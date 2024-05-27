@@ -1,0 +1,352 @@
+// Données de produits fictives
+const products = [
+    {
+      id: 1,
+      name: 'HP',
+      description: 'RAM 8 Go, SSD 256 Go, AZERTY',
+      price: 379.99,
+      category: 'electronique',
+      images: [
+        'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600'
+      ]
+    },
+    {
+      id: 2,
+      name: 'Acer Aspire',
+      description: 'RAM 16 Go, SSD 512 Go',
+      price: 534.99,
+      category: 'electronique',
+      images: [
+        'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600'
+      ]
+    },
+    {
+      id: 3,
+      name: 'Lenovo ',
+      description: '8 Go DDR4,512 Go SSD,',
+      price: 724.99,
+      category: 'electronique',
+      images: [
+        'https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=600' 
+      ]
+    },
+    {
+      id: 4,
+      name: 'Produit 2',
+      description: 'Description du produit 2',
+      price: 524.99,
+      category: 'electronique',
+      images: [
+        'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
+      ]
+    },
+    {
+      id: 5,
+      name: 'Produit 2',
+      description: 'Description du produit 2',
+      price: 24.99,
+      category: 'electronique',
+      images: [
+        'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
+      ]
+    },
+    {
+      id: 6,
+      name: 'Produit 2',
+      description: 'Description du produit 2',
+      price: 24.99,
+      category: 'electronique',
+      images: [
+        'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
+      ]
+    },
+    // Vêtements
+    {
+        id: 7,
+        name: 'Produit 2',
+        description: 'Description du produit 2',
+        price: 24.99,
+        category: 'vetements',
+        images: [
+          'https://images.pexels.com/photos/3755706/pexels-photo-3755706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+          'https://images.pexels.com/photos/6069553/pexels-photo-6069553.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/1389449/pexels-photo-1389449.jpeg?auto=compress&cs=tinysrgb&w=600'
+        ]
+      },
+    {
+        id: 8,
+        name: 'Produit 2',
+        description: 'Description du produit 2',
+        price: 24.99,
+        category: 'vetements',
+        images: [
+          'https://images.pexels.com/photos/5490979/pexels-photo-5490979.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/9185791/pexels-photo-9185791.jpeg?auto=compress&cs=tinysrgb&w=600'
+        ]
+      },
+    {
+        id: 9,
+        name: 'Produit 2',
+        description: 'Description du produit 2',
+        price: 24.99,
+        category: 'vetements',
+        images: [
+          'https://images.pexels.com/photos/7691089/pexels-photo-7691089.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/7691227/pexels-photo-7691227.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/8387838/pexels-photo-8387838.jpeg?auto=compress&cs=tinysrgb&w=600'
+        ]
+      },
+    {
+        id: 10, name: 'Produit 2',  description: 'Description du produit 2',price: 24.99,category: 'vetements',images: [
+          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
+        ]
+      },
+    {
+        id: 11, name: 'Produit 2',  description: 'Description du produit 2',price: 24.99,category: 'vetements',images: [
+          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
+        ]
+      },
+    {
+        id: 12, name: 'Produit 2',  description: 'Description du produit 2',price: 24.99,category: 'vetements',images: [
+          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
+        ]
+      },
+
+  ];
+  
+  // Fonction pour créer une carte de produit
+  function createProductCard(product) {
+    const card = document.createElement('div');
+    card.classList.add('product-card');
+  
+    const image = document.createElement('img');
+    image.src = product.images[0];
+    image.alt = product.name;
+    card.appendChild(image);
+  
+    const name = document.createElement('h3');
+    name.textContent = product.name;
+    card.appendChild(name);
+  
+    const description = document.createElement('p');
+    description.textContent = product.description;
+    card.appendChild(description);
+  
+    const price = document.createElement('p');
+    price.textContent = `Prix : ${product.price} €`;
+    card.appendChild(price);
+  
+    const button = document.createElement('a');
+    button.classList.add('btn');
+    button.textContent = 'Voir le produit';
+    button.addEventListener('click', () => showProductModal(product));
+    card.appendChild(button);
+  
+    return card;
+  }
+
+  // Variables pour la pagination
+    let currentPage = 1;
+    const productsPerPage = 10;
+    const paginationContainer = document.querySelector('.pagination');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const pageInfo = document.getElementById('page-info');
+    
+// Fonction pour afficher les produits avec pagination
+function displayProducts(products) {
+    const productList = document.querySelector('.product-list');
+    productList.innerHTML = '';
+  
+    const startIndex = (currentPage - 1) * productsPerPage;
+    const endIndex = startIndex + productsPerPage;
+    const paginatedProducts = products.slice(startIndex, endIndex);
+  
+    paginatedProducts.forEach(product => {
+      const card = createProductCard(product);
+      productList.appendChild(card);
+    });
+  
+    updatePaginationInfo(products.length);
+  }
+
+  // Fonction pour mettre à jour les informations de pagination
+function updatePaginationInfo(totalProducts) {
+    const totalPages = Math.ceil(totalProducts / productsPerPage);
+    pageInfo.textContent = `Page ${currentPage} sur ${totalPages}`;
+  
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+  }
+
+  // Événement pour le bouton "Précédent"
+prevBtn.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      displayProducts(products);
+    }
+  });
+
+  // Événement pour le bouton "Suivant"
+nextBtn.addEventListener('click', () => {
+    const totalProducts = products.length;
+    const totalPages = Math.ceil(totalProducts / productsPerPage);
+  
+    if (currentPage < totalPages) {
+      currentPage++;
+      displayProducts(products);
+    }
+  });
+  
+  // Fonction pour filtrer les produits par catégorie
+  function filterProductsByCategory(category) {
+    const categoryLinks = document.querySelectorAll('.category-list a');
+    categoryLinks.forEach(link => link.classList.remove('active'));
+  
+    const activeLink = document.querySelector(`.category-list a[data-category="${category}"]`);
+    activeLink.classList.add('active');
+  
+    if (category === 'all') {
+      displayProducts(products);
+    } else {
+      const filteredProducts = products.filter(product => product.category === category);
+      displayProducts(filteredProducts);
+    }
+  }
+  
+  // Fonction pour filtrer les produits par prix
+  function filterProducts() {
+    const filterInput = document.getElementById('filter');
+    const filterValue = document.getElementById('filter-value');
+    const maxPrice = filterInput.value;
+  
+    filterValue.textContent = maxPrice;
+  
+    const filteredProducts = products.filter(product => product.price <= maxPrice);
+    displayProducts(filteredProducts);
+  }
+  
+  // Fonction pour trier les produits
+  function sortProducts() {
+    const sortSelect = document.getElementById('sort');
+    const sortOption = sortSelect.value;
+  
+    let sortedProducts = [...products];
+  
+    if (sortOption === 'price-asc') {
+      sortedProducts.sort((a, b) => a.price - b.price);
+    } else if (sortOption === 'price-desc') {
+      sortedProducts.sort((a, b) => b.price - a.price);
+    }
+  
+    displayProducts(sortedProducts);
+  }
+  
+  // Fonction pour afficher la modal de la galerie d'images
+  function showProductModal(product) {
+    const modal = document.getElementById('product-modal');
+    const modalContent = modal.querySelector('.modal-content');
+    const productGallery = modalContent.querySelector('.product-gallery');
+  
+    productGallery.innerHTML = '';
+  
+    product.images.forEach(imageUrl => {
+      const img = document.createElement('img');
+      img.src = imageUrl;
+      img.alt = product.name;
+      productGallery.appendChild(img);
+    });
+  
+    modal.style.display = 'block';
+  
+    const closeModal = () => {
+      modal.style.display = 'none';
+    };
+  
+    const closeBtn = modalContent.querySelector('.close');
+    closeBtn.addEventListener('click', closeModal);
+  
+    window.addEventListener('click', event => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  }
+  
+  document.querySelectorAll('.category-list a').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const category = event.target.dataset.category;
+      filterProductsByCategory(category);
+    });
+  });
+  
+  document.getElementById('filter').addEventListener('input', filterProducts);
+  document.getElementById('sort').addEventListener('change', sortProducts);
+  
+  // Afficher tous les produits au chargement initial
+  displayProducts(products);
+  
+  const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+  
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+      burger.classList.toggle('toggle');
+    });
+  
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+      });
+    });
+
+    const searchInput = document.getElementById('search-input');
+    const productList = document.querySelector('.product-list');
+
+    function filterProducts() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const cards = productList.getElementsByClassName('product-card');
+
+    for (let i = 0; i < cards.length; i++) {
+        const card = cards[i];
+        const productName = card.querySelector('h3').textContent.toLowerCase();
+
+
+        if (productName.includes(searchTerm)) {
+        card.style.display = 'block'; 
+        } else {
+        card.style.display = 'none'; 
+        }
+    }
+    }
+
+    searchInput.addEventListener('input', filterProducts);
+
+  };
+  
+  navSlide();
+  

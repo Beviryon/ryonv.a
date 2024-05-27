@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formations - Deslo'Group</title>
+  <link rel="stylesheet" href="../styles/formations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <a href="#">DESLO'GROUP</a>
+          </div>
+          <div class="menu">
+            <ul class="nav-links">
+              <li><a href="../pages/home.html">Accueil</a></li>
+              <li><a href="../pages/produits.html">Produits</a></li>
+              <li><a href="../pages//services.html">Nos services</a></li>
+              <li><a href="../pages/about.html">À propos</a></li>
+              <li><a href="../pages/contact.html">Contact</a></li>
+              <li><a href="../pages/formations.html">Nos formations</a></li>
+            </ul>
+            <div class="burger">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="formations">
+      <h1>Nos Formations</h1>
+      <div class="formation-list">
+        <div class="formation-card">
+          <img src="https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation 1">
+          <h3>Développement Web</h3>
+          <p>La formation est basées sur le JavaScripte, HTML, CSS</p>
+          <a href="#" class="btn" data-formation-id="1">Plus d'infos</a>
+        </div>
+        <div class="formation-card">
+          <img src="https://images.pexels.com/photos/414974/pexels-photo-414974.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation 2">
+          <h3>Désign graphique</h3>
+          <p>La formation est basées sur Photoshop, InDesign, Illustrator</p>
+          <a href="#" class="btn" data-formation-id="2">Plus d'infos</a>
+        </div>
+        <div class="formation-card">
+          <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation 3">
+          <h3>E-commerce</h3>
+          <p>La formation est basées sur Alibaba, Amazone Busness, Shein</p>
+          <a href="#" class="btn" data-formation-id="3">Plus d'infos</a>
+        </div>
+        <div class="formation-card">
+          <img src="https://images.pexels.com/photos/2881232/pexels-photo-2881232.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation 4">
+          <h3>Réseau Informatique</h3>
+          <p>La formation est basées sur...</p>
+          <a href="#" class="btn" data-formation-id="4">Plus d'infos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal pour les détails de la formation -->
+  <div id="formation-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="formation-details">
+        <!--  -->
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Deslo'Group. Tous droits réservés.</p>
+  </footer>
+
+  <script src="../scripts/formations.js"></script>
+</body>
+</html>
