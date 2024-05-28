@@ -369,12 +369,17 @@ main {
       /* top: 100%; */
       /* flex-direction: column; */
       flex-wrap: wrap;
+      justify-content: center;
       left: 0;
       width: 100%;
       background-color: #fff;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       padding: 1rem;
       z-index: 1;
+    }
+
+    .filters {
+      display: none;
     }
   
     .category-list li {
