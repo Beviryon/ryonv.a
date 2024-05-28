@@ -365,8 +365,10 @@ main {
   
     .category-list {
       /* display: none; */
-      position: absolute;
+      /* position: absolute; */
       /* top: 100%; */
+      /* flex-direction: column; */
+      flex-wrap: wrap;
       left: 0;
       width: 100%;
       background-color: #fff;
