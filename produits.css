@@ -512,7 +512,7 @@ main {
     margin: 5% auto;
     padding: 2rem;
     border-radius: 10px;
-    max-width: 800px;
+    max-width: 1000px;
     position: relative;
     animation: modalFadeIn 0.3s ease-in-out;
   }
@@ -547,11 +547,12 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 2rem;
+
   }
   
   .product-gallery img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 800px;
+    max-height: 800px;
     margin: 10px;
     cursor: pointer;
     border-radius: 5px;
