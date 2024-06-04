@@ -161,6 +161,13 @@ const products = [
     button.textContent = 'Voir le produit';
     button.addEventListener('click', () => showProductModal(product));
     card.appendChild(button);
+
+    const whatsappBtn = document.createElement('a');
+    whatsappBtn.classList.add('btn', 'whatsapp-btn');
+    whatsappBtn.textContent = 'Commander';
+    whatsappBtn.href = `https://wa.me/NUMERODETELEPHONEDUVENDEUR?text=Je%20souhaite%20commander%20le%20produit%20${product.name}`;
+    whatsappBtn.target = '_blank';
+    card.appendChild(whatsappBtn);
   
     return card;
   }
