@@ -244,6 +244,10 @@ main {
     color: #fff;
     margin-top: 8px;
   }
+
+  .btn-detail {
+    font-size: 10px;
+  }
   
   .btn:hover {
     background-color: #e9e9e9;
