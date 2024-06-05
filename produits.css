@@ -297,6 +297,10 @@ main {
       color: #fff;
       margin-top: 8px;
     }
+
+    .btn-detail {
+      font-size: 11px;
+    }
   }
   
   
