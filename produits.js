@@ -10,7 +10,8 @@ const products = [
         'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
         'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
         'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600'
-      ]
+      ],
+      vendorPhone: '+3358146261' 
     },
     {
       id: 2,
@@ -165,7 +166,7 @@ const products = [
     const whatsappBtn = document.createElement('a');
     whatsappBtn.classList.add('btn', 'whatsapp-btn');
     whatsappBtn.textContent = 'Commander';
-    whatsappBtn.href = `https://wa.me/NUMERODETELEPHONEDUVENDEUR?text=Je%20souhaite%20commander%20le%20produit%20${product.name}`;
+    whatsappBtn.href = `https://wa.me/${product.vendorPhone}?text=Je%20souhaite%20commander%20le%20produit%20${product.name}`;
     whatsappBtn.target = '_blank';
     card.appendChild(whatsappBtn);
   
