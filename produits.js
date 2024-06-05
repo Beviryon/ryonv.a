@@ -11,7 +11,7 @@ const products = [
         'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
         'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600'
       ],
-      vendorPhone: '+33è58146261' 
+      vendorPhone: '+33758146261' 
     },
     {
       id: 2,
