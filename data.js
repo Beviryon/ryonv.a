@@ -1,9 +1,9 @@
 const products = [
     {
       id: 1,
-      name: 'HP',
-      description: 'RAM 8 Go, SSD 256 Go, AZERTY',
-      price: 379.99,
+      name: 'HP PC Portable 15.6"',
+      description: 'HP Laptop 15s-eq2000sf PC Portable 15.6" FHD (AMD Ryzen 5 5500U, RAM 8 Go, SSD 256 Go, AZERTY, Windows 11 Famille) Gris Ardoise',
+      price: 579.99,
 
       images: [
         'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',

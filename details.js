@@ -1,14 +1,8 @@
-// Récupérer l'ID du produit à partir de l'URL
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
 
-// Trouver le produit correspondant à l'ID dans le tableau products
-const product = products.find(p => p.id === parseInt(productId));
-
-// Récupérer l'élément HTML où les détails du produit seront affichés
+const product = products.find(p => p.id === parseInt(productId))
 const productInfo = document.getElementById('product-info');
-
-// Créer les éléments HTML pour afficher les détails du produit
 const name = document.createElement('h2');
 name.textContent = product.name;
 productInfo.appendChild(name);
@@ -22,6 +16,16 @@ price.textContent = `Prix : ${product.price} €`;
 productInfo.appendChild(price);
 
 const images = document.createElement('div');
+// Créer le bouton "Discuter avec le vendeur"
+const button = document.createElement('button');
+button.textContent = 'Discuter avec le vendeur';
+button.addEventListener('click', () => {
+  const phoneNumber = product.vendorPhone.replace(/[^0-9]/g, '');
+  const whatsappUrl = `https://wa.me/${phoneNumber}`;
+  window.location.href = whatsappUrl;
+});
+productInfo.appendChild(button);
+
 images.classList.add('product-images');
 product.images.forEach(imageUrl => {
   const img = document.createElement('img');
@@ -47,6 +51,6 @@ const navSlide = () => {
       burger.classList.remove('toggle');
     });
   });
-};
+}
 
 navSlide();
