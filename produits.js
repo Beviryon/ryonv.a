@@ -166,7 +166,7 @@ const products = [
     card.appendChild(description);
   
     const price = document.createElement('p');
-    price.textContent = `Prix : ${product.price} €`;
+    price.textContent = `Prix : ${product.price} Fcfa`;
     card.appendChild(price);
   
     const button = document.createElement('a');
