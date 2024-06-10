@@ -178,7 +178,7 @@ const products = [
     const whatsappBtn = document.createElement('a');
     whatsappBtn.classList.add('btn', 'whatsapp-btn');
     whatsappBtn.textContent = 'Commander';
-    whatsappBtn.href = `https://wa.me/${product.vendorPhone}?text=Je%20souhaite%20commander%20le%20produit:\n%20${product.name}`;
+    whatsappBtn.href = `https://wa.me/${product.vendorPhone}?text=Bonjour,%20je%20souhaite%20commander%20le%20produit%20:%20${product.name}.%20Voici%20le%20lien%20de%20l'image%20:%20${encodeURIComponent(product.images[0])}`;
     whatsappBtn.target = '_blank';
     card.appendChild(whatsappBtn);
 
