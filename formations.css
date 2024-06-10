@@ -75,11 +75,13 @@ footer {
       display: none;
       flex-direction: column;
       align-items: center;
-      width: 100%;
     }
   
     .nav-links li {
       margin: 1rem 0;
+      padding: 0.2rem;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
     }
   
     .burger {
@@ -101,7 +103,7 @@ footer {
     .toggle .line3 {
       transform: rotate(45deg) translate(-5px, -6px);
     }
-
+  
     header {
       position: fixed;
       width: 100%;
@@ -114,6 +116,7 @@ footer {
       padding-top: 4rem; 
     }
   }
+
   /* Section "Formations" */
   .formations {
     max-width: 1200px;
