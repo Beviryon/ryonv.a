@@ -7,9 +7,8 @@ const products = [
       price: 379.99,
       category: 'electronique',
       images: [
-        'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600'
+        './Moi.jpg'
+        
       ],
       vendorPhone: '+33758146261' 
     },
