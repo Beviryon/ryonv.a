@@ -76,11 +76,13 @@ nav {
     display: none;
     flex-direction: column;
     align-items: center;
-    width: 100%;
   }
 
   .nav-links li {
     margin: 1rem 0;
+    padding: 0.3rem;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
   }
 
   .burger {
@@ -101,6 +103,18 @@ nav {
 
   .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+
+  main {
+    padding-top: 4rem; 
   }
 }
   

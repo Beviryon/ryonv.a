@@ -101,6 +101,18 @@ footer {
     .toggle .line3 {
       transform: rotate(45deg) translate(-5px, -6px);
     }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+  
+    main {
+      padding-top: 4rem; 
+    }
   }
   /* Section "Formations" */
   .formations {
