@@ -734,22 +734,17 @@ main {
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   max-width: 500px;
-  left: 22em;
 }
 
 @media (max-width: 968px)   {
   .form-container {
-    position: absolute;
     background-color: #fff;
-    padding: 30px;
+    padding: 35px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    left: 8px;
-    top: 14rem;
+    margin: 0px;
+
   }
 }
 
@@ -803,7 +798,7 @@ main {
 
 /* Style du modal */
 .form-popup {
-  display: none;
+  display: flex;
   position: fixed;
   z-index: 9999;
   left: 0;
