@@ -238,13 +238,13 @@ function openOrderForm(product) {
 
   const submitBtn = document.createElement('button');
   submitBtn.type = 'submit';
-  submitBtn.textContent = 'Envoyer la commande';
+  submitBtn.textContent = 'Discuter avec le vendeur';
   submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
     const name = nameInput.value;
     const city = cityInput.value;
     const phone = phoneInput.value;
-    const message = `Bonjour, je m'appelle ${name} et je suis de ${city}. Je souhaite commander le produit : ${product.name}. Voici le lien de l'image : ${encodeURIComponent(product.images[0])}`;
+    const message = `Bonjour, je m'appelle ${name} et je suis de ${city}.\n Je souhaite commander le produit :\n ${product.name}.}`;
     const whatsappUrl = `https://wa.me/${product.vendorPhone}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     formPopup.style.display = 'none';

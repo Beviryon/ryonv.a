@@ -18,7 +18,7 @@ productInfo.appendChild(price);
 const images = document.createElement('div');
 // Créer le bouton "Discuter avec le vendeur"
 const button = document.createElement('button');
-button.textContent = "Voir d'autres produits";
+button.textContent = 'Discuter avec le vendeur';
 button.addEventListener('click', () => {
   const phoneNumber = product.vendorPhone.replace(/[^0-9]/g, '');
   const whatsappUrl = `./produits.html`;
