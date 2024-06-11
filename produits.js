@@ -191,8 +191,76 @@ function createProductCard(product) {
 
 
 // Fonction pour afficher le formulaire de commande dans un pop-up
+// function openOrderForm(product) {
+//   // Créer le formulaire pop-up
+//   const formPopup = document.createElement('div');
+//   formPopup.classList.add('form-popup');
+
+//   const formContainer = document.createElement('div');
+//   formContainer.classList.add('form-container');
+
+//   const closeBtn = document.createElement('span');
+//   closeBtn.classList.add('close');
+//   closeBtn.textContent = '×';
+//   closeBtn.addEventListener('click', () => {
+//     formPopup.style.display = 'none';
+//   });
+
+//   formContainer.appendChild(closeBtn);
+
+//   const form = document.createElement('form');
+//   form.classList.add('order-form');
+
+//   const nameLabel = document.createElement('label');
+//   nameLabel.textContent = 'Nom :';
+//   const nameInput = document.createElement('input');
+//   nameInput.type = 'text';
+//   nameInput.required = true;
+//   nameLabel.appendChild(nameInput);
+
+//   const cityLabel = document.createElement('label');
+//   cityLabel.textContent = 'Ville :';
+//   const cityInput = document.createElement('input');
+//   cityInput.type = 'text';
+//   cityInput.required = true;
+//   cityLabel.appendChild(cityInput);
+
+//   const phoneLabel = document.createElement('label');
+//   phoneLabel.textContent = 'Numéro de téléphone :';
+//   const phoneInput = document.createElement('input');
+//   phoneInput.type = 'tel';
+//   phoneInput.required = true;
+//   phoneLabel.appendChild(phoneInput);
+
+//   form.appendChild(nameLabel);
+//   form.appendChild(cityLabel);
+//   form.appendChild(phoneLabel);
+
+//   const submitBtn = document.createElement('button');
+//   submitBtn.type = 'submit';
+//   submitBtn.textContent = 'Discuter avec le vendeur';
+//   submitBtn.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     const name = nameInput.value;
+//     const city = cityInput.value;
+//     const phone = phoneInput.value;
+//     const message = `Bonjour, je m'appelle ${name} et je suis de ${city}.\n Je souhaite commander le produit :\n ${product.name}.}`;
+//     const whatsappUrl = `https://wa.me/${product.vendorPhone}?text=${encodeURIComponent(message)}`;
+//     window.open(whatsappUrl, '_blank');
+//     formPopup.style.display = 'none';
+//   });
+
+//   form.appendChild(submitBtn);
+//   formContainer.appendChild(form);
+
+//   formPopup.appendChild(formContainer);
+//   document.body.appendChild(formPopup);
+
+//   // Afficher le formulaire pop-up
+//   formPopup.style.display = 'block';
+// }
+
 function openOrderForm(product) {
-  const myPhoneNumber = "+33763217791"
   // Créer le formulaire pop-up
   const formPopup = document.createElement('div');
   formPopup.classList.add('form-popup');
@@ -240,16 +308,9 @@ function openOrderForm(product) {
   const submitBtn = document.createElement('button');
   submitBtn.type = 'submit';
   submitBtn.textContent = 'Discuter avec le vendeur';
-  submitBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    const name = nameInput.value;
-    const city = cityInput.value;
-    const phone = phoneInput.value;
-    const message = `Bonjour, je m'appelle ${name} et je suis de ${city}.\n Je souhaite commander le produit :\n ${product.name}.}`;
-    const whatsappUrl = `https://wa.me/${myPhoneNumber},${product.vendorPhone}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    formPopup.style.display = 'none';
-  });
+
+  form.appendChild(submitBtn);
+  formContainer.appendChild(form);
 
   form.appendChild(submitBtn);
   formContainer.appendChild(form);
@@ -259,7 +320,20 @@ function openOrderForm(product) {
 
   // Afficher le formulaire pop-up
   formPopup.style.display = 'block';
+
+  // Ajouter l'événement 'submit' au formulaire
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const name = nameInput.value;
+    const city = cityInput.value;
+    const phone = phoneInput.value;
+    const message = `Bonjour, je m'appelle ${name} et je suis de ${city}.\n Je souhaite commander le produit :\n ${product.name}.`;
+    const whatsappUrl = `https://wa.me/${product.vendorPhone}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    formPopup.style.display = 'none';
+  });
 }
+
 
 
 // Variables pour la pagination
