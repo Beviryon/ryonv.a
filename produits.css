@@ -724,4 +724,107 @@ main {
     cursor: pointer;
   }
    */
-  
+
+   /* style formulaire */
+   /* Modal pour le formulaire d'informations utilisateur */
+#user-info-modal {
+  display: none;
+  position: fixed;
+  z-index: 1001; /* Z-index supérieur à celui du modal de la galerie d'images */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#user-info-modal .modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px; /* Largeur maximale réduite pour un meilleur affichage sur mobile */
+}
+
+#user-info-modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#user-info-modal .close:hover,
+#user-info-modal .close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+#user-info-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#user-info-form input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+#user-info-form button[type="submit"] {
+  background-color: #f2ae01;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#user-info-form button[type="submit"]:hover {
+  background-color: #e9e9e9;
+  color: #000361;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-container {
+  position: absolute;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+}
+
+.form-container .close {
+  position: absolute;
+  z-index: 9999;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.order-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.order-form input,
+.order-form button
