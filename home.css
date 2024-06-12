@@ -90,22 +90,25 @@ main {
 }
 
 .hero p {
-  color: #fff;
+  color: #f2ae01;
   font-size: 1.2rem;
   font-weight: 600;
+  margin: 2px;
 }
 
 .hero h1 {
-  color: #f2ae01;
-  font-weight: 900;
+  color: #ffffff;
+  font-weight: 600;
   font-size: 3rem;
+  padding: 4px;
+  margin: 6px;
 }
 
 .product-carousel {
   text-align: center;
 }
 .product-carousel h2 {
-  color: #f2ae01;
+  color: #ffffff;
   font-size: 1.5rem;
   top: 9px;
   position: relative;
