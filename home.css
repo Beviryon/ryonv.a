@@ -243,4 +243,40 @@ footer {
   main {
     padding-top: 4rem; 
   }
+
+  .carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    flex-wrap: wrap;
+    justify-content: center;
+    top: 10px;
+    position: relative;
+    margin: 10px 2px;
+    padding: 16px;
+    border-radius: 35px;
+    background-color: rgba(238, 238, 238, 0.2);
+  }
+  
+  .carousel-slide {
+    flex: 0 0 300px;
+    margin-right: 1rem;
+    scroll-snap-align: start;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: #c6c6c6;
+    border-radius: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
+    -23px 0 20px -23px rgba(0, 0, 0, .8),
+    23px 0 20px -23px rgba(0, 0, 0, .8),
+    inset 0 0 40px rgba(0, 0, 0, .1);
+  }
+  
+  .carousel-slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
 }
