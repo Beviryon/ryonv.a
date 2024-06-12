@@ -50,10 +50,9 @@ const products = [
     },
     {
       id: 5,
-      name: 'Produit 2',
-      description: 'Description du produit 2',
+      name: '	Femmes Sexy Jupe',
+      description: 'Jupe en denim pour femmes, longue, taille haute, mode de bureau, style décontracté, nouvelle collection été',
       price: 24.99,
-      category: 'electronique',
       images: [
         'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
         'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',

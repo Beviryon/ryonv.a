@@ -18,7 +18,7 @@ id: 2,
 name: 'Support de téléphone',
 description: 'Décoration de la maison',
 price: 1200,
-category: 'electronique',
+category: 'maison',
 images: [
 'https://s.alicdn.com/@sc04/kf/H0911ecc7982549489bd59d3976fc5378W.jpg',
 'https://s.alicdn.com/@sc04/kf/H9a2c6edd9c6e454e9f6cddff49f56dafc.jpg',
@@ -31,7 +31,7 @@ id: 3,
 name: 'ZONE Sport ',
 description: 'Sacs de Téléphone portable',
 price: 724.99,
-category: 'electronique',
+category: 'sport',
 images: [
 'https://s.alicdn.com/@sc04/kf/HTB1FQLZXOnrK1Rjy1Xcq6yeDVXah.jpg',
 'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSszcq6zwhFXaW.jpg',
@@ -44,7 +44,7 @@ id: 4,
 name: 'Custom Brand',
 description: 'Costumes de pantalon',
 price: 524.99,
-category: 'electronique',
+category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
 'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
@@ -54,14 +54,14 @@ vendorPhone: '+33758146261'
 },
 {
 id: 5,
-name: 'Produit 2',
-description: 'Description du produit 2',
+name: 'Femmes Sexy Jupe',
+description: '100% coton Denim',
 price: 24.99,
-category: 'electronique',
+category: 'vetements',
 images: [
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
+'https://s.alicdn.com/@sc04/kf/H85526e7e55e443c593b9302487ad2ba2R.jpg',
+'https://s.alicdn.com/@sc04/kf/H1f7aaa81232649b4b352c4e228268009O.jpg',
+'https://s.alicdn.com/@sc04/kf/Hfde0ff53a70a41ad82d118ee575586ffY.jpg'
 ],
 vendorPhone: '+33758146261'
 },
