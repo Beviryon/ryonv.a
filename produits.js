@@ -43,7 +43,7 @@ vendorPhone: '+33758146261'
 id: 4,
 name: 'Custom Brand',
 description: 'Costumes de pantalon',
-price: 150.99,
+price: 150000,
 category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
@@ -112,7 +112,7 @@ vendorPhone: '+33758146261'
 id: 9,
 name: 'Sac à main',
 description: 'modèle 2023 en cuir',
-price: 70000,
+price: 7000,
 category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/H2aa20b2331584b08914ebfdbecc8f76eo.jpg',

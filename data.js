@@ -39,7 +39,7 @@ const products = [
       id: 4,
       name: 'Custom Brand',
       description: "Costume 3 pièces élégant avec pantalon pour homme, coupe Slim, bouton unique, tenue de soirée formelle, costume d'affaires",
-      price: 150.99,
+      price: 150000,
 
       images: [
         'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
@@ -102,7 +102,7 @@ const products = [
         id: 9,
         name: 'sacs à main vintage pour dames',
         description: 'Grands sacs à main vintage pour dames: modèle 2023, fourre-tout en cuir PU et polyester, sacs à bandoulière chics pour femmes',
-        price: 70000,
+        price: 7000,
         images: [
           'https://s.alicdn.com/@sc04/kf/H2aa20b2331584b08914ebfdbecc8f76eo.jpg',
           'https://s.alicdn.com/@sc04/kf/H7d09183f2f284305bb1d08834b842c4eY.jpg',
