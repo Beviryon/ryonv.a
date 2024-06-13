@@ -12,7 +12,7 @@ description.textContent = product.description;
 productInfo.appendChild(description);
 
 const price = document.createElement('p');
-price.textContent = `Prix : ${product.price} €`;
+price.textContent = `Prix : ${product.price} Fcfa`;
 productInfo.appendChild(price);
 
 const images = document.createElement('div');

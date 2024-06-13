@@ -27,7 +27,7 @@ const products = [
       id: 3,
       name: 'Sacs de Téléphone portable ',
       description: 'Brassard De Sport pour Téléphone Portable Pour Tous Les Téléphones mobiles Accessoire',
-      price: 724.99,
+      price: 25000,
       images: [
         'https://s.alicdn.com/@sc04/kf/HTB1FQLZXOnrK1Rjy1Xcq6yeDVXah.jpg',
         'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSszcq6zwhFXaW.jpg',
@@ -39,7 +39,7 @@ const products = [
       id: 4,
       name: 'Custom Brand',
       description: "Costume 3 pièces élégant avec pantalon pour homme, coupe Slim, bouton unique, tenue de soirée formelle, costume d'affaires",
-      price: 524.99,
+      price: 150.99,
 
       images: [
         'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
@@ -52,7 +52,7 @@ const products = [
       id: 5,
       name: '	Femmes Sexy Jupe',
       description: 'Jupe en denim pour femmes, longue, taille haute, mode de bureau, style décontracté, nouvelle collection été',
-      price: 24.99,
+      price: 10000,
       images: [
         'https://s.alicdn.com/@sc04/kf/H85526e7e55e443c593b9302487ad2ba2R.jpg',
         'https://s.alicdn.com/@sc04/kf/H1f7aaa81232649b4b352c4e228268009O.jpg',
@@ -88,31 +88,46 @@ const products = [
       },
     {
         id: 8,
-        name: 'Produit 2',
-        description: 'Description du produit 2',
-        price: 24.99,
-
+        name: 'Robe de soirée femme',
+        description: '100% Polyester Vente en gros de vêtements personnalisés pour femmes robes de bal en satin pour femme robe de soirée enveloppante chic à une épaule robe élégante',
+        price: 20000,
         images: [
-          'https://images.pexels.com/photos/5490979/pexels-photo-5490979.jpeg?auto=compress&cs=tinysrgb&w=600',
-          'https://images.pexels.com/photos/9185791/pexels-photo-9185791.jpeg?auto=compress&cs=tinysrgb&w=600'
-        ],
+          'https://s.alicdn.com/@sc04/kf/Hbfc38afed3fc4b3984e40cbc5ed8a49cP.jpg',
+          'https://s.alicdn.com/@sc04/kf/H5710996c11594111ad7b127ee5c8cd741.jpg',
+          'https://s.alicdn.com/@sc04/kf/H43167ad91703404b8f759650953ff9c8B.jpg'
+          ],
         vendorPhone: '+33758146261' 
       },
     {
         id: 9,
-        name: 'Produit 2',
-        description: 'Description du produit 2',
-        price: 24.99,
-
+        name: 'sacs à main vintage pour dames',
+        description: 'Grands sacs à main vintage pour dames: modèle 2023, fourre-tout en cuir PU et polyester, sacs à bandoulière chics pour femmes',
+        price: 70000,
         images: [
-          'https://images.pexels.com/photos/7691089/pexels-photo-7691089.jpeg?auto=compress&cs=tinysrgb&w=600',
-          'https://images.pexels.com/photos/7691227/pexels-photo-7691227.jpeg?auto=compress&cs=tinysrgb&w=600',
-          'https://images.pexels.com/photos/8387838/pexels-photo-8387838.jpeg?auto=compress&cs=tinysrgb&w=600'
+          'https://s.alicdn.com/@sc04/kf/H2aa20b2331584b08914ebfdbecc8f76eo.jpg',
+          'https://s.alicdn.com/@sc04/kf/H7d09183f2f284305bb1d08834b842c4eY.jpg',
+          'https://s.alicdn.com/@sc04/kf/H0a2b7c07b5c2400cade43ace2db65141G.jpg'
         ],
         vendorPhone: '+33758146261' 
       },
     {
-        id: 10, name: 'Produit 2',  description: 'Description du produit 2',price: 24.99,images: [
+        id: 10, 
+        name: 'H-P EliteBook 640G9',  
+        description: "WINDOWS 11 HOME? Reconnaissance d'empreintes digitales, Fréquence principale du processeur	2.10 GHz, Capacité d'unité de disque dur(1): 512 Go, i5-1235U/16G/512G SSD, H-P EliteBook 640G9 Intel Core Series 12e génération CPU commercial/Offre Spéciale/grand public/maison/étudiant ordinateur portable",
+        price: 250000,
+        images: [
+          'https://s.alicdn.com/@sc04/kf/H13b354835d0742a1919dab2e5386d5d90.jpg',
+          'https://s.alicdn.com/@sc04/kf/H8d3e389715e449cba5f2c41c6f2a752cb.jpg',
+          'https://s.alicdn.com/@sc04/kf/H161a4757294e4dc7bb291fa1c6ec19aaZ.jpg'
+          ],
+        vendorPhone: '+33758146261' 
+      },
+    {
+        id: 11, 
+        name: 'Pas de stock',  
+        description: 'Bientôt disponible',
+        price: 0,
+        images: [
           'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
           'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
           'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
@@ -120,15 +135,11 @@ const products = [
         vendorPhone: '+33758146261' 
       },
     {
-        id: 11, name: 'Produit 2',  description: 'Description du produit 2',price: 24.99,images: [
-          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
-          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
-          'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
-        ],
-        vendorPhone: '+33758146261' 
-      },
-    {
-        id: 12, name: 'Produit 2',  description: 'Description du produit 2',price: 24.99,images: [
+        id: 12, 
+        name: 'Pas de stock',  
+        description: 'Bientôt disponible',
+        price: 0,
+        images: [
           'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
           'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
           'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'

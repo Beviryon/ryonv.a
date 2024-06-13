@@ -183,6 +183,30 @@ footer {
       max-width: 80%;
     }
   }
+
+  p_details {
+    padding: 2px;
+    top: 8px;
+    position: relative;
+    text-align: center;
+  }
+
+  p {
+    position: relative;
+    top: 25px;text-align: center;
+    color: #f2ae01;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  button {
+    position: relative;
+    top: 25px;
+    border-radius: 10px;
+    padding: 6px 9px;
+    margin: 22px;
+    background-color: #000361;
+  }
   
   /* button {
     display: block;

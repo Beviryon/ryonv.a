@@ -7,12 +7,12 @@ const name = document.createElement('h2');
 name.textContent = product.name;
 productInfo.appendChild(name);
 
-const description = document.createElement('p');
+const description = document.createElement('p_details');
 description.textContent = product.description;
 productInfo.appendChild(description);
 
 const price = document.createElement('p');
-price.textContent = `Prix : ${product.price} €`;
+price.textContent = `Prix : ${product.price} FCFA`;
 productInfo.appendChild(price);
 
 const images = document.createElement('div');

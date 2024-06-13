@@ -30,7 +30,7 @@ vendorPhone: '+33758146261'
 id: 3,
 name: 'ZONE Sport ',
 description: 'Sacs de Téléphone portable',
-price: 724.99,
+price: 2500,
 category: 'sport',
 images: [
 'https://s.alicdn.com/@sc04/kf/HTB1FQLZXOnrK1Rjy1Xcq6yeDVXah.jpg',
@@ -43,7 +43,7 @@ vendorPhone: '+33758146261'
 id: 4,
 name: 'Custom Brand',
 description: 'Costumes de pantalon',
-price: 524.99,
+price: 150.99,
 category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
@@ -56,7 +56,7 @@ vendorPhone: '+33758146261'
 id: 5,
 name: 'Femmes Sexy Jupe',
 description: '100% coton Denim',
-price: 24.99,
+price: 10000,
 category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/H85526e7e55e443c593b9302487ad2ba2R.jpg',
@@ -65,6 +65,8 @@ images: [
 ],
 vendorPhone: '+33758146261'
 },
+
+// Vêtements raison
 {
 id: 6,
 name: 'Robe',
@@ -76,10 +78,10 @@ images: [
 'https://db3pap006files.storage.live.com/y4m6QsZYenD0EYz8xg9YKmdpB-Mdg4fZy4flV44gaUGjkKd-YI6liCeDYeRPLKeXQffal47ZLCKMDkD1oNvWB3bi76uo_tjNO1oYLwuYG9aJ75UoC_tIdqmUespmUCABmQuiOPr9-t8S6HkJyJkor1BeIFMglBkWKPplONYqJwfv8NXUuFDXEX644wfZ6jj18m6kDCkqEPJQag0vGrc0STMniu-Fk_Qrfq8QDmdRLe4Anw?encodeFailures=1&width=604&height=756',
 'https://db3pap006files.storage.live.com/y4mGU8rgGiHvZrOmDKkz2S2t3Xu07Q7sYrW8m5f1t2_H83wZVKf_Ih4vZTvN0eIwF-SeqqtnewsPj003HF4l6qbEpJ9HESu6sPxxHl7Gvf2q3kwK7vMZQE_muCtC1fGFDtQcjrKpskc20BqsUAdVSSpqLLZh-MUbii0ykg9U23M7Yozr9rGHarKHClo8E_YoOUu387_8Lt5AOFIY7Vx66QvY38x_kzOVykJ3nH-7JkdjfU?encodeFailures=1&width=605&height=756'
 ],
-vendorPhone: '+33758146261'
+vendorPhone: '+221784743356'
 },
 
-// Vêtements
+// Vêtements raison
 {
 id: 7,
 name: 'Robe',
@@ -91,35 +93,54 @@ images: [
 'https://db3pap006files.storage.live.com/y4mTSBEzwFzRpE5m3-yZSTF1z4ziIJf1lZmsIYnjWgzzWQLTh666HAtRL_Jd-ahi_HuKHNvqsy4twNPOOfeWtMaDB0pVcADZtdJwOAzKsaUwwJd5fCKfvbJEMzhthk_ZvPmKnqd6dUzN29JPs-7WXFJfeo0YsstcxUxny641JUktL5Ems0zDUxDaRGZ36DEUZ7kVgfeWATct5Zeq1GRIiaPnVbuHLhCLmQO-5XOgr6ZWS4?encodeFailures=1&width=503&height=756',
 'https://db3pap006files.storage.live.com/y4m7hIf1N0BiNgEo5IefCxU-c71MbB7Bh_VOnFXNfNlGiRNz4MoWX8YrSqtVy8WCbveD3896VXhtPFgezq0mv6SsbcEA8xCe15YgTF_JhJi8mjq-acwHsYvS8VTCxIVNLM76MM-X3kIJt3NI3tnDhUIZIJ7j0FbazygySfjG15LxHQeCzfyjQ5yJOxavxsd6OfiERCQORA8dYRV4lz3oBO4v64vm6dhMeKS34Qy39Jzo5M?encodeFailures=1&width=503&height=756'
 ],
-vendorPhone: '+33758146261'
+vendorPhone: '+221784743356'
 },
 {
 id: 8,
-name: 'Produit 2',
-description: 'Description du produit 2',
-price: 24.99,
+name: 'Robe de soirée femme',
+description: '100% Polyester',
+price: 20000,
 category: 'vetements',
 images: [
-'https://images.pexels.com/photos/5490979/pexels-photo-5490979.jpeg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/9185791/pexels-photo-9185791.jpeg?auto=compress&cs=tinysrgb&w=600'
+'https://s.alicdn.com/@sc04/kf/Hbfc38afed3fc4b3984e40cbc5ed8a49cP.jpg',
+'https://s.alicdn.com/@sc04/kf/H5710996c11594111ad7b127ee5c8cd741.jpg',
+'https://s.alicdn.com/@sc04/kf/H43167ad91703404b8f759650953ff9c8B.jpg'
 ],
 vendorPhone: '+33758146261'
 },
 {
 id: 9,
-name: 'Produit 2',
-description: 'Description du produit 2',
-price: 24.99,
+name: 'Sac à main',
+description: 'modèle 2023 en cuir',
+price: 70000,
 category: 'vetements',
 images: [
-'https://images.pexels.com/photos/7691089/pexels-photo-7691089.jpeg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/7691227/pexels-photo-7691227.jpeg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/8387838/pexels-photo-8387838.jpeg?auto=compress&cs=tinysrgb&w=600'
+'https://s.alicdn.com/@sc04/kf/H2aa20b2331584b08914ebfdbecc8f76eo.jpg',
+'https://s.alicdn.com/@sc04/kf/H7d09183f2f284305bb1d08834b842c4eY.jpg',
+'https://s.alicdn.com/@sc04/kf/H0a2b7c07b5c2400cade43ace2db65141G.jpg'
 ],
 vendorPhone: '+33758146261'
 },
 {
-id: 10, name: 'Produit 2', description: 'Description du produit 2',price: 24.99,category: 'vetements',images: [
+id: 10, 
+name: 'H-P EliteBook 640G9', 
+description: 'WINDOWS 11 HOME',
+price: 250000,
+category: 'electronique',
+images: [
+'https://s.alicdn.com/@sc04/kf/H13b354835d0742a1919dab2e5386d5d90.jpg',
+'https://s.alicdn.com/@sc04/kf/H8d3e389715e449cba5f2c41c6f2a752cb.jpg',
+'https://s.alicdn.com/@sc04/kf/H161a4757294e4dc7bb291fa1c6ec19aaZ.jpg'
+],
+vendorPhone: '+33758146261'
+},
+{
+id: 11, 
+name: 'Pas de stock', 
+description: 'Bientôt disponible',
+price: 0,
+category: 'vetements',
+images: [
 'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
 'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
 'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
@@ -127,15 +148,12 @@ id: 10, name: 'Produit 2', description: 'Description du produit 2',price: 24.99,
 vendorPhone: '+33758146261'
 },
 {
-id: 11, name: 'Produit 2', description: 'Description du produit 2',price: 24.99,category: 'vetements',images: [
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
-],
-vendorPhone: '+33758146261'
-},
-{
-id: 12, name: 'Produit 2', description: 'Description du produit 2',price: 24.99,category: 'vetements',images: [
+id: 12, 
+name: 'Produit 2', 
+description: 'Bientôt disponible',
+price: 0,
+category: 'vetements',
+images: [
 'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
 'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
 'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
