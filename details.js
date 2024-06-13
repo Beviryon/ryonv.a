@@ -11,7 +11,7 @@ const description = document.createElement('p_details');
 description.textContent = product.description;
 productInfo.appendChild(description);
 
-const price = document.createElement('p');
+const price = document.createElement('p_prix');
 price.textContent = `Prix : ${product.price} FCFA`;
 productInfo.appendChild(price);
 
