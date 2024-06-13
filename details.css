@@ -193,7 +193,12 @@ footer {
 
   p_prix {
     position: relative;
-    top: 25px;text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    top: 35px;
+    text-align: center;
     color: #f2ae01;
     font-weight: bold;
     font-size: 20px;
