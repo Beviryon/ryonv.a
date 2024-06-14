@@ -726,7 +726,7 @@ main {
    */
 
 
-  /* Style du formulaire */
+/* Style du formulaire */
 .form-container {
   position: relative;
   background-color: #fff;
@@ -734,23 +734,25 @@ main {
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   max-width: 500px;
+  margin: auto;
+  animation: modalFadeIn 0.5s ease;
 }
 
-@media (max-width: 968px)   {
+@media (max-width: 968px) {
   .form-container {
-    background-color: #fff;
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-    margin: 0px;
-
+    padding: 35px;
   }
 }
 
 .form-container .close {
   color: #999;
   transition: color 0.3s ease;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .form-container .close:hover {
@@ -761,10 +763,12 @@ main {
   color: #333;
   font-weight: bold;
   margin-bottom: 10px;
+  display: block;
 }
 
 .order-form input,
-.order-form textarea {
+.order-form textarea,
+.order-form select {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -775,7 +779,8 @@ main {
 }
 
 .order-form input:focus,
-.order-form textarea:focus {
+.order-form textarea:focus,
+.order-form select:focus {
   border-color: #f2ae01;
   outline: none;
 }
@@ -799,6 +804,8 @@ main {
 /* Style du modal */
 .form-popup {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 9999;
   left: 0;
@@ -807,7 +814,7 @@ main {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: auto;
-  padding-top: 50px;
+  padding: 50px 20px;
 }
 
 /* Animation du modal */
@@ -820,8 +827,4 @@ main {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.form-container {
-  animation: modalFadeIn 0.5s ease;
 }

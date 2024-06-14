@@ -277,7 +277,6 @@ function createProductCard(product) {
 // }
 
 function openOrderForm(product) {
-  // Créer le formulaire pop-up
   const formPopup = document.createElement('div');
   formPopup.classList.add('form-popup');
 
@@ -300,55 +299,167 @@ function openOrderForm(product) {
   nameLabel.textContent = 'Nom :';
   const nameInput = document.createElement('input');
   nameInput.type = 'text';
+  nameInput.name = 'name';
+  nameInput.pattern = '[A-Za-zÀ-ÿ ]+';
+  nameInput.title = 'Seuls les lettres et espaces sont autorisés';
   nameInput.required = true;
-  nameLabel.appendChild(nameInput);
+  form.appendChild(nameLabel);
+  form.appendChild(nameInput);
 
   const cityLabel = document.createElement('label');
   cityLabel.textContent = 'Ville :';
   const cityInput = document.createElement('input');
   cityInput.type = 'text';
+  cityInput.name = 'city';
+  cityInput.pattern = '[A-Za-zÀ-ÿ ]+';
+  cityInput.title = 'Seuls les lettres et espaces sont autorisés';
   cityInput.required = true;
-  cityLabel.appendChild(cityInput);
+  form.appendChild(cityLabel);
+  form.appendChild(cityInput);
+
+  const countryLabel = document.createElement('label');
+  countryLabel.textContent = 'Pays :';
+  const countrySelect = document.createElement('select');
+  countrySelect.name = 'country';
+  countrySelect.required = true;
+  countrySelect.innerHTML = `
+  <!-- Pays d'Afrique -->
+    <option value="+213">Algérie (+213)</option>
+    <option value="+244">Angola (+244)</option>
+    <option value="+229">Bénin (+229)</option>
+    <option value="+226">Burkina Faso (+226)</option>
+    <option value="+257">Burundi (+257)</option>
+    <option value="+237">Cameroun (+237)</option>
+    <option value="+238">Cap-Vert (+238)</option>
+    <option value="+236">République Centrafricaine (+236)</option>
+    <option value="+235">Tchad (+235)</option>
+    <option value="+269">Comores (+269)</option>
+    <option value="+242">Congo-Brazzaville (+242)</option>
+    <option value="+243">République Démocratique du Congo (+243)</option>
+    <option value="+225">Côte d'Ivoire (+225)</option>
+    <option value="+253">Djibouti (+253)</option>
+    <option value="+20">Égypte (+20)</option>
+    <option value="+240">Guinée Équatoriale (+240)</option>
+    <option value="+291">Érythrée (+291)</option>
+    <option value="+251">Éthiopie (+251)</option>
+    <option value="+241">Gabon (+241)</option>
+    <option value="+220">Gambie (+220)</option>
+    <option value="+233">Ghana (+233)</option>
+    <option value="+224">Guinée (+224)</option>
+    <option value="+245">Guinée-Bissau (+245)</option>
+    <option value="+254">Kenya (+254)</option>
+    <option value="+266">Lesotho (+266)</option>
+    <option value="+231">Libéria (+231)</option>
+    <option value="+218">Libye (+218)</option>
+    <option value="+261">Madagascar (+261)</option>
+    <option value="+265">Malawi (+265)</option>
+    <option value="+223">Mali (+223)</option>
+    <option value="+222">Mauritanie (+222)</option>
+    <option value="+230">Maurice (+230)</option>
+    <option value="+212">Maroc (+212)</option>
+    <option value="+258">Mozambique (+258)</option>
+    <option value="+264">Namibie (+264)</option>
+    <option value="+227">Niger (+227)</option>
+    <option value="+234">Nigeria (+234)</option>
+    <option value="+250">Rwanda (+250)</option>
+    <option value="+239">Sao Tomé-et-Principe (+239)</option>
+    <option value="+221">Sénégal (+221)</option>
+    <option value="+248">Seychelles (+248)</option>
+    <option value="+232">Sierra Leone (+232)</option>
+    <option value="+252">Somalie (+252)</option>
+    <option value="+27">Afrique du Sud (+27)</option>
+    <option value="+211">Soudan du Sud (+211)</option>
+    <option value="+249">Soudan (+249)</option>
+    <option value="+268">Eswatini (+268)</option>
+    <option value="+255">Tanzanie (+255)</option>
+    <option value="+228">Togo (+228)</option>
+    <option value="+216">Tunisie (+216)</option>
+    <option value="+256">Ouganda (+256)</option>
+    <option value="+260">Zambie (+260)</option>
+    <option value="+263">Zimbabwe (+263)</option>
+
+    <!-- Pays d'Europe -->
+    <option value="+43">Autriche (+43)</option>
+    <option value="+32">Belgique (+32)</option>
+    <option value="+359">Bulgarie (+359)</option>
+    <option value="+357">Chypre (+357)</option>
+    <option value="+420">République Tchèque (+420)</option>
+    <option value="+45">Danemark (+45)</option>
+    <option value="+372">Estonie (+372)</option>
+    <option value="+358">Finlande (+358)</option>
+    <option value="+33">France (+33)</option>
+    <option value="+49">Allemagne (+49)</option>
+    <option value="+30">Grèce (+30)</option>
+    <option value="+36">Hongrie (+36)</option>
+    <option value="+354">Islande (+354)</option>
+    <option value="+353">Irlande (+353)</option>
+    <option value="+39">Italie (+39)</option>
+    <option value="+371">Lettonie (+371)</option>
+    <option value="+370">Lituanie (+370)</option>
+    <option value="+352">Luxembourg (+352)</option>
+    <option value="+356">Malte (+356)</option>
+    <option value="+31">Pays-Bas (+31)</option>
+    <option value="+47">Norvège (+47)</option>
+    <option value="+48">Pologne (+48)</option>
+    <option value="+351">Portugal (+351)</option>
+    <option value="+40">Roumanie (+40)</option>
+    <option value="+7">Russie (+7)</option>
+    <option value="+421">Slovaquie (+421)</option>
+    <option value="+386">Slovénie (+386)</option>
+    <option value="+34">Espagne (+34)</option>
+    <option value="+46">Suède (+46)</option>
+    <option value="+41">Suisse (+41)</option>
+    <option value="+44">Royaume-Uni (+44)</option>
+  `;
+  form.appendChild(countryLabel);
+  form.appendChild(countrySelect);
 
   const phoneLabel = document.createElement('label');
   phoneLabel.textContent = 'Numéro de téléphone :';
   const phoneInput = document.createElement('input');
   phoneInput.type = 'tel';
+  phoneInput.name = 'phone';
   phoneInput.required = true;
-  phoneLabel.appendChild(phoneInput);
-
-  form.appendChild(nameLabel);
-  form.appendChild(cityLabel);
   form.appendChild(phoneLabel);
+  form.appendChild(phoneInput);
 
   const submitBtn = document.createElement('button');
   submitBtn.type = 'submit';
   submitBtn.textContent = 'Discuter avec le vendeur';
-
   form.appendChild(submitBtn);
-  formContainer.appendChild(form);
 
-  form.appendChild(submitBtn);
   formContainer.appendChild(form);
-
   formPopup.appendChild(formContainer);
   document.body.appendChild(formPopup);
 
-  // Afficher le formulaire pop-up
   formPopup.style.display = 'block';
 
-  // Ajouter l'événement 'submit' au formulaire
   form.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    if (!form.checkValidity()) {
+      return;
+    }
+
     const name = nameInput.value;
     const city = cityInput.value;
+    const country = countrySelect.value;
     const phone = phoneInput.value;
-    const message = `Bonjour, je m'appelle ${name} \nJ'habite à ${city}.\n \nJe souhaite commander le produit :\n\ ${product.name}.`;
-    const whatsappUrl = `https://wa.me/${product.vendorPhone}?text=${encodeURIComponent(message)}`;
+
+    // Format du numéro de téléphone en fonction du pays
+    let phonePrefix = country.substring(0, 3); // Extrait le préfixe du pays (par exemple, +213 pour l'Algérie)
+    let phoneNumber = phone.substring(phonePrefix.length); // Extrait le numéro de téléphone sans le préfixe
+
+    const message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}.\n\nJe souhaite commander le produit :\n${product.name}.`;
+
+    const whatsappUrl = `https://wa.me/${country}${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     formPopup.style.display = 'none';
   });
 }
+
+
+
 
 
 
