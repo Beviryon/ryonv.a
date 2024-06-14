@@ -276,7 +276,7 @@ function createProductCard(product) {
 //   formPopup.style.display = 'block';
 // }
 
-function openOrderForm(product) {
+function openOrderForm() {
   const formPopup = document.createElement('div');
   formPopup.classList.add('form-popup');
 
@@ -323,7 +323,7 @@ function openOrderForm(product) {
   countrySelect.name = 'country';
   countrySelect.required = true;
   countrySelect.innerHTML = `
-  <!-- Pays d'Afrique -->
+    <!-- Pays d'Afrique -->
     <option value="+213">Algérie (+213)</option>
     <option value="+244">Angola (+244)</option>
     <option value="+229">Bénin (+229)</option>
@@ -441,21 +441,22 @@ function openOrderForm(product) {
       return;
     }
 
-    const name = nameInput.value;
-    const city = cityInput.value;
-    const country = countrySelect.value;
-    const phone = phoneInput.value;
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const city = formData.get('city');
+    const country = formData.get('country');
+    const phone = formData.get('phone');
 
-    // Format du numéro de téléphone en fonction du pays
-    let phonePrefix = country.substring(0, 3); // Extrait le préfixe du pays (par exemple, +213 pour l'Algérie)
-
-    const message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}.\n\nJe souhaite commander le produit :\n${product.name}${country}.`;
+    const message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}.\n\nJe souhaite commander le produit :\n${product.name}\n${phone}.`;
 
     const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     formPopup.style.display = 'none';
   });
 }
+
+
+
 
 
 // Variables pour la pagination
