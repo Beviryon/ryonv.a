@@ -448,11 +448,10 @@ function openOrderForm(product) {
 
     // Format du numéro de téléphone en fonction du pays
     let phonePrefix = country.substring(0, 3); // Extrait le préfixe du pays (par exemple, +213 pour l'Algérie)
-    let phoneNumber = phone.substring(phonePrefix.length); // Extrait le numéro de téléphone sans le préfixe
 
     const message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}.\n\nJe souhaite commander le produit :\n${product.name}${country}.`;
 
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     formPopup.style.display = 'none';
   });
