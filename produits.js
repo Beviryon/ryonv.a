@@ -455,8 +455,7 @@ function openOrderForm() {
   });
 }
 
-
-
+openOrderForm();
 
 
 // Variables pour la pagination
