@@ -205,6 +205,174 @@ function createProductCard(product) {
   return card;
 }
 
+function openOrderForm(product) {
+  // Créer le modal
+  const modal = document.createElement('div');
+  modal.id = 'user-info-modal';
+  modal.classList.add('modal');
+
+  // Créer le contenu du modal
+  const modalContent = document.createElement('div');
+  modalContent.classList.add('modal-content');
+
+  // Bouton de fermeture du modal
+  const closeModalSpan = document.createElement('span');
+  closeModalSpan.classList.add('close');
+  closeModalSpan.textContent = '×';
+  closeModalSpan.addEventListener('click', () => {
+    modal.style.display = 'none';
+    form.reset(); // Réinitialiser le formulaire lorsque le modal est fermé
+  });
+
+  // Formulaire à l'intérieur du modal
+  const form = document.createElement('form');
+  form.id = 'user-info-form';
+
+  const nameLabel = document.createElement('label');
+  nameLabel.setAttribute('for', 'name');
+  nameLabel.textContent = 'Nom :';
+  const nameInput = document.createElement('input');
+  nameInput.type = 'text';
+  nameInput.id = 'name';
+  nameInput.name = 'name';
+  nameInput.required = true;
+  nameLabel.appendChild(nameInput);
+
+  const cityLabel = document.createElement('label');
+  cityLabel.setAttribute('for', 'city');
+  cityLabel.textContent = 'Ville :';
+  const cityInput = document.createElement('input');
+  cityInput.type = 'text';
+  cityInput.id = 'city';
+  cityInput.name = 'city';
+  cityInput.required = true;
+  cityLabel.appendChild(cityInput);
+
+  const countryLabel = document.createElement('label');
+  countryLabel.setAttribute('for', 'country');
+  countryLabel.textContent = 'Pays :';
+  const countrySelect = document.createElement('select');
+  countrySelect.id = 'country';
+  countrySelect.name = 'country';
+  countrySelect.required = true;
+
+  const countries = [
+    { code: 'DZ', name: 'Algérie' },
+    { code: 'AO', name: 'Angola' },
+    { code: 'BJ', name: 'Bénin' },
+    { code: 'BW', name: 'Botswana' },
+    { code: 'BF', name: 'Burkina Faso' },
+    { code: 'BI', name: 'Burundi' },
+    { code: 'CM', name: 'Cameroun' },
+    { code: 'CV', name: 'Cap-Vert' },
+    { code: 'CF', name: 'République centrafricaine' },
+    { code: 'TD', name: 'Tchad' },
+    { code: 'KM', name: 'Comores' },
+    { code: 'CG', name: 'Congo' },
+    { code: 'CD', name: 'République Démocratique du Congo' },
+    { code: 'DJ', name: 'Djibouti' },
+    { code: 'EG', name: 'Égypte' },
+    { code: 'GQ', name: 'Guinée équatoriale' },
+    { code: 'ER', name: 'Érythrée' },
+    { code: 'ET', name: 'Éthiopie' },
+    { code: 'GA', name: 'Gabon' },
+    { code: 'GM', name: 'Gambie' },
+    { code: 'GH', name: 'Ghana' },
+    { code: 'GN', name: 'Guinée' },
+    { code: 'GW', name: 'Guinée-Bissau' },
+    { code: 'CI', name: "Côte d'Ivoire" },
+    { code: 'KE', name: 'Kenya' },
+    { code: 'LS', name: 'Lesotho' },
+    { code: 'LR', name: 'Libéria' },
+    { code: 'LY', name: 'Libye' },
+    { code: 'MG', name: 'Madagascar' },
+    { code: 'MW', name: 'Malawi' },
+    { code: 'ML', name: 'Mali' },
+    { code: 'MR', name: 'Mauritanie' },
+    { code: 'MU', name: 'Maurice' },
+    { code: 'MA', name: 'Maroc' },
+    { code: 'MZ', name: 'Mozambique' },
+    { code: 'NA', name: 'Namibie' },
+    { code: 'NE', name: 'Niger' },
+    { code: 'NG', name: 'Nigéria' },
+    { code: 'RW', name: 'Rwanda' },
+    { code: 'ST', name: 'Sao Tomé-et-Principe' },
+    { code: 'SN', name: 'Sénégal' },
+    { code: 'SC', name: 'Seychelles' },
+    { code: 'SL', name: 'Sierra Leone' },
+    { code: 'SO', name: 'Somalie' },
+    { code: 'ZA', name: 'Afrique du Sud' },
+    { code: 'SS', name: 'Soudan du Sud' },
+    { code: 'SD', name: 'Soudan' },
+    { code: 'SZ', name: 'Eswatini' },
+    { code: 'TZ', name: 'Tanzanie' },
+    { code: 'TG', name: 'Togo' },
+    { code: 'TN', name: 'Tunisie' },
+    { code: 'UG', name: 'Ouganda' },
+    { code: 'ZM', name: 'Zambie' },
+    { code: 'ZW', name: 'Zimbabwe' }
+  ];
+  
+
+  countries.forEach(country => {
+    const option = document.createElement('option');
+    option.value = country.code;
+    option.textContent = country.name;
+    countrySelect.appendChild(option);
+  });
+
+  const recaptchaDiv = document.createElement('div');
+  recaptchaDiv.classList.add('g-recaptcha');
+  recaptchaDiv.setAttribute('data-sitekey', '6Leua_wpAAAAAFr_FF5hGycID6Rj0C7vzB8bvXcL');
+
+  const submitButton = document.createElement('button');
+  submitButton.type = 'submit';
+  submitButton.textContent = 'Discuter avec le vendeur';
+
+  form.appendChild(nameLabel);
+  form.appendChild(cityLabel);
+  form.appendChild(countryLabel);
+  form.appendChild(countrySelect);
+  form.appendChild(recaptchaDiv);
+  form.appendChild(submitButton);
+
+  modalContent.appendChild(closeModalSpan);
+  modalContent.appendChild(form);
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
+
+  // Afficher le modal
+  modal.style.display = 'block';
+
+  // Ajouter un événement de soumission au formulaire
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+      const name = nameInput.value;
+      const city = cityInput.value;
+      const country = countrySelect.options[countrySelect.selectedIndex].text;
+      const message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\nJe souhaite commander le produit :\n${product.name}.`;
+      const whatsappUrl = `https://wa.me/${product.vendorPhone}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      modal.style.display = 'none';
+      form.reset(); // Réinitialiser le formulaire après l'envoi
+    } else {
+      alert('Veuillez remplir correctement tous les champs et cocher la case reCAPTCHA.');
+    }
+  });
+
+  // Validation du formulaire
+  function validateForm() {
+    const nameValid = /^[a-zA-Z\s]+$/.test(nameInput.value);
+    const cityValid = /^[a-zA-Z\s]+$/.test(cityInput.value);
+    const countryValid = countrySelect.value !== '';
+    const recaptchaValid = grecaptcha.getResponse() !== '';
+
+    return nameValid && cityValid && countryValid && recaptchaValid;
+  }
+}
+
+
 // Fonction pour afficher le formulaire de commande dans un pop-up
 // function openOrderForm(product) {
 //   // Créer le formulaire pop-up
@@ -275,79 +443,6 @@ function createProductCard(product) {
 //   formPopup.style.display = 'block';
 // }
 
-function openOrderForm(product) {
-  // Créer le formulaire pop-up
-  const formPopup = document.createElement('div');
-  formPopup.classList.add('form-popup');
-
-  const formContainer = document.createElement('div');
-  formContainer.classList.add('form-container');
-
-  const closeBtn = document.createElement('span');
-  closeBtn.classList.add('close');
-  closeBtn.textContent = '×';
-  closeBtn.addEventListener('click', () => {
-    formPopup.style.display = 'none';
-  });
-
-  formContainer.appendChild(closeBtn);
-
-  const form = document.createElement('form');
-  form.classList.add('order-form');
-
-  const nameLabel = document.createElement('label');
-  nameLabel.textContent = 'Nom :';
-  const nameInput = document.createElement('input');
-  nameInput.type = 'text';
-  nameInput.required = true;
-  nameLabel.appendChild(nameInput);
-
-  const cityLabel = document.createElement('label');
-  cityLabel.textContent = 'Ville :';
-  const cityInput = document.createElement('input');
-  cityInput.type = 'text';
-  cityInput.required = true;
-  cityLabel.appendChild(cityInput);
-
-  const phoneLabel = document.createElement('label');
-  phoneLabel.textContent = 'Numéro de téléphone :';
-  const phoneInput = document.createElement('input');
-  phoneInput.type = 'number';
-  phoneInput.required = true;
-  phoneLabel.appendChild(phoneInput);
-
-  form.appendChild(nameLabel);
-  form.appendChild(cityLabel);
-  form.appendChild(phoneLabel);
-
-  const submitBtn = document.createElement('button');
-  submitBtn.type = 'submit';
-  submitBtn.textContent = 'Discuter avec le vendeur';
-
-  form.appendChild(submitBtn);
-  formContainer.appendChild(form);
-
-  form.appendChild(submitBtn);
-  formContainer.appendChild(form);
-
-  formPopup.appendChild(formContainer);
-  document.body.appendChild(formPopup);
-
-  // Afficher le formulaire pop-up
-  formPopup.style.display = 'block';
-
-  // Ajouter l'événement 'submit' au formulaire
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const name = nameInput.value;
-    const city = cityInput.value;
-    const phone = phoneInput.value;
-    const message = `Bonjour, je m'appelle ${name} \nJ'habite à ${city}.\n \nJe souhaite commander le produit :\n\ ${product.name}.`;
-    const whatsappUrl = `https://wa.me/${product.vendorPhone}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    formPopup.style.display = 'none';
-  });
-}
 
 
 

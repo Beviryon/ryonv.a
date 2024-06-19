@@ -114,114 +114,84 @@
       <form id="user-info-form">
         <label for="name">Nom :</label>
         <input type="text" id="name" name="name" required>
-  
+      
         <label for="city">Ville :</label>
         <input type="text" id="city" name="city" required>
-  
+      
         <label for="country">Pays :</label>
         <select id="country" name="country" required>
-          <!-- Pays d'Afrique -->
-          <option value="+213">Algérie (+213)</option>
-          <option value="+244">Angola (+244)</option>
-          <option value="+229">Bénin (+229)</option>
-          <option value="+226">Burkina Faso (+226)</option>
-          <option value="+257">Burundi (+257)</option>
-          <option value="+237">Cameroun (+237)</option>
-          <option value="+238">Cap-Vert (+238)</option>
-          <option value="+236">République Centrafricaine (+236)</option>
-          <option value="+235">Tchad (+235)</option>
-          <option value="+269">Comores (+269)</option>
-          <option value="+242">Congo-Brazzaville (+242)</option>
-          <option value="+243">République Démocratique du Congo (+243)</option>
-          <option value="+225">Côte d'Ivoire (+225)</option>
-          <option value="+253">Djibouti (+253)</option>
-          <option value="+20">Égypte (+20)</option>
-          <option value="+240">Guinée Équatoriale (+240)</option>
-          <option value="+291">Érythrée (+291)</option>
-          <option value="+251">Éthiopie (+251)</option>
-          <option value="+241">Gabon (+241)</option>
-          <option value="+220">Gambie (+220)</option>
-          <option value="+233">Ghana (+233)</option>
-          <option value="+224">Guinée (+224)</option>
-          <option value="+245">Guinée-Bissau (+245)</option>
-          <option value="+254">Kenya (+254)</option>
-          <option value="+266">Lesotho (+266)</option>
-          <option value="+231">Libéria (+231)</option>
-          <option value="+218">Libye (+218)</option>
-          <option value="+261">Madagascar (+261)</option>
-          <option value="+265">Malawi (+265)</option>
-          <option value="+223">Mali (+223)</option>
-          <option value="+222">Mauritanie (+222)</option>
-          <option value="+230">Maurice (+230)</option>
-          <option value="+212">Maroc (+212)</option>
-          <option value="+258">Mozambique (+258)</option>
-          <option value="+264">Namibie (+264)</option>
-          <option value="+227">Niger (+227)</option>
-          <option value="+234">Nigeria (+234)</option>
-          <option value="+250">Rwanda (+250)</option>
-          <option value="+239">Sao Tomé-et-Principe (+239)</option>
-          <option value="+221">Sénégal (+221)</option>
-          <option value="+248">Seychelles (+248)</option>
-          <option value="+232">Sierra Leone (+232)</option>
-          <option value="+252">Somalie (+252)</option>
-          <option value="+27">Afrique du Sud (+27)</option>
-          <option value="+211">Soudan du Sud (+211)</option>
-          <option value="+249">Soudan (+249)</option>
-          <option value="+268">Eswatini (+268)</option>
-          <option value="+255">Tanzanie (+255)</option>
-          <option value="+228">Togo (+228)</option>
-          <option value="+216">Tunisie (+216)</option>
-          <option value="+256">Ouganda (+256)</option>
-          <option value="+260">Zambie (+260)</option>
-          <option value="+263">Zimbabwe (+263)</option>
-  
-          <!-- Pays d'Europe -->
-          <option value="+43">Autriche (+43)</option>
-          <option value="+32">Belgique (+32)</option>
-          <option value="+359">Bulgarie (+359)</option>
-          <option value="+357">Chypre (+357)</option>
-          <option value="+420">République Tchèque (+420)</option>
-          <option value="+45">Danemark (+45)</option>
-          <option value="+372">Estonie (+372)</option>
-          <option value="+358">Finlande (+358)</option>
-          <option value="+33">France (+33)</option>
-          <option value="+49">Allemagne (+49)</option>
-          <option value="+30">Grèce (+30)</option>
-          <option value="+36">Hongrie (+36)</option>
-          <option value="+354">Islande (+354)</option>
-          <option value="+353">Irlande (+353)</option>
-          <option value="+39">Italie (+39)</option>
-          <option value="+371">Lettonie (+371)</option>
-          <option value="+370">Lituanie (+370)</option>
-          <option value="+352">Luxembourg (+352)</option>
-          <option value="+356">Malte (+356)</option>
-          <option value="+31">Pays-Bas (+31)</option>
-          <option value="+47">Norvège (+47)</option>
-          <option value="+48">Pologne (+48)</option>
-          <option value="+351">Portugal (+351)</option>
-          <option value="+40">Roumanie (+40)</option>
-          <option value="+7">Russie (+7)</option>
-          <option value="+421">Slovaquie (+421)</option>
-          <option value="+386">Slovénie (+386)</option>
-          <option value="+34">Espagne (+34)</option>
-          <option value="+46">Suède (+46)</option>
-          <option value="+41">Suisse (+41)</option>
-          <option value="+44">Royaume-Uni (+44)</option>
-        </select>
-  
-        <label for="phone">Numéro de téléphone :</label>
-        <input type="tel" id="phone" name="phone" required pattern="\d{10}">
-    
-        <button type="submit">Envoyer</button>
+          <option value="">Sélectionnez un pays</option>
+          <option value="DZ">Algérie</option>
+          <option value="AO">Angola</option>
+          <option value="BJ">Bénin</option>
+          <option value="BW">Botswana</option>
+          <option value="BF">Burkina Faso</option>
+          <option value="BI">Burundi</option>
+          <option value="CM">Cameroun</option>
+          <option value="CV">Cap-Vert</option>
+          <option value="CF">République centrafricaine</option>
+          <option value="TD">Tchad</option>
+          <option value="KM">Comores</option>
+          <option value="CG">Congo</option>
+          <option value="CD">République Démocratique du Congo</option>
+          <option value="DJ">Djibouti</option>
+          <option value="EG">Égypte</option>
+          <option value="GQ">Guinée équatoriale</option>
+          <option value="ER">Érythrée</option>
+          <option value="ET">Éthiopie</option>
+          <option value="GA">Gabon</option>
+          <option value="GM">Gambie</option>
+          <option value="GH">Ghana</option>
+          <option value="GN">Guinée</option>
+          <option value="GW">Guinée-Bissau</option>
+          <option value="CI">Côte d'Ivoire</option>
+          <option value="KE">Kenya</option>
+          <option value="LS">Lesotho</option>
+          <option value="LR">Libéria</option>
+          <option value="LY">Libye</option>
+          <option value="MG">Madagascar</option>
+          <option value="MW">Malawi</option>
+          <option value="ML">Mali</option>
+          <option value="MR">Mauritanie</option>
+          <option value="MU">Maurice</option>
+          <option value="MA">Maroc</option>
+          <option value="MZ">Mozambique</option>
+          <option value="NA">Namibie</option>
+          <option value="NE">Niger</option>
+          <option value="NG">Nigéria</option>
+          <option value="RW">Rwanda</option>
+          <option value="ST">Sao Tomé-et-Principe</option>
+          <option value="SN">Sénégal</option>
+          <option value="SC">Seychelles</option>
+          <option value="SL">Sierra Leone</option>
+          <option value="SO">Somalie</option>
+          <option value="ZA">Afrique du Sud</option>
+          <option value="SS">Soudan du Sud</option>
+          <option value="SD">Soudan</option>
+          <option value="SZ">Eswatini</option>
+          <option value="TZ">Tanzanie</option>
+          <option value="TG">Togo</option>
+          <option value="TN">Tunisie</option>
+          <option value="UG">Ouganda</option>
+          <option value="ZM">Zambie</option>
+          <option value="ZW">Zimbabwe</option>
+        </select>        
+      
+        <!-- Champ reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6Leua_wpAAAAAFr_FF5hGycID6Rj0C7vzB8bvXcL"></div>
+      
+        <button type="submit">Discuter avec le vendeur</button>
       </form>
+      
     </div>
-  </div>
-  
+  </div> 
   
   <footer>
     <p>&copy;2024 Deslo'Group. Tous droits réservés. Développer par Beviryon.</p>
   </footer>
   <script src="./produits.js"></script>
   <script src="./requets.js"></script>
+    <!-- Autres balises head -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>  
 </body>
 </html>
