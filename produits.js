@@ -312,7 +312,6 @@ function openOrderForm(product) {
     { code: 'ZM', name: 'Zambie' },
     { code: 'ZW', name: 'Zimbabwe' }
   ];
-  
 
   countries.forEach(country => {
     const option = document.createElement('option');
@@ -320,10 +319,6 @@ function openOrderForm(product) {
     option.textContent = country.name;
     countrySelect.appendChild(option);
   });
-
-  const recaptchaDiv = document.createElement('div');
-  recaptchaDiv.classList.add('g-recaptcha');
-  recaptchaDiv.setAttribute('data-sitekey', '6Leua_wpAAAAAFr_FF5hGycID6Rj0C7vzB8bvXcL');
 
   const submitButton = document.createElement('button');
   submitButton.type = 'submit';
@@ -333,7 +328,6 @@ function openOrderForm(product) {
   form.appendChild(cityLabel);
   form.appendChild(countryLabel);
   form.appendChild(countrySelect);
-  form.appendChild(recaptchaDiv);
   form.appendChild(submitButton);
 
   modalContent.appendChild(closeModalSpan);
@@ -357,7 +351,7 @@ function openOrderForm(product) {
       modal.style.display = 'none';
       form.reset(); // Réinitialiser le formulaire après l'envoi
     } else {
-      alert('Veuillez remplir correctement tous les champs et cocher la case reCAPTCHA.');
+      alert('Veuillez remplir correctement tous les champs.');
     }
   });
 
@@ -366,11 +360,12 @@ function openOrderForm(product) {
     const nameValid = /^[a-zA-Z\s]+$/.test(nameInput.value);
     const cityValid = /^[a-zA-Z\s]+$/.test(cityInput.value);
     const countryValid = countrySelect.value !== '';
-    const recaptchaValid = grecaptcha.getResponse() !== '';
 
-    return nameValid && cityValid && countryValid && recaptchaValid;
+    return nameValid && cityValid && countryValid;
   }
 }
+
+
 
 
 // Fonction pour afficher le formulaire de commande dans un pop-up
