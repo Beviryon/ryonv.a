@@ -205,7 +205,6 @@ function createProductCard(product) {
   return card;
 }
 
-
 // Fonction pour afficher le formulaire de commande dans un pop-up
 // function openOrderForm(product) {
 //   // Créer le formulaire pop-up
@@ -488,7 +487,7 @@ filterProductsByCategory(category);
 });
 });
 
-document.getElementById('filter').addEventListener('input', filterProducts);
+// document.getElementById('filter').addEventListener('input', filterProducts);
 document.getElementById('sort').addEventListener('change', sortProducts);
 
 // Afficher tous les produits au chargement initial
@@ -516,19 +515,19 @@ const searchInput = document.getElementById('search-input');
 const productList = document.querySelector('.product-list');
 
 function filterProducts() {
-const searchTerm = searchInput.value.toLowerCase();
-const cards = productList.getElementsByClassName('product-card');
+  const searchTerm = searchInput.value.toLowerCase();
+  const cards = productList.getElementsByClassName('product-card');
 
-for (let i = 0; i < cards.length; i++) {
-const card = cards[i];
-const productName = card.querySelector('h3').textContent.toLowerCase();
+  for (let i = 0; i < cards.length; i++) {
+  const card = cards[i];
+  const productName = card.querySelector('h3').textContent.toLowerCase();
 
-if (productName.includes(searchTerm)) {
-card.style.display = 'block';
-} else {
-card.style.display = 'none';
-}
-}
+  if (productName.includes(searchTerm)) {
+  card.style.display = 'block';
+  } else {
+  card.style.display = 'none';
+    }
+  }
 }
 
 searchInput.addEventListener('input', filterProducts);

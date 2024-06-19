@@ -136,6 +136,10 @@
   .product-grid {
     flex: 1;
   }
+
+  .hidden {
+    display: none;
+  }
   
   .filters {
     display: flex;
@@ -150,7 +154,8 @@
   .filters select,
   .filters input[type="range"] {
     margin-right: 1rem;
-  }é
+  }beviryon
+
 
   .product-listing {
     width: 10%;
@@ -426,6 +431,10 @@ main {
       border-radius: 5px;
       cursor: pointer;
       margin-left: auto;
+    }
+
+    .filters {
+      display: none;
     }
   }
   
