@@ -207,6 +207,21 @@ images: [
 ],
 vendorPhone: '+33758146261'
 },
+{
+id: 16, 
+name: 'Draps plats', 
+description: '100% Polyester',
+price: 90000,
+category: 'Maison',
+images: [
+  'https://s.alicdn.com/@sc04/kf/Ha9658f0230284f87ac87c68821d68bb2G.jpg',
+  'https://s.alicdn.com/@sc04/kf/H5423e303cfbb47529b3600661f20c20cx.jpg',
+  'https://s.alicdn.com/@sc04/kf/Hd7ce141a43644a8e9d63bce2af43bab1I.jpg',
+  'https://s.alicdn.com/@sc04/kf/Hbf6d45e665ba49d1a0b0f71b489aec9bA.jpg',
+  'https://s.alicdn.com/@sc04/kf/H80e39df3cadd4f778bd15007d9394ef7H.png'
+],
+vendorPhone: '+33758146261'
+},
 
 ];
 
