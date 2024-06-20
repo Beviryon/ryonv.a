@@ -136,30 +136,78 @@ vendorPhone: '+33758146261'
 },
 {
 id: 11, 
-name: 'Pas de stock', 
-description: 'Bientôt disponible',
-price: 0,
+name: 'Pull ', 
+description: 'Coton/Fibre de bambou',
+price: 9000,
 category: 'vetements',
 images: [
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
+'https://s.alicdn.com/@sc04/kf/H41b80ca10ccd4bac8264eefd48316704V.jpg',
+'https://s.alicdn.com/@sc04/kf/H491e6c1e4845486abc3afc8718c9a964W.jpg',
 ],
 vendorPhone: '+33758146261'
 },
 {
 id: 12, 
-name: 'Produit 2', 
-description: 'Bientôt disponible',
-price: 0,
+name: 'Robe', 
+description: 'Polyester',
+price: 20000,
 category: 'vetements',
 images: [
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600',
-'https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600'
+'https://s.alicdn.com/@sc04/kf/H58cb15421aa94bc5a813bf8f4b883a3bY.png',
+'https://s.alicdn.com/@sc04/kf/H9d075e179f454d2388796c5bda521df3Q.jpg',
+'https://s.alicdn.com/@sc04/kf/Hd6ced2e218df41f7bb1c17bdb9f73de9e.jpg',
+'https://s.alicdn.com/@sc04/kf/Hd1f0f03ed9824666ae75f8bb44be83ae0.jpg',
+'https://s.alicdn.com/@sc04/kf/H3d6bd0cb4b8f400f9dde650405b8176f2.jpg',
+'https://s.alicdn.com/@sc04/kf/Hd4264e42d8254abbaa38bacc299612e3M.jpg'
 ],
 vendorPhone: '+33758146261'
-}
+},
+{
+id: 13, 
+name: 'Chemises Hommes', 
+description: 'Col rabattu',
+price: 70000,
+category: 'vetements',
+images: [
+  'https://s.alicdn.com/@sc04/kf/H12cdfb8eaa3a4929be28cba2d2c701cbW.jpg',
+  'https://s.alicdn.com/@sc04/kf/H2d6d61a7e124466a8ab87e3d4e9d6a38c.jpg',
+  'https://s.alicdn.com/@sc04/kf/H197d813ab6d645268032263c9b2b40a00.jpg',
+  'https://s.alicdn.com/@sc04/kf/Hae3219dab53547cf863174cc0d908c96z.jpg',
+  'https://s.alicdn.com/@sc04/kf/Hdf4b5a1e550349f5967b283dca1d84c0h.jpg'
+  ],
+vendorPhone: '+33758146261'
+},
+{
+id: 14, 
+name: 'Chemises Hommes', 
+description: '	Polyester / coton',
+price: 70000,
+category: 'vetements',
+images: [
+  'https://s.alicdn.com/@sc04/kf/H414fc4a08f8f4b0690dd30d2118a0f8eU.jpg',
+  'https://s.alicdn.com/@sc04/kf/H1be3e820295b438588483000eb45c891l.jpg',
+  'https://s.alicdn.com/@sc04/kf/Hefe0c5fe5f644ea8a8dd90ba8f0d98e0I.jpg',
+  'https://s.alicdn.com/@sc04/kf/Hd50830bdb3014505811fe3b4761a8a6fl.jpg',
+  'https://s.alicdn.com/@sc04/kf/Hf8bbab9f172d43309128ba137f426061x.jpg'
+],
+vendorPhone: '+33758146261'
+},
+{
+id: 15, 
+name: 'Shorts', 
+description: '100% Polyester',
+price: 90000,
+category: 'vetements',
+images: [
+  'https://s.alicdn.com/@sc04/kf/Hc13922b4f77741a1971d5d3ea8164f73P.png',
+  'https://s.alicdn.com/@sc04/kf/H70702c2fbcca4385add27f95d2f9f5fcp.png',
+  'https://s.alicdn.com/@sc04/kf/H030af050062d4538acb91c1af58b6bb2t.png',
+  'https://s.alicdn.com/@sc04/kf/Hd9b97457fc904340a0327bde51254635F.png',
+  'https://s.alicdn.com/@sc04/kf/Hd6152d57976e4b0f931b81d5206ca19eV.png'
+],
+vendorPhone: '+33758146261'
+},
+
 ];
 
 // Fonction pour créer une carte de produit
