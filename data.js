@@ -191,18 +191,48 @@ const products = [
         vendorPhone: '+33758146261' 
       },
     {
-        id: 16, 
-        name: 'draps plats',  
-        description: "Vente en gros de draps plats en polyester brossé en microfibre ensembles de draps et taies d'oreiller",
-        price: 90000,
-        images: [
-          'https://s.alicdn.com/@sc04/kf/Ha9658f0230284f87ac87c68821d68bb2G.jpg',
-          'https://s.alicdn.com/@sc04/kf/H5423e303cfbb47529b3600661f20c20cx.jpg',
-          'https://s.alicdn.com/@sc04/kf/Hd7ce141a43644a8e9d63bce2af43bab1I.jpg',
-          'https://s.alicdn.com/@sc04/kf/Hbf6d45e665ba49d1a0b0f71b489aec9bA.jpg',
-          'https://s.alicdn.com/@sc04/kf/H80e39df3cadd4f778bd15007d9394ef7H.png'
-        ],
-        vendorPhone: '+33758146261' 
-      },
+      id: 16, 
+      name: 'draps plats',  
+      description: "Vente en gros de draps plats en polyester brossé en microfibre ensembles de draps et taies d'oreiller",
+      price: 90000,
+      images: [
+        'https://s.alicdn.com/@sc04/kf/Ha9658f0230284f87ac87c68821d68bb2G.jpg',
+        'https://s.alicdn.com/@sc04/kf/H5423e303cfbb47529b3600661f20c20cx.jpg',
+        'https://s.alicdn.com/@sc04/kf/Hd7ce141a43644a8e9d63bce2af43bab1I.jpg',
+        'https://s.alicdn.com/@sc04/kf/Hbf6d45e665ba49d1a0b0f71b489aec9bA.jpg',
+        'https://s.alicdn.com/@sc04/kf/H80e39df3cadd4f778bd15007d9394ef7H.png'
+      ],
+      vendorPhone: '+33758146261' 
+    },
+    {
+      id: 17, 
+      name: 'Drap-housse',  
+      description: "Drap-housse à imprimé café avec taies d'oreiller, housse de protection de matelas, taille King/Queen/Twin, 3 pièces",
+      price: 10000,
+      images: [
+        'https://s.alicdn.com/@sc04/kf/Hb9327b0ad28d4d7592200ae312ad278be.jpg',
+        'https://s.alicdn.com/@sc04/kf/Hd563096c298245a59a298ff69c296e67C.jpg',
+        'https://s.alicdn.com/@sc04/kf/Hd7ce141a43644a8e9d63bce2af43bab1I.jpg',
+        'https://s.alicdn.com/@sc04/kf/Hd8c1570821934f2ba9c4de9feb241d898.jpg',
+        'https://s.alicdn.com/@sc04/kf/H7270ff5536e1419c858dfbb155434c54U.jpg',
+        'https://s.alicdn.com/@sc04/kf/H7c67bde15747449e82c29d2c3d49c4332.jpg'
+      ],
+      vendorPhone: '+33758146261' 
+    },
+    {
+      id: 18, 
+      name: 'Mini broyeur',  
+      description: "Nouveau hachoir à lame en métal manuel Mini broyeur d'ail en acier inoxydable pour légumes et fruits pour usage en cuisine",
+      price: 7000,
+      images: [
+        'https://s.alicdn.com/@sc04/kf/H2890d50f345f4056ac236fad8fbb5f8cU.png',
+        'https://s.alicdn.com/@sc04/kf/Hdde0ea2ed30944f0ada91c76439c16e8V.png',
+        'https://s.alicdn.com/@sc04/kf/H5bcfa19a90fc4be5b7a06ba1ea5e85b3Y.png',
+        'https://s.alicdn.com/@sc04/kf/Hfb95223a915043ee95329d8d2880b7dc6.png',
+        'https://s.alicdn.com/@sc04/kf/H4a0d44471a694a7d945170de8cdd78f0A.png',
+        'https://s.alicdn.com/@sc04/kf/Hcbf55f7354bf4bc9891139bb872a478cx.png'
+      ],
+      vendorPhone: '+33758146261' 
+    },
 
   ];
