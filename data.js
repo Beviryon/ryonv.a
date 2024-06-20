@@ -66,10 +66,10 @@ const products = [
       description: 'Tailles: XL | M | L',
       price: 8000,
       images: [
-        'https://live.staticflickr.com/65535/53804146564_6d12963d8f_m.jpg',
-        'https://live.staticflickr.com/65535/53803818431_29f2a5a591_m.jpg',
-        'https://live.staticflickr.com/65535/53804063223_07ccde5008_m.jpg'
-        ],
+        'https://live.staticflickr.com/65535/53804146564_6d12963d8f_b.jpg',
+        'https://live.staticflickr.com/65535/53804063223_07ccde5008_b.jpg',
+        'https://live.staticflickr.com/65535/53803818431_29f2a5a591_b.jpg'
+      ],
       vendorPhone: '+33758146261' 
     },
 
@@ -80,9 +80,9 @@ const products = [
         description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
         price: 8000,
         images: [
-          'https://live.staticflickr.com/65535/53804063198_7af2ed9561_m.jpg',
-          'https://live.staticflickr.com/65535/53802885782_77b847496f_m.jpg',
-          'https://live.staticflickr.com/65535/53804146569_481a14341d_m.jpg'
+          'https://live.staticflickr.com/65535/53804063198_7af2ed9561_b.jpg',
+          'https://live.staticflickr.com/65535/53802885782_77b847496f_b.jpg',
+          'https://live.staticflickr.com/65535/53804146569_481a14341d_b.jpg'
           ],
         vendorPhone: '+33758146261' 
       },
