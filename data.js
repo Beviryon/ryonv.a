@@ -66,10 +66,10 @@ const products = [
       description: 'Tailles: XL | M | L',
       price: 8000,
       images: [
-        'https://db3pap006files.storage.live.com/y4mc4hcMYmNr5YU88xwxNSDuV7FGAc2ej1B9KZWIoH_GyulchS8x60OVcTKvw772UbpWsrNP_tDeHdMsgUb-rRDReIECOkCJGXERoCS4I1lUFdS94tKbXI7dIxKvBvukqJ5LkoiDUnDsjZDrdXt7hSxUYL-JQ6rO1trsdRWmmy5ZTRnLrbIbsdhhmE2lYjaKFyQ-E1-TEZkcVYFBTFEYYRXws7kcFvItC2teq3VNy2iD3c?encodeFailures=1&width=756&height=756',
-        'https://db3pap006files.storage.live.com/y4m6QsZYenD0EYz8xg9YKmdpB-Mdg4fZy4flV44gaUGjkKd-YI6liCeDYeRPLKeXQffal47ZLCKMDkD1oNvWB3bi76uo_tjNO1oYLwuYG9aJ75UoC_tIdqmUespmUCABmQuiOPr9-t8S6HkJyJkor1BeIFMglBkWKPplONYqJwfv8NXUuFDXEX644wfZ6jj18m6kDCkqEPJQag0vGrc0STMniu-Fk_Qrfq8QDmdRLe4Anw?encodeFailures=1&width=604&height=756',
-        'https://db3pap006files.storage.live.com/y4mGU8rgGiHvZrOmDKkz2S2t3Xu07Q7sYrW8m5f1t2_H83wZVKf_Ih4vZTvN0eIwF-SeqqtnewsPj003HF4l6qbEpJ9HESu6sPxxHl7Gvf2q3kwK7vMZQE_muCtC1fGFDtQcjrKpskc20BqsUAdVSSpqLLZh-MUbii0ykg9U23M7Yozr9rGHarKHClo8E_YoOUu387_8Lt5AOFIY7Vx66QvY38x_kzOVykJ3nH-7JkdjfU?encodeFailures=1&width=605&height=756'
-      ],
+        'https://live.staticflickr.com/65535/53804146564_6d12963d8f_m.jpg',
+        'https://live.staticflickr.com/65535/53803818431_29f2a5a591_m.jpg',
+        'https://live.staticflickr.com/65535/53804063223_07ccde5008_m.jpg'
+        ],
       vendorPhone: '+33758146261' 
     },
 
@@ -80,9 +80,9 @@ const products = [
         description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
         price: 8000,
         images: [
-          'https://db3pap006files.storage.live.com/y4mNmL6ftkc8Fw9dAxv7W0lBHmd3iwyVD3nfs7Z5pR_ef0rb_-Z4NuloqmB9AfqdbNOc8SgQ12gMRRYJkEqODAopmr8Ew6CxwyX_E9_YVQYGrS1w8FrhSv2puxH8Nz6LqhGn1Mnzn1iiAyEtdYJdU1sE3hO4RB7d9MtIzA_5wbBtlkxNTbTAa9Vs6rPDNiIDukmrJv7MQTQWW7siXoN-LChIphEqlqoNNcZMyZXXm53W2I?encodeFailures=1&width=503&height=755',
-          'https://db3pap006files.storage.live.com/y4mTSBEzwFzRpE5m3-yZSTF1z4ziIJf1lZmsIYnjWgzzWQLTh666HAtRL_Jd-ahi_HuKHNvqsy4twNPOOfeWtMaDB0pVcADZtdJwOAzKsaUwwJd5fCKfvbJEMzhthk_ZvPmKnqd6dUzN29JPs-7WXFJfeo0YsstcxUxny641JUktL5Ems0zDUxDaRGZ36DEUZ7kVgfeWATct5Zeq1GRIiaPnVbuHLhCLmQO-5XOgr6ZWS4?encodeFailures=1&width=503&height=756',
-          'https://db3pap006files.storage.live.com/y4m7hIf1N0BiNgEo5IefCxU-c71MbB7Bh_VOnFXNfNlGiRNz4MoWX8YrSqtVy8WCbveD3896VXhtPFgezq0mv6SsbcEA8xCe15YgTF_JhJi8mjq-acwHsYvS8VTCxIVNLM76MM-X3kIJt3NI3tnDhUIZIJ7j0FbazygySfjG15LxHQeCzfyjQ5yJOxavxsd6OfiERCQORA8dYRV4lz3oBO4v64vm6dhMeKS34Qy39Jzo5M?encodeFailures=1&width=503&height=756'
+          'https://live.staticflickr.com/65535/53804063198_7af2ed9561_m.jpg',
+          'https://live.staticflickr.com/65535/53802885782_77b847496f_m.jpg',
+          'https://live.staticflickr.com/65535/53804146569_481a14341d_m.jpg'
           ],
         vendorPhone: '+33758146261' 
       },
