@@ -81,7 +81,7 @@ footer {
       margin: 1rem 0;
       padding: 0.2rem;
       width: 100%;
-      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
     }
   
     .burger {
