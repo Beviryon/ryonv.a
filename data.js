@@ -234,5 +234,20 @@ const products = [
       ],
       vendorPhone: '+33758146261' 
     },
+    {
+      id: 19, 
+      name: 'Contrôleur de jeu sans fil 2.4G ',  
+      description: "PG-9076 contrôleur de jeu sans fil 2.4G pour Android Smartphone iOS Gamepad pour PC PS3 poignée Joystick",
+      price: 20000,
+      images: [
+        'https://s.alicdn.com/@sc04/kf/Hc1c0b699684b42b6a00dd234944547184.jpg',
+        'https://s.alicdn.com/@sc04/kf/H206a15ef54194c5c831b9c5ae6fe2b6fR.jpg',
+        'https://s.alicdn.com/@sc04/kf/H189c6bd52c6249b49e867b0243cc4f20W.jpg',
+        'https://s.alicdn.com/@sc04/kf/Hb493a24e6f85418383c380d210e87cfbW.jpg',
+        'https://s.alicdn.com/@sc04/kf/H538b2787519d46fab86128f1874d187aw.jpg',
+        'https://s.alicdn.com/@sc04/kf/He8f69a08da8f43ba97ce66c76d61e53eF.jpg'
+      ],
+      vendorPhone: '+33758146261' 
+    },
 
   ];
