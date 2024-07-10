@@ -61,7 +61,7 @@ const products = [
       vendorPhone: '+33758146261' 
     },
     {
-      id: 6,
+      id: 6,// Vêtements raison
       name: 'Robe',
       description: 'Tailles: XL | M | L',
       price: 8000,
@@ -70,21 +70,21 @@ const products = [
         'https://live.staticflickr.com/65535/53804063223_07ccde5008_b.jpg',
         'https://live.staticflickr.com/65535/53803818431_29f2a5a591_b.jpg'
       ],
-      vendorPhone: '+33758146261' 
+      vendorPhone: '+221784743356' 
     },
 
     // Vêtements
     {
-        id: 7,
+        id: 7,// Vêtements raison
         name: 'Robe en gros et en détails',
         description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
         price: 8000,
         images: [
-          'https://live.staticflickr.com/65535/53804063198_7af2ed9561_b.jpg',
-          'https://live.staticflickr.com/65535/53802885782_77b847496f_b.jpg',
-          'https://live.staticflickr.com/65535/53804146569_481a14341d_b.jpg'
+          'https://live.staticflickr.com/65535/53808261640_81983ff3b3_w.jpg',
+          'https://live.staticflickr.com/65535/53808261640_81983ff3b3_w.jpg',
+          'https://live.staticflickr.com/65535/53808261640_81983ff3b3_w.jpg'
           ],
-        vendorPhone: '+33758146261' 
+        vendorPhone: '+221784743356' 
       },
     {
         id: 8,
@@ -248,6 +248,129 @@ const products = [
         'https://s.alicdn.com/@sc04/kf/He8f69a08da8f43ba97ce66c76d61e53eF.jpg'
       ],
       vendorPhone: '+33758146261' 
+    },
+    {
+      id: 20,// Vêtements raison
+      name: 'Ensemble H&F',
+      description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
+      price: 9000,
+      images: [
+        'https://live.staticflickr.com/65535/53808149299_845e11f25b_w.jpg',
+        'https://live.staticflickr.com/65535/53806891127_2371ca23f1_w.jpg',
+        'https://live.staticflickr.com/65535/53807824346_a454c0bc44_w.jpg',
+        'https://live.staticflickr.com/65535/53808261690_3762aca3df_w.jpg'
+      ],
+      vendorPhone: '+221784743356' 
+    },
+    {
+      id: 21,// Vêtements raison
+      name: 'Ensemble H&F',
+      description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
+      price: 9000,
+      images: [
+        'https://live.staticflickr.com/65535/53806891132_5b166f4f7c_w.jpg',
+        'https://live.staticflickr.com/65535/53808066533_a7ee9543a0_w.jpg',
+        'https://live.staticflickr.com/65535/53808066543_08a5387f87_w.jpg',
+      ],
+      vendorPhone: '+221784743356' 
+    },
+    {
+      id: 22,// Vêtements raison
+      name: 'Ensemble H&F',
+      description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
+      price: 9000,
+      images: [
+        'https://live.staticflickr.com/65535/53808261695_161b2c5f85_w.jpg',
+        'https://live.staticflickr.com/65535/53807824376_456948f358_w.jpg',
+      ],
+      vendorPhone: '+221784743356' 
+    },
+    {
+      id: 23,// Vêtements raison
+      name: 'Ensemble H&F',
+      description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
+      price: 9000,
+      images: [
+        'https://live.staticflickr.com/65535/53808149329_59e6f358e4_w.jpg',
+        'https://live.staticflickr.com/65535/53806891147_67fec9235b_w.jpg',
+        'https://live.staticflickr.com/65535/53808066548_3b17ec4f65_w.jpg',
+        'https://live.staticflickr.com/65535/53808066543_08a5387f87_w.jpg',
+        'https://live.staticflickr.com/65535/53806891162_5cc02640cf_w.jpg',
+      ],
+      vendorPhone: '+221784743356' 
+    },
+    {
+      id: 23,// Vêtements raison
+      name: 'Ensemble H&F',
+      description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
+      price: 9000,
+      images: [
+        'https://live.staticflickr.com/65535/53806891187_ee975c0252_w.jpg',
+        'https://live.staticflickr.com/65535/53807824386_ed8b86f2b0_w.jpg',
+        'https://live.staticflickr.com/65535/53808261775_6693ab5503_w.jpg',
+        'https://live.staticflickr.com/65535/53806891207_fbe177a5d2_w.jpg',
+        'https://live.staticflickr.com/65535/53806891162_5cc02640cf_w.jpg',
+      ],
+      vendorPhone: '+221784743356' 
+    },
+    {
+      id: 24,// Vêtements raison
+      name: 'Ensemble Femme',
+      description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
+      price: 9000,
+      images: [
+        'https://live.staticflickr.com/65535/53806891187_ee975c0252_w.jpg',
+        'https://live.staticflickr.com/65535/53807824376_456948f358_w.jpg',
+      ],
+      vendorPhone: '+221784743356' 
+    },
+    {
+      id: 25,// Vêtements raison
+      name: 'Ensemble Femme',
+      description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
+      price: 9000,
+      images: [
+        'https://live.staticflickr.com/65535/53808261755_e378a6ecb9_w.jpg',
+        'https://live.staticflickr.com/65535/53806891177_413d86dc4a_w.jpg',
+      ],
+      vendorPhone: '+221784743356' 
+    },
+    {
+      id: 26,// Vêtements raison
+      name: 'Ensemble Femme',
+      description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
+      price: 9000,
+      images: [
+        'https://live.staticflickr.com/65535/53807824286_05c79659ab_n.jpg',
+        'https://live.staticflickr.com/65535/53808261645_240d0c12aa_w.jpg',
+      ],
+      vendorPhone: '+221784743356' 
+    },
+    {
+      id: 27,// Vêtements raison
+      name: 'Ensemble Femme',
+      description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
+      price: 9000,
+      images: [
+        'https://live.staticflickr.com/65535/53806891072_2c565e3b87_w.jpg',
+        'https://live.staticflickr.com/65535/53806891097_5e15fa9968_n.jpg',
+        'https://live.staticflickr.com/65535/53807824276_1a10e6dcb0_w.jpg',
+      ],
+      vendorPhone: '+221784743356' 
+    },
+    {
+      id: 27,// Vêtements raison
+      name: 'Ensemble Femme',
+      description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
+      price: 9000,
+      images: [
+        'https://live.staticflickr.com/65535/53808149244_2e6ec6330a_n.jpg',
+        'https://live.staticflickr.com/65535/53808149274_c14f032e24_n.jpg',
+        'https://live.staticflickr.com/65535/53808149289_8e66a33302_w.jpg',
+        'https://live.staticflickr.com/65535/53806891107_a4f580e8ae_w.jpg',
+        'https://live.staticflickr.com/65535/53807824316_5c8fcdd4f2_w.jpg',
+      ],
+      vendorPhone: '+221784743356' 
     },
 
   ];
