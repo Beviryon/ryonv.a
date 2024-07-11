@@ -10,6 +10,7 @@ self.addEventListener('install', event => {
           './contact.html',
           './formations.html',
           './produits.js',
+          './products.js',
           './manifest.json',
           './about.css',
           './contact.css',
@@ -25,7 +26,7 @@ self.addEventListener('install', event => {
   self.addEventListener('fetch', event => {
     event.respondWith(
       caches.match(event.request).then(response => {
-        return response || fetch(event.request);
+        return response || fetch(event.request, {mode: 'no-cors' });
       })
     );
   });
