@@ -66,12 +66,12 @@ vendorPhone: '+33758146261'
 },
 {
 id: 6,// Vêtements raison
-name: 'Robe',
+name: 'Robe xxx',
 description: 'Toutes les tailles',
 price: 8000,
 category: 'vetements',
 images: [
-  'https://live.staticflickr.com/65535/53804146564_6d12963d8f_b.jpg',
+  'https://live.staticflickr.com/65535/53808261655_a7ccaf6301_n.jpg',
   'https://live.staticflickr.com/65535/53804063223_07ccde5008_b.jpg',
   'https://live.staticflickr.com/65535/53803818431_29f2a5a591_b.jpg'
 ],
@@ -279,7 +279,7 @@ vendorPhone: '+33758146261'
   ],
   vendorPhone: '+221784743356'
   },
-{
+  {
   id: 21,// Vêtements raison
   name: 'Ensemble H&F',
   description: 'Toutes les tailles',
