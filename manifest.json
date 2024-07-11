@@ -1,8 +1,8 @@
 {
-    "name": "Mon Site E-commerce",
-    "short_name": "E-commerce",
+    "name": "DESLO'SHOP",
+    "short_name": "DESLO'SHOP",
     "description": "Application e-commerce pour Deslo'Group",
-    "start_url": "/home.html",
+    "start_url": "./home.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
