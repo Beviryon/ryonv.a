@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="./home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="manifest" href="./manifest.json">
-  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'https://cdnjs.cloudflare.com'; script-src 'self';"> -->
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com;">
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-xyz';">
 </head>
 <body>
   <div class="background-image">
@@ -79,10 +80,10 @@
     <p>&copy;2024 Deslo'Group. Tous droits réservés. Développer par Beviryon.</p>
   </footer>
 
-  <script src="./main.js"></script>
+  <script nonce="xyz" src="./main.js"></script>
 
-  <!-- Message pop up -->
-   <!-- Message Pop-up -->
+
+<!-- Message Pop-up -->
 <div id="popup" class="popup">
   <div class="popup-content">
     <span class="close-popup">&times;</span>
@@ -90,7 +91,6 @@
     <a href="https://deslogroupssite.netlify.app/" class="download-link">Télécharger l'application</a>
   </div>
 </div>
-
 <!-- Ajouter les styles CSS pour le pop-up -->
 <style>
 .popup {
@@ -118,7 +118,6 @@
   cursor: pointer;
 }
 </style>
-
 <!-- JavaScript pour le pop-up -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -149,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-  </script>
+</script>
   
 </body>
 </html>

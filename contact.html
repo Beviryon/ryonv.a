@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="./contact.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="manifest" href="./manifest.json">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'https://cdnjs.cloudflare.com'; script-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com;">
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-xyz';">
 </head>
 <body>
   <header>
@@ -79,7 +80,7 @@
     <p>&copy;2024 Deslo'Group. Tous droits réservés. Développer par Beviryon.</p>
   </footer>
 
-  <script src="./contact.js"></script>
+  <script nonce="xyz" src="./contact.js"></script>
 
   <!--  -->
   <!-- Message Pop-up -->

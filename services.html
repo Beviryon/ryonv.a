@@ -7,7 +7,13 @@
   <link rel="stylesheet" href="./services.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="manifest" href="./manifest.json">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'https://cdnjs.cloudflare.com'; script-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self'; 
+    script-src 'self' 'nonce-xyz'; 
+    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+    img-src 'self' https://s.alicdn.com https://live.staticflickr.com;
+    font-src 'self' https://cdnjs.cloudflare.com;
+  ">
 </head>
 <body>
   <header>
@@ -45,7 +51,7 @@
         <div class="service-card">
           <i class="fa fa-at"></i>
           <h3>Développement Web</h3>
-          <p>Développement des sites internet sur commande et mesur (site vitrime, blog,...).</p>
+          <p>Développement des sites internet sur commande et mesure (site vitrine, blog,...).</p>
         </div>
         <div class="service-card">
           <i class="fa fa-paint-brush"></i>
@@ -75,7 +81,7 @@
     <p>&copy;2024 Deslo'Group. Tous droits réservés. Développer par Beviryon.</p>
   </footer>
 
-  <script src="./services.js"></script>
+  <script nonce="xyz" src="./services.js"></script>
 
   <!--  -->
   <!-- Message Pop-up -->
@@ -116,7 +122,7 @@
 </style>
 
 <!-- JavaScript pour le pop-up -->
-<script>
+<script nonce="xyz">
 document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('popup');
   const closePopup = document.querySelector('.close-popup');
@@ -136,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script>
+<script nonce="xyz">
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./service-worker.js').then(registration => {
@@ -146,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-  </script>
+</script>
   
 </body>
 </html>

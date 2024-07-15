@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="./produits.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="manifest" href="./manifest.json">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'https://cdnjs.cloudflare.com'; script-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com;">
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-xyz';">
 </head>
 <body>
   <header>
@@ -191,83 +192,24 @@
   <footer>
     <p>&copy;2024 Deslo'Group. Tous droits réservés. Développer par Beviryon.</p>
   </footer>
-  <script type="module" src="./produits.js"></script>
+  <script nonce="xyz" type="module" src="./produits.js"></script>
   <!-- <script type="module"  src="./requets.js"></script> -->
-  <script type="module"  src="./products.js"></script>
-  <script type="module"  src="./lib/bundle.js"></script>
+  <script nonce="xyz" type="module"  src="./products.js"></script>
+  <script nonce="xyz" type="module"  src="./lib/bundle.js"></script>
     <!-- Autres balises head -->
   <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>   -->
 
-  <!--  -->
-  <!-- Message Pop-up -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close-popup">&times;</span>
-    <p>Téléchargez notre application pour une meilleure expérience !</p>
-    <a href="https://deslogroupssite.netlify.app/" class="download-link">Télécharger l'application</a>
+   <!-- Message pop up -->
+   <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close-popup">&times;</span>
+      <p>Téléchargez notre application pour une meilleure expérience !</p>
+      <a href="https://deslogroupssite.netlify.app/" class="download-link">Télécharger l'application</a>
+    </div>
   </div>
-</div>
 
-<!-- Ajouter les styles CSS pour le pop-up -->
-<style>
-.popup {
-  display: none;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 400px;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
 
-.popup-content {
-  text-align: center;
-}
-
-.close-popup {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
-}
-</style>
-
-<!-- JavaScript pour le pop-up -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const popup = document.getElementById('popup');
-  const closePopup = document.querySelector('.close-popup');
-
-  // Afficher le pop-up au chargement de la page
-  function showPopup() {
-    popup.style.display = 'block';
-  }
-
-  // Fermer le pop-up
-  closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-
-  // Afficher le pop-up après un délai ou immédiatement
-  setTimeout(showPopup, 1000); // Délai de 1 seconde
-});
-</script>
-
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./service-worker.js').then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }, error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
-    });
-  }
-  </script>
+  
   
 </body>
 </html>
