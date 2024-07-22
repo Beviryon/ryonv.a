@@ -283,3 +283,30 @@ footer {
     border-radius: 20px;
   }
 }
+
+
+/* Ajouter les styles CSS pour le pop-up */
+.popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.close-popup {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}

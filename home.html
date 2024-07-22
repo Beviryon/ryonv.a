@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="manifest" href="./manifest.json">
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'sha256-votre_hash_calculé';">
   <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com;">
   <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-xyz';">
 </head>
@@ -76,79 +77,47 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy;2024 Deslo'Group. Tous droits réservés. Développer par Beviryon.</p>
-  </footer>
+  <script nonce="xyz">
+    if ('caches' in window) {
+      caches.keys().then(cacheNames => {
+        cacheNames.forEach(cacheName => {
+          caches.delete(cacheName);
+        });
+      });
+    }
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(registration => registration.unregister());
+      });
+    }
+  </script>
 
-  <script nonce="xyz" src="./main.js"></script>
 
+  <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
+  <script nonce="xyz">
+    if ('caches' in window) {
+      caches.keys().then(cacheNames => {
+        cacheNames.forEach(cacheName => {
+          caches.delete(cacheName);
+        });
+      });
+    }
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(registration => registration.unregister());
+      });
+    }
+  </script>
 
-<!-- Message Pop-up -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close-popup">&times;</span>
-    <p>Téléchargez notre application pour une meilleure expérience !</p>
-    <a href="https://deslogroupssite.netlify.app/" class="download-link">Télécharger l'application</a>
-  </div>
-</div>
-<!-- Ajouter les styles CSS pour le pop-up -->
-<style>
-.popup {
-  display: none;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 400px;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-
-.popup-content {
-  text-align: center;
-}
-
-.close-popup {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
-}
-</style>
-<!-- JavaScript pour le pop-up -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const popup = document.getElementById('popup');
-  const closePopup = document.querySelector('.close-popup');
-
-  // Afficher le pop-up au chargement de la page
-  function showPopup() {
-    popup.style.display = 'block';
-  }
-
-  // Fermer le pop-up
-  closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-
-  // Afficher le pop-up après un délai ou immédiatement
-  setTimeout(showPopup, 1000); // Délai de 1 seconde
-});
-</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
+  <!-- Script pour réenregistrer le Service Worker -->
+  <script nonce="xyz">
+    if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./service-worker.js').then(registration => {
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }, error => {
+      }).catch(error => {
         console.log('ServiceWorker registration failed: ', error);
       });
-    });
-  }
-</script>
-  
+    }
+  </script>
 </body>
 </html>

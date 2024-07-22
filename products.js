@@ -1,30 +1,33 @@
 const products = [
-{
-id: 1,
-name: "Écouteurs d'écran tactile",
-description: 'Écouteurs intra-auriculaires',
-price: 17500,
-category: 'electronique',
-images: [
-'https://s.alicdn.com/@sc04/kf/H8d4e33a9c7344e6aae486a7e45b05e24H.jpg',
-'https://s.alicdn.com/@sc04/kf/Hdb7f824324e84044b3eef68f9d9878eaB.jpg',
-'hhttps://s.alicdn.com/@sc04/kf/Hddcc916518fc4fcf97f1253fbb5c82c4C.jpg'
-],
-vendorPhone: '+33758146261'
-},
-{
-id: 2,
-name: 'Support de téléphone',
-description: 'Décoration de la maison',
-price: 1200,
-category: 'maison',
-images: [
-'https://s.alicdn.com/@sc04/kf/H0911ecc7982549489bd59d3976fc5378W.jpg',
-'https://s.alicdn.com/@sc04/kf/H9a2c6edd9c6e454e9f6cddff49f56dafc.jpg',
-'https://s.alicdn.com/@sc04/kf/H2fef3c9f9fa247439fe76a740fd921fcE.jpg',
-],
-vendorPhone: '+33758146261'
-},
+  {
+    id: 1,// Vêtements raison
+    name: 'Ensemble H&F',
+    description: 'Toutes les tailles',
+    price: 9000,
+    category: 'vetements',
+    images: [
+      'https://live.staticflickr.com/65535/53808149299_845e11f25b_w.jpg',
+      'https://live.staticflickr.com/65535/53806891127_2371ca23f1_w.jpg',
+      'https://live.staticflickr.com/65535/53807824346_a454c0bc44_w.jpg',
+      'https://live.staticflickr.com/65535/53808261690_3762aca3df_w.jpg'
+    ],
+    vendorPhone: '+221784743356'
+    },
+    {
+      id: 2,// Vêtements raison
+      name: 'Ensemble Femme',
+      description: 'Toutes les tailles',
+      price: 9000,
+      category: 'vetements',
+      images: [
+        'https://live.staticflickr.com/65535/53808149244_2e6ec6330a_n.jpg',
+        'https://live.staticflickr.com/65535/53808149274_c14f032e24_n.jpg',
+        'https://live.staticflickr.com/65535/53808149289_8e66a33302_w.jpg',
+        'https://live.staticflickr.com/65535/53806891107_a4f580e8ae_w.jpg',
+        'https://live.staticflickr.com/65535/53807824316_5c8fcdd4f2_w.jpg',
+      ],
+      vendorPhone: '+221784743356'
+      },
 {
 id: 3,
 name: 'ZONE Sport ',
@@ -265,19 +268,19 @@ images: [
 ],
 vendorPhone: '+33758146261'
 },
+
 {
-  id: 20,// Vêtements raison
-  name: 'Ensemble H&F',
-  description: 'Toutes les tailles',
-  price: 9000,
-  category: 'vetements',
+  id: 20,
+  name: "Écouteurs d'écran tactile",
+  description: 'Écouteurs intra-auriculaires',
+  price: 17500,
+  category: 'electronique',
   images: [
-    'https://live.staticflickr.com/65535/53808149299_845e11f25b_w.jpg',
-    'https://live.staticflickr.com/65535/53806891127_2371ca23f1_w.jpg',
-    'https://live.staticflickr.com/65535/53807824346_a454c0bc44_w.jpg',
-    'https://live.staticflickr.com/65535/53808261690_3762aca3df_w.jpg'
+  'https://s.alicdn.com/@sc04/kf/H8d4e33a9c7344e6aae486a7e45b05e24H.jpg',
+  'https://s.alicdn.com/@sc04/kf/Hdb7f824324e84044b3eef68f9d9878eaB.jpg',
+  'hhttps://s.alicdn.com/@sc04/kf/Hddcc916518fc4fcf97f1253fbb5c82c4C.jpg'
   ],
-  vendorPhone: '+221784743356'
+  vendorPhone: '+33758146261'
   },
   {
   id: 21,// Vêtements raison
@@ -383,21 +386,19 @@ vendorPhone: '+33758146261'
   ],
   vendorPhone: '+221784743356'
   },
-{
-  id: 27,// Vêtements raison
-  name: 'Ensemble Femme',
-  description: 'Toutes les tailles',
-  price: 9000,
-  category: 'vetements',
-  images: [
-    'https://live.staticflickr.com/65535/53808149244_2e6ec6330a_n.jpg',
-    'https://live.staticflickr.com/65535/53808149274_c14f032e24_n.jpg',
-    'https://live.staticflickr.com/65535/53808149289_8e66a33302_w.jpg',
-    'https://live.staticflickr.com/65535/53806891107_a4f580e8ae_w.jpg',
-    'https://live.staticflickr.com/65535/53807824316_5c8fcdd4f2_w.jpg',
-  ],
-  vendorPhone: '+221784743356'
-  },
+  {
+    id: 28,
+    name: 'Support de téléphone',
+    description: 'Décoration de la maison',
+    price: 1200,
+    category: 'maison',
+    images: [
+    'https://s.alicdn.com/@sc04/kf/H0911ecc7982549489bd59d3976fc5378W.jpg',
+    'https://s.alicdn.com/@sc04/kf/H9a2c6edd9c6e454e9f6cddff49f56dafc.jpg',
+    'https://s.alicdn.com/@sc04/kf/H2fef3c9f9fa247439fe76a740fd921fcE.jpg',
+    ],
+    vendorPhone: '+33758146261'
+    },
 
 ];
 
