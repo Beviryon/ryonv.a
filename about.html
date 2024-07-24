@@ -6,29 +6,29 @@
   <title>À propos - Mon Site E-commerce</title>
   <link rel="stylesheet" href="./about.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-xyz'; img-src 'self' https://images.pexels.com; connect-src https://wa.me;">
 </head>
 <body>
   <header>
     <nav>
-        <div class="logo">
-            <a href="./home.html">DESLO'GROUP</a>
-          </div>
-          <div class="menu">
-            <ul class="nav-links">
-              <li><a href="./about.html">Accueil</a></li>
-              <li><a href="./produits.html">Produits</a></li>
-              <li><a href="./services.html">Nos services</a></li>
-              <li><a href="./about.html">À propos</a></li>
-              <li><a href="./contact.html">Contact</a></li>
-              <li><a href="./formations.html">Nos formations</a></li>
-            </ul>
-            <div class="burger">
-              <div class="line1"></div>
-              <div class="line2"></div>
-              <div class="line3"></div>
-            </div>
-          </div>
+      <div class="logo">
+        <a href="./home.html">DESLO'GROUP</a>
+      </div>
+      <div class="menu">
+        <ul class="nav-links">
+          <li><a href="./home.html">Accueil</a></li>
+          <li><a href="./produits.html">Produits</a></li>
+          <li><a href="./services.html">Nos services</a></li>
+          <li><a href="./about.html">À propos</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./formations.html">Nos formations</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -96,12 +96,40 @@
   </main>
 
   <footer class="pide_page">
-    <p class="pied">&copy;2024 Deslo'Group. Tous droits réservés. Développer par Beviryon.</p>
+    <p class="pied">&copy;2024 Deslo'Group. Tous droits réservés. Développé par Beviryon.</p>
   </footer>
   <script nonce="xyz" src="./about.js"></script>
 
-  <!--  -->
- 
-  
+  <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
+  <script nonce="xyz">
+    if ('caches' in window) {
+      caches.keys().then(cacheNames => {
+        cacheNames.forEach(cacheName => {
+          caches.delete(cacheName);
+        });
+      });
+    }
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(registration => {
+          registration.unregister();
+        });
+      }).then(() => {
+        navigator.serviceWorker.register('./service-worker.js').then(registration => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(error => {
+          console.log('ServiceWorker registration failed: ', error);
+        });
+      });
+    }
+  </script>
+  <script nonce="xyz">
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        location.reload();
+      }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
+    });
+    </script>
+    
 </body>
 </html>

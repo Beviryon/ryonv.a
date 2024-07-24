@@ -7,14 +7,10 @@
   <link rel="stylesheet" href="./home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="manifest" href="./manifest.json">
-  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'sha256-votre_hash_calculé';">
-  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com;">
-  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-xyz';">
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-xyz'; img-src 'self' https://images.pexels.com;">
 </head>
 <body>
-  <div class="background-image">
-
-  </div>
+  <div class="background-image"></div>
   <header>
     <nav>
       <div class="logo">
@@ -48,50 +44,34 @@
       <h2>Nos produits phares</h2>
       <div class="carousel-container">
         <div class="carousel-slide">
-          <a href="./produits.html"> <img id="produitImage" src="https://images.pexels.com/photos/1093926/pexels-photo-1093926.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Produit 1"></a>
-          <h3>VETÊMES</h3>
+          <a href="./produits.html">
+            <img id="produitImage1" src="https://images.pexels.com/photos/1093926/pexels-photo-1093926.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Produit 1">
+          </a>
+          <h3>VÊTEMENTS</h3>
           <p>Vêtements hommes, femmes,...</p>
-          <a id="voirPlusBtn" href="./produits.html" class="btn">Voir les produits</a>
+          <a href="./produits.html" class="btn">Voir les produits</a>
         </div>
         <div class="carousel-slide">
-          <a href="./formations.html"><img id="produitImage" src="https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Produit 1"></a>
+          <a href="./formations.html">
+            <img id="produitImage2" src="https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Produit 2">
+          </a>
           <h3>E-COMMERCE</h3>
           <p>Formation en e-commerce...</p>
-          <a id="voirPlusBtn" href="./formations.html" class="btn">Voir le produit</a>
+          <a href="./formations.html" class="btn">Voir le produit</a>
         </div>
         <div class="carousel-slide">
-          <a href="./produits.html"><img id="produitImage" src="https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" alt="Produit 1"></a>
-          <h3>ELECTRONIQUES</h3>
+          <a href="./produits.html">
+            <img id="produitImage3" src="https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" alt="Produit 3">
+          </a>
+          <h3>ÉLECTRONIQUES</h3>
           <p>Ordinateur Portable...</p>
-          <a id="voirPlusBtn" href="./produits.html" class="btn">Voir le produit</a>
+          <a href="./produits.html" class="btn">Voir le produit</a>
         </div>
       </div>
-      <script>
-        const voirPlusBtn = document.getElementById('voirPlusBtn');
-        const produitImage = document.getElementById('produitImage');
-    
-        voirPlusBtn.addEventListener('click', function() {
-          produitImage.style.display = 'block';
-        });
-      </script>
     </section>
   </main>
 
-  <script nonce="xyz">
-    if ('caches' in window) {
-      caches.keys().then(cacheNames => {
-        cacheNames.forEach(cacheName => {
-          caches.delete(cacheName);
-        });
-      });
-    }
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(registrations => {
-        registrations.forEach(registration => registration.unregister());
-      });
-    }
-  </script>
-
+  <script nonce="xyz" type="module" src="./main.js"></script>
 
   <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
   <script nonce="xyz">
@@ -104,20 +84,25 @@
     }
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(registrations => {
-        registrations.forEach(registration => registration.unregister());
+        registrations.forEach(registration => {
+          registration.unregister();
+        });
+      }).then(() => {
+        navigator.serviceWorker.register('./service-worker.js').then(registration => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(error => {
+          console.log('ServiceWorker registration failed: ', error);
+        });
       });
     }
   </script>
-
-  <!-- Script pour réenregistrer le Service Worker -->
   <script nonce="xyz">
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js').then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }).catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
-    }
-  </script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        location.reload();
+      }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
+    });
+    </script>
+    
 </body>
 </html>

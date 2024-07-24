@@ -7,9 +7,14 @@
   <link rel="stylesheet" href="./produits.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="manifest" href="./manifest.json">
-  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'sha256-votre_hash_calculé';">
-  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com;">
-  <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-xyz';">
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self' 'nonce-xyz'; 
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  img-src 'self' https://s.alicdn.com https://live.staticflickr.com;
+  font-src 'self' https://cdnjs.cloudflare.com;
+">
+
 </head>
 <body>
   <header>
@@ -202,6 +207,37 @@
 
    <!-- Message pop up -->
   
-  
+  <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
+  <script nonce="xyz">
+    if ('caches' in window) {
+      caches.keys().then(cacheNames => {
+        cacheNames.forEach(cacheName => {
+          caches.delete(cacheName);
+        });
+      });
+    }
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(registration => {
+          registration.unregister();
+        });
+      }).then(() => {
+        navigator.serviceWorker.register('./service-worker.js').then(registration => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(error => {
+          console.log('ServiceWorker registration failed: ', error);
+        });
+      });
+    }
+  </script>
+
+  <script nonce="xyz">
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        location.reload();
+      }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
+    });
+    </script>
+    
 </body>
 </html>

@@ -6,7 +6,13 @@
   <title>Détails du produit</title>
   <link rel="stylesheet" href="./details.css">
   <link rel="manifest" href="./manifest.json">
-  
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self' 'nonce-xyz'; 
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  img-src 'self' https://s.alicdn.com https://live.staticflickr.com;
+  font-src 'self' https://cdnjs.cloudflare.com;
+">
 <body>
   <header>
     <nav>
@@ -134,6 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   </script>
-  
+  <script nonce="xyz">
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        location.reload();
+      }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
+    });
+    </script>
+    
 </body>
 </html>
