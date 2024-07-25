@@ -1,7 +1,7 @@
 {
-    "name": "DESLO'SHOP",
-    "short_name": "DESLO'SHOP",
-    "description": "Application e-commerce pour Deslo'Group",
+    "name": "RYONE",
+    "short_name": "RYONE",
+    "description": "Application e-commerce pour RYONE",
     "start_url": "./",
     "display": "standalone",
     "background_color": "#ffffff",
