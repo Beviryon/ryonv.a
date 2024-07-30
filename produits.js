@@ -105,6 +105,23 @@ function createProductCard(product) {
     updatePromoTimer(promoPopup.querySelector('.promo-timer'), card);
   }
 
+   // Ajout du pop-up de stock
+   const stockStatus = document.createElement('div');
+   stockStatus.classList.add('stock-status');
+   
+   if (product.stock > 10) {
+     stockStatus.textContent = 'En stock';
+     stockStatus.classList.add('in-stock');
+   } else if (product.stock > 0) {
+     stockStatus.textContent = 'Stock limité';
+     stockStatus.classList.add('low-stock');
+   } else {
+     stockStatus.textContent = 'Rupture de stock';
+     stockStatus.classList.add('out-of-stock');
+   }
+   
+   card.appendChild(stockStatus);
+
   return card;
 }
 

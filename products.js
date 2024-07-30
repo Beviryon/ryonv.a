@@ -14,7 +14,8 @@ vendorPhone: '+33758146261',
 promotion: {
   discount: 10, // 10% de réduction
   endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
-}
+},
+stock: 15
 },
 
 {
@@ -32,7 +33,8 @@ vendorPhone: '+33758146261',
 promotion: {
   discount: 20, // 10% de réduction
   endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
-}
+},
+stock: 5
 },
 
 {
@@ -77,7 +79,8 @@ vendorPhone: '+33758146261',
 promotion: {
   discount: 20, // 10% de réduction
   endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
-}
+},
+stock: 15
 },
 
 {

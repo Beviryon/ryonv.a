@@ -949,6 +949,32 @@ button[type="submit"]:hover {
   }
 }
 
+/* pop up statut produit */
+.stock-status {
+  position: absolute;
+  /* bottom: 5px; */
+  right: 2px;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 0.5em;
+  font-weight: bold;
+}
+
+.in-stock {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.low-stock {
+  background-color: #7e6f42;
+  color: rgb(255, 255, 255);
+}
+
+.out-of-stock {
+  background-color: #F44336;
+  color: white;
+}
+
 @media (max-width: 300px) {
   #installBanner div, #salesPopup div {
     padding: 1em;
