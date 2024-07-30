@@ -13,7 +13,7 @@ function showInstallPromotion() {
     <div style="
       position: fixed;
       top: 70%;
-      left: 50%;
+      left: 5%;
       transform: translateX(-50%);
       background: rgba(0, 0, 0, 0.9);
       color: #fff;
