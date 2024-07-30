@@ -12,8 +12,9 @@ function showInstallPromotion() {
   installBanner.innerHTML = `
     <div style="
       position: fixed;
-      bottom: 100px;
-      left: 50%;
+      top: 77%;
+      width: 90%;
+      left: 5%;
       transform: translateX(-50%);
       background: rgba(0, 0, 0, 0.9);
       color: #fff;
@@ -22,7 +23,7 @@ function showInstallPromotion() {
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       animation: pulse 4s infinite;
-      z-index: 1000;
+      z-index: 1001;
     ">
       <p style="margin: 0 0 10px 0; font-size: 16px;">Installez notre application pour une meilleure expérience !</p>
       <button id="installButton" style="

@@ -2,6 +2,58 @@
 import { products } from "./products.js";
 
 // Fonction pour créer une carte de produit
+// function createProductCard(product) {
+//   const card = document.createElement('div');
+//   card.classList.add('product-card');
+
+//   const image = document.createElement('img');
+//   image.src = product.images[0];
+//   image.alt = product.name;
+//   card.appendChild(image);
+
+//   const name = document.createElement('h3');
+//   name.textContent = product.name;
+//   card.appendChild(name);
+
+//   const description = document.createElement('p');
+//   description.textContent = product.description;
+//   card.appendChild(description);
+
+//   const price = document.createElement('p');
+//   price.textContent = `Prix : ${product.price} Fcfa`;
+//   card.appendChild(price);
+
+//   const button = document.createElement('a');
+//   button.classList.add('btn');
+//   button.textContent = 'Voir le produit';
+//   button.addEventListener('click', () => showProductModal(product));
+//   card.appendChild(button);
+
+//   const whatsappBtn = document.createElement('a');
+//   whatsappBtn.classList.add('btn', 'whatsapp-btn');
+//   whatsappBtn.textContent = 'Commander';
+//   whatsappBtn.addEventListener('click', () => openOrderForm(product)); // Mettre à jour cette ligne
+//   card.appendChild(whatsappBtn);
+
+//   const detailsBtn = document.createElement('a');
+//   detailsBtn.classList.add('btn-detail');
+//   detailsBtn.textContent = 'Détails du produit';
+//   detailsBtn.href = `details.html?id=${product.id}`;
+//   card.appendChild(detailsBtn);
+
+//   if (product.promotion && isPromotionValid(product.promotion)) {
+//     const promoPopup = document.createElement('div');
+//     promoPopup.classList.add('promo-popup');
+//     promoPopup.innerHTML = `
+//       <p>Promotion ${product.promotion.discount}% !</p>
+//       <p class="promo-timer" data-end="${product.promotion.endDate}"></p>
+//     `;
+//     card.appendChild(promoPopup);
+//     updatePromoTimer(promoPopup.querySelector('.promo-timer'), card);
+//   }
+
+//   return card;
+// }
 function createProductCard(product) {
   const card = document.createElement('div');
   card.classList.add('product-card');
@@ -32,7 +84,7 @@ function createProductCard(product) {
   const whatsappBtn = document.createElement('a');
   whatsappBtn.classList.add('btn', 'whatsapp-btn');
   whatsappBtn.textContent = 'Commander';
-  whatsappBtn.addEventListener('click', () => openOrderForm(product)); // Mettre à jour cette ligne
+  whatsappBtn.addEventListener('click', () => openOrderForm(product));
   card.appendChild(whatsappBtn);
 
   const detailsBtn = document.createElement('a');
@@ -41,8 +93,58 @@ function createProductCard(product) {
   detailsBtn.href = `details.html?id=${product.id}`;
   card.appendChild(detailsBtn);
 
+  // Ajout du pop-up de promotion
+  if (product.promotion && isPromotionValid(product.promotion)) {
+    const promoPopup = document.createElement('div');
+    promoPopup.classList.add('promo-popup');
+    promoPopup.innerHTML = `
+      <p>Promotion ${product.promotion.discount}% !</p>
+      <p class="promo-timer" data-end="${product.promotion.endDate}"></p>
+    `;
+    card.appendChild(promoPopup);
+    updatePromoTimer(promoPopup.querySelector('.promo-timer'), card);
+  }
+
   return card;
 }
+
+// affichage et mise à jours promotion
+function updatePromoTimer(timerElement, cardElement) {
+  const endDate = new Date(timerElement.dataset.end);
+  
+  function updateTimer() {
+    const now = new Date();
+    const timeLeft = endDate - now;
+
+    if (timeLeft > 0) {
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      timerElement.textContent = `Fin dans : ${days}j ${hours}h ${minutes}m ${seconds}s`;
+    } else {
+      // Supprime le pop-up de promotion lorsque la promotion est terminée
+      const promoPopup = cardElement.querySelector('.promo-popup');
+      if (promoPopup) {
+        promoPopup.remove();
+      }
+      clearInterval(timerInterval);
+    }
+  }
+
+  updateTimer();
+  const timerInterval = setInterval(updateTimer, 1000);
+}
+
+
+// fn pour vérifier si la promotion est toujours valide
+function isPromotionValid(promotion) {
+  const now = new Date();
+  const endDate = new Date(promotion.endDate);
+  return now < endDate;
+}
+
 
 function openOrderForm(product) {
   // Créer le modal

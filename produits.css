@@ -908,6 +908,47 @@ button[type="submit"]:hover {
   }
 }
 
+/* promotion */
+.product-card {
+  position: relative;
+  /* padding-top: 50px;  */
+}
+
+.promo-popup {
+  position: absolute;
+  top: 0;
+  /* left: 50%; */
+  transform: translateX(-50%);
+  background-color: rgba(255, 0, 0, 0.9);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.6em;
+  /* width: 87%; */
+  height: 40px;
+  font-weight: 900;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+.promo-timer {
+  font-size: 0.9em;
+  margin-top: -14px;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 @media (max-width: 300px) {
   #installBanner div, #salesPopup div {
