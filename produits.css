@@ -917,7 +917,6 @@ button[type="submit"]:hover {
 .promo-popup {
   position: absolute;
   top: 0;
-  /* left: 50%; */
   transform: translateX(-50%);
   background-color: rgba(255, 0, 0, 0.9);
   color: white;
