@@ -310,3 +310,19 @@ footer {
   top: 10px;
   cursor: pointer;
 }
+
+@media (max-width: 300px) {
+  #installBanner div, #salesPopup div {
+    padding: 1em;
+    font-size: 14px;
+  }
+
+  #installButton, #yesButton, #noButton {
+    padding: 0.5em 1em;
+    font-size: 12px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
