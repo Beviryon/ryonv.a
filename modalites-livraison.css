@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +23,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
   }
   
   .page-header .logo {
@@ -36,6 +37,8 @@
   .page-header .breadcrumb {
     list-style: none;
     display: flex;
+    justify-content: center;
+    margin-top: 10px;
   }
   
   .page-header .breadcrumb li {
@@ -57,13 +60,25 @@
     max-width: 1200px;
     margin: 30px auto;
     padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
   }
   
   .delivery-content section {
     margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .delivery-options {
+    background-color: #e6f7ff;
+  }
+  
+  .delivery-times {
+    background-color: #fff3e6;
+  }
+  
+  .delivery-costs {
+    background-color: #e6ffe6;
   }
   
   .delivery-content h2 {
@@ -113,5 +128,29 @@
     }
   }
   
-
- 
+  @media (max-width: 480px) {
+    .page-header nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .page-header h1 {
+      font-size: 1.8em;
+      margin-top: 15px;
+    }
+  
+    .delivery-content {
+      margin: 10px 5px;
+      padding: 10px;
+    }
+  
+    .delivery-content h2 {
+      font-size: 1.4em;
+    }
+  
+    .page-footer {
+      padding: 8px;
+      font-size: 0.8em;
+    }
+  }
+  
