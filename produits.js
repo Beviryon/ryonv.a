@@ -282,11 +282,17 @@ function openOrderForm(product) {
   submitButton.type = 'submit';
   submitButton.textContent = 'Discuter avec le vendeur';
 
+    // Lien vers les modalités de livraison
+    const deliveryLink = document.createElement('p');
+    deliveryLink.innerHTML = `<a href="./modalites-livraison.html" target="_blank">Connaître les modalités de livraison</a>`;
+    deliveryLink.style.marginTop = '10px';
+
   form.appendChild(nameLabel);
   form.appendChild(cityLabel);
   form.appendChild(countryLabel);
   form.appendChild(countrySelect);
   form.appendChild(submitButton);
+  form.appendChild(deliveryLink);
 
   modalContent.appendChild(closeModalSpan);
   modalContent.appendChild(form);
@@ -315,12 +321,13 @@ function openOrderForm(product) {
 
   // Validation du formulaire
   function validateForm() {
-    const nameValid = /^[a-zA-Z\s]+$/.test(nameInput.value);
-    const cityValid = /^[a-zA-Z\s]+$/.test(cityInput.value);
+    const nameValid = /^[a-zA-Z\s,;_\-'\u00C0-\u017F]+$/.test(nameInput.value);
+    const cityValid = /^[a-zA-Z\s,;_\-'\u00C0-\u017F]+$/.test(cityInput.value);
     const countryValid = countrySelect.value !== '';
-
+  
     return nameValid && cityValid && countryValid;
   }
+  
 }
 
 
