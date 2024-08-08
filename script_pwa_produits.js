@@ -12,20 +12,30 @@ function showInstallPromotion() {
   installBanner.innerHTML = `
     <div style="
       position: fixed;
-      top: 70%;
-      left: 5%;
+      bottom: 20px;
+      left: 50%;
       transform: translateX(-50%);
       background: rgba(0, 0, 0, 0.9);
       color: #fff;
-      padding: 1em 2em;
+      padding: 1em;
       text-align: center;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      animation: pulse 4s infinite;
       z-index: 1001;
       width: 90%;
+      max-width: 400px;
       box-sizing: border-box;
     ">
+      <button id="closeInstallBanner" style="
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      ">X</button>
       <p style="margin: 0 0 10px 0; font-size: 16px;">Installez notre application pour une meilleure expérience !</p>
       <button id="installButton" style="
         padding: 0.7em 1.5em;
@@ -41,6 +51,11 @@ function showInstallPromotion() {
     </div>
   `;
   document.body.appendChild(installBanner);
+
+  const closeInstallBanner = document.getElementById('closeInstallBanner');
+  closeInstallBanner.addEventListener('click', () => {
+    installBanner.style.display = 'none';
+  });
 
   const installButton = document.getElementById('installButton');
   installButton.addEventListener('click', () => {
@@ -92,8 +107,19 @@ function showSalesPopup() {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     z-index: 1001;
     width: 90%;
+    max-width: 400px;
     box-sizing: border-box;
   ">
+    <button id="closeSalesPopup" style="
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: #000;
+      font-size: 16px;
+      cursor: pointer;
+    ">X</button>
     <h2 style="margin-bottom: 20px;">Besoin de vendre vos articles ?</h2>
     <button id="yesButton" style="
       padding: 0.7em 1.5em;
@@ -120,6 +146,11 @@ function showSalesPopup() {
 `;
   document.body.appendChild(salesPopup);
 
+  const closeSalesPopup = document.getElementById('closeSalesPopup');
+  closeSalesPopup.addEventListener('click', () => {
+    salesPopup.style.display = 'none';
+  });
+
   const yesButton = document.getElementById('yesButton');
   const noButton = document.getElementById('noButton');
 
@@ -133,4 +164,4 @@ function showSalesPopup() {
 }
 
 // Afficher le pop-up de vente après un certain temps ou une action
-setTimeout(showSalesPopup, 10000);
+setTimeout(showSalesPopup, 30000);
