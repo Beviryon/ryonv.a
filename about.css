@@ -9,16 +9,16 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* En-tête */
+/* Barre de navigation */
 header {
-  background-color: rgba(0, 3, 97, 0.7);
+  background-color: rgba(0, 3, 97, 0.8);
   color: #f2ae01;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -35,13 +35,13 @@ nav {
 }
 
 .nav-links li {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  transition: 0.3;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
@@ -61,7 +61,6 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* Pied de page */
 .pide_page .pied {
   background-color: #000361;
   color: #fff;
@@ -70,53 +69,55 @@ nav {
   font-size: 10px;
 }
 
-/* Responsive */
+/* Responsive Menu */
 @media (max-width: 968px) {
   .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
+      display: none;
+      flex-direction: column;
+      align-items: center;
   }
 
   .nav-links li {
-    margin: 1rem 0;
-    padding: 0.2rem;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+      margin: 1rem 0;
+      padding: 0.5rem;
+      width: 100%;
+      text-align: center;
+      background-color: #000361;
   }
 
   .burger {
-    display: block;
+      display: block;
   }
 
   .nav-active {
-    display: flex;
+      display: flex;
   }
 
   .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
+      transform: rotate(-45deg) translate(-5px, 6px);
   }
 
   .toggle .line2 {
-    opacity: 0;
+      opacity: 0;
   }
 
   .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
+      transform: rotate(45deg) translate(-5px, -6px);
   }
 
   header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 999;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
   }
 
   main {
-    padding-top: 4rem; 
+      padding-top: 4rem; 
   }
 }
+
   
   /* Section "À propos" */
   .about {

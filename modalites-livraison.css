@@ -10,6 +10,14 @@
     background-color: #f5f5f5;
     color: #333;
   }
+
+  .pide_page .pied {
+    background-color: #000361;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 10px;
+  }
   
   /* Header */
   .page-header {

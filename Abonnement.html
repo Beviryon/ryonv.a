@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYONE - Abonnement</title>
+    <link rel="stylesheet" href="./Abonnement.css">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">RYONE</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./home.html">Accueil</a></li>
+                <li><a href="./produits.html">Produits</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Abonnement -->
+    <section class="subscription-page">
+        <div class="subscription-content">
+            <h1>Choisissez votre Abonnement</h1>
+            <p class="subtitle">Accédez à notre plateforme de vente en ligne en sélectionnant l'un de nos plans d'abonnement.</p>
+            <div class="subscription-plans">
+                <div class="plan-card">
+                    <h2>Abonnement 4 Mois</h2>
+                    <p class="price">5,000 FCFA</p>
+                    <p class="description">Idéal pour tester notre plateforme et réaliser vos premières ventes.</p>
+                    <a href="https://wa.me/33758146261" class="cta-button" target="_blank">S'abonner maintenant</a>
+                </div>
+                <div class="plan-card">
+                    <h2>Abonnement 6 Mois</h2>
+                    <p class="price">7,500 FCFA</p>
+                    <p class="description">Pour un engagement à moyen terme et maximiser vos opportunités de vente.</p>
+                    <a href="https://wa.me/33758146261" class="cta-button" target="_blank">S'abonner maintenant</a>
+                </div>
+                <div class="plan-card">
+                    <h2>Abonnement 12 Mois</h2>
+                    <p class="price">12,000 FCFA</p>
+                    <p class="description">Pour les vendeurs réguliers souhaitant une visibilité maximale et un tarif avantageux.</p>
+                    <a href="https://wa.me/33758146261" class="cta-button" target="_blank">S'abonner maintenant</a>
+                </div>
+            </div>
+            <p class="contact-admin">Des questions ? Contactez-nous via <a href="https://wa.me/33758146261" class="contact-link" target="_blank">WhatsApp</a>.</p>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 RYONE. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script pour le menu burger -->
+    <script>
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
+</body>
+</html>

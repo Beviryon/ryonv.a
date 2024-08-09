@@ -1,120 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RYONE</title>
-  <link rel="stylesheet" href="./home.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="manifest" href="./manifest.json">
-  <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-xyz'; img-src 'self' https://images.pexels.com;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil</title>
+    <link rel="stylesheet" href="./home.css">
 </head>
 <body>
-  <div class="background-image"></div>
-  <header>
-    <nav>
-      <div class="logo">
-        <a href="./home.html">RYONE</a>
-      </div>
-      <div class="menu">
-        <ul class="nav-links">
-          <li><a href="./home.html">Accueil</a></li>
-          <li><a href="./produits.html">Produits</a></li>
-          <li><a href="./services.html">Nos services</a></li>
-          <li><a href="./about.html">À propos</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-          <li class="formations"><a href="./formations.html">Nos formations</a></li>
-        </ul>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+    <!-- Barre de navigation -->
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="./home.html">RYONE</a>
         </div>
-      </div>
-    </nav>
-  </header>
+        <div class="menu">
+          <ul class="nav-links">
+            <li><a href="./home.html">Accueil</a></li>
+            <li><a href="./produits.html">Produits</a></li>
+            <li><a href="./services.html">Nos services</a></li>
+            <li><a href="./about.html">À propos</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./formations.html">Nos formations</a></li>
+            <li><a href="./Abonnement.html">Vendre avec nous</a></li>
+          </ul>
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-  <main>
+    <!-- Section d'en-tête principale -->
     <section class="hero">
-      <h1>Bienvenue sur RYONE</h1>
-      <p>Découvrez vos produits de qualité supérieure et nos formations.</p>
-    </section>
-
-    <section class="product-carousel">
-      <h2>Nos produits phares</h2>
-      <div class="carousel-container">
-        <div class="carousel-slide">
-          <a href="./produits.html">
-            <img id="produitImage1" src="https://images.pexels.com/photos/1093926/pexels-photo-1093926.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Produit 1">
-          </a>
-          <h3>VÊTEMENTS</h3>
-          <p>Vêtements hommes, femmes,...</p>
-          <a href="./produits.html" class="btn">Voir les produits</a>
-        </div>
-        <div class="carousel-slide">
-          <a href="./formations.html">
-            <img id="produitImage2" src="https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Produit 2">
-          </a>
-          <h3>E-COMMERCE</h3>
-          <p>Formation en e-commerce...</p>
-          <a href="./formations.html" class="btn">Voir le produit</a>
-        </div>
-        <div class="carousel-slide">
-          <a href="./produits.html">
-            <img id="produitImage3" src="https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" alt="Produit 3">
-          </a>
-          <h3>ÉLECTRONIQUES</h3>
-          <p>Ordinateur Portable...</p>
-          <a href="./produits.html" class="btn">Voir le produit</a>
-        </div>
+      <div class="hero-content">
+          <h1>Bienvenue sur RYONE</h1>
+          <p>Découvrez et achetez des produits de qualité ou rejoignez-nous pour vendre vos propres produits.</p>
+          <a href="./produits.html" class="cta-button">Voir nos produits</a>
       </div>
-    </section>
-  </main>
+  </section>
 
-  <script nonce="xyz" type="module" src="./main.js"></script>
+  <!-- Section Produits Phare -->
+  <section class="featured-products">
+      <h2>Nos Produits Phare</h2>
+      <div class="product-gallery">
+          <div class="product-card">
+              <img src="https://s.alicdn.com/@sc04/kf/Hbfc38afed3fc4b3984e40cbc5ed8a49cP.jpg" alt="Produit 1">
+              <h3>Robe</h3>
+              <p>Élégant et moderne, parfait pour toutes les occasions.</p>
+              <a href="./produits.html" class="btn">Voir plus +</a>
+          </div>
+          <div class="product-card">
+              <img src="https://s.alicdn.com/@sc04/kf/H85526e7e55e443c593b9302487ad2ba2R.jpg" alt="Produit 2">
+              <h3>Femmes Sexy Jupe</h3>
+              <p>Un choix incontournable pour les amateurs de qualité.</p>
+              <a href="./produits.html" class="btn">Voir plus +</a>
+          </div>
+          <div class="product-card">
+              <img src="https://s.alicdn.com/@sc04/kf/H41b80ca10ccd4bac8264eefd48316704V.jpg" alt="Produit 3">
+              <h3>Robe</h3>
+              <p>Découvrez notre sélection exclusive pour vous.</p>
+              <a href="./produits.html" class="btn">Voir plus +</a>
+          </div>
+      </div>
+  </section>
 
-  <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
-  <script nonce="xyz">
-    if ('caches' in window) {
-      caches.keys().then(cacheNames => {
-        cacheNames.forEach(cacheName => {
-          caches.delete(cacheName);
-        });
+  <!-- Section Abonnement pour vendre -->
+  <section class="subscription-section">
+      <div class="subscription-content">
+          <h2>Devenez Vendeur avec Nous</h2>
+          <p>Vous souhaitez vendre vos produits sur notre plateforme ? Abonnez-vous et rejoignez notre réseau de vendeurs.</p>
+          <a href="./Abonnement.html" class="cta-button">Abonnez-vous maintenant</a>
+      </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+      <p>&copy; 2024 RYONE. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Script pour le menu burger -->
+  <script>
+      const burger = document.querySelector('.burger');
+      const navLinks = document.querySelector('.nav-links');
+
+      burger.addEventListener('click', () => {
+          navLinks.classList.toggle('nav-active');
+          burger.classList.toggle('toggle');
       });
-    }
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(registrations => {
-        registrations.forEach(registration => {
-          registration.unregister();
-        });
-      }).then(() => {
-        navigator.serviceWorker.register('./service-worker.js').then(registration => {
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }).catch(error => {
-          console.log('ServiceWorker registration failed: ', error);
-        });
-      });
-    }
   </script>
-  <script nonce="xyz">
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        location.reload();
-      }, 300000); 
-    });
-    </script>
-    
-    <script nonce="xyz" src="./scrpt_pwa.js"></script>
-    <script nonce="xyz">
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch(error => {
-            console.log('Service Worker registration failed:', error);
-          });
-      }
-    </script>
 </body>
 </html>
