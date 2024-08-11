@@ -1,16 +1,18 @@
+/* Réinitialisation et réglages globaux */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Barre de navigation */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
 header {
-  background-color: rgba(0, 3, 97, 0.8);
+  background-color: rgba(0, 3, 97, 0.9);
   color: #f2ae01;
   padding: 1rem;
 }
@@ -60,15 +62,122 @@ nav {
   transition: all 0.3s ease;
 }
 
-.pide_page .pied {
-  background-color: #000361;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  font-size: 10px;
+/* Section "Formations" */
+.formations {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-/* Responsive Menu */
+.formations h1 {
+  text-align: center;
+  color: #000361;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.formation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+}
+
+.formation-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.formation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.formation-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.formation-card h3 {
+  color: #000361;
+  padding: 20px;
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.formation-card p {
+  color: #666;
+  padding: 0 20px 20px;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.card-actions {
+  padding: 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #f2ae01;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #be8903;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5b;
+}
+
+.footer-content {
+  background-color: #000;
+  color: #fff;
+  padding: 1.5rem 5%;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: #f2ae01;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #e8a700;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  font-weight: 300;
+}
+
 @media (max-width: 968px) {
   .nav-links {
       display: none;
@@ -117,125 +226,51 @@ nav {
   }
 }
 
+/* Styles pour la modal */
+.modal {
+  display: none; /* Masquée par défaut */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
+}
 
-  /* Section "Formations" */
-  .formations {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  
-  .formations h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 40px;
-  }
-  
-  .formation-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 40px;
-  }
-  
-  .formation-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  .formation-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .formation-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .formation-card h3 {
-    color: #333;
-    padding: 20px;
-    margin: 0;
-  }
-  
-  .formation-card p {
-    color: #666;
-    padding: 0 20px 20px;
-    margin: 0;
-  }
-  
-  .btn {
-    display: inline-block;
-    background-color:  #f2ae01;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    margin: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #be8903;
-  }
-  
-  /* Modal pour les détails de la formation */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: none;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 800px;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #333;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+}
 
-  @media (max-width: 300px) {
-    #installBanner div, #salesPopup div {
-      padding: 1em;
-      font-size: 14px;
-    }
-  
-    #installButton, #yesButton, #noButton {
-      padding: 0.5em 1em;
-      font-size: 12px;
-    }
-  
-    h2 {
-      font-size: 18px;
-    }
-  }
-  
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-title {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #000361;
+}
+
+#modal-description,
+#modal-details {
+  margin: 15px 0;
+  color: #666;
+}

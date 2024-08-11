@@ -6,7 +6,9 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 /* Barre de navigation */
@@ -61,15 +63,115 @@ nav {
   transition: all 0.3s ease;
 }
 
-.pide_page .pied {
-  background-color: #000361;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  font-size: 10px;
+/* Section "À propos" */
+.about {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-/* Responsive Menu */
+.about h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #f2ae01;
+  font-weight: 900;
+  border-bottom: 2px solid #f2ae01;
+  padding-bottom: 0.5rem;
+}
+
+.about-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text h2 {
+  margin-top: 1.5rem;
+  color: #000361;
+  border-bottom: 2px solid #f2ae01;
+  padding-bottom: 0.5rem;
+}
+
+.about-text p {
+  margin: 1rem 0;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-text li {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.join-us {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.join-us h2 {
+  margin-bottom: 1rem;
+  color: #f2ae01;
+}
+
+.join-us p {
+  margin: 0.5rem 0;
+}
+
+.join-us a {
+  color: #f2ae01;
+  text-decoration: none;
+}
+
+.join-us a:hover {
+  text-decoration: underline;
+}
+
+
+/* Pied de page */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 1.5rem 5%;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: #f2ae01;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #e8a700;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  font-weight: 300;
+}
+/* Menu responsive */
 @media (max-width: 968px) {
   .nav-links {
       display: none;
@@ -118,271 +220,16 @@ nav {
   }
 }
 
-  
-  /* Section "À propos" */
-  .about {
-    max-width: 1060px;
-    margin: 0 auto;
-    padding: 4px 2px;
-  }
-  
-  .about h1 {
-    text-align: center;
-    padding: 8px;
-    margin:  42px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    font-weight: 900; 
-    color: #f2ae01;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-    animation: customAni 2s ease 0s infinite normal none;
-  }
-  /* animation texte */
-  @keyframes customAni {
-    0% {
-      animation-timing-function: ease-in;
-      opacity: 1;
-      transform: translateY(-45px);
-    }
-  
-    24% {
-      opacity: 1;
-    }
-  
-    40% {
-      animation-timing-function: ease-in;
-      transform: translateY(-24px);
-    }
-  
-    65% {
-      animation-timing-function: ease-in;
-      transform: translateY(-12px);
-    }
-  
-    82% {
-      animation-timing-function: ease-in;
-      transform: translateY(-6px);
-    }
-  
-    93% {
-      animation-timing-function: ease-in;
-      transform: translateY(-4px);
-    }
-  
-    25%,
-    55%,
-    75%,
-    87% {
-      animation-timing-function: ease-out;
-      transform: translateY(0px);
-    }
-  
-    100% {
-      animation-timing-function: ease-out;
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
-
-  .contact h1:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .contact-info {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-  }
-
-  @media screen and (max-width:867px) {
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-      flex-direction: column;
-      padding: 5px;
-      margin: 28px;
-    }
-  }
-  
+@media (max-width: 768px) {
   .about-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 40px;
-  }
-  
-  .about-text {
-    flex: 1 1 60%;
-  }
-  
-  /* style image */
-  .about-image {
-    flex: 1 1 35%;
-    text-align: center;
-  }
-  
-  .about-image img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 10%;
-  }
-  
-  .join-us {
-    text-align: center;
-    margin: 25px;
+      padding: 1rem;
   }
 
   .join-us h2 {
-    padding: 8px;
-    margin: 20px;
-    color: #f2ae01;
-    font-weight: 800;
+      font-size: 1.2rem;
   }
 
   .join-us p {
-    color: #000361;
-    margin: 15px;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .about-content {
-      flex-direction: column;
-    }
-  
-    .about-text,
-    .about-image {
-      flex: 1 1 100%;
-    }
-  
-    .about-image {
-      margin-top: 20px;
-    }
-  }
-
-  /* Styles pour les paragraphes */
-p {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-p:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Styles pour la section "Nos valeurs" */
-.about-text h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #f2ae01;
-  padding: auto;
-  margin: 10px;
-}
-
-.about-text ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.about-text li {
-  background-color: #f8f8f8;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease-in-out;
-}
-
-.about-text li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.about-text li strong {
-  display: block;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-/*style image nos valeurs  */
-.value-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;}
-
-.value-item img {
-  width: 50px;
-  height: 50px;
-  margin-right: 1rem;
-  border-radius: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.value-item div {
-  flex: 1;
-}
-
-.value-item strong {
-  display: block;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.value-item p {
-  color: #000361;
-  animation: customAni 7s ease 0s infinite normal none;
-}
-
-@keyframes customAni {
-  0%,
-  100% {
-	transform: translateX(0%);
-	transform-origin: 50% 50%;
-  }
-
-  15% {
-	transform: translateX(-30px) rotate(0.2deg);
-  }
-
-  30% {
-	transform: translateX(15px) rotate(-0.2deg);
-  }
-
-  45% {
-	transform: translateX(-15px) rotate(0.6deg);
-  }
-
-  60% {
-	transform: translateX(9px) rotate(-0.4deg);
-  }
-
-  75% {
-	transform: translateX(-6px) rotate(0.2deg);
-  }
-}
-
-@media (max-width: 300px) {
-  #installBanner div, #salesPopup div {
-    padding: 1em;
-    font-size: 14px;
-  }
-
-  #installButton, #yesButton, #noButton {
-    padding: 0.5em 1em;
-    font-size: 12px;
-  }
-
-  h2 {
-    font-size: 18px;
+      font-size: 0.9rem;
   }
 }

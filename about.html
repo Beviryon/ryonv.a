@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À propos - Mon Site E-commerce</title>
+  <title>À propos - RYONE</title>
   <link rel="stylesheet" href="./about.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-xyz'; img-src 'self' https://images.pexels.com; connect-src https://wa.me;">
@@ -47,45 +47,22 @@
           <h2>Nos valeurs</h2>
           <ul>
             <li>
-              <div class="value-item">
-                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Qualité">
-                <div>
-                  <strong>Qualité</strong>
-                  <p>Nous sélectionnons soigneusement nos produits auprès de fournisseurs réputés pour garantir la meilleure qualité possible.</p>
-                </div>
-              </div>
+              <strong>Qualité</strong>
+              <p>Nous sélectionnons soigneusement nos produits auprès de fournisseurs réputés pour garantir la meilleure qualité possible.</p>
             </li>
             <li>
-              <div class="value-item">
-                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Satisfaction client">
-                <div>
-                  <strong>Satisfaction client</strong>
-                  <p>Votre satisfaction est notre priorité absolue. Nous nous engageons à vous offrir un service exceptionnel à chaque étape de votre expérience d'achat.</p>
-                </div>
-              </div>
+              <strong>Satisfaction client</strong>
+              <p>Votre satisfaction est notre priorité absolue. Nous nous engageons à vous offrir un service exceptionnel à chaque étape de votre expérience d'achat.</p>
             </li>
             <li>
-              <div class="value-item">
-                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Innovation">
-                <div>
-                  <strong>Innovation</strong>
-                  <p>Nous restons à l'avant-garde des tendances et des technologies pour vous offrir des produits innovants et une expérience de shopping en ligne fluide.</p>
-                </div>
-              </div>
+              <strong>Innovation</strong>
+              <p>Nous restons à l'avant-garde des tendances et des technologies pour vous offrir des produits innovants et une expérience de shopping en ligne fluide.</p>
             </li>
             <li>
-              <div class="value-item">
-                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Responsabilité">
-                <div>
-                  <strong>Responsabilité</strong>
-                  <p>Nous sommes conscients de notre impact sur l'environnement et la société. C'est pourquoi nous nous efforçons d'adopter des pratiques durables et éthiques dans nos opérations.</p>
-                </div>
-              </div>
+              <strong>Responsabilité</strong>
+              <p>Nous sommes conscients de notre impact sur l'environnement et la société. C'est pourquoi nous nous efforçons d'adopter des pratiques durables et éthiques dans nos opérations.</p>
             </li>
           </ul>
-        </div>
-        <div class="about-image">
-          <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="À propos de RYONE">
         </div>
       </div>
       <div class="join-us">
@@ -96,55 +73,18 @@
     </section>
   </main>
 
-  <footer class="pide_page">
-    <p class="pied">&copy;2024 RYONE. Tous droits réservés. Développé par Beviryon.</p>
-  </footer>
+  <footer>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="./home.html">Accueil</a>
+            <a href="./modalites-livraison.html">Livraison</a>
+            <a href="./Abonnement.html">Abonnement</a>
+            <a href="./contact.html">Contact</a>
+        </div>
+        <p>&copy; 2024 RYONE. Développé par Beviryon.</p>
+    </div>
+</footer>
+
   <script nonce="xyz" src="./about.js"></script>
-
-  <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
-  <script nonce="xyz">
-    if ('caches' in window) {
-      caches.keys().then(cacheNames => {
-        cacheNames.forEach(cacheName => {
-          caches.delete(cacheName);
-        });
-      });
-    }
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(registrations => {
-        registrations.forEach(registration => {
-          registration.unregister();
-        });
-      }).then(() => {
-        navigator.serviceWorker.register('./service-worker.js').then(registration => {
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }).catch(error => {
-          console.log('ServiceWorker registration failed: ', error);
-        });
-      });
-    }
-  </script>
-  <script nonce="xyz">
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        location.reload();
-      }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
-    });
-    </script>
-    
-
-    
-    <script nonce="xyz" src="./scrpt_pwa.js"></script>
-    <script nonce="xyz">
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch(error => {
-            console.log('Service Worker registration failed:', error);
-          });
-      }
-    </script>
 </body>
 </html>
