@@ -10,11 +10,13 @@ body {
   background-color: #f4f4f4;
   color: #333;
 }
-
+/* Barre de navigation */
 header {
-  background-color: rgba(0, 3, 97, 0.9);
-  color: #f2ae01;
-  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 nav {
@@ -26,22 +28,20 @@ nav {
 .logo a {
   color: #f2ae01;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-}
-
-.nav-links li {
-  margin-left: 1.5rem;
+  gap: 2rem;
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
@@ -60,6 +60,65 @@ nav {
   background-color: #fff;
   margin: 5px;
   transition: all 0.3s ease;
+}
+
+/* Responsive Menu */
+@media (max-width: 968px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 50%;
+      padding-top: 5rem;
+  }
+
+  .nav-links li {
+      margin: 1rem 0;
+  }
+
+  .burger {
+      display: block;
+  }
+
+  .nav-active {
+      display: flex;
+  }
+
+  .toggle .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+      opacity: 0;
+  }
+
+  .toggle .line3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  header {
+      padding: 1rem 5%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+  }
+}
+
+@media (max-width: 968px) {
+  main {
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+}
+
+main {
+  padding: 2rem;
 }
 
 /* Section "Formations" */
@@ -149,11 +208,20 @@ nav {
   background-color: #1ebe5b;
 }
 
-.footer-content {
+/* Pied de page */
+footer {
   background-color: #000;
   color: #fff;
   padding: 1.5rem 5%;
   text-align: center;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .footer-links {
@@ -178,53 +246,6 @@ footer p {
   font-weight: 300;
 }
 
-@media (max-width: 968px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .nav-links li {
-      margin: 1rem 0;
-      padding: 0.5rem;
-      width: 100%;
-      text-align: center;
-      background-color: #000361;
-  }
-
-  .burger {
-      display: block;
-  }
-
-  .nav-active {
-      display: flex;
-  }
-
-  .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-      opacity: 0;
-  }
-
-  .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 999;
-  }
-
-  main {
-      padding-top: 4rem; 
-  }
-}
 
 /* Styles pour la modal */
 .modal {
