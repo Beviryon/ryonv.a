@@ -1,25 +1,28 @@
 const products = [
     {
       id: 1,
-      name: 'Écouteurs intra-auriculaires',
-      description: 'Capacité batterie (mAh)	500mAh\n Couleurs	Noir Blanc\n Écouteurs intra-auriculaires TWS à suppression de bruit ANC Microphone ENC à écran tactile Son super basse Batterie longue durée Écouteurs étanches',
-      price: 17500,
+      name: 'Robe Femme',
+      description: ' Toutes les tailles | S, L, M, XL ',
+      price: 7000,
       images: [
-        'https://s.alicdn.com/@sc04/kf/H8d4e33a9c7344e6aae486a7e45b05e24H.jpg',
-        'https://s.alicdn.com/@sc04/kf/Hdb7f824324e84044b3eef68f9d9878eaB.jpg',
-        'hhttps://s.alicdn.com/@sc04/kf/Hddcc916518fc4fcf97f1253fbb5c82c4C.jpg'
+        'https://live.staticflickr.com/65535/53917188752_4573f5fef5_n.jpg',
+        'https://live.staticflickr.com/65535/53917188777_b67c965e64_w.jpg',
+        'https://live.staticflickr.com/65535/53918079316_f5d4b32b37_w.jpg',
+        'https://live.staticflickr.com/65535/53918431524_d372a79efc_n.jpg',
+        'https://live.staticflickr.com/65535/53918079321_47efa595d3_w.jpg',
         ],
       vendorPhone: '+33758146261' 
     },
+
     {
       id: 2,
-      name: 'Boîte de rangement polyvalente',
-      description: 'Marque compatible	Tous les téléphones mobiles\n Produit	Boîte de rangement polyvalente\n Conception fonctionnelle	Multifonction\n Support de téléphone portable mural avec auto-adhésif pour salle de bain chambre cuisine support de chargeur télécommande boîte de rangement',
+      name: 'Ensemble femme',
+      description: 'Toutes les tailles | S, L, M, XL ',
       price: 1200,
       images: [
-        'https://s.alicdn.com/@sc04/kf/H0911ecc7982549489bd59d3976fc5378W.jpg',
-        'https://s.alicdn.com/@sc04/kf/H9a2c6edd9c6e454e9f6cddff49f56dafc.jpg',
-        'https://s.alicdn.com/@sc04/kf/H2fef3c9f9fa247439fe76a740fd921fcE.jpg',
+        'https://live.staticflickr.com/65535/53918326358_3338d3cc5a_w.jpg',
+        'https://live.staticflickr.com/65535/53918525480_4f51da965d_n.jpg',
+        'https://live.staticflickr.com/65535/53918326368_3007678649_w.jpg',
       ],
       vendorPhone: '+33758146261' 
     },

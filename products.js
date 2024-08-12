@@ -1,33 +1,31 @@
 const products = [
 {
 id: 1,// Vêtements raison
-name: "Écouteurs d'écran tactile",
-description: 'Écouteurs intra-auriculaires',
-price: 17500,
-category: 'electronique',
+name: "Robe Femme",
+description: 'Toutes les tailles',
+price: 7000,
+category: 'vetements',
 images: [
-'https://s.alicdn.com/@sc04/kf/H8d4e33a9c7344e6aae486a7e45b05e24H.jpg',
-'https://s.alicdn.com/@sc04/kf/Hdb7f824324e84044b3eef68f9d9878eaB.jpg',
-'hhttps://s.alicdn.com/@sc04/kf/Hddcc916518fc4fcf97f1253fbb5c82c4C.jpg'
+'https://live.staticflickr.com/65535/53917188752_4573f5fef5_n.jpg',
+'https://live.staticflickr.com/65535/53917188777_b67c965e64_w.jpg',
 ],
 vendorPhone: '+33758146261',
 promotion: {
-  discount: 10, // 10% de réduction
-  endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
+  discount: 10, 
+  endDate: '2024-08-15T23:59:59' 
 },
 stock: 15
 },
 
 {
 id: 2,// Vêtements raison
-name: 'Support de téléphone',
-description: 'Décoration de la maison',
-price: 1200,
-category: 'maison',
+name: 'Ensemble femme',
+description: 'Toutes les tailles',
+price: 7000,
+category: 'vetements',
 images: [
-'https://s.alicdn.com/@sc04/kf/H0911ecc7982549489bd59d3976fc5378W.jpg',
-'https://s.alicdn.com/@sc04/kf/H9a2c6edd9c6e454e9f6cddff49f56dafc.jpg',
-'https://s.alicdn.com/@sc04/kf/H2fef3c9f9fa247439fe76a740fd921fcE.jpg',
+'https://live.staticflickr.com/65535/53918326358_3338d3cc5a_w.jpg',
+'https://live.staticflickr.com/65535/53918525480_4f51da965d_n.jpg',
 ],
 vendorPhone: '+33758146261',
 promotion: {
@@ -483,6 +481,19 @@ stock: 15
       'https://live.staticflickr.com/65535/53808149289_8e66a33302_w.jpg',
       'https://live.staticflickr.com/65535/53806891107_a4f580e8ae_w.jpg',
       'https://live.staticflickr.com/65535/53807824316_5c8fcdd4f2_w.jpg',
+    ],
+    vendorPhone: '+221784743356',
+    stock: 30
+    },
+  {
+    id: 29,
+    name: 'Robe Femme',
+    description: 'Toutes les tailles',
+    price: 4000,
+    category: 'vetements',
+    images: [
+      'https://live.staticflickr.com/65535/53918326268_f077d3d109_n.jpg',
+      'https://live.staticflickr.com/65535/53917188587_36e66481d6_n.jpg',
     ],
     vendorPhone: '+221784743356',
     stock: 30
