@@ -109,7 +109,7 @@ nav {
 /* Section d'en-tête principale */
 .hero {
   height: 100vh;
-  background-image: url('https://www.pexels.com/fr-fr/video/mains-ordinateur-portable-naviguer-internet-6994619/');
+  background-image: url('https://s.alicdn.com/@sc04/kf/H83b8adf683094afda3923c98d2155fb4l.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -119,8 +119,8 @@ nav {
 }
 
 .hero-overlay {
-  /* background: rgba(0, 0, 0, 0.5); */
-  background-color: red;
+  background: rgba(0, 0, 0, 0.8);
+  /* background-color: red; */
   position: absolute;
   top: 0;
   left: 0;
