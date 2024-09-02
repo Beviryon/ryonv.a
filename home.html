@@ -103,7 +103,7 @@
 <script nonce="xyz" src="./main.js"></script>
     
  <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
- <script nonce="xyz">
+<script nonce="xyz">
   if ('caches' in window) {
     caches.keys().then(cacheNames => {
       cacheNames.forEach(cacheName => {
@@ -131,7 +131,7 @@
       location.reload();
     }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
   });
-  </script>
+</script>
   
 
   

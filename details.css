@@ -152,13 +152,13 @@ footer p {
 }
 
   
-
 /* Styles pour la page de détails du produit */
 .product-details {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 2rem;
+    top: 22px;
   }
   
   #product-info {
