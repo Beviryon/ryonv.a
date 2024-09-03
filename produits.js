@@ -328,15 +328,15 @@ form.addEventListener('submit', (event) => {
       const country = countrySelect.options[countrySelect.selectedIndex].text;
 
       // Informations sur le produit
-      const productId = product.id; // Récupérer l'ID du produit
       const productName = product.name;
       const productDescription = product.description;
       const productPrice = product.price;
       const productImages = product.images; // Tableau d'URL des images
       const vendorPhone = product.vendorPhone;
-      
-      // Construire le lien du produit
-      const productLink = `http://127.0.0.1:5501/details.html?id=${productId}`;
+      const productId = product.id;
+
+      // Générer l'URL spécifique du produit en utilisant son ID
+      const productLink = `https://ryone.netlify.app/details.html?id=${productId}`;
 
       // Construire le message WhatsApp
       let message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\n`;
@@ -350,7 +350,7 @@ form.addEventListener('submit', (event) => {
       if (productImages && productImages.length > 0) {
           message += `- Images :\n`;
           productImages.forEach((image, index) => {
-              message += `   ${index + 1}. Image [${index + 1}](${image})\n`;
+              message += `   ${index + 1}. ${image}\n`;
           });
       }
 
