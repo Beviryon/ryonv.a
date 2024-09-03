@@ -1,4 +1,3 @@
-
 import { products } from "./products.js";
 
 // Fonction pour créer une carte de produit
@@ -303,21 +302,65 @@ function openOrderForm(product) {
   modal.style.display = 'block';
 
   // Ajouter un événement de soumission au formulaire
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (validateForm()) {
+  // form.addEventListener('submit', (event) => {
+  //   event.preventDefault();
+  //   if (validateForm()) {
+  //     const name = nameInput.value;
+  //     const city = cityInput.value;
+  //     const country = countrySelect.options[countrySelect.selectedIndex].text;
+  //     const message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\nJe souhaite commander le produit :\n${product.name}.`;
+  //     const whatsappUrl = `https://wa.me/${product.vendorPhone}?text=${encodeURIComponent(message)}`;
+  //     window.open(whatsappUrl, '_blank');
+  //     modal.style.display = 'none';
+  //     form.reset(); 
+  //   } else {
+  //     alert('Veuillez remplir correctement tous les champs.');
+  //   }
+  // });
+
+
+  // Ajouter un événement de soumission au formulaire
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (validateForm()) {
       const name = nameInput.value;
       const city = cityInput.value;
       const country = countrySelect.options[countrySelect.selectedIndex].text;
-      const message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\nJe souhaite commander le produit :\n${product.name}.`;
-      const whatsappUrl = `https://wa.me/${product.vendorPhone}?text=${encodeURIComponent(message)}`;
+
+      // Informations sur le produit
+      const productName = product.name;
+      const productDescription = product.description;
+      const productPrice = product.price;
+      const productImages = product.images; // Tableau d'URL des images
+      const vendorPhone = product.vendorPhone;
+      const productLink = window.location.href; // Lien actuel de la page du produit
+
+      // Construire le message WhatsApp
+      let message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\n`;
+      message += `Je souhaite commander le produit :\n`;
+      message += `- Nom : ${productName}\n`;
+      message += `- Description : ${productDescription}\n`;
+      message += `- Prix : ${productPrice} FCFA\n`;
+      message += `- Lien : ${productLink}\n`;
+
+      // Ajouter les images au message
+      if (productImages && productImages.length > 0) {
+          message += `- Images :\n`;
+          productImages.forEach((image, index) => {
+              message += `   ${index + 1}. ${image}\n`;
+          });
+      }
+
+      // Encodage de l'URL de WhatsApp
+      const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
       modal.style.display = 'none';
-      form.reset(); 
-    } else {
+      form.reset();
+  } else {
       alert('Veuillez remplir correctement tous les champs.');
-    }
-  });
+  }
+});
+
 
   // Validation du formulaire
   function validateForm() {
