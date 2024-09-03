@@ -18,7 +18,7 @@ const products = [
       id: 2,
       name: 'Ensemble femme',
       description: 'Toutes les tailles | S, L, M, XL ',
-      price: 1200,
+      price: 6500,
       images: [
         'https://live.staticflickr.com/65535/53918326358_3338d3cc5a_w.jpg',
         'https://live.staticflickr.com/65535/53918525480_4f51da965d_n.jpg',
@@ -30,7 +30,7 @@ const products = [
       id: 3,
       name: 'Sacs de Téléphone portable ',
       description: 'Brassard De Sport pour Téléphone Portable Pour Tous Les Téléphones mobiles Accessoire',
-      price: 25000,
+      price: 2500,
       images: [
         'https://s.alicdn.com/@sc04/kf/HTB1FQLZXOnrK1Rjy1Xcq6yeDVXah.jpg',
         'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSszcq6zwhFXaW.jpg',
@@ -42,8 +42,7 @@ const products = [
       id: 4,
       name: 'Custom Brand',
       description: "Costume 3 pièces élégant avec pantalon pour homme, coupe Slim, bouton unique, tenue de soirée formelle, costume d'affaires",
-      price: 150000,
-
+      price: 80000,
       images: [
         'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
         'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
@@ -55,7 +54,7 @@ const products = [
       id: 5,
       name: '	Femmes Sexy Jupe',
       description: 'Jupe en denim pour femmes, longue, taille haute, mode de bureau, style décontracté, nouvelle collection été',
-      price: 10000,
+      price: 6500,
       images: [
         'https://s.alicdn.com/@sc04/kf/H85526e7e55e443c593b9302487ad2ba2R.jpg',
         'https://s.alicdn.com/@sc04/kf/H1f7aaa81232649b4b352c4e228268009O.jpg',
@@ -93,7 +92,7 @@ const products = [
         id: 8,
         name: 'Robe de soirée femme',
         description: '100% Polyester Vente en gros de vêtements personnalisés pour femmes robes de bal en satin pour femme robe de soirée enveloppante chic à une épaule robe élégante',
-        price: 20000,
+        price: 15000,
         images: [
           'https://s.alicdn.com/@sc04/kf/Hbfc38afed3fc4b3984e40cbc5ed8a49cP.jpg',
           'https://s.alicdn.com/@sc04/kf/H5710996c11594111ad7b127ee5c8cd741.jpg',
@@ -105,7 +104,7 @@ const products = [
         id: 9,
         name: 'sacs à main vintage pour dames',
         description: 'Grands sacs à main vintage pour dames: modèle 2023, fourre-tout en cuir PU et polyester, sacs à bandoulière chics pour femmes',
-        price: 7000,
+        price: 6500,
         images: [
           'https://s.alicdn.com/@sc04/kf/H2aa20b2331584b08914ebfdbecc8f76eo.jpg',
           'https://s.alicdn.com/@sc04/kf/H7d09183f2f284305bb1d08834b842c4eY.jpg',
@@ -129,7 +128,7 @@ const products = [
         id: 11, 
         name: 'Pull Homme | Femme',  
         description: 'Blanc personnalisé à manches longues hiver coton français éponge pull sweat mince Couple ras du cou sweats à capuche et sweats',
-        price: 9000,
+        price: 6000,
         images: [
           'https://s.alicdn.com/@sc04/kf/H41b80ca10ccd4bac8264eefd48316704V.jpg',
           'https://s.alicdn.com/@sc04/kf/H491e6c1e4845486abc3afc8718c9a964W.jpg',
@@ -140,7 +139,7 @@ const products = [
         id: 12, 
         name: 'Combinaison femmes',  
         description: 'combinaison femmes lâche plissé large jambe combinaisons élégant bureau dames à manches longues combinaison avec ceinture',
-        price: 20000,
+        price: 10000,
         images: [
           'https://s.alicdn.com/@sc04/kf/H58cb15421aa94bc5a813bf8f4b883a3bY.png',
           'https://s.alicdn.com/@sc04/kf/H9d075e179f454d2388796c5bda521df3Q.jpg',
@@ -155,7 +154,7 @@ const products = [
         id: 13, 
         name: 'Chemises Hommes',  
         description: "Chemises pour hommes en pur coton, Anti-rétricissant, Anti-rides, Respirant, Séchage rapide, Autres de vente chaude, couleur unie, chemise bleue vierge, chemise à manches longues à revers, en stock, rapidement envoyé",
-        price: 70000,
+        price: 6500,
         images: [
           'https://s.alicdn.com/@sc04/kf/H12cdfb8eaa3a4929be28cba2d2c701cbW.jpg',
           'https://s.alicdn.com/@sc04/kf/H2d6d61a7e124466a8ab87e3d4e9d6a38c.jpg',
@@ -169,7 +168,7 @@ const products = [
         id: 14, 
         name: 'Chemises Hommes',  
         description: "Chemise de couleur unie Oxford tissée mince pour hommes, chemise à manches longues pour hommes, nouvelle collection d'automne transfrontalier",
-        price: 70000,
+        price: 6000,
         images: [
           'https://s.alicdn.com/@sc04/kf/H414fc4a08f8f4b0690dd30d2118a0f8eU.jpg',
           'https://s.alicdn.com/@sc04/kf/H1be3e820295b438588483000eb45c891l.jpg',
@@ -183,7 +182,7 @@ const products = [
         id: 15, 
         name: 'Ensembles de shorts',  
         description: "Ensembles de shorts pour hommes Ensemble de chemises d'été personnalisées pour hommes Ensemble de t-shirts et shorts de plage à manches courtes",
-        price: 90000,
+        price: 7000,
         images: [
           'https://s.alicdn.com/@sc04/kf/Hc13922b4f77741a1971d5d3ea8164f73P.png',
           'https://s.alicdn.com/@sc04/kf/H70702c2fbcca4385add27f95d2f9f5fcp.png',
@@ -197,7 +196,7 @@ const products = [
       id: 16, 
       name: 'draps plats',  
       description: "Vente en gros de draps plats en polyester brossé en microfibre ensembles de draps et taies d'oreiller",
-      price: 90000,
+      price: 6500,
       images: [
         'https://s.alicdn.com/@sc04/kf/Ha9658f0230284f87ac87c68821d68bb2G.jpg',
         'https://s.alicdn.com/@sc04/kf/H5423e303cfbb47529b3600661f20c20cx.jpg',
@@ -211,7 +210,7 @@ const products = [
       id: 17, 
       name: 'Drap-housse',  
       description: "Drap-housse à imprimé café avec taies d'oreiller, housse de protection de matelas, taille King/Queen/Twin, 3 pièces",
-      price: 10000,
+      price: 6000,
       images: [
         'https://s.alicdn.com/@sc04/kf/Hb9327b0ad28d4d7592200ae312ad278be.jpg',
         'https://s.alicdn.com/@sc04/kf/Hd563096c298245a59a298ff69c296e67C.jpg',
@@ -226,7 +225,7 @@ const products = [
       id: 18, 
       name: 'Mini broyeur',  
       description: "Nouveau hachoir à lame en métal manuel Mini broyeur d'ail en acier inoxydable pour légumes et fruits pour usage en cuisine",
-      price: 7000,
+      price: 5000,
       images: [
         'https://s.alicdn.com/@sc04/kf/H2890d50f345f4056ac236fad8fbb5f8cU.png',
         'https://s.alicdn.com/@sc04/kf/Hdde0ea2ed30944f0ada91c76439c16e8V.png',
@@ -241,7 +240,7 @@ const products = [
       id: 19, 
       name: 'Contrôleur de jeu sans fil 2.4G ',  
       description: "PG-9076 contrôleur de jeu sans fil 2.4G pour Android Smartphone iOS Gamepad pour PC PS3 poignée Joystick",
-      price: 20000,
+      price: 8000,
       images: [
         'https://s.alicdn.com/@sc04/kf/Hc1c0b699684b42b6a00dd234944547184.jpg',
         'https://s.alicdn.com/@sc04/kf/H206a15ef54194c5c831b9c5ae6fe2b6fR.jpg',
@@ -256,7 +255,7 @@ const products = [
       id: 20,// Vêtements raison
       name: 'Ensemble H&F',
       description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
-      price: 9000,
+      price: 8000,
       images: [
         'https://live.staticflickr.com/65535/53808149299_845e11f25b_w.jpg',
         'https://live.staticflickr.com/65535/53806891127_2371ca23f1_w.jpg',
@@ -269,7 +268,7 @@ const products = [
       id: 21,// Vêtements raison
       name: 'Ensemble H&F',
       description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
-      price: 9000,
+      price: 8000,
       images: [
         'https://live.staticflickr.com/65535/53806891132_5b166f4f7c_w.jpg',
         'https://live.staticflickr.com/65535/53808066533_a7ee9543a0_w.jpg',
@@ -281,7 +280,7 @@ const products = [
       id: 22,// Vêtements raison
       name: 'Ensemble H&F',
       description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
-      price: 9000,
+      price: 6500,
       images: [
         'https://live.staticflickr.com/65535/53808261695_161b2c5f85_w.jpg',
         'https://live.staticflickr.com/65535/53807824376_456948f358_w.jpg',
@@ -292,7 +291,7 @@ const products = [
       id: 23,// Vêtements raison
       name: 'Ensemble H&F',
       description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
-      price: 9000,
+      price: 6000,
       images: [
         'https://live.staticflickr.com/65535/53808149329_59e6f358e4_w.jpg',
         'https://live.staticflickr.com/65535/53806891147_67fec9235b_w.jpg',
@@ -303,10 +302,10 @@ const products = [
       vendorPhone: '+221784743356' 
     },
     {
-      id: 23,// Vêtements raison
+      id: 24,// Vêtements raison
       name: 'Ensemble H&F',
       description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
-      price: 9000,
+      price: 6500,
       images: [
         'https://live.staticflickr.com/65535/53806891187_ee975c0252_w.jpg',
         'https://live.staticflickr.com/65535/53807824386_ed8b86f2b0_w.jpg',
@@ -317,10 +316,10 @@ const products = [
       vendorPhone: '+221784743356' 
     },
     {
-      id: 24,// Vêtements raison
+      id: 25,// Vêtements raison
       name: 'Ensemble Femme',
       description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
-      price: 9000,
+      price: 6000,
       images: [
         'https://live.staticflickr.com/65535/53806891187_ee975c0252_w.jpg',
         'https://live.staticflickr.com/65535/53807824376_456948f358_w.jpg',
@@ -328,10 +327,10 @@ const products = [
       vendorPhone: '+221784743356' 
     },
     {
-      id: 25,// Vêtements raison
+      id: 26,// Vêtements raison
       name: 'Ensemble Femme',
       description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
-      price: 9000,
+      price: 6500,
       images: [
         'https://live.staticflickr.com/65535/53808261755_e378a6ecb9_w.jpg',
         'https://live.staticflickr.com/65535/53806891177_413d86dc4a_w.jpg',
@@ -339,10 +338,10 @@ const products = [
       vendorPhone: '+221784743356' 
     },
     {
-      id: 26,// Vêtements raison
+      id: 27,// Vêtements raison
       name: 'Ensemble Femme',
       description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
-      price: 9000,
+      price: 7000,
       images: [
         'https://live.staticflickr.com/65535/53807824286_05c79659ab_n.jpg',
         'https://live.staticflickr.com/65535/53808261645_240d0c12aa_w.jpg',
@@ -350,10 +349,10 @@ const products = [
       vendorPhone: '+221784743356' 
     },
     {
-      id: 27,// Vêtements raison
+      id: 28,// Vêtements raison
       name: 'Ensemble Femme',
       description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
-      price: 9000,
+      price: 6000,
       images: [
         'https://live.staticflickr.com/65535/53806891072_2c565e3b87_w.jpg',
         'https://live.staticflickr.com/65535/53806891097_5e15fa9968_n.jpg',
@@ -362,10 +361,10 @@ const products = [
       vendorPhone: '+221784743356' 
     },
     {
-      id: 27,// Vêtements raison
+      id: 29,// Vêtements raison
       name: 'Ensemble Femme',
       description: 'Tissu en coton,\n Disponible taille L | XL | XXL | 3XL',
-      price: 9000,
+      price: 3000,
       images: [
         'https://live.staticflickr.com/65535/53808149244_2e6ec6330a_n.jpg',
         'https://live.staticflickr.com/65535/53808149274_c14f032e24_n.jpg',

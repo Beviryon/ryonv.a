@@ -11,8 +11,8 @@ images: [
 ],
 vendorPhone: '+221784743356',
 promotion: {
-  discount: 10, 
-  endDate: '2024-08-15T23:59:59' 
+  discount: -10, 
+  endDate: '2024-09-15T23:59:59' 
 },
 stock: 15
 },
@@ -21,7 +21,7 @@ stock: 15
 id: 2,// Vêtements raison
 name: 'Ensemble femme',
 description: 'Toutes les tailles',
-price: 7000,
+price: 6500,
 category: 'vetements',
 images: [
 'https://live.staticflickr.com/65535/53918326358_3338d3cc5a_w.jpg',
@@ -53,7 +53,7 @@ stock: 15
 id: 4,
 name: 'Custom Brand',
 description: 'Costumes de pantalon',
-price: 150000,
+price: 80000,
 category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
@@ -68,7 +68,7 @@ stock: 10
 id: 5,
 name: 'Femmes Sexy Jupe',
 description: '100% coton Denim',
-price: 10000,
+price: 6500,
 category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/H85526e7e55e443c593b9302487ad2ba2R.jpg',
@@ -116,7 +116,7 @@ stock: 20
 id: 8,
 name: 'Robe de soirée femme',
 description: '100% Polyester',
-price: 20000,
+price: 15000,
 category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/Hbfc38afed3fc4b3984e40cbc5ed8a49cP.jpg',
@@ -135,7 +135,7 @@ promotion: {
 id: 9,
 name: 'Sac à main',
 description: 'modèle 2023 en cuir',
-price: 7000,
+price: 6500,
 category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/H2aa20b2331584b08914ebfdbecc8f76eo.jpg',
@@ -169,13 +169,13 @@ promotion: {
 id: 11, 
 name: 'Pull ', 
 description: 'Coton/Fibre de bambou',
-price: 9000,
+price: 6000,
 category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/H41b80ca10ccd4bac8264eefd48316704V.jpg',
 'https://s.alicdn.com/@sc04/kf/H491e6c1e4845486abc3afc8718c9a964W.jpg',
 ],
-vendorPhone: '+33758146261',
+vendorPhone: '+221784743356',
 stock: 15,
 promotion: {
   discount: 10, // 10% de réduction
@@ -187,7 +187,7 @@ promotion: {
 id: 12, 
 name: 'Robe', 
 description: 'Polyester',
-price: 20000,
+price: 10000,
 category: 'vetements',
 images: [
 'https://s.alicdn.com/@sc04/kf/H58cb15421aa94bc5a813bf8f4b883a3bY.png',
@@ -197,7 +197,7 @@ images: [
 'https://s.alicdn.com/@sc04/kf/H3d6bd0cb4b8f400f9dde650405b8176f2.jpg',
 'https://s.alicdn.com/@sc04/kf/Hd4264e42d8254abbaa38bacc299612e3M.jpg'
 ],
-vendorPhone: '+33758146261',
+vendorPhone: '+221784743356',
 stock: 20,
 promotion: {
   discount: 10, // 10% de réduction
@@ -209,7 +209,7 @@ promotion: {
 id: 13, 
 name: 'Chemises Hommes', 
 description: 'Col rabattu',
-price: 70000,
+price: 6500,
 category: 'vetements',
 images: [
   'https://s.alicdn.com/@sc04/kf/H12cdfb8eaa3a4929be28cba2d2c701cbW.jpg',
@@ -226,7 +226,7 @@ stock: 10
 id: 14, 
 name: 'Chemises Hommes', 
 description: '	Polyester / coton',
-price: 70000,
+price: 6000,
 category: 'vetements',
 images: [
   'https://s.alicdn.com/@sc04/kf/H414fc4a08f8f4b0690dd30d2118a0f8eU.jpg',
@@ -243,7 +243,7 @@ stock: 15
 id: 15, 
 name: 'Shorts', 
 description: '100% Polyester',
-price: 90000,
+price: 7000,
 category: 'vetements',
 images: [
   'https://s.alicdn.com/@sc04/kf/Hc13922b4f77741a1971d5d3ea8164f73P.png',
@@ -260,7 +260,7 @@ stock: 20
 id: 16, 
 name: 'Draps plats', 
 description: '100% Polyester',
-price: 90000,
+price: 6500,
 category: 'maison',
 images: [
   'https://s.alicdn.com/@sc04/kf/Ha9658f0230284f87ac87c68821d68bb2G.jpg',
@@ -277,7 +277,7 @@ stock: 15
 id: 17, 
 name: 'Drap-housse', 
 description: 'Polyester/cotonr',
-price: 10000,
+price: 6000,
 category: 'maison',
 images: [
   'https://s.alicdn.com/@sc04/kf/Hb9327b0ad28d4d7592200ae312ad278be.jpg',
@@ -295,7 +295,7 @@ stock: 10
 id: 18, 
 name: 'Mixeur', 
 description: 'Fruit et Légumes',
-price: 7000,
+price: 5000,
 category: 'maison',
 images: [
   'https://s.alicdn.com/@sc04/kf/H2890d50f345f4056ac236fad8fbb5f8cU.png',
@@ -305,7 +305,7 @@ images: [
   'https://s.alicdn.com/@sc04/kf/H4a0d44471a694a7d945170de8cdd78f0A.png',
   'https://s.alicdn.com/@sc04/kf/Hcbf55f7354bf4bc9891139bb872a478cx.png'
 ],
-vendorPhone: '+33758146261',
+vendorPhone: '+221784743356',
 stock: 20,
 promotion: {
   discount: 10, // 10% de réduction
@@ -317,7 +317,7 @@ promotion: {
 id: 19, 
 name: 'Manette', 
 description: 'Pour téléphone Mobile',
-price: 20000,
+price: 8000,
 category: 'electronique',
 images: [
   'https://s.alicdn.com/@sc04/kf/Hc1c0b699684b42b6a00dd234944547184.jpg',
@@ -335,7 +335,7 @@ stock: 15
   id: 20,
   name: 'Ensemble H&F',
   description: 'Toutes les tailles',
-  price: 9000,
+  price: 8000,
   category: 'vetements',
   images: [
     'https://live.staticflickr.com/65535/53808149299_845e11f25b_w.jpg',
@@ -351,7 +351,7 @@ stock: 15
   id: 21,// Vêtements raison
   name: 'Ensemble H&F',
   description: 'Toutes les tailles',
-  price: 9000,
+  price: 8000,
   category: 'vetements',
   images: [
     'https://live.staticflickr.com/65535/53806891132_5b166f4f7c_w.jpg',
@@ -369,7 +369,7 @@ stock: 15
   id: 22,// Vêtements raison
   name: 'Ensemble H&F',
   description: 'Toutes les tailles',
-  price: 9000,
+  price: 6500,
   category: 'vetements',
   images: [
     'https://live.staticflickr.com/65535/53808261695_161b2c5f85_w.jpg',
@@ -382,7 +382,7 @@ stock: 15
   id: 23,// Vêtements raison
   name: 'Ensemble H&F',
   description: 'Toutes les tailles',
-  price: 9000,
+  price: 6000,
   category: 'vetements',
   images: [
     'https://live.staticflickr.com/65535/53808149329_59e6f358e4_w.jpg',
@@ -398,7 +398,7 @@ stock: 15
   id: 23,// Vêtements raison
   name: 'Ensemble H&F',
   description: 'Toutes les tailles',
-  price: 9000,
+  price: 6000,
   category: 'vetements',
   images: [
     'https://live.staticflickr.com/65535/53806891187_ee975c0252_w.jpg',
@@ -418,7 +418,7 @@ stock: 15
   id: 24,// Vêtements raison
   name: 'Ensemble Femme',
   description: 'Toutes les tailles',
-  price: 9000,
+  price: 6500,
   category: 'vetements',
   images: [
     'https://live.staticflickr.com/65535/53806891187_ee975c0252_w.jpg',
@@ -431,7 +431,7 @@ stock: 15
   id: 25,// Vêtements raison
   name: 'Ensemble Femme',
   description: 'Toutes les tailles',
-  price: 9000,
+  price: 6000,
   category: 'vetements',
   images: [
     'https://live.staticflickr.com/65535/53808261755_e378a6ecb9_w.jpg',
@@ -444,7 +444,7 @@ stock: 15
   id: 26,// Vêtements raison
   name: 'Ensemble Femme',
   description: 'Toutes les tailles',
-  price: 9000,
+  price: 6500,
   category: 'vetements',
   images: [
     'https://live.staticflickr.com/65535/53807824286_05c79659ab_n.jpg',
@@ -458,7 +458,7 @@ stock: 15
   id: 27,// Vêtements raison
   name: 'Ensemble Femme',
   description: 'Toutes les tailles',
-  price: 9000,
+  price: 7000,
   category: 'vetements',
   images: [
     'https://live.staticflickr.com/65535/53806891072_2c565e3b87_w.jpg',
@@ -473,7 +473,7 @@ stock: 15
     id: 28,
     name: 'Ensemble Femme',
     description: 'Toutes les tailles',
-    price: 9000,
+    price: 6000,
     category: 'vetements',
     images: [
       'https://live.staticflickr.com/65535/53808149244_2e6ec6330a_n.jpg',
@@ -489,7 +489,7 @@ stock: 15
     id: 29,
     name: 'Robe Femme',
     description: 'Toutes les tailles',
-    price: 4000,
+    price: 3000,
     category: 'vetements',
     images: [
       'https://live.staticflickr.com/65535/53918326268_f077d3d109_n.jpg',
