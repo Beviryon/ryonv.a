@@ -9,7 +9,7 @@ images: [
 'https://live.staticflickr.com/65535/53917188752_4573f5fef5_n.jpg',
 'https://live.staticflickr.com/65535/53917188777_b67c965e64_w.jpg',
 ],
-vendorPhone: '+33758146261',
+vendorPhone: '+221784743356',
 promotion: {
   discount: 10, 
   endDate: '2024-08-15T23:59:59' 

@@ -112,13 +112,9 @@ nav {
 
   
   /* Contenu principal */
-  /* main {
-    padding: 2rem;
-    display: flex;
-  }
-   */
+ 
 
-  /* .sidebar {
+ .sidebar {
     width: 100%;
     margin-right: 2rem;
   }
@@ -170,7 +166,7 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(150px, 12fr));
     grid-gap: 1rem;
     width: 100%;
-  } */
+  }
   
   .product-card {
     border: 1px solid #ccc;
@@ -328,12 +324,13 @@ main {
   .sidebar {
     width: 100%;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
     padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    background-color: red;
   }
   
   .sidebar h3 {

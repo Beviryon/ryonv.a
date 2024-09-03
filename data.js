@@ -49,7 +49,7 @@ const products = [
         'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
         'https://s.alicdn.com/@sc04/kf/H6db20e92226c43bc996db6197dd5be93l.jpg'
       ],
-      vendorPhone: '+33758146261' 
+      vendorPhone: '+221784743356' 
     },
     {
       id: 5,
