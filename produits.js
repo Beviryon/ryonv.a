@@ -328,12 +328,15 @@ form.addEventListener('submit', (event) => {
       const country = countrySelect.options[countrySelect.selectedIndex].text;
 
       // Informations sur le produit
+      const productId = product.id; // Récupérer l'ID du produit
       const productName = product.name;
       const productDescription = product.description;
       const productPrice = product.price;
       const productImages = product.images; // Tableau d'URL des images
       const vendorPhone = product.vendorPhone;
-      const productLink = window.location.href; // Lien actuel de la page du produit
+      
+      // Construire le lien du produit
+      const productLink = `http://127.0.0.1:5501/details.html?id=${productId}`;
 
       // Construire le message WhatsApp
       let message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\n`;
@@ -347,7 +350,7 @@ form.addEventListener('submit', (event) => {
       if (productImages && productImages.length > 0) {
           message += `- Images :\n`;
           productImages.forEach((image, index) => {
-              message += `   ${index + 1}. ${image}\n`;
+              message += `   ${index + 1}. Image [${index + 1}](${image})\n`;
           });
       }
 
