@@ -11,7 +11,7 @@ images: [
 ],
 vendorPhone: '+221784743356',
 promotion: {
-  discount: -10, 
+  discount: 10, 
   endDate: '2024-09-15T23:59:59' 
 },
 stock: 15
@@ -30,7 +30,7 @@ images: [
 vendorPhone: '+33758146261',
 promotion: {
   discount: 20, 
-  endDate: '2024-08-15T23:59:59' 
+  endDate: '2024-09-15T23:59:59' 
 },
 stock: 5
 },
@@ -46,6 +46,10 @@ images: [
 'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSszcq6zwhFXaW.jpg',
 'https://s.alicdn.com/@sc04/kf/HTB11gOaiXmWBuNjSspdq6zugXXaQ.jpg',
 ],
+promotion: {
+  discount: 20, 
+  endDate: '2024-09-15T23:59:59' 
+},
 vendorPhone: '+33758146261',
 stock: 15
 },
@@ -60,6 +64,10 @@ images: [
 'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
 'https://s.alicdn.com/@sc04/kf/H6db20e92226c43bc996db6197dd5be93l.jpg'
 ],
+promotion: {
+  discount: 20, 
+  endDate: '2024-09-15T23:59:59' 
+},
 vendorPhone: '+33758146261',
 stock: 10
 },
@@ -77,8 +85,8 @@ images: [
 ],
 vendorPhone: '+33758146261',
 promotion: {
-  discount: 20, // 10% de réduction
-  endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
+  discount: 20, 
+  endDate: '2024-09-15T23:59:59' 
 },
 stock: 15
 },
@@ -94,6 +102,10 @@ images: [
   'https://live.staticflickr.com/65535/53804063223_07ccde5008_b.jpg',
   'https://live.staticflickr.com/65535/53803818431_29f2a5a591_b.jpg'
 ],
+promotion: {
+  discount: 20, 
+  endDate: '2024-09-15T23:59:59' 
+},
 vendorPhone: '+221784743356',
 stock: 20
 },
@@ -108,6 +120,10 @@ images: [
   'https://live.staticflickr.com/65535/53808261640_81983ff3b3_w.jpg',
   'https://live.staticflickr.com/65535/53808261655_a7ccaf6301_n.jpg',
   ],
+  promotion: {
+    discount: 20, 
+    endDate: '2024-09-15T23:59:59' 
+  },
 vendorPhone: '+221784743356',
 stock: 20
 },
@@ -123,6 +139,10 @@ images: [
 'https://s.alicdn.com/@sc04/kf/H5710996c11594111ad7b127ee5c8cd741.jpg',
 'https://s.alicdn.com/@sc04/kf/H43167ad91703404b8f759650953ff9c8B.jpg'
 ],
+promotion: {
+  discount: 20, 
+  endDate: '2024-09-15T23:59:59' 
+},
 vendorPhone: '+33758146261',
 stock: 15,
 promotion: {
@@ -142,6 +162,10 @@ images: [
 'https://s.alicdn.com/@sc04/kf/H7d09183f2f284305bb1d08834b842c4eY.jpg',
 'https://s.alicdn.com/@sc04/kf/H0a2b7c07b5c2400cade43ace2db65141G.jpg'
 ],
+promotion: {
+  discount: 20, 
+  endDate: '2024-09-15T23:59:59' 
+},
 vendorPhone: '+33758146261',
 stock: 20
 },
@@ -178,8 +202,8 @@ images: [
 vendorPhone: '+221784743356',
 stock: 15,
 promotion: {
-  discount: 10, // 10% de réduction
-  endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
+  discount: 20, 
+  endDate: '2024-09-15T23:59:59' 
 },
 },
 
@@ -201,7 +225,7 @@ vendorPhone: '+221784743356',
 stock: 20,
 promotion: {
   discount: 10, // 10% de réduction
-  endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
+  endDate: '2024-09-15T23:59:59' // Date de fin de la promotion
 },
 },
 
@@ -218,6 +242,10 @@ images: [
   'https://s.alicdn.com/@sc04/kf/Hae3219dab53547cf863174cc0d908c96z.jpg',
   'https://s.alicdn.com/@sc04/kf/Hdf4b5a1e550349f5967b283dca1d84c0h.jpg'
   ],
+  promotion: {
+    discount: 20, 
+    endDate: '2024-09-15T23:59:59' 
+  },
 vendorPhone: '+33758146261',
 stock: 10
 },
@@ -269,6 +297,10 @@ images: [
   'https://s.alicdn.com/@sc04/kf/Hbf6d45e665ba49d1a0b0f71b489aec9bA.jpg',
   'https://s.alicdn.com/@sc04/kf/H80e39df3cadd4f778bd15007d9394ef7H.png'
 ],
+promotion: {
+  discount: 20, 
+  endDate: '2024-09-15T23:59:59' 
+},
 vendorPhone: '+33758146261',
 stock: 15
 },
@@ -287,6 +319,10 @@ images: [
   'https://s.alicdn.com/@sc04/kf/H7270ff5536e1419c858dfbb155434c54U.jpg',
   'https://s.alicdn.com/@sc04/kf/H7c67bde15747449e82c29d2c3d49c4332.jpg'
 ],
+promotion: {
+  discount: 20, 
+  endDate: '2024-09-15T23:59:59' 
+},
 vendorPhone: '+33758146261',
 stock: 10
 },
@@ -309,7 +345,7 @@ vendorPhone: '+221784743356',
 stock: 20,
 promotion: {
   discount: 10, // 10% de réduction
-  endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
+  endDate: '2024-09-15T23:59:59' // Date de fin de la promotion
 },
 },
 
@@ -327,6 +363,10 @@ images: [
   'https://s.alicdn.com/@sc04/kf/H538b2787519d46fab86128f1874d187aw.jpg',
   'https://s.alicdn.com/@sc04/kf/He8f69a08da8f43ba97ce66c76d61e53eF.jpg'
 ],
+promotion: {
+  discount: 20, 
+  endDate: '2024-09-15T23:59:59' 
+},
 vendorPhone: '+33758146261',
 stock: 15
 },
@@ -343,6 +383,10 @@ stock: 15
     'https://live.staticflickr.com/65535/53807824346_a454c0bc44_w.jpg',
     'https://live.staticflickr.com/65535/53808261690_3762aca3df_w.jpg'
   ],
+  promotion: {
+    discount: 20, 
+    endDate: '2024-09-15T23:59:59' 
+  },
   vendorPhone: '+221784743356',
   stock: 30
   },
@@ -362,7 +406,7 @@ stock: 15
   stock: 30,
   promotion: {
     discount: 10, // 10% de réduction
-    endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
+    endDate: '2024-09-15T23:59:59' // Date de fin de la promotion
   },
   },
 {
@@ -375,6 +419,10 @@ stock: 15
     'https://live.staticflickr.com/65535/53808261695_161b2c5f85_w.jpg',
     'https://live.staticflickr.com/65535/53807824376_456948f358_w.jpg',
   ],
+  promotion: {
+    discount: 20, 
+    endDate: '2024-09-15T23:59:59' 
+  },
   vendorPhone: '+221784743356',
   stock: 30
   },
@@ -391,6 +439,10 @@ stock: 15
     'https://live.staticflickr.com/65535/53808066543_08a5387f87_w.jpg',
     'https://live.staticflickr.com/65535/53806891162_5cc02640cf_w.jpg',
   ],
+  promotion: {
+    discount: 20, 
+    endDate: '2024-09-15T23:59:59' 
+  },
   vendorPhone: '+221784743356',
   stock: 30
   },
@@ -411,7 +463,7 @@ stock: 15
   stock: 30,
   promotion: {
     discount: 10, // 10% de réduction
-    endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
+    endDate: '2024-09-15T23:59:59' // Date de fin de la promotion
   },
   },
 {
@@ -424,6 +476,10 @@ stock: 15
     'https://live.staticflickr.com/65535/53806891187_ee975c0252_w.jpg',
     'https://live.staticflickr.com/65535/53807824376_456948f358_w.jpg',
   ],
+  promotion: {
+    discount: 20, 
+    endDate: '2024-09-15T23:59:59' 
+  },
   vendorPhone: '+221784743356',
   stock: 30
   },
@@ -450,6 +506,10 @@ stock: 15
     'https://live.staticflickr.com/65535/53807824286_05c79659ab_n.jpg',
     'https://live.staticflickr.com/65535/53808261645_240d0c12aa_w.jpg',
   ],
+  promotion: {
+    discount: 20, 
+    endDate: '2024-09-15T23:59:59' 
+  },
   vendorPhone: '+221784743356',
   stock: 30
   },
@@ -465,6 +525,10 @@ stock: 15
     'https://live.staticflickr.com/65535/53806891097_5e15fa9968_n.jpg',
     'https://live.staticflickr.com/65535/53807824276_1a10e6dcb0_w.jpg',
   ],
+  promotion: {
+    discount: 20, 
+    endDate: '2024-09-15T23:59:59' 
+  },
   vendorPhone: '+221784743356',
   stock: 30
   },
@@ -495,6 +559,10 @@ stock: 15
       'https://live.staticflickr.com/65535/53918326268_f077d3d109_n.jpg',
       'https://live.staticflickr.com/65535/53917188587_36e66481d6_n.jpg',
     ],
+    promotion: {
+      discount: 20, 
+      endDate: '2024-09-15T23:59:59' 
+    },
     vendorPhone: '+221784743356',
     stock: 30
     },
