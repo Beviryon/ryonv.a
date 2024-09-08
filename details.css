@@ -157,13 +157,17 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2rem;
-    top: 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
   }
   
   #product-info {
     max-width: 800px;
     text-align: center;
+    position: relative;
+    padding: 20px 30px;
+    margin: 50px;
   }
   
   .product-images {
