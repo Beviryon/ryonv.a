@@ -113,9 +113,9 @@ nav {
 /* Styles de base */
 /* Contenu principal */
 main {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 40px 20px;
   }
   
   .sidebar {
@@ -241,12 +241,14 @@ main {
   .sidebar {
     width: 100%;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    padding: 1rem;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
+    /* padding: 1rem; */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 58px;
+    margin:  4px;
   }
   
   .sidebar h3 {
