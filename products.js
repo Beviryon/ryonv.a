@@ -6,13 +6,13 @@ description: 'Toutes les tailles',
 price: 7000,
 category: 'vetements',
 images: [
-'https://live.staticflickr.com/65535/53917188752_4573f5fef5_n.jpg',
-'https://live.staticflickr.com/65535/53917188777_b67c965e64_w.jpg',
+'https://live.staticflickr.com/65535/53918079291_fd5fb40099_n.jpg',
+'https://live.staticflickr.com/65535/53918431534_3744337f06_n.jpg',
 ],
 vendorPhone: '+221784743356',
 promotion: {
   discount: 10, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2024-09-25T23:59:59' 
 },
 stock: 15
 },
@@ -30,13 +30,31 @@ images: [
 vendorPhone: '+33758146261',
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2024-09-25T23:59:59' 
 },
 stock: 5
 },
 
 {
 id: 3,
+name: 'Ensemble deux pièces',
+description: 'Ensemble deux pièces',
+price: 2500,
+category: 'sport',
+images: [
+'https://live.staticflickr.com/65535/53918326223_b42c569af8_w.jpg',
+'https://live.staticflickr.com/65535/53917188547_cac5a4720d_w.jpg',
+'https://live.staticflickr.com/65535/53918326218_f9bf1a5a3d_w.jpg',
+],
+promotion: {
+  discount: 20, 
+  endDate: '2024-09-29T23:59:59' 
+},
+vendorPhone: '+221784743356',
+stock: 15
+},
+{
+id: 31,
 name: 'ZONE Sport ',
 description: 'Sacs de Téléphone portable',
 price: 2500,
@@ -48,11 +66,12 @@ images: [
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2024-09-19T23:59:59' 
 },
 vendorPhone: '+33758146261',
 stock: 15
 },
+
 {
 id: 4,
 name: 'Custom Brand',
@@ -566,6 +585,24 @@ stock: 15
     vendorPhone: '+221784743356',
     stock: 30
     },
+
+    {
+      id: 30,// Vêtements raison
+      name: "Robe Femme",
+      description: 'Toutes les tailles',
+      price: 7000,
+      category: 'vetements',
+      images: [
+      'https://live.staticflickr.com/65535/53917188752_4573f5fef5_n.jpg',
+      'https://live.staticflickr.com/65535/53917188777_b67c965e64_w.jpg',
+      ],
+      vendorPhone: '+221784743356',
+      promotion: {
+        discount: 10, 
+        endDate: '2024-09-25T23:59:59' 
+      },
+      stock: 15
+      },
 
 ];
 

@@ -1,0 +1,26 @@
+/* Styles pour le dashboard */
+#dashboard {
+    padding: 20px;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  button {
+    margin: 5px;
+  }
+  
+  #product-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  #product-form input, #product-form textarea {
+    display: block;
+    margin: 10px 0;
+  }
+  

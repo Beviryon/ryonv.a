@@ -5,11 +5,8 @@ const products = [
       description: ' Toutes les tailles | S, L, M, XL ',
       price: 7000,
       images: [
-        'https://live.staticflickr.com/65535/53917188752_4573f5fef5_n.jpg',
-        'https://live.staticflickr.com/65535/53917188777_b67c965e64_w.jpg',
-        'https://live.staticflickr.com/65535/53918079316_f5d4b32b37_w.jpg',
-        'https://live.staticflickr.com/65535/53918431524_d372a79efc_n.jpg',
-        'https://live.staticflickr.com/65535/53918079321_47efa595d3_w.jpg',
+        'https://live.staticflickr.com/65535/53918079291_fd5fb40099_n.jpg',
+        'https://live.staticflickr.com/65535/53918431534_3744337f06_n.jpg',
         ],
       vendorPhone: '+33758146261' 
     },
@@ -28,6 +25,18 @@ const products = [
     },
     {
       id: 3,
+      name: 'Ensemble deux pièces',
+      description: 'Ensemble deux pièces',
+      price: 2500,
+      images: [
+        'https://live.staticflickr.com/65535/53918326223_b42c569af8_w.jpg',
+        'https://live.staticflickr.com/65535/53917188547_cac5a4720d_w.jpg',
+        'https://live.staticflickr.com/65535/53918326218_f9bf1a5a3d_w.jpg',
+        ],
+      vendorPhone: '+33758146261' 
+    },
+    {
+      id: 31,
       name: 'Sacs de Téléphone portable ',
       description: 'Brassard De Sport pour Téléphone Portable Pour Tous Les Téléphones mobiles Accessoire',
       price: 2500,
@@ -373,6 +382,21 @@ const products = [
         'https://live.staticflickr.com/65535/53807824316_5c8fcdd4f2_w.jpg',
       ],
       vendorPhone: '+221784743356' 
+    },
+
+    {
+      id: 30,
+      name: 'Robe Femme',
+      description: ' Toutes les tailles | S, L, M, XL ',
+      price: 7000,
+      images: [
+        'https://live.staticflickr.com/65535/53917188752_4573f5fef5_n.jpg',
+        'https://live.staticflickr.com/65535/53917188777_b67c965e64_w.jpg',
+        'https://live.staticflickr.com/65535/53918079316_f5d4b32b37_w.jpg',
+        'https://live.staticflickr.com/65535/53918431524_d372a79efc_n.jpg',
+        'https://live.staticflickr.com/65535/53918079321_47efa595d3_w.jpg',
+        ],
+      vendorPhone: '+33758146261' 
     },
 
   ];

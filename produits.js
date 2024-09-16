@@ -349,7 +349,7 @@ form.addEventListener('submit', (event) => {
       // Ajouter les images au message
       if (productImages && productImages.length > 0) {
           message += `- Images :\n`;
-          productImages.forEach((image, index) => {
+          productImages.forEach((image, index ) => {
               message += `   ${index + 1}. ${image}\n`;
           });
       }
