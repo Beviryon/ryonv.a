@@ -40,7 +40,7 @@ id: 3,
 name: 'Ensemble deux pièces',
 description: 'Ensemble deux pièces',
 price: 2500,
-category: 'sport',
+category: 'vetements',
 images: [
 'https://live.staticflickr.com/65535/53918326223_b42c569af8_w.jpg',
 'https://live.staticflickr.com/65535/53917188547_cac5a4720d_w.jpg',
@@ -53,62 +53,47 @@ promotion: {
 vendorPhone: '+221784743356',
 stock: 15
 },
-{
-id: 31,
-name: 'ZONE Sport ',
-description: 'Sacs de Téléphone portable',
-price: 2500,
-category: 'sport',
-images: [
-'https://s.alicdn.com/@sc04/kf/HTB1FQLZXOnrK1Rjy1Xcq6yeDVXah.jpg',
-'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSszcq6zwhFXaW.jpg',
-'https://s.alicdn.com/@sc04/kf/HTB11gOaiXmWBuNjSspdq6zugXXaQ.jpg',
-],
-promotion: {
-  discount: 20, 
-  endDate: '2024-09-19T23:59:59' 
-},
-vendorPhone: '+33758146261',
-stock: 15
-},
 
 {
 id: 4,
-name: 'Custom Brand',
-description: 'Costumes de pantalon',
-price: 80000,
+name: 'Ensemble deux pièces',
+description: 'L XL XXL 3XL',
+price: 7500,
 category: 'vetements',
 images: [
-'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
-'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
-'https://s.alicdn.com/@sc04/kf/H6db20e92226c43bc996db6197dd5be93l.jpg'
+'https://live.staticflickr.com/65535/53999356837_c71364c768_w.jpg',
+'https://live.staticflickr.com/65535/54000575439_d80a7113a9_n.jpg',
+'https://live.staticflickr.com/65535/54000250216_fd5f629c82_n.jpg',
+'https://live.staticflickr.com/65535/54000250176_a63038d3e9_w.jpg',
+'https://live.staticflickr.com/65535/54000575489_715f39d960_w.jpg',
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2024-09-29T23:59:59' 
 },
-vendorPhone: '+33758146261',
-stock: 10
+vendorPhone: '+221784743356',
+stock: 15
 },
 
 {
 id: 5,
-name: 'Femmes Sexy Jupe',
-description: '100% coton Denim',
-price: 6500,
+name: 'Robe',
+description: 'S L XL XXL 3XL',
+price: 7500,
 category: 'vetements',
 images: [
-'https://s.alicdn.com/@sc04/kf/H85526e7e55e443c593b9302487ad2ba2R.jpg',
-'https://s.alicdn.com/@sc04/kf/H1f7aaa81232649b4b352c4e228268009O.jpg',
-'https://s.alicdn.com/@sc04/kf/Hfde0ff53a70a41ad82d118ee575586ffY.jpg'
+'https://live.staticflickr.com/65535/54000490618_fc587ecc95_w.jpg',
+'https://live.staticflickr.com/65535/54000575484_55fd83c68c_w.jpg',
+'https://live.staticflickr.com/65535/54000250171_f35e13ae50_w.jpg',
 ],
-vendorPhone: '+33758146261',
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2024-09-29T23:59:59' 
 },
+vendorPhone: '+221784743356',
 stock: 15
 },
+
 
 {
 id: 6,// Vêtements raison
@@ -603,6 +588,63 @@ stock: 15
       },
       stock: 15
       },
+
+      {
+        id: 31,
+        name: 'ZONE Sport ',
+        description: 'Sacs de Téléphone portable',
+        price: 2500,
+        category: 'sport',
+        images: [
+        'https://s.alicdn.com/@sc04/kf/HTB1FQLZXOnrK1Rjy1Xcq6yeDVXah.jpg',
+        'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSszcq6zwhFXaW.jpg',
+        'https://s.alicdn.com/@sc04/kf/HTB11gOaiXmWBuNjSspdq6zugXXaQ.jpg',
+        ],
+        promotion: {
+          discount: 20, 
+          endDate: '2024-09-19T23:59:59' 
+        },
+        vendorPhone: '+33758146261',
+        stock: 15
+        },
+
+        {
+          id: 32,
+          name: 'Custom Brand',
+          description: 'Costumes de pantalon',
+          price: 80000,
+          category: 'vetements',
+          images: [
+          'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
+          'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
+          'https://s.alicdn.com/@sc04/kf/H6db20e92226c43bc996db6197dd5be93l.jpg'
+          ],
+          promotion: {
+            discount: 20, 
+            endDate: '2024-09-15T23:59:59' 
+          },
+          vendorPhone: '+33758146261',
+          stock: 10
+          },
+
+          {
+            id: 33,
+            name: 'Femmes Sexy Jupe',
+            description: '100% coton Denim',
+            price: 6500,
+            category: 'vetements',
+            images: [
+            'https://s.alicdn.com/@sc04/kf/H85526e7e55e443c593b9302487ad2ba2R.jpg',
+            'https://s.alicdn.com/@sc04/kf/H1f7aaa81232649b4b352c4e228268009O.jpg',
+            'https://s.alicdn.com/@sc04/kf/Hfde0ff53a70a41ad82d118ee575586ffY.jpg'
+            ],
+            vendorPhone: '+33758146261',
+            promotion: {
+              discount: 20, 
+              endDate: '2024-09-15T23:59:59' 
+            },
+            stock: 15
+            },
 
 ];
 

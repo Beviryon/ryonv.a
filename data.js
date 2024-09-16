@@ -36,29 +36,19 @@ const products = [
       vendorPhone: '+33758146261' 
     },
     {
-      id: 31,
-      name: 'Sacs de Téléphone portable ',
-      description: 'Brassard De Sport pour Téléphone Portable Pour Tous Les Téléphones mobiles Accessoire',
+      id: 4,
+      name: 'Ensemble deux pièces',
+      description: 'Ensemble deux pièces',
       price: 2500,
       images: [
-        'https://s.alicdn.com/@sc04/kf/HTB1FQLZXOnrK1Rjy1Xcq6yeDVXah.jpg',
-        'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSszcq6zwhFXaW.jpg',
-        'https://s.alicdn.com/@sc04/kf/HTB11gOaiXmWBuNjSspdq6zugXXaQ.jpg',
-      ],
+        'https://live.staticflickr.com/65535/53918326223_b42c569af8_w.jpg',
+        'https://live.staticflickr.com/65535/53917188547_cac5a4720d_w.jpg',
+        'https://live.staticflickr.com/65535/53918326218_f9bf1a5a3d_w.jpg',
+        ],
       vendorPhone: '+33758146261' 
     },
-    {
-      id: 4,
-      name: 'Custom Brand',
-      description: "Costume 3 pièces élégant avec pantalon pour homme, coupe Slim, bouton unique, tenue de soirée formelle, costume d'affaires",
-      price: 80000,
-      images: [
-        'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
-        'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
-        'https://s.alicdn.com/@sc04/kf/H6db20e92226c43bc996db6197dd5be93l.jpg'
-      ],
-      vendorPhone: '+221784743356' 
-    },
+
+
     {
       id: 5,
       name: '	Femmes Sexy Jupe',
@@ -397,6 +387,32 @@ const products = [
         'https://live.staticflickr.com/65535/53918079321_47efa595d3_w.jpg',
         ],
       vendorPhone: '+33758146261' 
+    },
+
+    {
+      id: 31,
+      name: 'Sacs de Téléphone portable ',
+      description: 'Brassard De Sport pour Téléphone Portable Pour Tous Les Téléphones mobiles Accessoire',
+      price: 2500,
+      images: [
+        'https://s.alicdn.com/@sc04/kf/HTB1FQLZXOnrK1Rjy1Xcq6yeDVXah.jpg',
+        'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSszcq6zwhFXaW.jpg',
+        'https://s.alicdn.com/@sc04/kf/HTB11gOaiXmWBuNjSspdq6zugXXaQ.jpg',
+      ],
+      vendorPhone: '+33758146261' 
+    },
+
+    {
+      id: 32,
+      name: 'Custom Brand',
+      description: "Costume 3 pièces élégant avec pantalon pour homme, coupe Slim, bouton unique, tenue de soirée formelle, costume d'affaires",
+      price: 80000,
+      images: [
+        'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
+        'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
+        'https://s.alicdn.com/@sc04/kf/H6db20e92226c43bc996db6197dd5be93l.jpg'
+      ],
+      vendorPhone: '+221784743356' 
     },
 
   ];
