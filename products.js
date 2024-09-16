@@ -305,7 +305,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-09-15T23:59:59' 
 },
-vendorPhone: '+33758146261',
+vendorPhone: '+242065235530',
 stock: 15
 },
 
@@ -327,7 +327,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-09-15T23:59:59' 
 },
-vendorPhone: '+33758146261',
+vendorPhone: '+242065235530',
 stock: 10
 },
 
