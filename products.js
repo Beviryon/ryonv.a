@@ -3,7 +3,7 @@ const products = [
 id: 1,// Vêtements 
 name: "Robe Femme",
 description: 'Toutes les tailles',
-price: 7000,
+price: 13000,
 category: 'vetements',
 images: [
 'https://live.staticflickr.com/65535/54004585421_9786d774ef_w.jpg',
@@ -54,15 +54,16 @@ stock: 5
 },
 
 {
-id: 3,
-name: 'Ensemble deux pièces',
-description: 'Ensemble deux pièces',
-price: 2500,
+id: 33,
+name: 'Perruque',
+description: 'Toutes les tailles',
+price: 25000,
 category: 'vetements',
 images: [
-'https://live.staticflickr.com/65535/53918326223_b42c569af8_w.jpg',
-'https://live.staticflickr.com/65535/53917188547_cac5a4720d_w.jpg',
-'https://live.staticflickr.com/65535/53918326218_f9bf1a5a3d_w.jpg',
+'https://live.staticflickr.com/65535/54003722967_4476dfc92d_n.jpg',
+'https://live.staticflickr.com/65535/54003722832_4ab8cf4d60_w.jpg',
+'https://live.staticflickr.com/65535/54004860668_deebf9bb45_n.jpg',
+'https://live.staticflickr.com/65535/54003722967_4476dfc92d_n.jpg',
 ],
 promotion: {
   discount: 20, 

@@ -3,7 +3,7 @@ const products = [
       id: 1,
       name: 'Robe Femme',
       description: ' Toutes les tailles | S, L, M, XL ',
-      price: 7000,
+      price: 13000,
       images: [
         'https://live.staticflickr.com/65535/54004585421_9786d774ef_w.jpg',
         'https://live.staticflickr.com/65535/54005006385_ea4b85b8e5_w.jpg',
@@ -28,7 +28,7 @@ const products = [
       description: 'Toutes les tailles | S, L, M, XL ',
       price: 6500,
       images: [
-        'https://live.staticflickr.com/65535/53918326358_3338d3cc5a_w.jpg',
+        'https://live.staticflickr.com/65535/54003722832_4ab8cf4d60_w.jpg',
         'https://live.staticflickr.com/65535/53918525480_4f51da965d_n.jpg',
         'https://live.staticflickr.com/65535/53918326368_3007678649_w.jpg',
       ],
@@ -37,13 +37,14 @@ const products = [
     
     {
       id: 33,
-      name: 'Ensemble deux pièces',
-      description: 'Ensemble deux pièces',
+      name: 'Perruques',
+      description: 'Toutes les tailles',
       price: 2500,
       images: [
-        'https://live.staticflickr.com/65535/53918326223_b42c569af8_w.jpg',
-        'https://live.staticflickr.com/65535/53917188547_cac5a4720d_w.jpg',
-        'https://live.staticflickr.com/65535/53918326218_f9bf1a5a3d_w.jpg',
+        'https://live.staticflickr.com/65535/54003722967_4476dfc92d_n.jpg',
+        'https://live.staticflickr.com/65535/54003722832_4ab8cf4d60_w.jpg',
+        'https://live.staticflickr.com/65535/54004860668_deebf9bb45_n.jpg',
+        'https://live.staticflickr.com/65535/54003722967_4476dfc92d_n.jpg',
         ],
       vendorPhone: '+33758146261' 
     },
