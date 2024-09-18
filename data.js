@@ -39,14 +39,14 @@ const products = [
       id: 33,
       name: 'Perruques',
       description: 'Toutes les tailles',
-      price: 2500,
+      price: 25000,
       images: [
         'https://live.staticflickr.com/65535/54003722967_4476dfc92d_n.jpg',
         'https://live.staticflickr.com/65535/54003722832_4ab8cf4d60_w.jpg',
         'https://live.staticflickr.com/65535/54004860668_deebf9bb45_n.jpg',
         'https://live.staticflickr.com/65535/54003722967_4476dfc92d_n.jpg',
         ],
-      vendorPhone: '+33758146261' 
+      vendorPhone: '+221781520600' 
     },
 
     {
