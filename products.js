@@ -69,7 +69,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-09-29T23:59:59' 
 },
-vendorPhone: '+221784743356',
+vendorPhone: '+221781520600',
 stock: 15
 },
 
