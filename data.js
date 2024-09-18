@@ -5,6 +5,17 @@ const products = [
       description: ' Toutes les tailles | S, L, M, XL ',
       price: 7000,
       images: [
+        'https://live.staticflickr.com/65535/54004585421_9786d774ef_w.jpg',
+        'https://live.staticflickr.com/65535/54005006385_ea4b85b8e5_w.jpg',
+        ],
+      vendorPhone: '+221781520600' 
+    },
+    {
+      id: 2,
+      name: 'Robe Femme',
+      description: ' Toutes les tailles | S, L, M, XL ',
+      price: 7000,
+      images: [
         'https://live.staticflickr.com/65535/53918079291_fd5fb40099_n.jpg',
         'https://live.staticflickr.com/65535/53918431534_3744337f06_n.jpg',
         ],
@@ -12,7 +23,7 @@ const products = [
     },
 
     {
-      id: 2,
+      id: 3,
       name: 'Ensemble femme',
       description: 'Toutes les tailles | S, L, M, XL ',
       price: 6500,
@@ -23,6 +34,20 @@ const products = [
       ],
       vendorPhone: '+33758146261' 
     },
+    
+    {
+      id: 33,
+      name: 'Ensemble deux pièces',
+      description: 'Ensemble deux pièces',
+      price: 2500,
+      images: [
+        'https://live.staticflickr.com/65535/53918326223_b42c569af8_w.jpg',
+        'https://live.staticflickr.com/65535/53917188547_cac5a4720d_w.jpg',
+        'https://live.staticflickr.com/65535/53918326218_f9bf1a5a3d_w.jpg',
+        ],
+      vendorPhone: '+33758146261' 
+    },
+
     {
       id: 3,
       name: 'Ensemble deux pièces',
@@ -35,6 +60,7 @@ const products = [
         ],
       vendorPhone: '+33758146261' 
     },
+   
     {
       id: 4,
       name: 'Ensemble deux pièces',
@@ -60,6 +86,17 @@ const products = [
         'https://s.alicdn.com/@sc04/kf/Hfde0ff53a70a41ad82d118ee575586ffY.jpg'
         ],
       vendorPhone: '+33758146261' 
+    },
+    {
+      id: 34,// Vêtements 
+      name: 'Robe',
+      description: 'Tailles: XL | M | L',
+      price: 8000,
+      images: [
+        'https://live.staticflickr.com/65535/54004910659_fa98b38975_n.jpg',
+        'https://live.staticflickr.com/65535/54003677497_c177414031_n.jpg',
+        ],
+      vendorPhone: '+221781520600' 
     },
     {
       id: 6,// Vêtements raison
@@ -414,5 +451,6 @@ const products = [
       ],
       vendorPhone: '+221784743356' 
     },
+
 
   ];

@@ -1,6 +1,24 @@
 const products = [
 {
-id: 1,// Vêtements raison
+id: 1,// Vêtements 
+name: "Robe Femme",
+description: 'Toutes les tailles',
+price: 7000,
+category: 'vetements',
+images: [
+'https://live.staticflickr.com/65535/54004585421_9786d774ef_w.jpg',
+'https://live.staticflickr.com/65535/54005006385_ea4b85b8e5_w.jpg',
+],
+vendorPhone: '+221781520600',
+promotion: {
+  discount: 10, 
+  endDate: '2024-09-25T23:59:59' 
+},
+stock: 15
+},
+
+{
+id: 2,// Vêtements raison
 name: "Robe Femme",
 description: 'Toutes les tailles',
 price: 7000,
@@ -18,7 +36,7 @@ stock: 15
 },
 
 {
-id: 2,// Vêtements raison
+id: 3,// Vêtements raison
 name: 'Ensemble femme',
 description: 'Toutes les tailles',
 price: 6500,
@@ -53,6 +71,25 @@ promotion: {
 vendorPhone: '+221784743356',
 stock: 15
 },
+
+{
+  id: 33,
+  name: 'Ensemble deux pièces',
+  description: 'Ensemble deux pièces',
+  price: 2500,
+  category: 'vetements',
+  images: [
+  'https://live.staticflickr.com/65535/53918326223_b42c569af8_w.jpg',
+  'https://live.staticflickr.com/65535/53917188547_cac5a4720d_w.jpg',
+  'https://live.staticflickr.com/65535/53918326218_f9bf1a5a3d_w.jpg',
+  ],
+  promotion: {
+    discount: 20, 
+    endDate: '2024-09-29T23:59:59' 
+  },
+  vendorPhone: '+221784743356',
+  stock: 15
+  },
 
 {
 id: 4,
@@ -91,6 +128,24 @@ promotion: {
   endDate: '2024-09-29T23:59:59' 
 },
 vendorPhone: '+221784743356',
+stock: 15
+},
+
+{
+id: 34,
+name: 'Robe',
+description: 'S L XL XXL 3XL',
+price: 7500,
+category: 'vetements',
+images: [
+'https://live.staticflickr.com/65535/54004910659_fa98b38975_n.jpg',
+'https://live.staticflickr.com/65535/54003677497_c177414031_n.jpg',
+],
+promotion: {
+  discount: 20, 
+  endDate: '2024-09-29T23:59:59' 
+},
+vendorPhone: '+221781520600',
 stock: 15
 },
 
@@ -645,6 +700,8 @@ stock: 15
             },
             stock: 15
             },
+
+
 
 ];
 
