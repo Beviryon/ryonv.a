@@ -92,7 +92,6 @@
       </div>
   </footer>
 
-
   <script nonce="xyz" src="./services.js"></script>
 
   <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
@@ -126,12 +125,10 @@
         location.reload();
       }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
     });
-    </script>
+  </script>
 
-
-    <script nonce="xyz" src="./scrpt_pwa.js"></script>
-
-    <script nonce="xyz">
+  <script nonce="xyz" src="./scrpt_pwa.js"></script>
+  <script nonce="xyz">
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/service-worker.js')
           .then(registration => {
@@ -141,6 +138,6 @@
             console.log('Service Worker registration failed:', error);
           });
       }
-    </script>
+  </script>
 </body>
 </html>

@@ -153,14 +153,12 @@ function updatePromoTimer(timerElement, cardElement) {
   const timerInterval = setInterval(updateTimer, 1000);
 }
 
-
 // fn pour vérifier si la promotion est toujours valide
 function isPromotionValid(promotion) {
   const now = new Date();
   const endDate = new Date(promotion.endDate);
   return now < endDate;
 }
-
 
 function openOrderForm(product) {
   // Créer le modal
@@ -376,10 +374,9 @@ form.addEventListener('submit', (event) => {
   
 }
 
-
 // Variables pour la pagination
 let currentPage = 1;
-const productsPerPage = 10;
+const productsPerPage = 20;
 const paginationContainer = document.querySelector('.pagination');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
