@@ -12,7 +12,7 @@ images: [
 vendorPhone: '+221781520600',
 promotion: {
   discount: 10, 
-  endDate: '2024-09-25T23:59:59' 
+  endDate: '2024-10-25T23:59:59' 
 },
 stock: 15
 },
@@ -30,7 +30,7 @@ images: [
 vendorPhone: '+221784743356',
 promotion: {
   discount: 10, 
-  endDate: '2024-09-25T23:59:59' 
+  endDate: '2024-10-25T23:59:59' 
 },
 stock: 15
 },
@@ -48,7 +48,7 @@ images: [
 vendorPhone: '+33758146261',
 promotion: {
   discount: 20, 
-  endDate: '2024-09-25T23:59:59' 
+  endDate: '2024-10-25T23:59:59' 
 },
 stock: 5
 },
@@ -67,7 +67,7 @@ images: [
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-09-29T23:59:59' 
+  endDate: '2024-10-29T23:59:59' 
 },
 vendorPhone: '+221781520600',
 stock: 15
@@ -86,7 +86,7 @@ stock: 15
   ],
   promotion: {
     discount: 20, 
-    endDate: '2024-09-29T23:59:59' 
+    endDate: '2024-10-29T23:59:59' 
   },
   vendorPhone: '+221784743356',
   stock: 15
@@ -107,7 +107,7 @@ images: [
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-09-29T23:59:59' 
+  endDate: '2024-10-29T23:59:59' 
 },
 vendorPhone: '+221784743356',
 stock: 15
@@ -126,7 +126,7 @@ images: [
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-09-29T23:59:59' 
+  endDate: '2024-10-29T23:59:59' 
 },
 vendorPhone: '+221784743356',
 stock: 15
@@ -144,7 +144,7 @@ images: [
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-09-29T23:59:59' 
+  endDate: '2024-10-29T23:59:59' 
 },
 vendorPhone: '+221781520600',
 stock: 15
@@ -164,7 +164,7 @@ images: [
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2024-10-15T23:59:59' 
 },
 vendorPhone: '+221784743356',
 stock: 20
@@ -182,7 +182,7 @@ images: [
   ],
   promotion: {
     discount: 20, 
-    endDate: '2024-09-15T23:59:59' 
+    endDate: '2024-10-15T23:59:59' 
   },
 vendorPhone: '+221784743356',
 stock: 20
@@ -201,13 +201,13 @@ images: [
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2024-10-15T23:59:59' 
 },
 vendorPhone: '+33758146261',
 stock: 15,
 promotion: {
   discount: 10, // 10% de réduction
-  endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
+  endDate: '2024-10-15T23:59:59' // Date de fin de la promotion
 },
 },
 
@@ -224,7 +224,7 @@ images: [
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2024-10-15T23:59:59' 
 },
 vendorPhone: '+33758146261',
 stock: 20
@@ -245,7 +245,7 @@ vendorPhone: '+33758146261',
 stock: 10,
 promotion: {
   discount: 10, // 10% de réduction
-  endDate: '2024-08-15T23:59:59' // Date de fin de la promotion
+  endDate: '2024-10-15T23:59:59' // Date de fin de la promotion
 },
 },
 
@@ -263,7 +263,7 @@ vendorPhone: '+221784743356',
 stock: 15,
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2024-10-15T23:59:59' 
 },
 },
 
@@ -285,7 +285,7 @@ vendorPhone: '+221784743356',
 stock: 20,
 promotion: {
   discount: 10, // 10% de réduction
-  endDate: '2024-09-15T23:59:59' // Date de fin de la promotion
+  endDate: '2024-10-15T23:59:59' // Date de fin de la promotion
 },
 },
 
@@ -304,7 +304,7 @@ images: [
   ],
   promotion: {
     discount: 20, 
-    endDate: '2024-09-15T23:59:59' 
+    endDate: '2024-10-15T23:59:59' 
   },
 vendorPhone: '+33758146261',
 stock: 10
@@ -359,7 +359,7 @@ images: [
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2024-10-15T23:59:59' 
 },
 vendorPhone: '+242065235530',
 stock: 15
