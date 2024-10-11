@@ -1,5 +1,38 @@
 import { products } from "./products.js";
 
+document.addEventListener('DOMContentLoaded', function() {
+  const carouselInner = document.querySelector('.featured-carousel-inner');
+  const items = document.querySelectorAll('.featured-item');
+  const totalItems = items.length;
+  let currentIndex = 0;
+  
+  // Dupliquer les éléments pour simuler un défilement infini
+  items.forEach(item => {
+      const clone = item.cloneNode(true);
+      carouselInner.appendChild(clone);
+  });
+
+  const itemWidth = items[0].offsetWidth + 20; // Largeur d'un item + marge
+
+  function scrollCarousel() {
+      currentIndex++;
+      carouselInner.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+      // Réinitialiser la position pour simuler le défilement infini
+      if (currentIndex >= totalItems) {
+          setTimeout(() => {
+              carouselInner.style.transition = 'none'; // Désactiver la transition
+              carouselInner.style.transform = 'translateX(0)';
+              currentIndex = 0;
+          }, 500); // Temps de transition
+      }
+  }
+
+  setInterval(scrollCarousel, 3000); // Défiler toutes les 3 secondes
+});
+
+
+
 function createProductCard(product) {
   const card = document.createElement('div');
   card.classList.add('product-card');
