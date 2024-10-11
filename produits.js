@@ -1,58 +1,5 @@
 import { products } from "./products.js";
 
-// Fonction pour créer une carte de produit
-// function createProductCard(product) {
-//   const card = document.createElement('div');
-//   card.classList.add('product-card');
-
-//   const image = document.createElement('img');
-//   image.src = product.images[0];
-//   image.alt = product.name;
-//   card.appendChild(image);
-
-//   const name = document.createElement('h3');
-//   name.textContent = product.name;
-//   card.appendChild(name);
-
-//   const description = document.createElement('p');
-//   description.textContent = product.description;
-//   card.appendChild(description);
-
-//   const price = document.createElement('p');
-//   price.textContent = `Prix : ${product.price} Fcfa`;
-//   card.appendChild(price);
-
-//   const button = document.createElement('a');
-//   button.classList.add('btn');
-//   button.textContent = 'Voir le produit';
-//   button.addEventListener('click', () => showProductModal(product));
-//   card.appendChild(button);
-
-//   const whatsappBtn = document.createElement('a');
-//   whatsappBtn.classList.add('btn', 'whatsapp-btn');
-//   whatsappBtn.textContent = 'Commander';
-//   whatsappBtn.addEventListener('click', () => openOrderForm(product)); // Mettre à jour cette ligne
-//   card.appendChild(whatsappBtn);
-
-//   const detailsBtn = document.createElement('a');
-//   detailsBtn.classList.add('btn-detail');
-//   detailsBtn.textContent = 'Détails du produit';
-//   detailsBtn.href = `details.html?id=${product.id}`;
-//   card.appendChild(detailsBtn);
-
-//   if (product.promotion && isPromotionValid(product.promotion)) {
-//     const promoPopup = document.createElement('div');
-//     promoPopup.classList.add('promo-popup');
-//     promoPopup.innerHTML = `
-//       <p>Promotion ${product.promotion.discount}% !</p>
-//       <p class="promo-timer" data-end="${product.promotion.endDate}"></p>
-//     `;
-//     card.appendChild(promoPopup);
-//     updatePromoTimer(promoPopup.querySelector('.promo-timer'), card);
-//   }
-
-//   return card;
-// }
 function createProductCard(product) {
   const card = document.createElement('div');
   card.classList.add('product-card');
@@ -60,6 +7,13 @@ function createProductCard(product) {
   const image = document.createElement('img');
   image.src = product.images[0];
   image.alt = product.name;
+  card.appendChild(image);
+
+   // Ajout du clic sur l'image pour rediriger vers la page du produit
+   image.addEventListener('click', () => {
+    window.location.href = `details.html?id=${product.id}`;
+  });
+
   card.appendChild(image);
 
   const name = document.createElement('h3');
@@ -552,9 +506,11 @@ function filterProducts() {
     }
   }
 }
-
 searchInput.addEventListener('input', filterProducts);
 
 };
+
+
+
 
 navSlide();

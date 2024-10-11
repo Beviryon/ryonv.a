@@ -138,12 +138,6 @@ main {
     grid-gap: 1rem;
   }
   
-  /* .product-card {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 5px;
-  } */
 
   .product-card {
     border: 1px solid #ccc;
@@ -156,13 +150,6 @@ main {
     justify-content: space-between; 
   }
   
-  
-  /* .product-card img {
-    max-width: 100%;
-    height: auto;
-  }
-   */
-
    .product-card img {
     width: 100%; 
     height: 200px; 
@@ -265,7 +252,7 @@ main {
   /* Début Barre latérale */
   .sidebar {
     width: 100%;
-    background-color: #fff;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -348,10 +335,6 @@ main {
     }
   
     .category-list {
-      /* display: none; */
-      /* position: absolute; */
-      /* top: 100%; */
-      /* flex-direction: column; */
       flex-wrap: wrap;
       justify-content: center;
       left: 0;
@@ -409,10 +392,6 @@ main {
     }
   
     .category-list {
-      /* display: none; */
-      /* position: absolute; */
-      /* top: 100%; */
-      /* flex-direction: column; */
       flex-wrap: wrap;
       justify-content: center;
       left: 0;
@@ -452,12 +431,12 @@ main {
   
 /* Début style filtre */
   .filters {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 2rem;
-    background-color: #ffffff;
+    background-color: #ff0000;
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -1066,3 +1045,4 @@ a:hover {
   color: #0056b3; 
 }
 
+/*  */
