@@ -1123,4 +1123,8 @@ a:hover {
   background-color: #f9f9f9;
   text-align: center;
 }
+
+.titre-scroll {
+  font-size: 1.2rem;
+}
 }
