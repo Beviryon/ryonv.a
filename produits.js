@@ -1,6 +1,12 @@
 import { products } from "./products.js";
 
 
+
+
+// 
+// 
+// 
+
 // Fonction pour ouvrir/fermer le panier
 function toggleCart() {
   const cartPopup = document.querySelector('.cart-popup');
@@ -200,16 +206,10 @@ function showAlert(message) {
   }, 3000);
 }
 
-
-
-
-
-
-
-
-
-
-
+// 
+// 
+// 
+// 
 
 document.addEventListener('DOMContentLoaded', function() {
   const carouselInner = document.querySelector('.featured-carousel-inner');
@@ -673,29 +673,58 @@ const pageInfo = document.getElementById('page-info');
 
 // Fonction pour afficher les produits avec pagination
 function displayProducts(products) {
-const productList = document.querySelector('.product-list');
-productList.innerHTML = '';
+  const productList = document.querySelector('.product-list');
+  productList.innerHTML = ''; 
 
-const startIndex = (currentPage - 1) * productsPerPage;
-const endIndex = startIndex + productsPerPage;
-const paginatedProducts = products.slice(startIndex, endIndex);
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const paginatedProducts = products.slice(startIndex, endIndex); 
 
-paginatedProducts.forEach(product => {
-const card = createProductCard(product);
-productList.appendChild(card);
-});
+  // Vérification si des produits sont disponibles après filtrage
+  if (paginatedProducts.length === 0) {
+      const noProductsMessage = document.createElement('p');
+      noProductsMessage.textContent = 'Pas de produits pour ce pays ou ce vendeur.';
+      productList.appendChild(noProductsMessage);
+      return;
+  }
 
-updatePaginationInfo(products.length);
+  paginatedProducts.forEach(product => {
+      const card = createProductCard(product); 
+      productList.appendChild(card);
+  });
+
+  updatePaginationInfo(products.length);
 }
+
 
 // Fonction pour mettre à jour les informations de pagination
 function updatePaginationInfo(totalProducts) {
-const totalPages = Math.ceil(totalProducts / productsPerPage);
-pageInfo.textContent = `Page ${currentPage} sur ${totalPages}`;
+    const totalPages = Math.ceil(totalProducts / productsPerPage);
+    pageInfo.textContent = `Page ${currentPage} sur ${totalPages}`;
 
-prevBtn.disabled = currentPage === 1;
-nextBtn.disabled = currentPage === totalPages;
+    // Désactiver les boutons "Précédent" et "Suivant" selon la page actuelle
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
 }
+
+// Fonction pour passer à la page suivante
+function nextPage() {
+    currentPage++;
+    filterProducts(); 
+}
+
+// Fonction pour revenir à la page précédente
+function prevPage() {
+    currentPage--;
+    filterProducts(); 
+}
+
+// Gestion des événements pour les boutons de pagination
+prevBtn.addEventListener('click', prevPage);
+nextBtn.addEventListener('click', nextPage);
+
+filterProducts();
+
 
 // Événement pour le bouton "Précédent"
 prevBtn.addEventListener('click', () => {
@@ -718,31 +747,64 @@ displayProducts(products);
 
 // Fonction pour filtrer les produits par catégorie
 function filterProductsByCategory(category) {
-const categoryLinks = document.querySelectorAll('.category-list a');
-categoryLinks.forEach(link => link.classList.remove('active'));
+  // Retirer la classe active des anciennes catégories (plus nécessaire avec un <select>)
+  const categorySelect = document.getElementById('category-select');
 
-const activeLink = document.querySelector(`.category-list a[data-category="${category}"]`);
-activeLink.classList.add('active');
-
-if (category === 'all') {
-displayProducts(products);
-} else {
-const filteredProducts = products.filter(product => product.category === category);
-displayProducts(filteredProducts);
+  // Vérifie si la catégorie sélectionnée est 'all'
+  if (category === 'all') {
+      // Affiche tous les produits si 'all' est sélectionné
+      displayProducts(products);
+  } else {
+      // Filtre les produits en fonction de la catégorie sélectionnée
+      const filteredProducts = products.filter(product => product.category === category);
+      displayProducts(filteredProducts);
+  }
 }
-}
 
-// Fonction pour filtrer les produits par prix
+// Événement pour détecter le changement dans le <select>
+document.getElementById('category-select').addEventListener('change', function() {
+  const selectedCategory = this.value; 
+  filterProductsByCategory(selectedCategory); 
+});
+
+
+// Fonction pour filtrer les produits par catégorie, pays ou vendeur
 function filterProducts() {
-const filterInput = document.getElementById('filter');
-const filterValue = document.getElementById('filter-value');
-const maxPrice = filterInput.value;
+  const selectedCategory = document.getElementById('category-select').value;
+  const selectedCountry = document.getElementById('seller-country').value;
+  const selectedSeller = document.getElementById('seller-name').value;
 
-filterValue.textContent = maxPrice;
+  let filteredProducts = products;
 
-const filteredProducts = products.filter(product => product.price <= maxPrice);
-displayProducts(filteredProducts);
+  // Filtrage par catégorie
+  if (selectedCategory !== 'all') {
+      filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
+  }
+
+  // Filtrage par pays du vendeur
+  if (selectedCountry !== 'all') {
+      filteredProducts = filteredProducts.filter(product => 
+          product.seller && product.seller.country === selectedCountry // Vérifie que seller existe avant d'accéder à country
+      );
+  }
+
+  // Filtrage par nom du vendeur
+  if (selectedSeller !== 'all') {
+      filteredProducts = filteredProducts.filter(product => 
+          product.seller && product.seller.name === selectedSeller // Vérifie que seller existe avant d'accéder à name
+      );
+  }
+
+  displayProducts(filteredProducts);
 }
+
+
+// Événements pour détecter les changements de filtre
+document.getElementById('category-select').addEventListener('change', filterProducts);
+document.getElementById('seller-country').addEventListener('change', filterProducts);
+document.getElementById('seller-name').addEventListener('change', filterProducts);
+
+
 
 // Fonction pour trier les produits
 function sortProducts() {

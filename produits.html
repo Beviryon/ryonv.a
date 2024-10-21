@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KJR2FXZ7');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Produits - Mon Site E-commerce</title>
@@ -23,6 +29,10 @@
 
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJR2FXZ7"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <header>
     <nav>
         <div class="logo">
@@ -48,8 +58,7 @@
       </nav>
   </header>
 
-  <main>
-
+<main>
 
 <!-- Pop-up du panier -->
 <!-- Icône du panier -->
@@ -118,19 +127,19 @@
       </div>
     </section>
     
-    
-  
     <section class="product-listing">
-      <aside class="sidebar">
+      <!-- <aside class="sidebar">
         <h3>Catégories</h3>
-        <ul class="category-list">
-          <li><a href="#" data-category="all" class="active">Toutes les catégories</a></li>
-          <li><a href="#" data-category="vetements">Vêtements</a></li>
-          <li><a href="#" data-category="electronique">Électronique</a></li>
-          <li><a href="#" data-category="maison">Maison</a></li>
-          <li><a href="#" data-category="sport">Accéssoir et Autres</a></li>
+        <div class="category-toggle" id="category-toggle">Catégories</div>
+        <ul class="category-list" id="category-list">
+            <li><a href="#" data-category="all" class="active">Toutes les catégories</a></li>
+            <li><a href="#" data-category="vetements">Vêtements</a></li>
+            <li><a href="#" data-category="electronique">Électronique</a></li>
+            <li><a href="#" data-category="maison">Maison</a></li>
+            <li><a href="#" data-category="sport">Accéssoires et Autres</a></li>
         </ul>
       </aside>
+     -->
 
       <div class="product-grid">
         <!-- section fitrage -->
@@ -141,30 +150,149 @@
             <option value="price-asc">Prix croissant</option>
             <option value="price-desc">Prix décroissant</option>
           </select>
-
           <!-- <label for="filter">Filtrer par prix :</label>
           <input type="range" id="filter" min="0" max="1000" value="1000" step="10">
           <span id="filter-value">1000M</span> -->
         </div>
 
         <!-- barre de recherche -->
-        <div class="search-container">
+        <!-- <div class="search-container">
             <input type="text" id="search-input" placeholder="Rechercher un produit...">
-        </div>
-  
+        </div> -->
 
-        <div class="product-list">
-          <!-- affichage des produits -->
+        <!--  -->
+        <!--  -->
+
+      <section class="filter-bar">
+        <aside class="sidebar">
+          <h3>Catégories</h3>
+          <label for="category-select" class="category-label">Sélectionner une catégorie :</label>
+          <select class="category-toggle" id="category-select">
+            <option value="all" class="active">Toutes les catégories</option>
+            <option value="vetements">Vêtements</option>
+            <option value="electronique">Électronique</option>
+            <option value="maison">Maison</option>
+            <option value="sport">Accessoires et Autres</option>
+          </select>
+        </aside>        
+        
+        <div class="filter-item">
+          <label id="seller-country-label" for="seller-country" data-icon="🌍">Pays :</label>
+          <select id="seller-country">
+            <option value="all">Tous les pays</option>
+            <optgroup label="Afrique">
+              <option value="DZ">Algérie</option>
+              <option value="AO">Angola</option>
+              <option value="BJ">Bénin</option>
+              <option value="BW">Botswana</option>
+              <option value="BF">Burkina Faso</option>
+              <option value="BI">Burundi</option>
+              <option value="CM">Cameroun</option>
+              <option value="CV">Cap-Vert</option>
+              <option value="CF">République centrafricaine</option>
+              <option value="TD">Tchad</option>
+              <option value="KM">Comores</option>
+              <option value="CG">Congo (Brazzaville)</option>
+              <option value="CD">Congo (Kinshasa)</option>
+              <option value="CI">Côte d'Ivoire</option>
+              <option value="DJ">Djibouti</option>
+              <option value="EG">Égypte</option>
+              <option value="GQ">Guinée équatoriale</option>
+              <option value="ER">Érythrée</option>
+              <option value="SZ">Eswatini</option>
+              <option value="ET">Éthiopie</option>
+              <option value="GA">Gabon</option>
+              <option value="GM">Gambie</option>
+              <option value="GH">Ghana</option>
+              <option value="GN">Guinée</option>
+              <option value="GW">Guinée-Bissau</option>
+              <option value="KE">Kenya</option>
+              <option value="LS">Lesotho</option>
+              <option value="LR">Liberia</option>
+              <option value="LY">Libye</option>
+              <option value="MG">Madagascar</option>
+              <option value="MW">Malawi</option>
+              <option value="ML">Mali</option>
+              <option value="MR">Mauritanie</option>
+              <option value="MU">Maurice</option>
+              <option value="MA">Maroc</option>
+              <option value="MZ">Mozambique</option>
+              <option value="NA">Namibie</option>
+              <option value="NE">Niger</option>
+              <option value="NG">Nigéria</option>
+              <option value="RW">Rwanda</option>
+              <option value="ST">Sao Tomé-et-Principe</option>
+              <option value="SN">Sénégal</option>
+              <option value="SC">Seychelles</option>
+              <option value="SL">Sierra Leone</option>
+              <option value="SO">Somalie</option>
+              <option value="ZA">Afrique du Sud</option>
+              <option value="SS">Soudan du Sud</option>
+              <option value="SD">Soudan</option>
+              <option value="TZ">Tanzanie</option>
+              <option value="TG">Togo</option>
+              <option value="TN">Tunisie</option>
+              <option value="UG">Ouganda</option>
+              <option value="ZM">Zambie</option>
+              <option value="ZW">Zimbabwe</option>
+          </optgroup>
+          <optgroup label="Europe">
+            <option value="FR">France</option>
+            <option value="DE">Allemagne</option>
+            <option value="IT">Italie</option>
+            <option value="ES">Espagne</option>
+            <option value="GB">Royaume-Uni</option>
+            <option value="PT">Portugal</option>
+            <option value="NL">Pays-Bas</option>
+            <option value="BE">Belgique</option>
+            <option value="CH">Suisse</option>
+            <option value="SE">Suède</option>
+            <option value="NO">Norvège</option>
+            <option value="FI">Finlande</option>
+            <option value="IE">Irlande</option>
+            <option value="PL">Pologne</option>
+            <option value="GR">Grèce</option>
+            <option value="AT">Autriche</option>
+            <option value="DK">Danemark</option>
+        </optgroup>
+          </select>
         </div>
+      
+        <div class="filter-item">
+          <label id="seller-name-label" for="seller-name" data-icon="👤">Vendeur :</label>
+          <select id="seller-name">
+            <option value="all">Tous les vendeurs</option>
+            <option value="MCRShop">MCRShop</option>
+            <option value="RYONV">RYONV</option>
+            <option value="Vendeur">Vendeur</option>
+          </select>
+        </div>
+      
+        <div class="filter-item search-box">
+          <label id="search-input-label" for="search-input" data-icon="🔍"></label>
+          <input type="text" id="search-input" placeholder="Rechercher un produit...">
+        </div>
+      </section>
+      
+      <div id="products-container"></div>
+      <div id="no-products-message" style="display: none;">Pas de produits pour ce pays ou ce vendeur.</div>
+      
+        <!--  -->
+        <!--  -->
+
+      <div class="product-list">
+        <!-- affichage des produits -->
+      </div>
 
         <!-- Pagination -->
-        <div class="pagination">
-            <button id="prev-btn" disabled>Précédent</button>
-            <span id="page-info">Page 1 sur 1</span>
-            <button id="next-btn">Suivant</button>
-        </div>
+      <div class="pagination">
+          <button id="prev-btn" disabled>Précédent</button>
+          <span id="page-info">Page 1 sur 1</span>
+          <button id="next-btn">Suivant</button>
+      </div>
       </div>
     </section>
+
  </main>
 
   <!-- Modal pour la galerie d'images -->
@@ -291,11 +419,9 @@
 </footer>
 
   <script nonce="xyz" type="module" src="./produits.js"></script>
-  <!-- <script type="module"  src="./requets.js"></script> -->
+  <script nonce="xyz" type="module"  src="./vendoScript.js"></script>
   <script nonce="xyz" type="module"  src="./products.js"></script>
   <script nonce="xyz" type="module"  src="./lib/bundle.js"></script>
-    <!-- Autres balises head -->
-
   
   <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
   <script nonce="xyz">
@@ -327,20 +453,19 @@
         location.reload();
       }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
     });
-    </script>
+  </script>
     
-
-    <script nonce="xyz" src="./script_pwa_produits.js"></script>
-    <script nonce="xyz">
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch(error => {
-            console.log('Service Worker registration failed:', error);
-          });
-      }
-    </script>
+  <script nonce="xyz" src="./script_pwa_produits.js"></script>
+  <script nonce="xyz">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(error => {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
+  </script>
 </body>
 </html>

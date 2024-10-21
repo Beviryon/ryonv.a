@@ -9,7 +9,12 @@ images: [
 'https://live.staticflickr.com/65535/54004585421_9786d774ef_w.jpg',
 'https://live.staticflickr.com/65535/54005006385_ea4b85b8e5_w.jpg',
 ],
-vendorPhone: '+221781520600',
+seller: {
+  name: 'Vendeur',
+  phone: '+221781520600',
+  country: 'SN'
+},
+sellerPhone: '+221781520600',
 promotion: {
   discount: 10, 
   endDate: '2024-10-25T23:59:59' 
@@ -27,7 +32,12 @@ images: [
 'https://live.staticflickr.com/65535/53918079291_fd5fb40099_n.jpg',
 'https://live.staticflickr.com/65535/53918431534_3744337f06_n.jpg',
 ],
-vendorPhone: '+221784743356',
+seller: {
+  name: 'MCRShop',
+  phone: '+221784743356',
+  country: 'SN',
+},
+sellerPhone: '+221784743356',
 promotion: {
   discount: 10, 
   endDate: '2024-10-25T23:59:59' 
@@ -45,7 +55,12 @@ images: [
 'https://live.staticflickr.com/65535/53918326358_3338d3cc5a_w.jpg',
 'https://live.staticflickr.com/65535/53918525480_4f51da965d_n.jpg',
 ],
-vendorPhone: '+33758146261',
+seller: {
+  name: 'RYONV',
+  phone: '+33758146261',
+  country: 'FR',
+},
+sellerPhone: '+33758146261',
 promotion: {
   discount: 20, 
   endDate: '2024-10-25T23:59:59' 
@@ -58,18 +73,23 @@ id: 33,
 name: 'Perruque',
 description: 'Toutes les tailles',
 price: 25000,
-category: 'vetements',
+category: 'sport',
 images: [
 'https://live.staticflickr.com/65535/54003722967_4476dfc92d_n.jpg',
 'https://live.staticflickr.com/65535/54003722832_4ab8cf4d60_w.jpg',
 'https://live.staticflickr.com/65535/54004860668_deebf9bb45_n.jpg',
 'https://live.staticflickr.com/65535/54003722967_4476dfc92d_n.jpg',
 ],
+seller: {
+  name: 'Vendeur',
+  phone: '+221781520600',
+  country: 'SN'
+},
 promotion: {
   discount: 20, 
   endDate: '2024-10-29T23:59:59' 
 },
-vendorPhone: '+221781520600',
+sellerPhone: '+221781520600',
 stock: 15
 },
 
@@ -84,11 +104,16 @@ stock: 15
   'https://live.staticflickr.com/65535/53917188547_cac5a4720d_w.jpg',
   'https://live.staticflickr.com/65535/53918326218_f9bf1a5a3d_w.jpg',
   ],
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
   promotion: {
     discount: 20, 
     endDate: '2024-10-29T23:59:59' 
   },
-  vendorPhone: '+221784743356',
+  sellerPhone: '+221784743356',
   stock: 15
   },
 
@@ -105,11 +130,16 @@ images: [
 'https://live.staticflickr.com/65535/54000250176_a63038d3e9_w.jpg',
 'https://live.staticflickr.com/65535/54000575489_715f39d960_w.jpg',
 ],
+seller: {
+  name: 'MCRShop',
+  phone: '+221784743356',
+  country: 'SN',
+},
 promotion: {
   discount: 20, 
   endDate: '2024-10-29T23:59:59' 
 },
-vendorPhone: '+221784743356',
+sellerPhone: '+221784743356',
 stock: 15
 },
 
@@ -124,11 +154,16 @@ images: [
 'https://live.staticflickr.com/65535/54000575484_55fd83c68c_w.jpg',
 'https://live.staticflickr.com/65535/54000250171_f35e13ae50_w.jpg',
 ],
+seller: {
+  name: 'MCRShop',
+  phone: '+221784743356',
+  country: 'SN',
+},
 promotion: {
   discount: 20, 
   endDate: '2024-10-29T23:59:59' 
 },
-vendorPhone: '+221784743356',
+sellerPhone: '+221784743356',
 stock: 15
 },
 
@@ -142,11 +177,16 @@ images: [
 'https://live.staticflickr.com/65535/54004910659_fa98b38975_n.jpg',
 'https://live.staticflickr.com/65535/54003677497_c177414031_n.jpg',
 ],
+seller: {
+  name: 'Vendeur',
+  phone: '+221781520600',
+  country: 'SN'
+},
 promotion: {
   discount: 20, 
   endDate: '2024-10-29T23:59:59' 
 },
-vendorPhone: '+221781520600',
+sellerPhone: '+221781520600',
 stock: 15
 },
 
@@ -162,11 +202,16 @@ images: [
   'https://live.staticflickr.com/65535/53804063223_07ccde5008_b.jpg',
   'https://live.staticflickr.com/65535/53803818431_29f2a5a591_b.jpg'
 ],
+seller: {
+  name: 'MCRShop',
+  phone: '+221784743356',
+  country: 'SN',
+},
 promotion: {
   discount: 20, 
   endDate: '2024-10-15T23:59:59' 
 },
-vendorPhone: '+221784743356',
+sellerPhone: '+221784743356',
 stock: 20
 },
 
@@ -180,11 +225,16 @@ images: [
   'https://live.staticflickr.com/65535/53808261640_81983ff3b3_w.jpg',
   'https://live.staticflickr.com/65535/53808261655_a7ccaf6301_n.jpg',
   ],
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
   promotion: {
     discount: 20, 
     endDate: '2024-10-15T23:59:59' 
   },
-vendorPhone: '+221784743356',
+sellerPhone: '+221784743356',
 stock: 20
 },
 
@@ -203,7 +253,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-10-15T23:59:59' 
 },
-vendorPhone: '+33758146261',
+sellerPhone: '+33758146261',
 stock: 15,
 promotion: {
   discount: 10, // 10% de réduction
@@ -222,11 +272,16 @@ images: [
 'https://s.alicdn.com/@sc04/kf/H7d09183f2f284305bb1d08834b842c4eY.jpg',
 'https://s.alicdn.com/@sc04/kf/H0a2b7c07b5c2400cade43ace2db65141G.jpg'
 ],
+seller: {
+  name: 'RYONV',
+  phone: '+33758146261',
+  country: 'FR',
+},
 promotion: {
   discount: 20, 
   endDate: '2024-10-15T23:59:59' 
 },
-vendorPhone: '+33758146261',
+sellerPhone: '+33758146261',
 stock: 20
 },
 
@@ -241,7 +296,12 @@ images: [
 'https://s.alicdn.com/@sc04/kf/H8d3e389715e449cba5f2c41c6f2a752cb.jpg',
 'https://s.alicdn.com/@sc04/kf/H161a4757294e4dc7bb291fa1c6ec19aaZ.jpg'
 ],
-vendorPhone: '+33758146261',
+seller: {
+  name: 'RYONV',
+  phone: '+33758146261',
+  country: 'FR',
+},
+sellerPhone: '+33758146261',
 stock: 10,
 promotion: {
   discount: 10, // 10% de réduction
@@ -259,7 +319,12 @@ images: [
 'https://s.alicdn.com/@sc04/kf/H41b80ca10ccd4bac8264eefd48316704V.jpg',
 'https://s.alicdn.com/@sc04/kf/H491e6c1e4845486abc3afc8718c9a964W.jpg',
 ],
-vendorPhone: '+221784743356',
+seller: {
+  name: 'MCRShop',
+  phone: '+221784743356',
+  country: 'SN',
+},
+sellerPhone: '+221784743356',
 stock: 15,
 promotion: {
   discount: 20, 
@@ -281,7 +346,12 @@ images: [
 'https://s.alicdn.com/@sc04/kf/H3d6bd0cb4b8f400f9dde650405b8176f2.jpg',
 'https://s.alicdn.com/@sc04/kf/Hd4264e42d8254abbaa38bacc299612e3M.jpg'
 ],
-vendorPhone: '+221784743356',
+seller: {
+  name: 'MCRShop',
+  phone: '+221784743356',
+  country: 'SN',
+},
+sellerPhone: '+221784743356',
 stock: 20,
 promotion: {
   discount: 10, // 10% de réduction
@@ -302,11 +372,16 @@ images: [
   'https://s.alicdn.com/@sc04/kf/Hae3219dab53547cf863174cc0d908c96z.jpg',
   'https://s.alicdn.com/@sc04/kf/Hdf4b5a1e550349f5967b283dca1d84c0h.jpg'
   ],
+  seller: {
+    name: 'RYONV',
+    phone: '+33758146261',
+    country: 'FR',
+  },
   promotion: {
     discount: 20, 
     endDate: '2024-10-15T23:59:59' 
   },
-vendorPhone: '+33758146261',
+sellerPhone: '+33758146261',
 stock: 10
 },
 
@@ -323,7 +398,12 @@ images: [
   'https://s.alicdn.com/@sc04/kf/Hd50830bdb3014505811fe3b4761a8a6fl.jpg',
   'https://s.alicdn.com/@sc04/kf/Hf8bbab9f172d43309128ba137f426061x.jpg'
 ],
-vendorPhone: '+33758146261',
+seller: {
+  name: 'RYONV',
+  phone: '+33758146261',
+  country: 'FR',
+},
+sellerPhone: '+33758146261',
 stock: 15
 },
 
@@ -340,7 +420,12 @@ images: [
   'https://s.alicdn.com/@sc04/kf/Hd9b97457fc904340a0327bde51254635F.png',
   'https://s.alicdn.com/@sc04/kf/Hd6152d57976e4b0f931b81d5206ca19eV.png'
 ],
-vendorPhone: '+33758146261',
+seller: {
+  name: 'RYONV',
+  phone: '+33758146261',
+  country: 'FR',
+},
+sellerPhone: '+33758146261',
 stock: 20
 },
 
@@ -357,11 +442,16 @@ images: [
   'https://s.alicdn.com/@sc04/kf/Hbf6d45e665ba49d1a0b0f71b489aec9bA.jpg',
   'https://s.alicdn.com/@sc04/kf/H80e39df3cadd4f778bd15007d9394ef7H.png'
 ],
+seller: {
+  name: 'Vendeur',
+  phone: '+242065235530',
+  country: 'Congo-Brazzaville',
+},
 promotion: {
   discount: 20, 
   endDate: '2024-10-15T23:59:59' 
 },
-vendorPhone: '+242065235530',
+sellerPhone: '+242065235530',
 stock: 15
 },
 
@@ -379,11 +469,16 @@ images: [
   'https://s.alicdn.com/@sc04/kf/H7270ff5536e1419c858dfbb155434c54U.jpg',
   'https://s.alicdn.com/@sc04/kf/H7c67bde15747449e82c29d2c3d49c4332.jpg'
 ],
+seller: {
+  name: 'Vendeur',
+  phone: '+242065235530',
+  country: 'Congo-Brazzaville',
+},
 promotion: {
   discount: 20, 
   endDate: '2024-09-15T23:59:59' 
 },
-vendorPhone: '+242065235530',
+sellerPhone: '+242065235530',
 stock: 10
 },
 
@@ -401,7 +496,12 @@ images: [
   'https://s.alicdn.com/@sc04/kf/H4a0d44471a694a7d945170de8cdd78f0A.png',
   'https://s.alicdn.com/@sc04/kf/Hcbf55f7354bf4bc9891139bb872a478cx.png'
 ],
-vendorPhone: '+221784743356',
+seller: {
+  name: 'MCRShop',
+  phone: '+221784743356',
+  country: 'SN',
+},
+sellerPhone: '+221784743356',
 stock: 20,
 promotion: {
   discount: 10, // 10% de réduction
@@ -423,11 +523,16 @@ images: [
   'https://s.alicdn.com/@sc04/kf/H538b2787519d46fab86128f1874d187aw.jpg',
   'https://s.alicdn.com/@sc04/kf/He8f69a08da8f43ba97ce66c76d61e53eF.jpg'
 ],
+seller: {
+  name: 'RYONV',
+  phone: '+33758146261',
+  country: 'FR',
+},
 promotion: {
   discount: 20, 
   endDate: '2024-09-15T23:59:59' 
 },
-vendorPhone: '+33758146261',
+sellerPhone: '+33758146261',
 stock: 15
 },
 
@@ -443,11 +548,16 @@ stock: 15
     'https://live.staticflickr.com/65535/53807824346_a454c0bc44_w.jpg',
     'https://live.staticflickr.com/65535/53808261690_3762aca3df_w.jpg'
   ],
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
   promotion: {
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  vendorPhone: '+221784743356',
+  sellerPhone: '+221784743356',
   stock: 30
   },
 
@@ -462,7 +572,12 @@ stock: 15
     'https://live.staticflickr.com/65535/53808066533_a7ee9543a0_w.jpg',
     'https://live.staticflickr.com/65535/53808066543_08a5387f87_w.jpg',
   ],
-  vendorPhone: '+221784743356',
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
+  sellerPhone: '+221784743356',
   stock: 30,
   promotion: {
     discount: 10, // 10% de réduction
@@ -479,11 +594,16 @@ stock: 15
     'https://live.staticflickr.com/65535/53808261695_161b2c5f85_w.jpg',
     'https://live.staticflickr.com/65535/53807824376_456948f358_w.jpg',
   ],
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
   promotion: {
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  vendorPhone: '+221784743356',
+  sellerPhone: '+221784743356',
   stock: 30
   },
 {
@@ -499,11 +619,16 @@ stock: 15
     'https://live.staticflickr.com/65535/53808066543_08a5387f87_w.jpg',
     'https://live.staticflickr.com/65535/53806891162_5cc02640cf_w.jpg',
   ],
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
   promotion: {
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  vendorPhone: '+221784743356',
+  sellerPhone: '+221784743356',
   stock: 30
   },
 {
@@ -519,7 +644,12 @@ stock: 15
     'https://live.staticflickr.com/65535/53806891207_fbe177a5d2_w.jpg',
     'https://live.staticflickr.com/65535/53806891162_5cc02640cf_w.jpg',
   ],
-  vendorPhone: '+221784743356',
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
+  sellerPhone: '+221784743356',
   stock: 30,
   promotion: {
     discount: 10, // 10% de réduction
@@ -536,11 +666,16 @@ stock: 15
     'https://live.staticflickr.com/65535/53806891187_ee975c0252_w.jpg',
     'https://live.staticflickr.com/65535/53807824376_456948f358_w.jpg',
   ],
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
   promotion: {
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  vendorPhone: '+221784743356',
+  sellerPhone: '+221784743356',
   stock: 30
   },
 {
@@ -553,7 +688,12 @@ stock: 15
     'https://live.staticflickr.com/65535/53808261755_e378a6ecb9_w.jpg',
     'https://live.staticflickr.com/65535/53806891177_413d86dc4a_w.jpg',
   ],
-  vendorPhone: '+221784743356',
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
+  sellerPhone: '+221784743356',
   stock: 30
   },
 {
@@ -566,11 +706,16 @@ stock: 15
     'https://live.staticflickr.com/65535/53807824286_05c79659ab_n.jpg',
     'https://live.staticflickr.com/65535/53808261645_240d0c12aa_w.jpg',
   ],
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
   promotion: {
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  vendorPhone: '+221784743356',
+  sellerPhone: '+221784743356',
   stock: 30
   },
 
@@ -585,11 +730,16 @@ stock: 15
     'https://live.staticflickr.com/65535/53806891097_5e15fa9968_n.jpg',
     'https://live.staticflickr.com/65535/53807824276_1a10e6dcb0_w.jpg',
   ],
+  seller: {
+    name: 'MCRShop',
+    phone: '+221784743356',
+    country: 'SN',
+  },
   promotion: {
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  vendorPhone: '+221784743356',
+  sellerPhone: '+221784743356',
   stock: 30
   },
 
@@ -606,7 +756,12 @@ stock: 15
       'https://live.staticflickr.com/65535/53806891107_a4f580e8ae_w.jpg',
       'https://live.staticflickr.com/65535/53807824316_5c8fcdd4f2_w.jpg',
     ],
-    vendorPhone: '+221784743356',
+    seller: {
+      name: 'MCRShop',
+      phone: '+221784743356',
+      country: 'SN',
+    },
+    sellerPhone: '+221784743356',
     stock: 30
     },
   {
@@ -619,11 +774,16 @@ stock: 15
       'https://live.staticflickr.com/65535/53918326268_f077d3d109_n.jpg',
       'https://live.staticflickr.com/65535/53917188587_36e66481d6_n.jpg',
     ],
+    seller: {
+      name: 'MCRShop',
+      phone: '+221784743356',
+      country: 'SN',
+    },
     promotion: {
       discount: 20, 
       endDate: '2024-09-15T23:59:59' 
     },
-    vendorPhone: '+221784743356',
+    sellerPhone: '+221784743356',
     stock: 30
     },
 
@@ -637,7 +797,12 @@ stock: 15
       'https://live.staticflickr.com/65535/53917188752_4573f5fef5_n.jpg',
       'https://live.staticflickr.com/65535/53917188777_b67c965e64_w.jpg',
       ],
-      vendorPhone: '+221784743356',
+      seller: {
+        name: 'MCRShop',
+        phone: '+221784743356',
+        country: 'SN',
+      },
+      sellerPhone: '+221784743356',
       promotion: {
         discount: 10, 
         endDate: '2024-09-25T23:59:59' 
@@ -656,11 +821,16 @@ stock: 15
         'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSszcq6zwhFXaW.jpg',
         'https://s.alicdn.com/@sc04/kf/HTB11gOaiXmWBuNjSspdq6zugXXaQ.jpg',
         ],
+        seller: {
+          name: 'RYONV',
+          phone: '+33758146261',
+          country: 'FR',
+        },
         promotion: {
           discount: 20, 
           endDate: '2024-09-19T23:59:59' 
         },
-        vendorPhone: '+33758146261',
+        sellerPhone: '+33758146261',
         stock: 15
         },
 
@@ -675,11 +845,16 @@ stock: 15
           'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
           'https://s.alicdn.com/@sc04/kf/H6db20e92226c43bc996db6197dd5be93l.jpg'
           ],
+          seller: {
+            name: 'RYONV',
+            phone: '+33758146261',
+            country: 'FR',
+          },
           promotion: {
             discount: 20, 
             endDate: '2024-09-15T23:59:59' 
           },
-          vendorPhone: '+33758146261',
+          sellerPhone: '+33758146261',
           stock: 10
           },
 
@@ -694,7 +869,12 @@ stock: 15
             'https://s.alicdn.com/@sc04/kf/H1f7aaa81232649b4b352c4e228268009O.jpg',
             'https://s.alicdn.com/@sc04/kf/Hfde0ff53a70a41ad82d118ee575586ffY.jpg'
             ],
-            vendorPhone: '+33758146261',
+            seller: {
+              name: 'RYONV',
+              phone: '+33758146261',
+              country: 'FR',
+            },
+            sellerPhone: '+33758146261',
             promotion: {
               discount: 20, 
               endDate: '2024-09-15T23:59:59' 

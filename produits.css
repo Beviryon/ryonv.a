@@ -165,7 +165,6 @@ main {
     margin-bottom: 1rem;
   }
   
-  
 
   /* Début style du bouton voir le produit */
   .btn {
@@ -182,6 +181,7 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
 
   .btn-voir-produit {
@@ -198,6 +198,7 @@ main {
     /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
   .whatsapp-btn {
     display: flex;
@@ -205,6 +206,7 @@ main {
     background-color:  #f2ae01; 
     color: #fff;
     margin-top: 1px;
+    cursor: pointer;
   }
 
   .btn-detail {
@@ -245,6 +247,7 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     margin-top: 8px;
+    cursor: pointer;
   }
   /* Fin style du bouton voir le produit */ 
 
@@ -267,11 +270,13 @@ main {
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
     .whatsapp-btn {
       background-color:  #f2ae01; 
       color: #fff;
       margin-top: 8px;
+      cursor: pointer;
     }
 
     .btn-detail {
@@ -297,187 +302,14 @@ main {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       background-color: #fff;
       margin-top: 8px;
+      cursor: pointer;
     }
   }  
   
-  /* Début Barre latérale */
-  .sidebar {
-    width: 100%;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 58px;
-    margin:  4px;
-  }
-  
-  .sidebar h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #000361;
-    margin-right: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .category-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-  
-  .category-list li {
-    margin-right: 1rem;
-    list-style: none;
-  }
-  
-  .category-list a {
-    display: block;
-    text-decoration: none;
-    color: #000000;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  
-  .category-list a:hover,
-  .category-list a.active {
-    background-color: #f2ae01;
-    color: #fff;
-  }
-  
-  .category-list a.active::before {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #000361;
-  }
-  
-  /* Styles responsives */
-  @media (max-width: 768px) {
-    .sidebar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .sidebar h3 {
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-    .sidebar {
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      top: 45px;
-    }
-  
-    .category-list {
-      flex-wrap: wrap;
-      justify-content: center;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      padding: 1rem;
-      z-index: 1;
-    }
+/* Début Barre latérale */
 
-    .filters {
-      display: none;
-    }
-  
-    .category-list li {
-      margin-right: 0;
-      margin-bottom: 0.5rem;
-    }
-  
-    .category-list.show {
-      display: block;
-    }
-  
-    .category-toggle {
-      display: block;
-      background-color: #f2ae01;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-left: auto;
-    }
-  }
-  
-  @media (max-width: 300px) {
-    .sidebar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .sidebar h3 {
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-    .sidebar {
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      top: 45px;
-    }
-  
-    .category-list {
-      flex-wrap: wrap;
-      justify-content: center;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      padding: 1rem;
-      z-index: 1;
-    }
 
-    .filters {
-      display: none;
-    }
-  
-    .category-list li {
-      margin-right: 0;
-      margin-bottom: 0.5rem;
-    }
-  
-    .category-list.show {
-      display: block;
-    }
-  
-    .category-toggle {
-      display: block;
-      background-color: #f2ae01;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-left: auto;
-    }
-  }
-  
-  /* Fin Barre latérale */
+/* Fin Barre latérale */
 
   
 /* Début style filtre */
@@ -600,7 +432,7 @@ footer p {
       margin-bottom: 2rem;
     }
     .filters {
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
@@ -624,7 +456,7 @@ footer p {
       margin-bottom: 2rem;
     }
     .filters {
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
@@ -1412,3 +1244,316 @@ a:hover {
   color: #e60000;
 }
 
+
+/* Section principale de la barre de filtre */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+}
+
+/* Filtre item compact */
+.filter-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: auto;
+  flex: 1;
+}
+
+/* Styles des labels */
+.filter-item label {
+  font-size: 0.85rem;
+  color: #555;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/* Champs de formulaire plus élégants */
+.filter-item select,
+.filter-item input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  flex: 1;
+  transition: border-color 0.3s ease;
+}
+
+/* Animation des focus */
+.filter-item select:focus,
+.filter-item input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Boîte de recherche compacte */
+.search-box {
+  display: flex;
+  flex: 2;
+  max-width: 400px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-box input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Icônes pour mobile avec amélioration des marges */
+.filter-item label::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 8px;
+  font-size: 1rem;
+  color: #007bff; /* Icône plus visible */
+}
+
+/* Icônes spécifiques pour chaque label */
+#seller-country-label::before { content: '\f57d'; } /* Icône globe */
+#seller-name-label::before { content: '\f2bb'; }    /* Icône utilisateur */
+#search-input-label::before { content: '\f002'; }   /* Icône recherche */
+
+/* Transition lors du survol de la barre de filtre */
+.filter-bar:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Responsive design - Tablettes et plus grands écrans */
+@media (min-width: 768px) {
+  .filter-bar {
+    justify-content: space-around;
+    padding: 16px 20px;
+  }
+
+  .filter-item {
+    flex: 1;
+    gap: 16px;
+  }
+
+  .search-box {
+    flex: 3;
+    max-width: 600px;
+  }
+
+  .filter-item label {
+    font-size: 0.9rem;
+  }
+
+  .filter-item select,
+  .filter-item input {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+/* Pour les petits écrans (mobile) */
+@media (max-width: 480px) {
+  .filter-bar {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .filter-item {
+    width: 100%;
+    gap: 6px;
+  }
+
+  .filter-item label {
+    font-size: 0.8rem;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 8px;
+  }
+
+  .filter-item {
+    gap: 6px;
+    justify-content: space-between;
+  }
+
+  .filter-item select,
+  .filter-item input {
+    width: calc(100% - 60px);
+    padding: 6px;
+  }
+
+  .filter-item label {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .search-box input {
+    width: calc(100% - 40px);
+  }
+}
+
+/* Style d'alerte pour le message d'absence de produits */
+#no-products-message {
+  font-size: 0.9rem;
+  color: #ff0000;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Sidebar principale */
+.sidebar {
+  width: 20%;
+  /* background-color: #fff; */
+  padding: 2px;
+  margin: 10px 0;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  border-radius: 8px;
+}
+
+.sidebar h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 4px;
+  /* text-align: left; */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Toggle du menu */
+.category-toggle {
+  display: block;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.category-toggle:hover {
+  background-color: #ffffff;
+}
+
+/* Liste des catégories (menu caché) */
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; 
+  flex-direction: column;
+}
+
+.category-list.show {
+  display: flex; 
+}
+
+.category-list li {
+  margin-bottom: 10px;
+}
+
+.category-list a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.category-list a:hover,
+.category-list a.active {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Media Queries pour les écrans mobiles */
+@media (max-width: 768px) {
+  .category-list {
+      flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-toggle {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+  }
+
+  .category-list a {
+      padding: 8px 10px;
+      font-size: 0.9rem;
+  }
+}
+
+
+/* Style pour la liste déroulante des catégories */
+#categories {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+/* Animation lors du focus de la liste déroulante */
+#categories:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsive - Réduire la taille de la liste déroulante sur les petits écrans */
+@media (max-width: 480px) {
+  #categories {
+    width: calc(100% - 40px);
+  }
+
+  .sidebar {
+    width: 100%;
+    /* background-color: #fff; */
+    padding: 2px;
+    margin: 10px 0;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;
+  }
+}
+
+
+/* Effet lors du focus */
+.category-toggle:focus {
+  border-color: #007bff;
+  outline: none;
+}
