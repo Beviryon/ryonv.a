@@ -58,7 +58,7 @@ images: [
 seller: {
   name: 'RYONV',
   phone: '+33758146261',
-  country: 'FR',
+  country: 'CG',
 },
 sellerPhone: '+33758146261',
 promotion: {
@@ -275,7 +275,7 @@ images: [
 seller: {
   name: 'RYONV',
   phone: '+33758146261',
-  country: 'FR',
+  country: 'CG',
 },
 promotion: {
   discount: 20, 
@@ -375,7 +375,7 @@ images: [
   seller: {
     name: 'RYONV',
     phone: '+33758146261',
-    country: 'FR',
+    country: 'CG',
   },
   promotion: {
     discount: 20, 
@@ -401,7 +401,7 @@ images: [
 seller: {
   name: 'RYONV',
   phone: '+33758146261',
-  country: 'FR',
+  country: 'CG',
 },
 sellerPhone: '+33758146261',
 stock: 15
@@ -423,7 +423,7 @@ images: [
 seller: {
   name: 'RYONV',
   phone: '+33758146261',
-  country: 'FR',
+  country: 'CG',
 },
 sellerPhone: '+33758146261',
 stock: 20
@@ -445,7 +445,7 @@ images: [
 seller: {
   name: 'Vendeur',
   phone: '+242065235530',
-  country: 'Congo-Brazzaville',
+  country: 'CG',
 },
 promotion: {
   discount: 20, 
@@ -472,7 +472,7 @@ images: [
 seller: {
   name: 'Vendeur',
   phone: '+242065235530',
-  country: 'Congo-Brazzaville',
+  country: 'CG',
 },
 promotion: {
   discount: 20, 
@@ -497,9 +497,9 @@ images: [
   'https://s.alicdn.com/@sc04/kf/Hcbf55f7354bf4bc9891139bb872a478cx.png'
 ],
 seller: {
-  name: 'MCRShop',
-  phone: '+221784743356',
-  country: 'SN',
+  name: 'RYONV',
+  phone: '+33758146261',
+  country: 'CG',
 },
 sellerPhone: '+221784743356',
 stock: 20,
@@ -526,7 +526,7 @@ images: [
 seller: {
   name: 'RYONV',
   phone: '+33758146261',
-  country: 'FR',
+  country: 'CG',
 },
 promotion: {
   discount: 20, 
@@ -824,7 +824,7 @@ stock: 15
         seller: {
           name: 'RYONV',
           phone: '+33758146261',
-          country: 'FR',
+          country: 'CG',
         },
         promotion: {
           discount: 20, 
@@ -848,7 +848,7 @@ stock: 15
           seller: {
             name: 'RYONV',
             phone: '+33758146261',
-            country: 'FR',
+            country: 'CG',
           },
           promotion: {
             discount: 20, 
@@ -872,7 +872,7 @@ stock: 15
             seller: {
               name: 'RYONV',
               phone: '+33758146261',
-              country: 'FR',
+              country: 'CG',
             },
             sellerPhone: '+33758146261',
             promotion: {
