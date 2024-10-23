@@ -1,5 +1,131 @@
 const products = [
 {
+id: 37,// Vêtements 
+name: "Complet femme",
+description: 'Toutes les tailles',
+price: 8500,
+category: 'vetements',
+images: [
+'https://live.staticflickr.com/65535/54087796153_bd4af03e4b_w.jpg',
+'https://live.staticflickr.com/65535/54087546136_d39fdaecb1_w.jpg',
+'https://live.staticflickr.com/65535/54088000980_6d8864ce94_w.jpg',
+'https://live.staticflickr.com/65535/54088000970_0b804b9a88_w.jpg',
+],
+seller: {
+  name: 'RAAM',
+  phone: '+242069954916',
+  country: 'CG'
+},
+sellerPhone: '+242069954916',
+promotion: {
+  discount: 10, 
+  endDate: '2024-10-21T23:59:59' 
+},
+stock: 9,
+},
+
+{
+id: 38,// Vêtements 
+name: "Robe femme",
+description: 'Toutes les tailles',
+price: 6000,
+category: 'vetements',
+images: [
+'https://live.staticflickr.com/65535/54087877064_c388e1a914_w.jpg',
+'https://live.staticflickr.com/65535/54087796148_98db3420b3_w.jpg',
+'https://live.staticflickr.com/65535/54086666982_271724e7bf_n.jpg',
+],
+seller: {
+  name: 'RAAM',
+  phone: '+242069954916',
+  country: 'CG'
+},
+sellerPhone: '+242069954916',
+promotion: {
+  discount: 10, 
+  endDate: '2024-10-21T23:59:59' 
+},
+stock: 9,
+},
+
+{
+id: 39,// Vêtements 
+name: "Complet femme",
+description: 'Toutes les tailles',
+price: 6000,
+category: 'vetements',
+images: [
+'https://live.staticflickr.com/65535/54087877029_1dcf7f5bec_n.jpg',
+'https://live.staticflickr.com/65535/54088000940_f36f3c9fdd_n.jpg',
+'https://live.staticflickr.com/65535/54088000945_8ee1da5c3d_n.jpg',
+],
+seller: {
+  name: 'RAAM',
+  phone: '+242069954916',
+  country: 'CG'
+},
+sellerPhone: '+242069954916',
+promotion: {
+  discount: 10, 
+  endDate: '2024-10-21T23:59:59' 
+},
+stock: 9,
+},
+
+{
+id: 40,// Vêtements 
+name: "Robe",
+description: 'Toutes les tailles',
+price: 6000,
+category: 'vetements',
+images: [
+'https://live.staticflickr.com/65535/54087877024_f67d960abf_n.jpg',
+'https://live.staticflickr.com/65535/54088000920_d7ccd65445_n.jpg',
+'https://live.staticflickr.com/65535/54087796103_804bbc1b4e_n.jpg',
+],
+seller: {
+  name: 'RAAM',
+  phone: '+242069954916',
+  country: 'CG'
+},
+sellerPhone: '+242069954916',
+promotion: {
+  discount: 10, 
+  endDate: '2024-10-21T23:59:59' 
+},
+stock: 9,
+},
+
+{
+id: 40,// Vêtements 
+name: "Robe",
+description: 'Toutes les tailles',
+price: 6000,
+category: 'vetements',
+images: [
+'https://live.staticflickr.com/65535/54086666967_1b79944ab4_n.jpg',
+'https://s.alicdn.com/@sc04/kf/Aeeaf6f19c9b54db699f8138117409af7x.jpg?avif=close',
+'https://s.alicdn.com/@sc04/kf/A462b12034cec461e978aec1f648e1677q.png_720x720q50.jpg',
+],
+seller: {
+  name: 'RAAM',
+  phone: '+242069954916',
+  country: 'CG'
+},
+sellerPhone: '+242069954916',
+promotion: {
+  discount: 10, 
+  endDate: '2024-10-21T23:59:59' 
+},
+stock: 9,
+},
+
+
+
+// //////////////////////////////////////////////////////////////////
+
+
+{
 id: 1,// Vêtements 
 name: "Robe Femme",
 description: 'Toutes les tailles',
@@ -94,7 +220,7 @@ stock: 15
 },
 
 {
-  id: 33,
+  id: 34,
   name: 'Ensemble deux pièces',
   description: 'Ensemble deux pièces',
   price: 2500,
@@ -168,7 +294,7 @@ stock: 15
 },
 
 {
-id: 34,
+id: 35,
 name: 'Robe',
 description: 'S L XL XXL 3XL',
 price: 7500,
@@ -859,7 +985,7 @@ stock: 15
           },
 
           {
-            id: 33,
+            id: 36,
             name: 'Femmes Sexy Jupe',
             description: '100% coton Denim',
             price: 6500,

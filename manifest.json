@@ -1,7 +1,7 @@
 {
-    "name": "RYONE",
-    "short_name": "RYONE",
-    "description": "Application e-commerce pour RYONE",
+    "name": "RYONV",
+    "short_name": "RYONV",
+    "description": "Application e-commerce pour RYONV",
     "start_url": "./",
     "display": "standalone",
     "background_color": "#ffffff",

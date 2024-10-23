@@ -164,4 +164,4 @@ function showSalesPopup() {
 }
 
 // Afficher le pop-up de vente après un certain temps ou une action
-setTimeout(showSalesPopup, 30000);
+setTimeout(showSalesPopup, 40000);

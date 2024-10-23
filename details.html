@@ -83,33 +83,6 @@
   </div>
 </div> -->
 
-<!-- Ajouter les styles CSS pour le pop-up -->
-<!-- <style>
-  .popup {
-    display: none;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 400px;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-
-  .popup-content {
-    text-align: center;
-  }
-
-  .close-popup {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
-  }
-</style> -->
 
 <!-- JavaScript pour le pop-up -->
 <script>
@@ -131,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(showPopup, 1000); // Délai de 1 seconde
 });
 </script>
+
+
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -141,14 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-  </script>
-  <script nonce="xyz">
+</script>
+<script nonce="xyz">
     document.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
         location.reload();
       }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
     });
-    </script>
+</script>
     
     
     <!-- <script nonce="xyz" src="./scrpt_pwa.js"></script> -->
