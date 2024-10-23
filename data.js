@@ -1,4 +1,72 @@
 const products = [
+
+  {
+    id: 37,// Vêtements 
+    name: "Complet femme",
+    description: 'Toutes les tailles',
+    price: 8500,
+    images: [
+    'https://live.staticflickr.com/65535/54087796153_bd4af03e4b_w.jpg',
+    'https://live.staticflickr.com/65535/54087546136_d39fdaecb1_w.jpg',
+    'https://live.staticflickr.com/65535/54088000980_6d8864ce94_w.jpg',
+    'https://live.staticflickr.com/65535/54088000970_0b804b9a88_w.jpg',
+    ],
+    vendorPhone: '+242069954916',
+  },
+    
+    {
+    id: 38,// Vêtements 
+    name: "Robe femme",
+    description: 'Toutes les tailles',
+    price: 6000,
+    images: [
+    'https://live.staticflickr.com/65535/54087877064_c388e1a914_w.jpg',
+    'https://live.staticflickr.com/65535/54087796148_98db3420b3_w.jpg',
+    'https://live.staticflickr.com/65535/54086666982_271724e7bf_n.jpg',
+    ],
+    vendorPhone: '+242069954916',
+    },
+    
+    {
+    id: 39,// Vêtements 
+    name: "Complet femme",
+    description: 'Toutes les tailles',
+    price: 6000,
+    images: [
+    'https://live.staticflickr.com/65535/54087877029_1dcf7f5bec_n.jpg',
+    'https://live.staticflickr.com/65535/54088000940_f36f3c9fdd_n.jpg',
+    'https://live.staticflickr.com/65535/54088000945_8ee1da5c3d_n.jpg',
+    ],
+    vendorPhone: '+242069954916',
+    },
+    
+    {
+    id: 40,// Vêtements 
+    name: "Robe",
+    description: 'Toutes les tailles',
+    price: 6000,
+    images: [
+    'https://live.staticflickr.com/65535/54087877024_f67d960abf_n.jpg',
+    'https://live.staticflickr.com/65535/54088000920_d7ccd65445_n.jpg',
+    'https://live.staticflickr.com/65535/54087796103_804bbc1b4e_n.jpg',
+    ],
+    vendorPhone: '+242069954916',
+    },
+    
+    {
+    id: 40,// Vêtements 
+    name: "Robe",
+    description: 'Toutes les tailles',
+    price: 6000,
+    images: [
+    'https://live.staticflickr.com/65535/54086666967_1b79944ab4_n.jpg',
+    'https://s.alicdn.com/@sc04/kf/Aeeaf6f19c9b54db699f8138117409af7x.jpg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/A462b12034cec461e978aec1f648e1677q.png_720x720q50.jpg',
+    ],
+    vendorPhone: '+242069954916',
+    },
+  
+  ////////////////////////////////////////////////////////////////
     {
       id: 1,
       name: 'Robe Femme',
