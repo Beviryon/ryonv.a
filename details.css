@@ -151,131 +151,93 @@ footer p {
   font-weight: 300;
 }
 
-  
-/* Styles pour la page de détails du produit */
+/* /contenu de la page detail */
 .product-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-  
-  #product-info {
-    max-width: 800px;
-    text-align: center;
-    position: relative;
-    padding: 20px 30px;
-    margin: 50px;
-  }
-  
-  .product-images {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-  }
-  
-  .product-images img {
-    max-width: 100%;
-    height: auto;
-    margin: 0.5rem;
-  }
-  
-  /* Styles pour les boutons */
-  button {
-    display: inline-block;
-    padding: 0.2rem 1rem;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    margin: 1rem;
-  }
-  
-  .btn:hover {
-    background-color: #555;
-  }
-  
-  .whatsapp-btn {
-    background-color: #25D366;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .product-details {
-      padding: 1rem;
-    }
-  
-    .product-images {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .product-images img {
-      max-width: 80%;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px;
+}
 
-  p_details {
-    padding: 2px;
-    top: 8px;
-    position: relative;
-    text-align: center;
-  }
+#product-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  p_prix {
-    position: relative;
-    justify-content: center;
+#contact-seller-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#contact-seller-btn:hover {
+  background-color: #45a049;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+@media (max-width: 868px) {
+  .product-details {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
+    padding: 20px;
+  }
+}
+@media (max-width: 568px) {
+  .product-details {
     display: flex;
-    top: 35px;
-    text-align: center;
-    color: #f2ae01;
-    font-weight: bold;
-    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
-
-  button {
-    position: relative;
-    top: 25px;
-    border-radius: 10px;
-    padding: 6px 9px;
-    margin: 22px;
-    background-color: #000361;
+}
+@media (max-width: 468px) {
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
-  
-  /* button {
-    display: block;
-    background-color: #000361;
-    color: #ffffff;
-    padding: 0.5rem 0.5rem;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: 400;
-    font-size: 11px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-    justify-content: center;
-  } */
-
-  @media (max-width: 300px) {
-    #installBanner div, #salesPopup div {
-      padding: 1em;
-      font-size: 14px;
-    }
-  
-    #installButton, #yesButton, #noButton {
-      padding: 0.5em 1em;
-      font-size: 12px;
-    }
-  
-    h2 {
-      font-size: 18px;
-    }
-  }
+}

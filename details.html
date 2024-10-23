@@ -51,10 +51,22 @@
   <main>
     <section class="product-details">
       <div id="product-info">
-        <!--  --> 
+        <!-- Informations sur le produit (nom, description, prix) seront insérées ici via JavaScript -->
       </div>
-      <!-- <button id="contact-seller-btn">Discuter avec le vendeur</button> -->
+    
+      <!-- Carrousel d'images -->
+      <div id="carousel" class="carousel">
+        <div class="carousel-inner">
+          <!-- Les images du produit seront insérées ici via JavaScript -->
+        </div>
+        <button class="carousel-control prev">Précédente</button>
+        <button class="carousel-control next">Suivante</button>
+      </div>
+    
+      <!-- Bouton pour discuter avec le vendeur -->
+      <button id="contact-seller-btn">Discuter avec le vendeur</button>
     </section>
+    
   </main>
 
   <footer>
@@ -73,17 +85,6 @@
   <script src="./details.js"></script>
   <script src="./products.js"></script>
 
-  <!--  -->
-  <!-- Message Pop-up -->
-<!-- <div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close-popup">&times;</span>
-    <p>Téléchargez notre application pour une meilleure expérience !</p>
-    <a href="https://ryonv-shop.netlify.app/" class="download-link">Télécharger l'application</a>
-  </div>
-</div> -->
-
-
 <!-- JavaScript pour le pop-up -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -101,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Afficher le pop-up après un délai ou immédiatement
-  setTimeout(showPopup, 1000); // Délai de 1 seconde
+  setTimeout(showPopup, 1000); 
 });
 </script>
 
@@ -124,19 +125,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
     });
 </script>
-    
-    
-    <!-- <script nonce="xyz" src="./scrpt_pwa.js"></script> -->
-    <script nonce="xyz">
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch(error => {
-            console.log('Service Worker registration failed:', error);
-          });
-      }
-    </script>
+     
+<script nonce="xyz">
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(error => {
+        console.log('Service Worker registration failed:', error);
+      });
+  }
+</script>
 </body>
 </html>
