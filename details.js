@@ -38,10 +38,17 @@ if (product) {
 
   const totalImages = product.images.length;
 
+  // Fonction pour mettre à jour le compteur d'images
+  function updateCounter(currentIndex, totalImages) {
+    const counter = document.getElementById('carousel-counter');
+    counter.textContent = `Image ${currentIndex + 1} sur ${totalImages}`;
+  }
+
   // Fonction pour afficher l'image courante
   function showImage(index) {
     const offset = -index * 100; // Calculer l'offset en fonction de l'index
     carouselInner.style.transform = `translateX(${offset}%)`;
+    updateCounter(index, totalImages); // Mise à jour du compteur
   }
 
   // Gestion des boutons du carrousel
@@ -62,64 +69,19 @@ if (product) {
   const contactBtn = document.getElementById('contact-seller-btn');
   contactBtn.addEventListener('click', () => {
     const phoneNumber = product.vendorPhone.replace(/[^0-9]/g, '');
-    const whatsappUrl = `https://wa.me/${phoneNumber}`;
-    window.open(whatsappUrl, '_blank'); // Ouvrir la discussion WhatsApp dans un nouvel onglet
+    
+    // Créer un message WhatsApp prédéfini avec les informations du produit
+    const message = `Bonjour, je suis intéressé par votre produit : 
+    *Nom :* ${product.name} 
+    *Description :* ${product.description} 
+    *Prix :* ${product.price} FCFA 
+    *Quantité disponible :* ${product.quantity || 'N/A'} 
+    Pouvez-vous me donner plus de détails ?`;
+
+    // Créer le lien WhatsApp avec le message prédéfini
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    // Ouvrir la discussion WhatsApp dans un nouvel onglet
+    window.open(whatsappUrl, '_blank');
   });
 }
-
-// === Gestion du menu burger pour la navigation mobile ===
-const navSlide = () => {
-  const burger = document.querySelector('.burger');
-  const nav = document.querySelector('.nav-links');
-  const navLinks = document.querySelectorAll('.nav-links li');
-
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
-    burger.classList.toggle('toggle');
-  });
-
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('nav-active');
-      burger.classList.remove('toggle');
-    });
-  });
-};
-
-navSlide(); // Appel de la fonction navSlide pour activer la fonctionnalité du menu
-
-// === Gestion du pop-up d'affichage (si besoin) ===
-document.addEventListener('DOMContentLoaded', () => {
-  const popup = document.getElementById('popup');
-  const closePopup = document.querySelector('.close-popup');
-
-  // Afficher le pop-up au chargement de la page
-  function showPopup() {
-    popup.style.display = 'block';
-  }
-
-  // Fermer le pop-up
-  closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-
-  // Afficher le pop-up après un délai de 1 seconde
-  setTimeout(showPopup, 1000);
-});
-
-// === Enregistrement du Service Worker pour les notifications et autres fonctionnalités PWA ===
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js').then(registration => {
-      console.log('Service Worker registered with scope:', registration.scope);
-    }).catch(error => {
-      console.log('Service Worker registration failed:', error);
-    });
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(function() {
-    location.reload();
-  }, 200000); 
-});

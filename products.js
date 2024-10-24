@@ -481,7 +481,7 @@ sellerPhone: '+221784743356',
 stock: 20,
 promotion: {
   discount: 10, // 10% de réduction
-  endDate: '2024-10-15T23:59:59' // Date de fin de la promotion
+  endDate: '2024-10-15T23:59:59' 
 },
 },
 

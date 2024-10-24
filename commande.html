@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi de Commande</title>
+    <link rel="stylesheet" href="commande.css">
+</head>
+<body>
+
+<header>
+    <h1>Suivi de Commande</h1>
+</header>
+
+<main>
+    <section class="tracking-section">
+        <h2>Détails de la Commande</h2>
+        <div id="order-details">
+            <!-- Détails de la commande chargés ici -->
+        </div>
+
+        <h3>Mettre à Jour la Progression</h3>
+        <form id="update-form">
+            <label for="status">Statut de la commande :</label>
+            <select id="status" required>
+                <option value="en attente">En attente</option>
+                <option value="en cours de livraison">En cours de livraison</option>
+                <option value="livrée">Livrée</option>
+                <option value="annulée">Annulée</option>
+            </select>
+
+            <label for="notes">Notes supplémentaires :</label>
+            <textarea id="notes" placeholder="Ajouter des notes ici..."></textarea>
+
+            <button type="submit">Mettre à jour</button>
+        </form>
+
+        <div id="notification"></div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 VotreSite. Tous droits réservés.</p>
+</footer>
+
+<script src="commande.js"></script>
+</body>
+</html>
