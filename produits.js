@@ -2,7 +2,6 @@ import { products } from "./products.js";
 console.log(products)
 
 
-
 // 
 // 
 // 
@@ -584,78 +583,85 @@ form.addEventListener('submit', (event) => {
   
 }
 
-// Variables pour la pagination
-let currentPage = 1;
-const productsPerPage = 20;
-const paginationContainer = document.querySelector('.pagination');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
-const pageInfo = document.getElementById('page-info');
-
-// Fonction pour afficher les produits avec pagination
-function displayProducts(products) {
-  const productList = document.querySelector('.product-list');
-  productList.innerHTML = ''; 
-
-  const startIndex = (currentPage - 1) * productsPerPage;
-  const endIndex = startIndex + productsPerPage;
-  const paginatedProducts = products.slice(startIndex, endIndex); 
-
-  // Vérification si des produits sont disponibles après filtrage
-  if (paginatedProducts.length === 0) {
-      const noProductsMessage = document.createElement('p');
-      noProductsMessage.textContent = 'Pas de produits pour ce pays ou ce vendeur.';
-      productList.appendChild(noProductsMessage);
+// Variables pour la pagination //////////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  // Vérifiez que `products` contient bien les articles
+  if (!products || products.length === 0) {
+      console.error("La variable 'products' est vide ou non définie.");
       return;
   }
+  
+  // Variables pour la pagination
+  let currentPage = 1;
+  const productsPerPage = 10;
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const pageInfo = document.getElementById('page-info');
+  
+  // Fonction pour afficher les produits avec pagination
+  function displayProducts(products) {
+      const productList = document.querySelector('.product-list');
+      productList.innerHTML = ''; 
 
-  paginatedProducts.forEach(product => {
-      const card = createProductCard(product); 
-      productList.appendChild(card);
-  });
+      const startIndex = (currentPage - 1) * productsPerPage;
+      const endIndex = startIndex + productsPerPage;
+      const paginatedProducts = products.slice(startIndex, endIndex); 
 
-  updatePaginationInfo(products.length);
-}
+      // Vérification si des produits sont disponibles
+      if (paginatedProducts.length === 0) {
+          const noProductsMessage = document.createElement('p');
+          noProductsMessage.textContent = 'Pas de produits pour ce pays ou ce vendeur.';
+          productList.appendChild(noProductsMessage);
+          return;
+      }
 
+      // Ajouter chaque produit
+      paginatedProducts.forEach(product => {
+          const card = createProductCard(product); 
+          if (card) productList.appendChild(card);
+      });
 
-// Fonction pour mettre à jour les informations de pagination
-function updatePaginationInfo(totalProducts) {
-    const totalPages = Math.ceil(totalProducts / productsPerPage);
-    pageInfo.textContent = `Page ${currentPage} sur ${totalPages}`;
+      updatePaginationInfo(products.length);
+  }
 
-    // Désactiver les boutons "Précédent" et "Suivant" selon la page actuelle
-    prevBtn.disabled = currentPage === 1;
-    nextBtn.disabled = currentPage === totalPages;
-}
+  // Fonction pour mettre à jour les informations de pagination
+  function updatePaginationInfo(totalProducts) {
+      const totalPages = Math.ceil(totalProducts / productsPerPage);
+      pageInfo.textContent = `Page ${currentPage} sur ${totalPages}`;
 
-// Fonction pour passer à la page suivante
-function nextPage() {
-    currentPage++;
-    filterProducts(); 
-}
+      // Désactiver les boutons si nécessaire
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = currentPage === totalPages;
+  }
 
-// Fonction pour revenir à la page précédente
-function prevPage() {
-    currentPage--;
-    filterProducts(); 
-}
+  // Fonction pour passer à la page suivante
+  function nextPage() {
+      const totalPages = Math.ceil(products.length / productsPerPage);
+      if (currentPage < totalPages) {
+          currentPage++;
+          displayProducts(products); 
+      }
+  }
 
-// Gestion des événements pour les boutons de pagination
-prevBtn.addEventListener('click', prevPage);
-nextBtn.addEventListener('click', nextPage);
+  // Fonction pour revenir à la page précédente
+  function prevPage() {
+      if (currentPage > 1) {
+          currentPage--;
+          displayProducts(products); 
+      }
+  }
 
-filterProducts();
+  // Gestion des événements pour les boutons de pagination
+  prevBtn.addEventListener('click', prevPage);
+  nextBtn.addEventListener('click', nextPage);
 
-
-// Événement pour le bouton "Précédent"
-prevBtn.addEventListener('click', () => {
-if (currentPage > 1) {
-currentPage--;
-displayProducts(products);
-}
+  // Appel initial de la fonction pour afficher les produits
+  displayProducts(products);
 });
+///
 
-// Événement pour le bouton "Suivant"
+
+// Événement pour le bouton "Suivant" 
 nextBtn.addEventListener('click', () => {
 const totalProducts = products.length;
 const totalPages = Math.ceil(totalProducts / productsPerPage);
@@ -688,7 +694,6 @@ document.getElementById('category-select').addEventListener('change', function()
   filterProductsByCategory(selectedCategory); 
 });
 
-
 // Fonction pour filtrer les produits par catégorie, pays ou vendeur
 function filterProducts() {
   const selectedCategory = document.getElementById('category-select').value;
@@ -719,13 +724,10 @@ function filterProducts() {
   displayProducts(filteredProducts);
 }
 
-
 // Événements pour détecter les changements de filtre
 document.getElementById('category-select').addEventListener('change', filterProducts);
 document.getElementById('seller-country').addEventListener('change', filterProducts);
 document.getElementById('seller-name').addEventListener('change', filterProducts);
-
-
 
 // Fonction pour trier les produits
 function sortProducts() {

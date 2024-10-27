@@ -54,7 +54,7 @@ const products = [
     },
     
     {
-    id: 40,// Vêtements 
+    id: 42,// Vêtements 
     name: "Robe",
     description: 'Toutes les tailles',
     price: 6000,

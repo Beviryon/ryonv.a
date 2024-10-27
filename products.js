@@ -1,4 +1,5 @@
 const products = [
+
 {
 id: 37,// Vêtements 
 name: "Complet femme",
@@ -97,8 +98,8 @@ stock: 9,
 },
 
 {
-id: 40,// Vêtements 
-name: "Robe",
+id: 42,// Vêtements 
+name: "Robe sexy",
 description: 'Toutes les tailles',
 price: 6000,
 category: 'vetements',
@@ -706,8 +707,8 @@ stock: 15
   sellerPhone: '+221784743356',
   stock: 30,
   promotion: {
-    discount: 10, // 10% de réduction
-    endDate: '2024-09-15T23:59:59' // Date de fin de la promotion
+    discount: 10, 
+    endDate: '2024-09-15T23:59:59' 
   },
   },
 {
@@ -758,7 +759,7 @@ stock: 15
   stock: 30
   },
 {
-  id: 23,// Vêtements raison
+  id: 41,// Vêtements raison
   name: 'Ensemble H&F',
   description: 'Toutes les tailles',
   price: 6000,
@@ -778,8 +779,8 @@ stock: 15
   sellerPhone: '+221784743356',
   stock: 30,
   promotion: {
-    discount: 10, // 10% de réduction
-    endDate: '2024-09-15T23:59:59' // Date de fin de la promotion
+    discount: 10, 
+    endDate: '2024-09-15T23:59:59' 
   },
   },
 {
@@ -1008,8 +1009,6 @@ stock: 15
             stock: 15
             },
 
-
-
 ];
 
-export { products };
+export  {products};

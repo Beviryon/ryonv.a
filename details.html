@@ -83,12 +83,12 @@
     </div>
   </footer>
   
-  <script src="./data.js"></script>
-  <script src="./details.js"></script>
-  <script src="./products.js"></script>
+  <script  nonce="xyz" src="./data.js"></script>
+  <script nonce="xyz" src="./details.js"></script>
+  <script  nonce="xyz" src="./products.js"></script>
 
 <!-- JavaScript pour le pop-up -->
-<script>
+<script nonce="xyz">
 document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('popup');
   const closePopup = document.querySelector('.close-popup');
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 
-<script>
+<script nonce="xyz">
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./service-worker.js').then(registration => {

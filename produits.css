@@ -1323,13 +1323,13 @@ a:hover {
   font-weight: 900;
   margin-right: 8px;
   font-size: 1rem;
-  color: #007bff; /* Icône plus visible */
+  color: #007bff; 
 }
 
 /* Icônes spécifiques pour chaque label */
-#seller-country-label::before { content: '\f57d'; } /* Icône globe */
-#seller-name-label::before { content: '\f2bb'; }    /* Icône utilisateur */
-#search-input-label::before { content: '\f002'; }   /* Icône recherche */
+#seller-country-label::before { content: '\f57d'; } 
+#seller-name-label::before { content: '\f2bb'; } 
+#search-input-label::before { content: '\f002'; }  
 
 /* Transition lors du survol de la barre de filtre */
 .filter-bar:hover {
