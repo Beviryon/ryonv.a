@@ -540,6 +540,7 @@ function openOrderForm(product) {
         window.open(whatsappUrl, '_blank');
         modal.style.display = 'none';
         form.reset();
+        location.reload();
     } else {
         alert('Veuillez remplir correctement tous les champs.');
     }
@@ -557,33 +558,34 @@ function openOrderForm(product) {
 
 
 // Variables pour la pagination //////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
-  // Vérifiez que `products` contient bien les articles
   if (!products || products.length === 0) {
       console.error("La variable 'products' est vide ou non définie.");
       return;
   }
   
-  // Variables pour la pagination
   let currentPage = 1;
   const productsPerPage = 10;
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
   const pageInfo = document.getElementById('page-info');
-  
-  // Fonction pour afficher les produits avec pagination
-  function displayProducts(products) {
+
+  // Fonction pour afficher les produits avec pagination et filtres
+  function displayProducts(filteredProducts) {
       const productList = document.querySelector('.product-list');
       productList.innerHTML = ''; 
 
       const startIndex = (currentPage - 1) * productsPerPage;
       const endIndex = startIndex + productsPerPage;
-      const paginatedProducts = products.slice(startIndex, endIndex); 
+      const paginatedProducts = filteredProducts.slice(startIndex, endIndex); 
 
       // Vérification si des produits sont disponibles
       if (paginatedProducts.length === 0) {
           const noProductsMessage = document.createElement('p');
-          noProductsMessage.textContent = 'Pas de produits pour ce pays ou ce vendeur.';
+          noProductsMessage.textContent = 'Pas de produits pour cette sélection.';
           productList.appendChild(noProductsMessage);
           return;
       }
@@ -594,7 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (card) productList.appendChild(card);
       });
 
-      updatePaginationInfo(products.length);
+      updatePaginationInfo(filteredProducts.length);
   }
 
   // Fonction pour mettre à jour les informations de pagination
@@ -602,64 +604,83 @@ document.addEventListener('DOMContentLoaded', () => {
       const totalPages = Math.ceil(totalProducts / productsPerPage);
       pageInfo.textContent = `Page ${currentPage} sur ${totalPages}`;
 
-      // Désactiver les boutons si nécessaire
       prevBtn.disabled = currentPage === 1;
       nextBtn.disabled = currentPage === totalPages;
   }
 
-  // Fonction pour passer à la page suivante
-  function nextPage() {
-      const totalPages = Math.ceil(products.length / productsPerPage);
+  // Fonction pour filtrer les produits
+  function applyFilters() {
+      const selectedCategory = document.getElementById('category-select').value;
+      const selectedCountry = document.getElementById('seller-country').value;
+      const selectedSeller = document.getElementById('seller-name').value;
+      const searchTerm = document.getElementById('search-input').value.toLowerCase();
+
+      let filteredProducts = products;
+
+      if (selectedCategory !== 'all') {
+          filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
+      }
+
+      if (selectedCountry !== 'all') {
+          filteredProducts = filteredProducts.filter(product => 
+              product.seller && product.seller.country === selectedCountry
+          );
+      }
+
+      if (selectedSeller !== 'all') {
+          filteredProducts = filteredProducts.filter(product => 
+              product.seller && product.seller.name === selectedSeller
+          );
+      }
+
+      if (searchTerm) {
+          filteredProducts = filteredProducts.filter(product => 
+              product.name.toLowerCase().includes(searchTerm)
+          );
+      }
+
+      currentPage = 1;  // Réinitialiser à la première page après chaque filtrage
+      displayProducts(filteredProducts);
+      return filteredProducts;  // Retourner les produits filtrés
+  }
+
+  // Événements pour les filtres et la barre de recherche
+  document.getElementById('category-select').addEventListener('change', () => {
+      filteredProducts = applyFilters();
+  });
+  document.getElementById('seller-country').addEventListener('change', () => {
+      filteredProducts = applyFilters();
+  });
+  document.getElementById('seller-name').addEventListener('change', () => {
+      filteredProducts = applyFilters();
+  });
+  document.getElementById('search-input').addEventListener('input', () => {
+      filteredProducts = applyFilters();
+  });
+
+  let filteredProducts = applyFilters();  // Initialiser avec les produits filtrés
+
+  // Gestion des événements pour la pagination
+  nextBtn.addEventListener('click', () => {
+      const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
       if (currentPage < totalPages) {
           currentPage++;
-          displayProducts(products); 
+          displayProducts(filteredProducts);  // Afficher les produits filtrés
       }
-  }
+  });
 
-  // Fonction pour revenir à la page précédente
-  function prevPage() {
+  prevBtn.addEventListener('click', () => {
       if (currentPage > 1) {
           currentPage--;
-          displayProducts(products); 
+          displayProducts(filteredProducts);  // Afficher les produits filtrés
       }
-  }
+  });
 
-  // Gestion des événements pour les boutons de pagination
-  prevBtn.addEventListener('click', prevPage);
-  nextBtn.addEventListener('click', nextPage);
-
-  // Appel initial de la fonction pour afficher les produits
-  displayProducts(products);
-});
-///
-
-
-// Événement pour le bouton "Suivant" 
-nextBtn.addEventListener('click', () => {
-const totalProducts = products.length;
-const totalPages = Math.ceil(totalProducts / productsPerPage);
-
-if (currentPage < totalPages) {
-currentPage++;
-displayProducts(products);
-}
+  // Appel initial pour afficher les produits sans filtre
+  applyFilters();
 });
 
-// Fonction pour filtrer les produits par catégorie
-function filterProductsByCategory(category) {
-  // Retirer la classe active des anciennes catégories (plus nécessaire avec un <select>)
-  const categorySelect = document.getElementById('category-select');
-
-  // Vérifie si la catégorie sélectionnée est 'all'
-  if (category === 'all') {
-      // Affiche tous les produits si 'all' est sélectionné
-      displayProducts(products);
-  } else {
-      // Filtre les produits en fonction de la catégorie sélectionnée
-      const filteredProducts = products.filter(product => product.category === category);
-      displayProducts(filteredProducts);
-  }
-}
+//////////////////////////////////////////////////////////////// //////
 
 // Événement pour détecter le changement dans le <select>
 document.getElementById('category-select').addEventListener('change', function() {
