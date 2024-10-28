@@ -17,7 +17,7 @@ seller: {
   phone: '+242069954916',
   country: 'CG'
 },
-sellerPhone: '+242069954916',
+vendorPhone: '+242069954916',
 promotion: {
   discount: 10, 
   endDate: '2024-10-21T23:59:59' 
@@ -41,7 +41,7 @@ seller: {
   phone: '+242069954916',
   country: 'CG'
 },
-sellerPhone: '+242069954916',
+vendorPhone: '+242069954916',
 promotion: {
   discount: 10, 
   endDate: '2024-10-21T23:59:59' 
@@ -65,7 +65,7 @@ seller: {
   phone: '+242069954916',
   country: 'CG'
 },
-sellerPhone: '+242069954916',
+vendorPhone: '+242069954916',
 promotion: {
   discount: 10, 
   endDate: '2024-10-21T23:59:59' 
@@ -89,7 +89,7 @@ seller: {
   phone: '+242069954916',
   country: 'CG'
 },
-sellerPhone: '+242069954916',
+vendorPhone: '+242069954916',
 promotion: {
   discount: 10, 
   endDate: '2024-10-21T23:59:59' 
@@ -113,7 +113,7 @@ seller: {
   phone: '+242069954916',
   country: 'CG'
 },
-sellerPhone: '+242069954916',
+vendorPhone: '+242069954916',
 promotion: {
   discount: 10, 
   endDate: '2024-10-21T23:59:59' 
@@ -141,7 +141,7 @@ seller: {
   phone: '+221781520600',
   country: 'SN'
 },
-sellerPhone: '+221781520600',
+vendorPhone: '+221781520600',
 promotion: {
   discount: 10, 
   endDate: '2024-10-25T23:59:59' 
@@ -164,7 +164,7 @@ seller: {
   phone: '+221784743356',
   country: 'SN',
 },
-sellerPhone: '+221784743356',
+vendorPhone: '+221784743356',
 promotion: {
   discount: 10, 
   endDate: '2024-10-25T23:59:59' 
@@ -187,7 +187,7 @@ seller: {
   phone: '+33758146261',
   country: 'CG',
 },
-sellerPhone: '+33758146261',
+vendorPhone: '+33758146261',
 promotion: {
   discount: 20, 
   endDate: '2024-10-25T23:59:59' 
@@ -216,7 +216,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-10-29T23:59:59' 
 },
-sellerPhone: '+221781520600',
+vendorPhone: '+221781520600',
 stock: 15
 },
 
@@ -240,7 +240,7 @@ stock: 15
     discount: 20, 
     endDate: '2024-10-29T23:59:59' 
   },
-  sellerPhone: '+221784743356',
+  vendorPhone: '+221784743356',
   stock: 15
   },
 
@@ -266,7 +266,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-10-29T23:59:59' 
 },
-sellerPhone: '+221784743356',
+vendorPhone: '+221784743356',
 stock: 15
 },
 
@@ -290,7 +290,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-10-29T23:59:59' 
 },
-sellerPhone: '+221784743356',
+vendorPhone: '+221784743356',
 stock: 15
 },
 
@@ -313,7 +313,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-10-29T23:59:59' 
 },
-sellerPhone: '+221781520600',
+vendorPhone: '+221781520600',
 stock: 15
 },
 
@@ -338,7 +338,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-10-15T23:59:59' 
 },
-sellerPhone: '+221784743356',
+vendorPhone: '+221784743356',
 stock: 20
 },
 
@@ -361,7 +361,7 @@ images: [
     discount: 20, 
     endDate: '2024-10-15T23:59:59' 
   },
-sellerPhone: '+221784743356',
+vendorPhone: '+221784743356',
 stock: 20
 },
 
@@ -380,7 +380,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-10-15T23:59:59' 
 },
-sellerPhone: '+33758146261',
+vendorPhone: '+33758146261',
 stock: 15,
 promotion: {
   discount: 10, // 10% de réduction
@@ -408,7 +408,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-10-15T23:59:59' 
 },
-sellerPhone: '+33758146261',
+vendorPhone: '+33758146261',
 stock: 20
 },
 
@@ -428,7 +428,7 @@ seller: {
   phone: '+33758146261',
   country: 'FR',
 },
-sellerPhone: '+33758146261',
+vendorPhone: '+33758146261',
 stock: 10,
 promotion: {
   discount: 10, // 10% de réduction
@@ -451,7 +451,7 @@ seller: {
   phone: '+221784743356',
   country: 'SN',
 },
-sellerPhone: '+221784743356',
+vendorPhone: '+221784743356',
 stock: 15,
 promotion: {
   discount: 20, 
@@ -478,7 +478,7 @@ seller: {
   phone: '+221784743356',
   country: 'SN',
 },
-sellerPhone: '+221784743356',
+vendorPhone: '+221784743356',
 stock: 20,
 promotion: {
   discount: 10, // 10% de réduction
@@ -508,7 +508,7 @@ images: [
     discount: 20, 
     endDate: '2024-10-15T23:59:59' 
   },
-sellerPhone: '+33758146261',
+vendorPhone: '+33758146261',
 stock: 10
 },
 
@@ -530,7 +530,7 @@ seller: {
   phone: '+33758146261',
   country: 'CG',
 },
-sellerPhone: '+33758146261',
+vendorPhone: '+33758146261',
 stock: 15
 },
 
@@ -552,7 +552,7 @@ seller: {
   phone: '+33758146261',
   country: 'CG',
 },
-sellerPhone: '+33758146261',
+vendorPhone: '+33758146261',
 stock: 20
 },
 
@@ -578,7 +578,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-10-15T23:59:59' 
 },
-sellerPhone: '+242065235530',
+vendorPhone: '+242065235530',
 stock: 15
 },
 
@@ -605,7 +605,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-09-15T23:59:59' 
 },
-sellerPhone: '+242065235530',
+vendorPhone: '+242065235530',
 stock: 10
 },
 
@@ -628,7 +628,7 @@ seller: {
   phone: '+33758146261',
   country: 'CG',
 },
-sellerPhone: '+221784743356',
+vendorPhone: '+221784743356',
 stock: 20,
 promotion: {
   discount: 10, // 10% de réduction
@@ -659,7 +659,7 @@ promotion: {
   discount: 20, 
   endDate: '2024-09-15T23:59:59' 
 },
-sellerPhone: '+33758146261',
+vendorPhone: '+33758146261',
 stock: 15
 },
 
@@ -684,7 +684,7 @@ stock: 15
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  sellerPhone: '+221784743356',
+  vendorPhone: '+221784743356',
   stock: 30
   },
 
@@ -704,7 +704,7 @@ stock: 15
     phone: '+221784743356',
     country: 'SN',
   },
-  sellerPhone: '+221784743356',
+  vendorPhone: '+221784743356',
   stock: 30,
   promotion: {
     discount: 10, 
@@ -730,7 +730,7 @@ stock: 15
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  sellerPhone: '+221784743356',
+  vendorPhone: '+221784743356',
   stock: 30
   },
 {
@@ -755,7 +755,7 @@ stock: 15
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  sellerPhone: '+221784743356',
+  vendorPhone: '+221784743356',
   stock: 30
   },
 {
@@ -776,7 +776,7 @@ stock: 15
     phone: '+221784743356',
     country: 'SN',
   },
-  sellerPhone: '+221784743356',
+  vendorPhone: '+221784743356',
   stock: 30,
   promotion: {
     discount: 10, 
@@ -802,7 +802,7 @@ stock: 15
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  sellerPhone: '+221784743356',
+  vendorPhone: '+221784743356',
   stock: 30
   },
 {
@@ -820,7 +820,7 @@ stock: 15
     phone: '+221784743356',
     country: 'SN',
   },
-  sellerPhone: '+221784743356',
+  vendorPhone: '+221784743356',
   stock: 30
   },
 {
@@ -842,7 +842,7 @@ stock: 15
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  sellerPhone: '+221784743356',
+  vendorPhone: '+221784743356',
   stock: 30
   },
 
@@ -866,7 +866,7 @@ stock: 15
     discount: 20, 
     endDate: '2024-09-15T23:59:59' 
   },
-  sellerPhone: '+221784743356',
+  vendorPhone: '+221784743356',
   stock: 30
   },
 
@@ -888,7 +888,7 @@ stock: 15
       phone: '+221784743356',
       country: 'SN',
     },
-    sellerPhone: '+221784743356',
+    vendorPhone: '+221784743356',
     stock: 30
     },
   {
@@ -910,7 +910,7 @@ stock: 15
       discount: 20, 
       endDate: '2024-09-15T23:59:59' 
     },
-    sellerPhone: '+221784743356',
+    vendorPhone: '+221784743356',
     stock: 30
     },
 
@@ -929,7 +929,7 @@ stock: 15
         phone: '+221784743356',
         country: 'SN',
       },
-      sellerPhone: '+221784743356',
+      vendorPhone: '+221784743356',
       promotion: {
         discount: 10, 
         endDate: '2024-09-25T23:59:59' 
@@ -957,7 +957,7 @@ stock: 15
           discount: 20, 
           endDate: '2024-09-19T23:59:59' 
         },
-        sellerPhone: '+33758146261',
+        vendorPhone: '+33758146261',
         stock: 15
         },
 
@@ -981,7 +981,7 @@ stock: 15
             discount: 20, 
             endDate: '2024-09-15T23:59:59' 
           },
-          sellerPhone: '+33758146261',
+          vendorPhone: '+33758146261',
           stock: 10
           },
 
@@ -1001,7 +1001,7 @@ stock: 15
               phone: '+33758146261',
               country: 'CG',
             },
-            sellerPhone: '+33758146261',
+            vendorPhone: '+33758146261',
             promotion: {
               discount: 20, 
               endDate: '2024-09-15T23:59:59' 

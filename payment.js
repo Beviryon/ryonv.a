@@ -56,3 +56,5 @@ function processPayment(paymentMethod, phone, amount) {
         document.getElementById('payment-response').textContent = 'Erreur de traitement du paiement.';
     });
 }
+
+

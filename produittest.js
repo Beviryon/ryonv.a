@@ -376,3 +376,276 @@ nextBtn.addEventListener('click', () => {
   
   navSlide();
   
+
+  ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+const countries = [
+  { code: 'DZ', name: 'Algérie' },
+  { code: 'AO', name: 'Angola' },
+  { code: 'BJ', name: 'Bénin' },
+  { code: 'BW', name: 'Botswana' },
+  { code: 'BF', name: 'Burkina Faso' },
+  { code: 'BI', name: 'Burundi' },
+  { code: 'CM', name: 'Cameroun' },
+  { code: 'CV', name: 'Cap-Vert' },
+  { code: 'CF', name: 'République centrafricaine' },
+  { code: 'TD', name: 'Tchad' },
+  { code: 'KM', name: 'Comores' },
+  { code: 'CG', name: 'Congo' },
+  { code: 'CD', name: 'République Démocratique du Congo' },
+  { code: 'DJ', name: 'Djibouti' },
+  { code: 'EG', name: 'Égypte' },
+  { code: 'GQ', name: 'Guinée équatoriale' },
+  { code: 'ER', name: 'Érythrée' },
+  { code: 'ET', name: 'Éthiopie' },
+  { code: 'GA', name: 'Gabon' },
+  { code: 'GM', name: 'Gambie' },
+  { code: 'GH', name: 'Ghana' },
+  { code: 'GN', name: 'Guinée' },
+  { code: 'GW', name: 'Guinée-Bissau' },
+  { code: 'CI', name: "Côte d'Ivoire" },
+  { code: 'KE', name: 'Kenya' },
+  { code: 'LS', name: 'Lesotho' },
+  { code: 'LR', name: 'Libéria' },
+  { code: 'LY', name: 'Libye' },
+  { code: 'MG', name: 'Madagascar' },
+  { code: 'MW', name: 'Malawi' },
+  { code: 'ML', name: 'Mali' },
+  { code: 'MR', name: 'Mauritanie' },
+  { code: 'MU', name: 'Maurice' },
+  { code: 'MA', name: 'Maroc' },
+  { code: 'MZ', name: 'Mozambique' },
+  { code: 'NA', name: 'Namibie' },
+  { code: 'NE', name: 'Niger' },
+  { code: 'NG', name: 'Nigéria' },
+  { code: 'RW', name: 'Rwanda' },
+  { code: 'ST', name: 'Sao Tomé-et-Principe' },
+  { code: 'SN', name: 'Sénégal' },
+  { code: 'SC', name: 'Seychelles' },
+  { code: 'SL', name: 'Sierra Leone' },
+  { code: 'SO', name: 'Somalie' },
+  { code: 'ZA', name: 'Afrique du Sud' },
+  { code: 'SS', name: 'Soudan du Sud' },
+  { code: 'SD', name: 'Soudan' },
+  { code: 'SZ', name: 'Eswatini' },
+  { code: 'TZ', name: 'Tanzanie' },
+  { code: 'TG', name: 'Togo' },
+  { code: 'TN', name: 'Tunisie' },
+  { code: 'UG', name: 'Ouganda' },
+  { code: 'ZM', name: 'Zambie' },
+  { code: 'ZW', name: 'Zimbabwe' }
+];
+
+function openOrderForm(product) {
+  // Créer le modal
+  const modal = document.createElement('div');
+  modal.id = 'user-info-modal';
+  modal.classList.add('modal');
+
+  // Créer le contenu du modal
+  const modalContent = document.createElement('div');
+  modalContent.classList.add('modal-content');
+
+  // Bouton de fermeture du modal
+  const closeModalSpan = document.createElement('span');
+  closeModalSpan.classList.add('close');
+  closeModalSpan.textContent = '×';
+  closeModalSpan.addEventListener('click', () => {
+    modal.style.display = 'none';
+    form.reset(); 
+  });
+
+  // Formulaire à l'intérieur du modal
+  const form = document.createElement('form');
+  form.id = 'user-info-form';
+
+  const nameLabel = document.createElement('label');
+  nameLabel.setAttribute('for', 'name');
+  nameLabel.textContent = 'Nom :';
+  const nameInput = document.createElement('input');
+  nameInput.type = 'text';
+  nameInput.id = 'name';
+  nameInput.name = 'name';
+  nameInput.required = true;
+  nameLabel.appendChild(nameInput);
+
+  const cityLabel = document.createElement('label');
+  cityLabel.setAttribute('for', 'city');
+  cityLabel.textContent = 'Ville :';
+  const cityInput = document.createElement('input');
+  cityInput.type = 'text';
+  cityInput.id = 'city';
+  cityInput.name = 'city';
+  cityInput.required = true;
+  cityLabel.appendChild(cityInput);
+
+  const countryLabel = document.createElement('label');
+  countryLabel.setAttribute('for', 'country');
+  countryLabel.textContent = 'Pays :';
+  const countrySelect = document.createElement('select');
+  countrySelect.id = 'country';
+  countrySelect.name = 'country';
+  countrySelect.required = true;
+
+  const countries = [
+    { code: 'DZ', name: 'Algérie' },
+    { code: 'AO', name: 'Angola' },
+    { code: 'BJ', name: 'Bénin' },
+    { code: 'BW', name: 'Botswana' },
+    { code: 'BF', name: 'Burkina Faso' },
+    { code: 'BI', name: 'Burundi' },
+    { code: 'CM', name: 'Cameroun' },
+    { code: 'CV', name: 'Cap-Vert' },
+    { code: 'CF', name: 'République centrafricaine' },
+    { code: 'TD', name: 'Tchad' },
+    { code: 'KM', name: 'Comores' },
+    { code: 'CG', name: 'Congo' },
+    { code: 'CD', name: 'République Démocratique du Congo' },
+    { code: 'DJ', name: 'Djibouti' },
+    { code: 'EG', name: 'Égypte' },
+    { code: 'GQ', name: 'Guinée équatoriale' },
+    { code: 'ER', name: 'Érythrée' },
+    { code: 'ET', name: 'Éthiopie' },
+    { code: 'GA', name: 'Gabon' },
+    { code: 'GM', name: 'Gambie' },
+    { code: 'GH', name: 'Ghana' },
+    { code: 'GN', name: 'Guinée' },
+    { code: 'GW', name: 'Guinée-Bissau' },
+    { code: 'CI', name: "Côte d'Ivoire" },
+    { code: 'KE', name: 'Kenya' },
+    { code: 'LS', name: 'Lesotho' },
+    { code: 'LR', name: 'Libéria' },
+    { code: 'LY', name: 'Libye' },
+    { code: 'MG', name: 'Madagascar' },
+    { code: 'MW', name: 'Malawi' },
+    { code: 'ML', name: 'Mali' },
+    { code: 'MR', name: 'Mauritanie' },
+    { code: 'MU', name: 'Maurice' },
+    { code: 'MA', name: 'Maroc' },
+    { code: 'MZ', name: 'Mozambique' },
+    { code: 'NA', name: 'Namibie' },
+    { code: 'NE', name: 'Niger' },
+    { code: 'NG', name: 'Nigéria' },
+    { code: 'RW', name: 'Rwanda' },
+    { code: 'ST', name: 'Sao Tomé-et-Principe' },
+    { code: 'SN', name: 'Sénégal' },
+    { code: 'SC', name: 'Seychelles' },
+    { code: 'SL', name: 'Sierra Leone' },
+    { code: 'SO', name: 'Somalie' },
+    { code: 'ZA', name: 'Afrique du Sud' },
+    { code: 'SS', name: 'Soudan du Sud' },
+    { code: 'SD', name: 'Soudan' },
+    { code: 'SZ', name: 'Eswatini' },
+    { code: 'TZ', name: 'Tanzanie' },
+    { code: 'TG', name: 'Togo' },
+    { code: 'TN', name: 'Tunisie' },
+    { code: 'UG', name: 'Ouganda' },
+    { code: 'ZM', name: 'Zambie' },
+    { code: 'ZW', name: 'Zimbabwe' }
+  ];
+
+  countries.forEach(country => {
+    const option = document.createElement('option');
+    option.value = country.code;
+    option.textContent = country.name;
+    countrySelect.appendChild(option);
+  });
+
+  const submitButton = document.createElement('button');
+  submitButton.type = 'submit';
+  submitButton.textContent = 'Discuter avec le vendeur';
+
+    // Lien vers les modalités de livraison
+    const deliveryLink = document.createElement('p');
+    deliveryLink.innerHTML = `<a href="./modalites-livraison.html" target="_blank">Connaître les modalités de livraison</a>`;
+    deliveryLink.style.marginTop = '10px';
+
+  form.appendChild(nameLabel);
+  form.appendChild(cityLabel);
+  form.appendChild(countryLabel);
+  form.appendChild(countrySelect);
+  form.appendChild(submitButton);
+  form.appendChild(deliveryLink);
+
+  modalContent.appendChild(closeModalSpan);
+  modalContent.appendChild(form);
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
+
+  // Afficher le modal
+  modal.style.display = 'block';
+
+  // Ajouter un événement de soumission au formulaire
+  // form.addEventListener('submit', (event) => {
+  //   event.preventDefault();
+  //   if (validateForm()) {
+  //     const name = nameInput.value;
+  //     const city = cityInput.value;
+  //     const country = countrySelect.options[countrySelect.selectedIndex].text;
+  //     const message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\nJe souhaite commander le produit :\n${product.name}.`;
+  //     const whatsappUrl = `https://wa.me/${product.vendorPhone}?text=${encodeURIComponent(message)}`;
+  //     window.open(whatsappUrl, '_blank');
+  //     modal.style.display = 'none';
+  //     form.reset(); 
+  //   } else {
+  //     alert('Veuillez remplir correctement tous les champs.');
+  //   }
+  // });
+
+
+  // Ajouter un événement de soumission au formulaire
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (validateForm()) {
+      const name = nameInput.value;
+      const city = cityInput.value;
+      const country = countrySelect.options[countrySelect.selectedIndex].text;
+
+      // Informations sur le produit
+      const productName = product.name;
+      const productDescription = product.description;
+      const productPrice = product.price;
+      const productImages = product.images;
+      const vendorPhone = product.vendorPhone;
+      const productId = product.id;
+
+      // Générer l'URL spécifique du produit en utilisant son ID
+      const productLink = `https://ryone.netlify.app/details.html?id=${productId}`;
+
+      // Construire le message WhatsApp
+      let message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\n`;
+      message += `Je souhaite commander le produit :\n`;
+      message += `- Nom : ${productName}\n`;
+      message += `- Description : ${productDescription}\n`;
+      message += `- Prix : ${productPrice} FCFA\n`;
+      message += `- Lien : ${productLink}\n`;
+
+      // Ajouter les images au message
+      if (productImages && productImages.length > 0) {
+          message += `- Images :\n`;
+          productImages.forEach((image, index ) => {
+              message += `   ${index + 1}. ${image}\n`;
+          });
+      }
+
+      // Encodage de l'URL de WhatsApp
+      const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      modal.style.display = 'none';
+      form.reset();
+  } else {
+      alert('Veuillez remplir correctement tous les champs.');
+  }
+});
+
+
+  // Validation du formulaire
+  function validateForm() {
+    const nameValid = /^[a-zA-Z\s,;_\-'\u00C0-\u017F]+$/.test(nameInput.value);
+    const cityValid = /^[a-zA-Z\s,;_\-'\u00C0-\u017F]+$/.test(cityInput.value);
+    const countryValid = countrySelect.value !== '';
+  
+    return nameValid && cityValid && countryValid;
+  }
+  
+}

@@ -181,17 +181,17 @@ function updateCartCounter() {
 }
 
 // Validation du formulaire avant commande
-function validateForm() {
-  const nameInput = document.querySelector('#name');
-  const cityInput = document.querySelector('#city');
-  const countrySelect = document.querySelector('#country');
+// function validateForm() {
+//   const nameInput = document.querySelector('#name');
+//   const cityInput = document.querySelector('#city');
+//   const countrySelect = document.querySelector('#country');
 
-  if (!nameInput.value || !cityInput.value || countrySelect.selectedIndex === 0) {
-    alert('Veuillez remplir tous les champs du formulaire.');
-    return false;
-  }
-  return true;
-}
+//   if (!nameInput.value || !cityInput.value || countrySelect.selectedIndex === 0) {
+//     alert('Veuillez remplir tous les champs du formulaire.');
+//     return false;
+//   }
+//   return true;
+// }
 
 function showAlert(message) {
   const alertBox = document.createElement('div');
@@ -477,6 +477,7 @@ function openOrderForm(product) {
     { code: 'ZW', name: 'Zimbabwe' }
   ];
 
+
   countries.forEach(country => {
     const option = document.createElement('option');
     option.value = country.code;
@@ -488,17 +489,11 @@ function openOrderForm(product) {
   submitButton.type = 'submit';
   submitButton.textContent = 'Discuter avec le vendeur';
 
-    // Lien vers les modalités de livraison
-    const deliveryLink = document.createElement('p');
-    deliveryLink.innerHTML = `<a href="./modalites-livraison.html" target="_blank">Connaître les modalités de livraison</a>`;
-    deliveryLink.style.marginTop = '10px';
-
   form.appendChild(nameLabel);
   form.appendChild(cityLabel);
   form.appendChild(countryLabel);
   form.appendChild(countrySelect);
   form.appendChild(submitButton);
-  form.appendChild(deliveryLink);
 
   modalContent.appendChild(closeModalSpan);
   modalContent.appendChild(form);
@@ -509,68 +504,46 @@ function openOrderForm(product) {
   modal.style.display = 'block';
 
   // Ajouter un événement de soumission au formulaire
-  // form.addEventListener('submit', (event) => {
-  //   event.preventDefault();
-  //   if (validateForm()) {
-  //     const name = nameInput.value;
-  //     const city = cityInput.value;
-  //     const country = countrySelect.options[countrySelect.selectedIndex].text;
-  //     const message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\nJe souhaite commander le produit :\n${product.name}.`;
-  //     const whatsappUrl = `https://wa.me/${product.vendorPhone}?text=${encodeURIComponent(message)}`;
-  //     window.open(whatsappUrl, '_blank');
-  //     modal.style.display = 'none';
-  //     form.reset(); 
-  //   } else {
-  //     alert('Veuillez remplir correctement tous les champs.');
-  //   }
-  // });
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+        const name = nameInput.value;
+        const city = cityInput.value;
+        const country = countrySelect.options[countrySelect.selectedIndex].text;
 
+        // Récupérer le numéro de téléphone du vendeur et vérifier qu'il est valide
+        const vendorPhone = product.vendorPhone ? product.vendorPhone.replace(/^\+/, '') : null;
+        if (!vendorPhone) {
+          alert("Numéro de téléphone du vendeur indisponible pour ce produit.");
+          return;
+        }
 
-  // Ajouter un événement de soumission au formulaire
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  if (validateForm()) {
-      const name = nameInput.value;
-      const city = cityInput.value;
-      const country = countrySelect.options[countrySelect.selectedIndex].text;
+        // Construire le message WhatsApp
+        const productLink = `https://ryone.netlify.app/details.html?id=${product.id}`;
+        let message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\n` +
+                      `Je souhaite commander le produit :\n` +
+                      `- Nom : ${product.name}\n` +
+                      `- Description : ${product.description}\n` +
+                      `- Prix : ${product.price} FCFA\n` +
+                      `- Lien : ${productLink}\n`;
 
-      // Informations sur le produit
-      const productName = product.name;
-      const productDescription = product.description;
-      const productPrice = product.price;
-      const productImages = product.images; // Tableau d'URL des images
-      const vendorPhone = product.vendorPhone;
-      const productId = product.id;
+        // Ajouter les images au message
+        if (product.images && product.images.length > 0) {
+            message += `- Images :\n`;
+            product.images.forEach((image, index) => {
+                message += `   ${index + 1}. ${image}\n`;
+            });
+        }
 
-      // Générer l'URL spécifique du produit en utilisant son ID
-      const productLink = `https://ryone.netlify.app/details.html?id=${productId}`;
-
-      // Construire le message WhatsApp
-      let message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\n`;
-      message += `Je souhaite commander le produit :\n`;
-      message += `- Nom : ${productName}\n`;
-      message += `- Description : ${productDescription}\n`;
-      message += `- Prix : ${productPrice} FCFA\n`;
-      message += `- Lien : ${productLink}\n`;
-
-      // Ajouter les images au message
-      if (productImages && productImages.length > 0) {
-          message += `- Images :\n`;
-          productImages.forEach((image, index ) => {
-              message += `   ${index + 1}. ${image}\n`;
-          });
-      }
-
-      // Encodage de l'URL de WhatsApp
-      const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank');
-      modal.style.display = 'none';
-      form.reset();
-  } else {
-      alert('Veuillez remplir correctement tous les champs.');
-  }
-});
-
+        // Encodage de l'URL de WhatsApp
+        const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        modal.style.display = 'none';
+        form.reset();
+    } else {
+        alert('Veuillez remplir correctement tous les champs.');
+    }
+  });
 
   // Validation du formulaire
   function validateForm() {
@@ -580,8 +553,8 @@ form.addEventListener('submit', (event) => {
   
     return nameValid && cityValid && countryValid;
   }
-  
 }
+
 
 // Variables pour la pagination //////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
