@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatPopup = document.getElementById('chat-popup');
     const chatButton = document.getElementById('chat-button');
     const closeButton = document.getElementById('close-chat-popup');
-    const adminPhoneNumber = '+3358146261'; 
+    const adminPhoneNumber = '+33758146261'; 
 
     // Affiche le pop-up avec effet après 3 secondes
     setTimeout(() => {

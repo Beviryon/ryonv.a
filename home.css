@@ -6,6 +6,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.active {
+  background-color: #f2ae01;
+}
+
 /* Barre de navigation */
 header {
   background-color: rgba(0, 0, 0, 0.8);
