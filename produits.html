@@ -12,6 +12,7 @@
   <title>Produits - Mon Site E-commerce</title>
   <link rel="stylesheet" href="./produits.css">
   <!-- <link rel="stylesheet" href="./produitTest.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="manifest" href="./manifest.json">
   <meta http-equiv="Content-Security-Policy" content="
@@ -394,7 +395,7 @@
 </div> 
   
   <!-- Pied de page -->
-  <footer>
+<footer>
     <div class="footer-content">
         <div class="footer-links">
             <a href="./home.html">Accueil</a>
@@ -406,11 +407,19 @@
     </div>
 </footer>
 
-  <script nonce="xyz" type="module" src="./produits.js"></script>
-  <script nonce="xyz" type="module"  src="./products.js"></script>
-  <script nonce="xyz" type="module"  src="./lib/bundle.js"></script>
-  <script nonce="xyz" src="./contact.js"></script>
-  
+<div id="chat-popup">
+  <button id="close-chat-popup">✖</button>
+  <button id="chat-button">
+    <i class="fab fa-whatsapp"></i>Posez votre question
+  </button>
+</div>
+
+<script nonce="xyz" type="module" src="./produits.js"></script>
+<script nonce="xyz" type="module"  src="./products.js"></script>
+<script nonce="xyz" type="module"  src="./lib/bundle.js"></script>
+<script nonce="xyz" type="module"  src="./contact.js"></script>
+<script nonce="xyz" type="module"  src="./popupWhatsapp.js"></script>
+
   <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
   <script nonce="xyz">
     if ('caches' in window) {

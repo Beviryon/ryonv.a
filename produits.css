@@ -1569,3 +1569,63 @@ a:hover {
   font-size: 1rem;
   margin-top: 0.5rem;
 }
+
+/*  */
+#chat-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: none; /* Masqué par défaut */
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#chat-button {
+  background-color: #25d366;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: rgba(0, 0, 0, .6);
+}
+
+#chat-button:hover {
+  background-color: #128c7e;
+}
+
+#close-chat-popup {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+}
+
+#chat-button i {
+  margin-right: 8px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+/* Effet d'apparition (animation de glissement vers le haut) */
+#chat-popup.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Effet de disparition (animation de fondu) */
+#chat-popup.hide {
+  opacity: 0;
+  transform: translateY(20px);
+}
