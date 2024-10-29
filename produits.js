@@ -271,9 +271,20 @@ function createProductCard(product) {
   description.textContent = product.description;
   card.appendChild(description);
 
-  const price = document.createElement('p');
+  const price = document.createElement('p-prix');
   price.textContent = `Prix : ${product.price} Fcfa`;
   card.appendChild(price);
+
+    ////////////////////////////////
+    const ratingContainer = document.createElement('div');
+    ratingContainer.classList.add('product-rating');
+  
+    const rating = product.rating || 0; 
+    const stars = '★'.repeat(Math.floor(rating)) + '☆'.repeat(5 - Math.floor(rating));
+    ratingContainer.textContent = `${stars} (${rating}/5)`;
+  
+    card.appendChild(ratingContainer);
+    ////////////////////////////////
 
   const button = document.createElement('a');
   button.classList.add('btn-voir-produit');
@@ -333,6 +344,26 @@ function createProductCard(product) {
 
   return card;
 }
+
+function displayVendorInfo(vendor) {
+  const vendorCard = document.createElement('div');
+  vendorCard.classList.add('vendor-card');
+
+  const name = document.createElement('h3');
+  name.textContent = vendor.name;
+  vendorCard.appendChild(name);
+
+  const rating = document.createElement('p');
+  rating.textContent = `Note : ${'★'.repeat(vendor.rating)}${'☆'.repeat(5 - vendor.rating)}`;
+  vendorCard.appendChild(rating);
+
+  const contact = document.createElement('p');
+  contact.textContent = `Contact : ${vendor.phone}`;
+  vendorCard.appendChild(contact);
+
+  document.querySelector('.vendor-list').appendChild(vendorCard);
+}
+
 
 function updatePromoTimer(timerElement, cardElement) {
   const endDate = new Date(timerElement.dataset.end);

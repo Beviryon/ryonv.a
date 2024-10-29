@@ -141,7 +141,7 @@ main {
 
   .product-card {
     border: 1px solid #ccc;
-    padding: 1rem;
+    padding: 0.3rem;
     text-align: center;
     border-radius: 5px;
     height: 450px; 
@@ -158,11 +158,18 @@ main {
   }
   
   .product-card h3 {
-    margin-top: 1rem 0;
+    margin-top: 1rem;
   }
   
   .product-card p {
     margin-bottom: 1rem;
+  }
+
+  .product-card p-prix {
+    margin-bottom: 1rem;
+    color: gray; 
+    position: relative;
+    font-weight: 800;
   }
   
 
@@ -185,7 +192,7 @@ main {
   }
 
   .btn-voir-produit {
-    display: flex;
+    display: none;
     justify-content: center;
     /* background-color: #ffffff; */
     color: #000361;
@@ -622,7 +629,6 @@ footer p {
     }
   }
   
-  
   .pagination button:hover {
     background-color: #ddd;
   }
@@ -950,24 +956,24 @@ a:hover {
 }
 
 .featured-carousel {
-  overflow: hidden; /* Cache les éléments en dehors de la zone visible */
+  overflow: hidden;
   position: relative;
 }
 
 .featured-carousel-inner {
   display: flex;
-  transition: transform 0.5s ease; /* Animation de transition fluide */
+  transition: transform 0.5s ease; 
 }
 
 .featured-item {
-  flex: 0 0 200px; /* Fixe la largeur de chaque item */
+  flex: 0 0 200px; 
   background: white;
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 8px;
   text-align: center;
-  margin-right: 20px; /* Espacement entre les items */
-  transition: transform 0.3s ease; /* Ajout d'une transition pour le zoom */
+  margin-right: 20px; 
+  transition: transform 0.3s ease;
 }
 
 .featured-item img {
@@ -979,8 +985,8 @@ a:hover {
 }
 
 .featured-item:hover {
-  transform: scale(1.05); /* Zoom léger sur l'élément au survol */
-  z-index: 1; /* S'assure que l'élément est au-dessus des autres lors du zoom */
+  transform: scale(1.05); 
+  z-index: 1; 
 }
 
 .featured-item:hover img {
@@ -1551,9 +1557,15 @@ a:hover {
   }
 }
 
-
 /* Effet lors du focus */
 .category-toggle:focus {
   border-color: #007bff;
   outline: none;
+}
+
+/* Style pour la section des avis */
+.product-rating {
+  color: #f26d01; 
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
