@@ -113,7 +113,7 @@ nav {
 /* Section d'en-tête principale */
 .hero {
   height: 100vh;
-  background-image: url('https://s.alicdn.com/@sc04/kf/Hb24901150d644862865e4360ebca4ca2s.jpg?avif=close');
+  background-image: url ('https://s.alicdn.com/@sc04/kf/Hb24901150d644862865e4360ebca4ca2s.jpg?avif=close');
   /* background-image: url('https://s.alicdn.com/@sc04/kf/H83b8adf683094afda3923c98d2155fb4l.jpg'); */
   background-size: cover;
   background-position: center;

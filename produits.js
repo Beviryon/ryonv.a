@@ -180,19 +180,6 @@ function updateCartCounter() {
   }
 }
 
-// Validation du formulaire avant commande
-// function validateForm() {
-//   const nameInput = document.querySelector('#name');
-//   const cityInput = document.querySelector('#city');
-//   const countrySelect = document.querySelector('#country');
-
-//   if (!nameInput.value || !cityInput.value || countrySelect.selectedIndex === 0) {
-//     alert('Veuillez remplir tous les champs du formulaire.');
-//     return false;
-//   }
-//   return true;
-// }
-
 function showAlert(message) {
   const alertBox = document.createElement('div');
   alertBox.textContent = message;
@@ -592,6 +579,12 @@ function openOrderForm(product) {
 
 
 ////////////////////////////////////////////////////////////////////////
+// Mettre à jour l'affichage toutes les minutes avec un ordre aléatoire
+setInterval(() => {
+  shuffleProducts(products); 
+  displayProducts(products); 
+}, 60000);
+
 document.addEventListener('DOMContentLoaded', () => {
   if (!products || products.length === 0) {
       console.error("La variable 'products' est vide ou non définie.");
@@ -603,6 +596,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
   const pageInfo = document.getElementById('page-info');
+
+    // Fonction de mélange des produits
+  function shuffleProducts(productsArray) {
+    for (let i = productsArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [productsArray[i], productsArray[j]] = [productsArray[j], productsArray[i]];
+    }
+  }
+
+  // Affichage initial des produits avec mélange
+  shuffleProducts(products); 
+  displayProducts(products); 
 
   // Fonction pour afficher les produits avec pagination et filtres
   function displayProducts(filteredProducts) {
@@ -670,9 +675,9 @@ document.addEventListener('DOMContentLoaded', () => {
           );
       }
 
-      currentPage = 1;  // Réinitialiser à la première page après chaque filtrage
+      currentPage = 1; 
       displayProducts(filteredProducts);
-      return filteredProducts;  // Retourner les produits filtrés
+      return filteredProducts; 
   }
 
   // Événements pour les filtres et la barre de recherche
