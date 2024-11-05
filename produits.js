@@ -1,6 +1,55 @@
 import { products } from "./products.js";
 console.log(products)
 
+function displaySimilarProducts(currentProduct) {
+  const similarProductsContainer = document.querySelector('.similar-products-carousel');
+  if (!similarProductsContainer) {
+    console.error("Conteneur des produits similaires non trouvé !");
+    return;
+  }
+  similarProductsContainer.innerHTML = '';
+
+  const similarProducts = getSimilarProducts(currentProduct);
+  console.log("Produits similaires:", similarProducts);
+
+  similarProducts.forEach(product => {
+      const productCard = createProductCard(product);
+      similarProductsContainer.appendChild(productCard);
+  });
+}
+
+function displayRecentlyViewedProducts() {
+  const recentlyViewedContainer = document.querySelector('.recently-viewed-carousel');
+  if (!recentlyViewedContainer) {
+    console.error("Conteneur des produits récemment consultés non trouvé !");
+    return;
+  }
+  recentlyViewedContainer.innerHTML = '';
+
+  const recentlyViewed = getRecentlyViewedProducts();
+  console.log("Produits récemment consultés:", recentlyViewed);
+
+  recentlyViewed.forEach(product => {
+      const productCard = createProductCard(product);
+      recentlyViewedContainer.appendChild(productCard);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const currentProductId = getProductIdFromURL();
+  console.log("ID du produit actuel:", currentProductId);
+  const currentProduct = products.find(product => product.id === currentProductId);
+
+  if (currentProduct) {
+      console.log("Produit actuel trouvé :", currentProduct);
+      displaySimilarProducts(currentProduct);
+      addRecentlyViewedProduct(currentProduct);
+      displayRecentlyViewedProducts();
+  } else {
+      console.error("Produit non trouvé avec l'ID:", currentProductId);
+  }
+});
+
 
 // 
 // 
