@@ -96,7 +96,6 @@ const products = [
       description: 'Toutes les tailles | S, L, M, XL ',
       price: 6500,
       images: [
-        'https://live.staticflickr.com/65535/54003722832_4ab8cf4d60_w.jpg',
         'https://live.staticflickr.com/65535/53918525480_4f51da965d_n.jpg',
         'https://live.staticflickr.com/65535/53918326368_3007678649_w.jpg',
       ],

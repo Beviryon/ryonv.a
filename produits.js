@@ -292,7 +292,6 @@ function createProductCard(product) {
   image.alt = product.name;
   card.appendChild(image);
 
-  // Ajout du clic sur l'image pour rediriger vers la page du produit
   image.addEventListener('click', () => {
     window.location.href = `details.html?id=${product.id}`;
   });
@@ -311,16 +310,16 @@ function createProductCard(product) {
   price.textContent = `Prix : ${product.price} Fcfa`;
   card.appendChild(price);
 
-    ////////////////////////////////
-    const ratingContainer = document.createElement('div');
-    ratingContainer.classList.add('product-rating');
-  
-    const rating = product.rating || 0; 
-    const stars = '★'.repeat(Math.floor(rating)) + '☆'.repeat(5 - Math.floor(rating));
-    ratingContainer.textContent = `${stars} (${rating}/5)`;
-  
-    card.appendChild(ratingContainer);
-    ////////////////////////////////
+  ////////////////////////////////
+  const ratingContainer = document.createElement('div');
+  ratingContainer.classList.add('product-rating');
+
+  const rating = product.rating || 0; 
+  const stars = '★'.repeat(Math.floor(rating)) + '☆'.repeat(5 - Math.floor(rating));
+  ratingContainer.textContent = `${stars} (${rating}/5)`;
+
+  card.appendChild(ratingContainer);
+  ////////////////////////////////
 
   const button = document.createElement('a');
   button.classList.add('btn-voir-produit');
@@ -348,6 +347,28 @@ function createProductCard(product) {
     addToCart(product);
   });
   card.appendChild(addToCartBtn);
+
+  const sellerInfo = document.createElement('p');
+  sellerInfo.classList.add('seller-info');
+  
+  // Créer un lien autour du nom du vendeur
+  const sellerLink = document.createElement('a');
+  sellerLink.classList.add('seller-link');
+  
+  // Vérifier si product.seller et product.seller.name existent
+  if (product.seller && product.seller.name && product.seller.phone) {
+    sellerLink.textContent = `Vendu par : ${product.seller.name}`;
+    // Créer le lien vers le WhatsApp du vendeur en utilisant son numéro de téléphone
+    sellerLink.href = `https://wa.me/${product.seller.phone}`;
+    sellerLink.target = "_blank"; // Ouvrir dans un nouvel onglet
+  } else {
+    sellerLink.textContent = 'Vendeur inconnu';
+    sellerLink.href = "#"; // Pas de lien si le vendeur est inconnu
+  }
+  
+  card.appendChild(sellerInfo);
+  sellerInfo.appendChild(sellerLink);
+  
 
   // Ajout du pop-up de promotion
   if (product.promotion && isPromotionValid(product.promotion)) {

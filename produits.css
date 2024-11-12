@@ -127,7 +127,6 @@ nav {
   }
 }
 
-
 /* Styles de base */
 /* Contenu principal */
 main {
@@ -151,8 +150,6 @@ main {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1rem;
-    margin-left: -13px;
-    margin: -10 px;
     align-items: center;
   }
   
@@ -166,6 +163,11 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
+    transition: transform 0.2s ease;
+  }
+
+  .product-card:hover {
+    transform: scale(1.05);
   }
   
    .product-card img {
@@ -177,10 +179,11 @@ main {
   
   .product-card h3 {
     margin-top: 1rem;
+    font-size: 17px;
   }
   
   .product-card p {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
   }
 
   .product-card p-prix {
@@ -189,6 +192,38 @@ main {
     position: relative;
     font-weight: 800;
   }
+
+  /* .product-card .seller-name {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  } */
+
+  .seller-info {
+    font-size: 14px;
+    color: #8a8989; 
+    margin-top: 10px; 
+    text-align: center;
+  }
+  
+  .seller-info::before {
+    content: "👤 ";
+    font-size: 10px; 
+    vertical-align: middle; 
+  }
+  
+  .seller-info .seller-link:hover {
+    color: #c28202; 
+    cursor: pointer; 
+  }
+
+  .seller-info .seller-link {
+    color: #757676;
+    text-decoration: none; 
+  }
+  
   
 
   /* Début style du bouton voir le produit */
@@ -230,7 +265,7 @@ main {
     justify-content: center;
     background-color:  #f2ae01; 
     color: #fff;
-    margin-top: 1px;
+    margin-bottom: 14px;
     cursor: pointer;
   }
 
@@ -271,7 +306,7 @@ main {
     /* margin: 2px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #fff;
-    margin-top: 8px;
+    margin-top: 1px;
     cursor: pointer;
   }
   /* Fin style du bouton voir le produit */ 
@@ -300,7 +335,7 @@ main {
     .whatsapp-btn {
       background-color:  #f2ae01; 
       color: #fff;
-      margin-top: 8px;
+      margin-bottom: 10px;
       cursor: pointer;
     }
 
@@ -321,12 +356,10 @@ main {
       color: rgb(7, 61, 1);
       font-size: 12px;
       border-radius: 10px;
-      /* border: 0.5px solid black; */
       padding: 0.5rem 0.5rem;
-      /* margin: 2px; */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       background-color: #fff;
-      margin-top: 8px;
+      margin-top: 1px;
       cursor: pointer;
     }
   }  
@@ -439,8 +472,7 @@ footer p {
   margin-top: 1rem;
   font-weight: 300;
 }
-
-  
+ 
   /* Responsive */
   @media (max-width: 968px) {
     main {
@@ -767,7 +799,6 @@ footer p {
     transform: translateY(0);
   }
 }
-
 
 /* Style pour le modal */
 .form-popup {
@@ -1198,7 +1229,7 @@ a:hover {
 
 /* Bouton "Commander" */
 .order-item {
-  background-color: #4CAF50;
+  background-color: #016c16;
   padding: 0.5rem 0.5rem;
   color: white;
   margin-left: 1px;
@@ -1446,10 +1477,8 @@ a:hover {
 /* Sidebar principale */
 .sidebar {
   width: 20%;
-  /* background-color: #fff; */
   padding: 2px;
   margin: 10px 0;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   border-radius: 8px;
 }
 
@@ -1579,12 +1608,12 @@ a:hover {
 
 /* Style pour la section des avis */
 .product-rating {
-  color: #f26d01; 
+  color: #bd5602; 
   font-size: 1rem;
-  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
-/*  */
+/* pop up du chat */
 #chat-popup {
   position: fixed;
   bottom: 20px;
@@ -1654,10 +1683,3 @@ a:hover {
   gap: 16px;
 }
 
-.product-card {
-  min-width: 200px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 8px;
-  text-align: center;
-}
