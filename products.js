@@ -2,6 +2,33 @@ const products = [
 
 {
 id: 37,// Vêtements 
+name: "Chemise homme",
+description: 'Toutes les tailles',
+price: 12500,
+category: 'vetements',
+images: [
+'https://s.alicdn.com/@sc04/kf/Hd9cdb4b4811d40dcbf1f2f200e2443acE.jpg?avif=close',
+'https://s.alicdn.com/@sc04/kf/Hd95ee3ffa47741efbdeddc8bff2758a0D.jpg?avif=close',
+'https://s.alicdn.com/@sc04/kf/Hf85b4cb00a5c4c99bde8c3ced3bf70d9E.jpg?avif=close',
+'https://s.alicdn.com/@sc04/kf/Hf32657d9fb0c4226b69ae83740c2a181q.jpg?avif=close',
+'https://s.alicdn.com/@sc04/kf/Hc0bc2a2881f0493dba69462cbbffc9b1l.jpg?avif=close',
+],
+seller: {
+  name: 'RYONV',
+  phone: '+330758146261',
+  country: 'FR',
+  rating: 4.8
+},
+vendorPhone: '+330758146261',
+promotion: {
+  discount: 10, 
+  endDate: '2024-10-21T23:59:59' 
+},
+stock: 9,
+rating: 4.9
+},
+{
+id: 37,// Vêtements 
 name: "Complet femme",
 description: 'Toutes les tailles',
 price: 8500,

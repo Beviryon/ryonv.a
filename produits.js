@@ -333,11 +333,11 @@ function createProductCard(product) {
   whatsappBtn.addEventListener('click', () => openOrderForm(product));
   card.appendChild(whatsappBtn);
 
-  const detailsBtn = document.createElement('a');
-  detailsBtn.classList.add('btn-detail');
-  detailsBtn.textContent = 'Détails du produit';
-  detailsBtn.href = `details.html?id=${product.id}`;
-  card.appendChild(detailsBtn);
+  // const detailsBtn = document.createElement('a');
+  // detailsBtn.classList.add('btn-detail');
+  // detailsBtn.textContent = 'Détails du produit';
+  // detailsBtn.href = `details.html?id=${product.id}`;
+  // card.appendChild(detailsBtn);
 
  // Bouton Ajouter au panier
   const addToCartBtn = document.createElement('button');
@@ -358,12 +358,11 @@ function createProductCard(product) {
   // Vérifier si product.seller et product.seller.name existent
   if (product.seller && product.seller.name && product.seller.phone) {
     sellerLink.textContent = `Vendu par : ${product.seller.name}`;
-    // Créer le lien vers le WhatsApp du vendeur en utilisant son numéro de téléphone
     sellerLink.href = `https://wa.me/${product.seller.phone}`;
-    sellerLink.target = "_blank"; // Ouvrir dans un nouvel onglet
+    sellerLink.target = "_blank";
   } else {
     sellerLink.textContent = 'Vendeur inconnu';
-    sellerLink.href = "#"; // Pas de lien si le vendeur est inconnu
+    sellerLink.href = "#"; 
   }
   
   card.appendChild(sellerInfo);

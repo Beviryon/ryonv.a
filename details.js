@@ -1,3 +1,6 @@
+// details.js
+import { products } from './products.js';  // Importer les données depuis products.js
+
 // Récupérer l'ID du produit depuis les paramètres d'URL
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
@@ -20,9 +23,24 @@ if (product) {
   productInfo.appendChild(description);
 
   // Ajouter le prix du produit
-  const price = document.createElement('p');
+  const price = document.createElement('p-prix');
   price.textContent = `Prix : ${product.price} FCFA`;
   productInfo.appendChild(price);
+
+    // Ajouter le stock du produit
+    const stock = document.createElement('p');
+    stock.textContent = `Quantité en stock : ${product.stock}`;
+    productInfo.appendChild(stock);
+  
+    // === Affichage des informations du vendeur ===
+    const sellerInfo = document.createElement('div');
+    sellerInfo.classList.add('seller-info');
+  
+    // const sellerCountry = document.createElement('p');
+    // sellerCountry.textContent = `Pays du vendeur : ${product.seller.country}`;
+    // sellerInfo.appendChild(sellerCountry);
+  
+    productInfo.appendChild(sellerInfo);
 
   // === Gestion du carrousel d'images ===
   const carouselInner = document.querySelector('.carousel-inner');
@@ -38,6 +56,8 @@ if (product) {
 
   const totalImages = product.images.length;
 
+  
+
   // Fonction pour mettre à jour le compteur d'images
   function updateCounter(currentIndex, totalImages) {
     const counter = document.getElementById('carousel-counter');
@@ -46,9 +66,9 @@ if (product) {
 
   // Fonction pour afficher l'image courante
   function showImage(index) {
-    const offset = -index * 100; // Calculer l'offset en fonction de l'index
+    const offset = -index * 100; 
     carouselInner.style.transform = `translateX(${offset}%)`;
-    updateCounter(index, totalImages); // Mise à jour du compteur
+    updateCounter(index, totalImages); 
   }
 
   // Gestion des boutons du carrousel
@@ -75,7 +95,7 @@ if (product) {
     *Nom :* ${product.name} 
     *Description :* ${product.description} 
     *Prix :* ${product.price} FCFA 
-    *Quantité disponible :* ${product.quantity || 'N/A'} 
+    *Quantité disponible :* ${product.stock || 'N/A'} 
     Pouvez-vous me donner plus de détails ?`;
 
     // Créer le lien WhatsApp avec le message prédéfini
@@ -105,4 +125,3 @@ const navSlide = () => {
 };
 
 navSlide();
-
