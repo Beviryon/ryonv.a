@@ -298,6 +298,85 @@ function createProductCard(product) {
 
   card.appendChild(image);
 
+// Début bouton like
+// Conteneur pour les boutons modernes
+const modernButtonsContainer = document.createElement('div');
+modernButtonsContainer.classList.add('modern-buttons-container');
+
+// Bouton J'aime
+const likeBtn = document.createElement('button');
+likeBtn.classList.add('modern-btn', 'like-btn');
+likeBtn.innerHTML = '<i class="fas fa-heart"></i>'; // Icône cœur
+
+// Compteur pour "J'aime"
+const likeCount = document.createElement('span');
+likeCount.classList.add('like-count');
+const likesKey = `likes_${product.id}`;
+let savedLikes = parseInt(localStorage.getItem(likesKey), 10) || 0;
+likeCount.textContent = savedLikes;
+
+// Ajout du compteur à l'intérieur du bouton
+likeBtn.appendChild(likeCount);
+
+likeBtn.addEventListener('click', () => {
+  savedLikes += 1;
+  likeCount.textContent = savedLikes;
+  localStorage.setItem(likesKey, savedLikes); // Sauvegarde locale
+});
+
+modernButtonsContainer.appendChild(likeBtn);
+
+// Bouton Partager
+const shareBtn = document.createElement('button');
+shareBtn.classList.add('modern-btn', 'share-btn');
+shareBtn.innerHTML = '<i class="fas fa-share"></i>'; // Icône partage
+
+// Compteur pour "Partager"
+const shareCount = document.createElement('span');
+shareCount.classList.add('share-count');
+const sharesKey = `shares_${product.id}`;
+let savedShares = parseInt(localStorage.getItem(sharesKey), 10) || 0;
+shareCount.textContent = savedShares;
+
+// Ajout du compteur à l'intérieur du bouton
+shareBtn.appendChild(shareCount);
+
+shareBtn.addEventListener('click', () => {
+  const shareLink = `${window.location.origin}/details.html?id=${product.id}`;
+  if (navigator.share) {
+    navigator.share({
+      title: product.name,
+      text: `Découvrez ce produit : ${product.name}`,
+      url: shareLink,
+    }).then(() => {
+      savedShares += 1;
+      shareCount.textContent = savedShares;
+      localStorage.setItem(sharesKey, savedShares);
+    });
+  } else {
+    navigator.clipboard.writeText(shareLink).then(() => {
+      alert('Lien copié dans le presse-papier !');
+      savedShares += 1;
+      shareCount.textContent = savedShares;
+      localStorage.setItem(sharesKey, savedShares);
+    });
+  }
+});
+
+modernButtonsContainer.appendChild(shareBtn);
+
+// Bouton WhatsApp (remplaçant commentaire)
+const modernWhatsappBtn = document.createElement('a');
+modernWhatsappBtn.classList.add('modern-btn', 'comment');
+modernWhatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>'; // Icône WhatsApp
+modernWhatsappBtn.href = `https://wa.me/${product.seller?.phone}?text=Bonjour, je suis intéressé par "${product.name}"`;
+modernWhatsappBtn.target = '_blank';
+
+modernButtonsContainer.appendChild(modernWhatsappBtn);
+
+// Fin du bouton like
+
+
   const name = document.createElement('h3');
   name.textContent = product.name;
   card.appendChild(name);
@@ -367,7 +446,6 @@ function createProductCard(product) {
   
   card.appendChild(sellerInfo);
   sellerInfo.appendChild(sellerLink);
-  
 
   // Ajout du pop-up de promotion
   if (product.promotion && isPromotionValid(product.promotion)) {
@@ -397,6 +475,7 @@ function createProductCard(product) {
   }
 
   card.appendChild(stockStatus);
+  card.appendChild(modernButtonsContainer);
 
   return card;
 }

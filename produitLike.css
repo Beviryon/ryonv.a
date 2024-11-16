@@ -1,0 +1,118 @@
+/* Conteneur principal de l'image et des boutons */
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto;
+  }
+  
+  /* Style de l'image */
+  .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; 
+  }
+  
+  /* Conteneur pour les boutons modernes */
+  .modern-buttons-container {
+    position: absolute;
+    /* bottom: 10px; */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10; 
+  }
+  
+  /* Style de base pour les boutons modernes */
+  .modern-btn {
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    margin: auto 23px;
+    justify-content: center;
+    text-decoration: none;
+    top: 170px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Hover et animation pour agrandir et ombrager */
+  .modern-btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #fe2c55; 
+    text-decoration: none;
+  }
+  
+  /* Icône à l'intérieur des boutons*/
+  .modern-btn i {
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Changer la couleur de l'icône au survol*/
+  .modern-btn:hover i {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Style pour les compteurs (like, share)*/
+  /* .modern-btn span {
+    font-size: 126px;
+    position: absolute;
+    margin-bottom: 100px;
+    right: -10px;
+    background-color: #fff;
+    color: #fe2c55;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+  } */
+
+  /* Style pour les compteurs (like, share)*/
+.modern-btn span {
+    font-size: 8px; 
+    position: absolute;
+    text-decoration: none;
+    top: -5px; 
+    right: -12px; 
+    background-color: #ffffff;
+    color: #ff0000; 
+    border-radius: 50%; 
+    padding: 2px 4px; 
+    font-weight: bold;
+    font-family: Arial, sans-serif; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease; 
+  }
+
+  @media (max-width: 768px) {
+    .modern-buttons-container {
+      top: 8px; 
+      gap: 5px; 
+    }
+  
+    .modern-btn {
+      width: 20px; 
+      height: 20px;
+      margin: auto 18px;
+    }
+  
+    /* .modern-btn i {
+      font-size: 18px; 
+    } */
+  
+    /* .modern-btn span {
+      font-size: 5px; 
+      top: -8px;
+      right: -8px;
+    } */
+  }

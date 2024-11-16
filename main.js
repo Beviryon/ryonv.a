@@ -18,3 +18,17 @@ const navSlide = () => {
   
   navSlide();
   
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+  const targetElement = e.target;
+  
+  // Vérifie si l'élément survolé est une image
+  if (targetElement.tagName.toLowerCase() === 'img') {
+    cursor.style.display = 'block'; // Affiche le curseur personnalisé
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+  } else {
+    cursor.style.display = 'none'; // Cache le curseur personnalisé
+  }
+});
