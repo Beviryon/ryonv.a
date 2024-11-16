@@ -478,7 +478,7 @@ modernButtonsContainer.appendChild(modernWhatsappBtn);
   card.appendChild(modernButtonsContainer);
 
   return card;
-}
+} 
 
 function displayVendorInfo(vendor) {
   const vendorCard = document.createElement('div');
