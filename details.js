@@ -125,3 +125,115 @@ const navSlide = () => {
 };
 
 navSlide();
+
+function renderSuggestionsCarousel(products) {
+  const track = document.querySelector('.carousel-track');
+
+  // Ajouter les produits au carrousel
+  products.forEach(product => {
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+
+    const img = document.createElement('img');
+    img.src = product.images[0]; 
+    img.alt = product.name;
+    img.title = product.name;
+
+    const name = document.createElement('h3-far');
+    name.textContent = product.name;
+
+    const price = document.createElement('p-far');
+    price.classList.add('price');
+    price.textContent = `${product.price} FCFA`;
+
+    const icon = document.createElement('span');
+    icon.classList.add('icon');
+
+    // Insérer un SVG pour l'icône de panier
+    icon.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+      </svg>
+    `;
+
+    // Ajouter les éléments dans la carte produit
+    productCard.appendChild(img);
+    productCard.appendChild(name);
+    productCard.appendChild(price);
+    productCard.appendChild(icon);
+
+    // Ajouter la carte produit au carrousel
+    track.appendChild(productCard);
+
+    // Ajouter un clic pour rediriger vers la page de détails
+    img.addEventListener('click', () => {
+      window.location.href = `details.html?id=${product.id}`;
+    });
+
+    // Ajouter l'événement de clic sur l'icône "ajouter au panier"
+    icon.addEventListener('click', () => {
+      alert(`Produit ajouté au panier : ${product.name}`);
+    });
+  });
+
+  let currentIndex = 0;
+  const totalItems = products.length;
+  const visibleWidth = track.parentNode.offsetWidth;
+  const itemWidth = track.firstElementChild.offsetWidth + 20; // Largeur de l'élément + marge
+  const itemsPerView = Math.floor(visibleWidth / itemWidth);
+
+  // Fonction pour mettre à jour la position du carrousel
+  function updateCarouselPosition() {
+    const offset = -(itemWidth * currentIndex);
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  // Gestion des boutons de défilement
+  document.querySelector('.carousel-control.next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateCarouselPosition();
+  });
+
+  document.querySelector('.carousel-control.prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateCarouselPosition();
+  });
+
+  // Fonction pour permettre de faire défiler avec le doigt (touch events)
+  let touchStartX = 0;
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX; // Enregistrer la position de départ du toucher
+  });
+
+  track.addEventListener('touchmove', (e) => {
+    const touchEndX = e.touches[0].clientX; // Enregistrer la position du toucher actuel
+    const moveX = touchStartX - touchEndX;
+
+    // Si l'utilisateur fait glisser vers la gauche ou la droite
+    if (Math.abs(moveX) > 50) {
+      if (moveX > 0) {
+        currentIndex = (currentIndex + 1) % totalItems;
+      } else {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      }
+      updateCarouselPosition();
+      touchStartX = touchEndX; // Réinitialiser la position de départ
+    }
+  });
+
+  // Défilement automatique toutes les 5 secondes
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateCarouselPosition();
+  }, 5000); // 5 secondes
+
+  // Rotation immédiate après 5 secondes (cela pourrait être redondant avec setInterval, mais laissé ici pour rotation immédiate)
+  setTimeout(() => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateCarouselPosition();
+  }, 5000); // Change les images après 5 secondes
+}
+
+// Appeler la fonction avec vos données de produits
+renderSuggestionsCarousel(products);
+

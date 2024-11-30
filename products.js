@@ -1,6 +1,382 @@
 const products = [
 
 {
+  id: 54,
+  name: "Lisseur à cheveux",
+  description: "Brosse chauffante électrique",
+  price: 5795,
+  category: 'sport',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/Hb53394b7cafb4bd184b05c406af4a030n.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hd76e7e5b391a47089589a2e66c15d607i.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H8d31e7b0b4a94062b29f7b848e2208bb8.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hf34a725ea85d4095b48c4bee4ca855fd0.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hd05e6357081840359371599ddc5e8504N.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+
+{
+  id: 53,
+  name: "Lames de tondeuse à sourcils",
+  description: "Rasoir pour épilation",
+  price: 735,
+  category: 'sport',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/H7c8cc19a94ef4649bad21468d10a1f10E.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hb6bbc337110c4aca86a07603ee7e30086.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Ae713c25ab5ee4bc1ab48bc675e5f360ai.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H51263bb3e6c4485c9ce70201b60b79beJ.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/A14c4a8f9abef463886f0546456fafa71J.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+
+{
+  id: 52,
+  name: "Sac à main matelassé ",
+  description: "Sac à main en cuir pour femme",
+  price: 4950,
+  category: 'sport',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/H76de0525b96449729fdb3baeeb58827cz.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H914bb45782cf407e8e343e9aeab6823bJ.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H9cdbe988908b446db11ed8791f0c6a86n.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H0e4b50cbc1b74d16b8c4b5d4babdb6a7C.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H8868205d661b4a10a4ece7aeca057530i.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+
+{
+  id: 51,
+  name: "Sèche-cheveux",
+  description: "Sèche-cheveux puissant à air inversé",
+  price: 8250,
+  category: 'sport',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/Hc14cac1e0cd841beab89da77268881a7W.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H293aef12eb504402af146e9636d74254M.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H95b7987f9eef41239023d7587e40f070z.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H95b7987f9eef41239023d7587e40f070z.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H26fd427cb40f4100b9e3481e7735f29eC.png?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+
+{
+  id: 50,
+  name: "brosses du cuir chevelu",
+  description: "Peigne à racines, flacon d'huile capillaire",
+  price: 1200,
+  category: 'sport',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/Hc1e4f43822ca41f5957d07c5c19487e1K.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H6c1fbe129abd4f418e8647b23c8c5bfbX.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hdbc7111a81404fa38f563f9889a267a4K.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/He485933ddb6d4c06a08682809f910130G.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hdaa3e401254c473b91d3d17dc7f6eb0bx.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+
+{
+  id: 49,
+  name: "Sous-vêtements sexy",
+  description: 'Nylon/nylon',
+  price: 1250,
+  category: 'vetements',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/Hb2f9c0a0b3f043e0af24262a621339c93.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H0848a52d5ae74774be2a62389f1f8a70N.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H696342a88d9f47079135b46fba1b6d71E.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hdefc13447a8e4669b0b404ab6e3b544cZ.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H0b4bced0329e4d7e923a6a57ca22af55m.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+
+{
+  id: 49,
+  name: "Brosse nettoyante",
+  description: 'Élimination des points noirs',
+  price: 2250,
+  category: 'sport',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/H9a016652dd7d4693a51cbf2d094496ffn.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hec0a1abf3ecb49d9b5a66dde4c47525cR.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hec0a1abf3ecb49d9b5a66dde4c47525cR.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H5bcc253750734776b76b194095221976Q.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hd83cba4ffcb64c36bb6921cf905debff0.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+
+{
+  id: 48,
+  name: "Pyjama court",
+  description: 'Polyester / Coton',
+  price: 1350,
+  category: 'vetements',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/Hcd3bf86f54c840d8bf06631e96dcd2dbr.png?avif=close',
+  'https://s.alicdn.com/@sc04/kf/He6e2c72351b6446daa985b3d72a87037V.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H0d07ca0f31e243e68bd327dad68f6b3bm.png?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hb0e6331ef7fe493ebca286d3fddfed2aZ.png?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hcd2493d1d00c43b88fa21488b797aa448.png?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+
+{
+  id: 47,
+  name: "Pull homme",
+  description: 'Polyester / Coton',
+  price: 13500,
+  category: 'vetements',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/He6cd3f5b412d44eaa8984613536fa793n.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H49c5911454904f00a0375b82ff700bbcC.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Heeb416ee0b4a49d6871388bdb41aa1fev.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H22b875407d3f40d7a70bcd1cfe4fed2ad.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Ha15d9c021e4a4bd78c62885b3d72c38dg.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+
+{
+  id: 46,
+  name: "Chemises YiXin",
+  description: 'Polyester / Coton',
+  price: 7500,
+  category: 'vetements',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/H30be75e72c63440aa6a0752aadcaafbb6.jpeg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H87253c2c346945ac9369cbe7d12f2a28M.jpeg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H9f4f8f198e60435fb1cd3786c244918c3.jpeg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hd7b21386397b4075a82f8513ceca96e3N.jpeg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hca28d6eb9cd04535ba3206de701a8b15C.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+
+{
+  id: 45,
+  name: "Pantalon de survêtement",
+  description: 'Polyester / Coton',
+  price: 8500,
+  category: 'vetements',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/H25c22a9ac06f4cd39d531a8878e613e9X.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H5e670eae90854336b2912e80418ae04f0.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/He60fff76adda4576bb5bdee2b126735fd.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hbbe5fa4fa90b4aa89156cab25d3ef816h.jpg?avif=close',
+
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+},
+  
+{
+  id: 44,
+  name: "Eponges de maquillage ",
+  description: 'Eponge douce pour fond de teint',
+  price: 2500,
+  category: 'sport',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/H94325898330942d0a09b995b25fa27fcJ.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hf32202c5f8d7494a8f8eb7f53163efeek.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H7f453fdda4504b43a74f6d7ad7231ed4P.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H686f020447444d01ab6329a3e35d9854c.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 9,
+  rating: 4.9
+  },
+    
+
+{
+id: 43,
+name: "Eponges de beauté mélangeurs",
+description: '10 pièces 5 pièces par sac',
+price: 2500,
+category: 'sport',
+images: [
+'https://s.alicdn.com/@sc04/kf/He7cfb16b3c4e421698e572930f8c95edy.jpg?avif=close',
+'https://s.alicdn.com/@sc04/kf/Hce84de98404346aaab1e24ed14f074f2Z.jpg?avif=close',
+'https://s.alicdn.com/@sc04/kf/Hce3a0674dd6f4538892de5dd022c09b6H.jpg?avif=close',
+'https://s.alicdn.com/@sc04/kf/H6d7cef328a234c5bb25fa9e4a7a96dcf8.jpg?avif=close',
+],
+like: 0,
+seller: {
+  name: 'RYONV',
+  phone: '+330758146261',
+  country: 'FR',
+  rating: 4.8
+},
+vendorPhone: '+330758146261',
+promotion: {
+  discount: 10, 
+  endDate: '2024-10-21T23:59:59' 
+},
+stock: 9,
+rating: 4.9
+},
+
+{
 id: 37,// Vêtements 
 name: "Chemise homme",
 description: 'Toutes les tailles',
@@ -28,6 +404,7 @@ promotion: {
 stock: 9,
 rating: 4.9
 },
+
 {
 id: 37,// Vêtements 
 name: "Complet femme",

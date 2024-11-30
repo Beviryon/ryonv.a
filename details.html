@@ -68,18 +68,27 @@
         <div class="carousel-inner">
           <!-- Les images du produit seront insérées ici via JavaScript -->
         </div>
-        <button class="carousel-control prev">Précédente</button>
-        <button class="carousel-control next">Suivante</button>
+        <button class="carousel-control prev">&lt;</button>
+        <button class="carousel-control next">&gt;</button>
       </div>
       <div id="carousel-counter"></div>
-
   
       <!-- Bouton pour discuter avec le vendeur -->
       <button id="contact-seller-btn">Discuter avec le vendeur</button>
-    </section>
-    
+    </section>  
   </main>
 
+  <section class="suggestions">
+    <h2>Suggestions de produits</h2>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <!-- Les cartes de produits seront insérées ici via JavaScript -->
+      </div>
+      <button class="carousel-control prev">&#10094;</button>
+      <button class="carousel-control next">&#10095;</button>
+    </div>
+  </section>   
+  
   <footer>
     <div class="footer-content">
       <div class="footer-links">
@@ -91,7 +100,7 @@
       <p>&copy; 2024 RYONV. Développé par Beviryon.</p>
     </div>
   </footer>
-  
+
   <script  nonce="xyz" src="./data.js"></script>
   <script type="module" nonce="xyz" src="./details.js"></script>
   <script  nonce="xyz" src="./products.js"></script>
@@ -116,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(showPopup, 1000); 
 });
 </script>
-
 
 <script nonce="xyz">
   if ('serviceWorker' in navigator) {
