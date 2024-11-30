@@ -1,7 +1,7 @@
 const products = [
 
 {
-  id: 54,
+  id: 55,
   name: "Lisseur à cheveux",
   description: "Brosse chauffante électrique",
   price: 5795,
@@ -146,7 +146,7 @@ const products = [
 },
 
 {
-  id: 49,
+  id: 54,
   name: "Sous-vêtements sexy",
   description: 'Nylon/nylon',
   price: 1250,
