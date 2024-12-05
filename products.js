@@ -31,7 +31,7 @@ const products = [
 
 {
   id: 53,
-  name: "Lames de tondeuse à sourcils",
+  name: "Tondeuse à sourcils",
   description: "Rasoir pour épilation",
   price: 735,
   category: 'sport',
@@ -60,8 +60,8 @@ const products = [
 
 {
   id: 52,
-  name: "Sac à main matelassé ",
-  description: "Sac à main en cuir pour femme",
+  name: "Sac à main",
+  description: "Sac à main en cuir ",
   price: 4950,
   category: 'sport',
   images: [
@@ -90,7 +90,7 @@ const products = [
 {
   id: 51,
   name: "Sèche-cheveux",
-  description: "Sèche-cheveux puissant à air inversé",
+  description: "Sèche-cheveux ",
   price: 8250,
   category: 'sport',
   images: [
@@ -118,8 +118,8 @@ const products = [
 
 {
   id: 50,
-  name: "brosses du cuir chevelu",
-  description: "Peigne à racines, flacon d'huile capillaire",
+  name: "Brosses du cuir chevelu",
+  description: "Peigne à racines",
   price: 1200,
   category: 'sport',
   images: [
@@ -292,7 +292,7 @@ const products = [
 
 {
   id: 45,
-  name: "Pantalon de survêtement",
+  name: "Pantalon",
   description: 'Polyester / Coton',
   price: 8500,
   category: 'vetements',
@@ -322,7 +322,7 @@ const products = [
 {
   id: 44,
   name: "Eponges de maquillage ",
-  description: 'Eponge douce pour fond de teint',
+  description: 'Eponge douce',
   price: 2500,
   category: 'sport',
   images: [
@@ -350,8 +350,8 @@ const products = [
 
 {
 id: 43,
-name: "Eponges de beauté mélangeurs",
-description: '10 pièces 5 pièces par sac',
+name: "Eponges de beauté",
+description: '10 pièces ',
 price: 2500,
 category: 'sport',
 images: [
