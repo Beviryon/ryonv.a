@@ -92,6 +92,72 @@
 <!-- Alerte -->
 <div class="alert-popup" style="display:none;"></div>
 
+ <!-- Bannière -->
+ <section class="banner">
+  <div class="banner-content" id="see-more-button">
+    <div class="banner-text">
+      <h2>OFFRES</h2>
+      <p>Toutes les catégories</p>
+      <button class="banner-button" id="see-more-button">Voir plus</button>
+    </div>
+    <div class="banner-images" id="see-more-button">
+      <img src="https://s.alicdn.com/@sc04/kf/H0b9102cfe0814ff8b2aa22345a6bc8ddv.jpg_720x720q50.jpg" alt="Produit 1">
+      <img src="https://s.alicdn.com/@sc04/kf/Hc14cac1e0cd841beab89da77268881a7W.jpg?avif=close" alt="Produit 2">
+    </div>
+  </div>
+  <div class="banner-bottom" id="see-more-button">
+    <p>JUSQU'À -10%</p>
+    <p>Réduction</p>
+  </div>
+</section>
+
+<!-- <section class="banner">
+  <div class="banner-content">
+    <div class="banner-text">
+      <h2>Cyber Monday</h2>
+      <p>Plus pour moins</p>
+      <p>J'en profite &gt;&gt;&gt;</p>
+    </div>
+    <div class="banner-images">
+      <img src="https://s.alicdn.com/@sc04/kf/Hc14cac1e0cd841beab89da77268881a7W.jpg?avif=close" alt="Produit 1">
+      <img src="https://s.alicdn.com/@sc04/kf/Hc14cac1e0cd841beab89da77268881a7W.jpg?avif=close" alt="Produit 2">
+    </div>
+  </div>
+</section> -->
+
+<!-- Bannière -->
+<!-- <section class="banner">
+  <div class="banner-content">
+    <div class="banner-left">
+      <div class="banner-item">
+        <h4>Téléchargez l'app RYONV</h4>
+        <p>et bénéficiez de réduction</p>
+      </div>
+      <div class="banner-item">
+        <h4>RYONV Affiliation</h4>
+      </div>
+      <div class="banner-item">
+        <h4>10% de réduction</h4>
+        <p>supplémentaires sur votre 1ère commande</p>
+      </div>
+      <div class="banner-item">
+        <h4>Carte cadeau</h4>
+      </div>
+    </div>
+    <div class="banner-right">
+      <div class="banner-image">
+        <img src="https://s.alicdn.com/@sc04/kf/Hc14cac1e0cd841beab89da77268881a7W.jpg?avif=close" alt="Bannière de Noël">
+      </div>
+      <div class="banner-text">
+        <h2>#RYONVhome</h2>
+        <h2>#RYONVcalendrierdelavent</h2>
+        <h1>DÉCORATION DE NOËL ET IDÉES CADEAUX</h1>
+        <p>À partir de 0,49€</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
     <section class="featured-products">
       <h2>Nos Produits Phare</h2>
       <div class="featured-carousel">
@@ -136,9 +202,8 @@
     </section>
     
     <section class="product-listing">
-
       <div class="product-grid">
-        <!-- section fitrage -->
+        <!-- Section filtrage -->
         <div class="filters">
           <label for="sort">Vous pouvez trier vos produits par :</label>
           <select id="sort">
@@ -146,157 +211,150 @@
             <option value="price-asc">Prix croissant</option>
             <option value="price-desc">Prix décroissant</option>
           </select>
-          <!-- <label for="filter">Filtrer par prix :</label>
-          <input type="range" id="filter" min="0" max="1000" value="1000" step="10">
-          <span id="filter-value">1000M</span> -->
-        </div>
-        <!--  -->
-        <!--  -->
-
-      <section class="filter-bar">
-        <aside class="sidebar">
-          <h3>Catégories</h3>
-          <label for="category-select" class="category-label">Sélectionner une catégorie :</label>
-          <select class="category-toggle" id="category-select">
-            <option value="all" class="active">Toutes les catégories</option>
-            <option value="vetements">Vêtements</option>
-            <option value="electronique">Électronique</option>
-            <option value="maison">Maison</option>
-            <option value="sport">Accessoires et Autres</option>
-          </select>
-        </aside>        
-        <div class="filter-item">
-          <label id="seller-country-label" for="seller-country" data-icon="🌍">Pays :</label>
-          <select id="seller-country">
-            <option value="all">Tous les pays</option>
-            <optgroup label="Afrique">
-              <option value="DZ">Algérie</option>
-              <option value="AO">Angola</option>
-              <option value="BJ">Bénin</option>
-              <option value="BW">Botswana</option>
-              <option value="BF">Burkina Faso</option>
-              <option value="BI">Burundi</option>
-              <option value="CM">Cameroun</option>
-              <option value="CV">Cap-Vert</option>
-              <option value="CF">République centrafricaine</option>
-              <option value="TD">Tchad</option>
-              <option value="KM">Comores</option>
-              <option value="CG">Congo (Brazzaville)</option>
-              <option value="CD">Congo (Kinshasa)</option>
-              <option value="CI">Côte d'Ivoire</option>
-              <option value="DJ">Djibouti</option>
-              <option value="EG">Égypte</option>
-              <option value="GQ">Guinée équatoriale</option>
-              <option value="ER">Érythrée</option>
-              <option value="SZ">Eswatini</option>
-              <option value="ET">Éthiopie</option>
-              <option value="GA">Gabon</option>
-              <option value="GM">Gambie</option>
-              <option value="GH">Ghana</option>
-              <option value="GN">Guinée</option>
-              <option value="GW">Guinée-Bissau</option>
-              <option value="KE">Kenya</option>
-              <option value="LS">Lesotho</option>
-              <option value="LR">Liberia</option>
-              <option value="LY">Libye</option>
-              <option value="MG">Madagascar</option>
-              <option value="MW">Malawi</option>
-              <option value="ML">Mali</option>
-              <option value="MR">Mauritanie</option>
-              <option value="MU">Maurice</option>
-              <option value="MA">Maroc</option>
-              <option value="MZ">Mozambique</option>
-              <option value="NA">Namibie</option>
-              <option value="NE">Niger</option>
-              <option value="NG">Nigéria</option>
-              <option value="RW">Rwanda</option>
-              <option value="ST">Sao Tomé-et-Principe</option>
-              <option value="SN">Sénégal</option>
-              <option value="SC">Seychelles</option>
-              <option value="SL">Sierra Leone</option>
-              <option value="SO">Somalie</option>
-              <option value="ZA">Afrique du Sud</option>
-              <option value="SS">Soudan du Sud</option>
-              <option value="SD">Soudan</option>
-              <option value="TZ">Tanzanie</option>
-              <option value="TG">Togo</option>
-              <option value="TN">Tunisie</option>
-              <option value="UG">Ouganda</option>
-              <option value="ZM">Zambie</option>
-              <option value="ZW">Zimbabwe</option>
-          </optgroup>
-          <optgroup label="Europe">
-            <option value="FR">France</option>
-            <option value="DE">Allemagne</option>
-            <option value="IT">Italie</option>
-            <option value="ES">Espagne</option>
-            <option value="GB">Royaume-Uni</option>
-            <option value="PT">Portugal</option>
-            <option value="NL">Pays-Bas</option>
-            <option value="BE">Belgique</option>
-            <option value="CH">Suisse</option>
-            <option value="SE">Suède</option>
-            <option value="NO">Norvège</option>
-            <option value="FI">Finlande</option>
-            <option value="IE">Irlande</option>
-            <option value="PL">Pologne</option>
-            <option value="GR">Grèce</option>
-            <option value="AT">Autriche</option>
-            <option value="DK">Danemark</option>
-        </optgroup>
-          </select>
         </div>
       
-        <div class="filter-item">
-          <label id="seller-name-label" for="seller-name" data-icon="👤">Vendeur :</label>
-          <select id="seller-name">
-            <option value="all">Tous les vendeurs</option>
-            <option value="RAAM">RAAM</option>
-            <option value="MCRShop">MCRShop</option>
-            <option value="RYONV">RYONV</option>
-            <option value="Vendeur">Vendeur</option>
-          </select>
+        <section class="filter-bar">
+          <aside class="sidebar">
+            <h3>Catégories</h3>
+            <label for="category-select" class="category-label">Sélectionner une catégorie :</label>
+            <select class="category-toggle" id="category-select">
+              <option value="all" class="active">Toutes les catégories</option>
+              <option value="vetements">Vêtements</option>
+              <option value="electronique">Électronique</option>
+              <option value="maison">Maison</option>
+              <option value="sport">Accessoires et Autres</option>
+            </select>
+          </aside>
+      
+          <div class="filter-item">
+            <label id="seller-country-label" for="seller-country" data-icon="🌍">Pays :</label>
+            <select id="seller-country">
+              <option value="all">Tous les pays</option>
+              <optgroup label="Afrique">
+                <option value="DZ">Algérie</option>
+                <option value="AO">Angola</option>
+                <option value="BJ">Bénin</option>
+                <option value="BW">Botswana</option>
+                <option value="BF">Burkina Faso</option>
+                <option value="BI">Burundi</option>
+                <option value="CM">Cameroun</option>
+                <option value="CV">Cap-Vert</option>
+                <option value="CF">République centrafricaine</option>
+                <option value="TD">Tchad</option>
+                <option value="KM">Comores</option>
+                <option value="CG">Congo (Brazzaville)</option>
+                <option value="CD">Congo (Kinshasa)</option>
+                <option value="CI">Côte d'Ivoire</option>
+                <option value="DJ">Djibouti</option>
+                <option value="EG">Égypte</option>
+                <option value="GQ">Guinée équatoriale</option>
+                <option value="ER">Érythrée</option>
+                <option value="SZ">Eswatini</option>
+                <option value="ET">Éthiopie</option>
+                <option value="GA">Gabon</option>
+                <option value="GM">Gambie</option>
+                <option value="GH">Ghana</option>
+                <option value="GN">Guinée</option>
+                <option value="GW">Guinée-Bissau</option>
+                <option value="KE">Kenya</option>
+                <option value="LS">Lesotho</option>
+                <option value="LR">Libéria</option>
+                <option value="LY">Libye</option>
+                <option value="MG">Madagascar</option>
+                <option value="MW">Malawi</option>
+                <option value="ML">Mali</option>
+                <option value="MR">Mauritanie</option>
+                <option value="MU">Maurice</option>
+                <option value="MA">Maroc</option>
+                <option value="MZ">Mozambique</option>
+                <option value="NA">Namibie</option>
+                <option value="NE">Niger</option>
+                <option value="NG">Nigéria</option>
+                <option value="RW">Rwanda</option>
+                <option value="ST">Sao Tomé-et-Principe</option>
+                <option value="SN">Sénégal</option>
+                <option value="SC">Seychelles</option>
+                <option value="SL">Sierra Leone</option>
+                <option value="SO">Somalie</option>
+                <option value="ZA">Afrique du Sud</option>
+                <option value="SS">Soudan du Sud</option>
+                <option value="SD">Soudan</option>
+                <option value="TZ">Tanzanie</option>
+                <option value="TG">Togo</option>
+                <option value="TN">Tunisie</option>
+                <option value="UG">Ouganda</option>
+                <option value="ZM">Zambie</option>
+                <option value="ZW">Zimbabwe</option>
+              </optgroup>
+              <optgroup label="Europe">
+                <option value="FR">France</option>
+                <option value="DE">Allemagne</option>
+                <option value="IT">Italie</option>
+                <option value="ES">Espagne</option>
+                <option value="GB">Royaume-Uni</option>
+                <option value="PT">Portugal</option>
+                <option value="NL">Pays-Bas</option>
+                <option value="BE">Belgique</option>
+                <option value="CH">Suisse</option>
+                <option value="SE">Suède</option>
+                <option value="NO">Norvège</option>
+                <option value="FI">Finlande</option>
+                <option value="IE">Irlande</option>
+                <option value="PL">Pologne</option>
+                <option value="GR">Grèce</option>
+                <option value="AT">Autriche</option>
+                <option value="DK">Danemark</option>
+              </optgroup>
+            </select>
+          </div>
+      
+          <div class="filter-item">
+            <label id="seller-name-label" for="seller-name" data-icon="👤">Vendeur :</label>
+            <select id="seller-name">
+              <option value="all">Tous les vendeurs</option>
+              <option value="RAAM">RAAM</option>
+              <option value="MCRShop">MCRShop</option>
+              <option value="RYONV">RYONV</option>
+              <option value="Vendeur">Vendeur</option>
+            </select>
+          </div>
+      
+          <div class="filter-item search-box">
+            <label id="search-input-label" for="search-input" data-icon="🔍"></label>
+            <input type="text" id="search-input" placeholder="Qu'est-ce que tu cherches?">
+          </div>
+        </section>
+      
+        <div id="products-container"></div>
+        <div id="no-products-message" style="display: none;">Pas de produits pour ce pays ou ce vendeur.</div>
+      
+        <div class="product-list">
+          <!-- Affichage des produits -->
         </div>
-      
-        <div class="filter-item search-box">
-          <label id="search-input-label" for="search-input" data-icon="🔍"></label>
-          <input type="text" id="search-input" placeholder="Qu'est-ce que tu cherches?">
-        </div>
-      </section>
-      
-      <div id="products-container"></div>
-      <div id="no-products-message" style="display: none;">Pas de produits pour ce pays ou ce vendeur.</div>
-      
-        <!--  -->
-        <!--  -->
-
-      <div class="product-list">
-        <!-- affichage des produits -->
       </div>
-
+      
         <!-- Pagination -->
       <div class="pagination">
           <button id="prev-btn" disabled>Précédent</button>
           <span id="page-info">Page 1 sur 1</span>
           <button id="next-btn">Suivant</button>
       </div>
-      </div>
+
     </section>
 
-  <section class="recommended-section">
-    <h3>Produits similaires</h3>
-    <div class="similar-products-carousel"></div>
-  </section>
+    <section class="recommended-section">
+      <h3>Produits similaires</h3>
+      <div class="similar-products-carousel"></div>
+    </section>
   
-  <section class="recently-viewed-section">
-      <h3>Vos produits récemment consultés</h3>
-      <div class="recently-viewed-carousel"></div>
-  </section>
-  
-
+    <section class="recently-viewed-section">
+        <h3>Vos produits récemment consultés</h3>
+        <div class="recently-viewed-carousel"></div>
+    </section>
  </main>
 
-  <!-- Modal pour la galerie d'images -->
+  <section id="products-section">
+     <!-- Modal pour la galerie d'images -->
   <div id="product-modal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -305,6 +363,7 @@
       </div>
     </div>
   </div>
+  </section>
 
   <div id="product-details-modal" class="modal">
     <div class="modal-content">
@@ -394,8 +453,6 @@
           <option value="ZW">Zimbabwe</option>
         </select>        
       
-    
-      
         <button type="submit">Discuter avec le vendeur</button>
         <p>
           <a href="./modalites-livraison.html">Connaître les modalités de livraison</a>
@@ -431,6 +488,17 @@
 <script nonce="xyz" type="module"  src="./products.js"></script>
 <script nonce="xyz" type="module"  src="./lib/bundle.js"></script>
 <script nonce="xyz" type="module"  src="./contact.js"></script>
+
+<script nonce="xyz" type="module">
+  document.getElementById('see-more-button').addEventListener('click', function() {
+    document.location.href = '#products-section';
+  });
+
+  // Fonctionnalité pour fermer la modal
+  document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('product-modal').style.display = 'none';
+  });
+</script>
 
   <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
   <script nonce="xyz">
