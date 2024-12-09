@@ -1,6 +1,63 @@
 const products = [
 
 {
+  id: 57,
+  name: "Robe sexy",
+  description: "Robe de bal",
+  price: 9000,
+  category: 'vetements',
+  images: [
+  'https://live.staticflickr.com/65535/54191950658_7f59510397_n.jpg',
+  'https://www.flickr.com/photos/deslogroup/54192142195/in/dateposted/',
+  'https://www.flickr.com/photos/deslogroup/54192142195/in/dateposted/',
+  'https://www.flickr.com/photos/deslogroup/54192142210/in/dateposted/',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 4.9
+},
+
+{
+  id: 56,
+  name: "Robe bandage sexy",
+  description: "Robe de bal",
+  price: 9500,
+  category: 'vetements',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/H87f5f20a66434abf8bfba4155a504f3d0.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H1828d107c7704fe5a5a4d3558981403cG.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H83fb4f21d04448d9933ca8756bef3050t.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H2c72b7643c0745fb9d20720e613cab66y.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H2c72b7643c0745fb9d20720e613cab66y.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+330758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+330758146261',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-10-21T23:59:59' 
+  },
+  stock: 5,
+  rating: 4.9
+},
+
+{
   id: 55,
   name: "Lisseur à cheveux",
   description: "Brosse chauffante électrique",
