@@ -25,7 +25,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 10,
-  rating: 4.9
+  rating: 4.9,
+  isTrending: true,
 },
 
 {
@@ -54,14 +55,15 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 5,
-  rating: 4.9
+  rating: 4.9,
+  isTrending: true,
 },
 
 {
   id: 55,
   name: "Lisseur à cheveux",
   description: "Brosse chauffante électrique",
-  price: 5795,
+  price: 9795,
   category: 'sport',
   images: [
   'https://s.alicdn.com/@sc04/kf/Hb53394b7cafb4bd184b05c406af4a030n.jpg?avif=close',
@@ -83,7 +85,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isBestSeller: true
 },
 
 {
@@ -112,7 +115,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isTrending: true,
 },
 
 {
@@ -141,7 +145,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isTrending: true,
 },
 
 {
@@ -170,7 +175,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isTrending: true,
 },
 
 {
@@ -199,7 +205,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isBestSeller: true
 },
 
 {
@@ -228,7 +235,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isTrending: true,
 },
 
 {
@@ -257,7 +265,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isBestSeller: true
 },
 
 {
@@ -286,7 +295,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isBestSeller: true
 },
 
 {
@@ -315,7 +325,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isBestSeller: true
 },
 
 {
@@ -344,7 +355,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isBestSeller: true
 },
 
 {
@@ -401,7 +413,8 @@ const products = [
     endDate: '2024-10-21T23:59:59' 
   },
   stock: 9,
-  rating: 4.9
+  rating: 4.9,
+  isBestSeller: true
   },
     
 
@@ -430,7 +443,8 @@ promotion: {
   endDate: '2024-10-21T23:59:59' 
 },
 stock: 9,
-rating: 4.9
+rating: 4.9,
+isBestSeller: true
 },
 
 {

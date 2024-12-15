@@ -1,6 +1,38 @@
 import { products } from "./products.js";
 console.log(products)
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Récupérer les éléments du carrousel des produits tendances et des meilleures ventes
+  const trendingCarousel = document.querySelector('.trending-carousel');
+  const bestSellersCarousel = document.querySelector('.best-sellers-carousel');
+
+  // Fonction pour créer un élément d'image de produit
+  const createProductImage = (product) => {
+    const img = document.createElement('img');
+    img.src = product.images[0];
+    img.alt = product.name;
+    img.dataset.id = product.id; // Ajouter l'ID du produit comme attribut de données
+    img.addEventListener('click', () => {
+      window.location.href = `details.html?id=${product.id}`;
+    });
+    return img;
+  };
+
+  // Ajouter les produits tendances dans le carrousel
+  const trendingProducts = products.filter(product => product.isTrending).slice(0, 6); // Limiter à 6 produits
+  trendingProducts.forEach(product => {
+    const img = createProductImage(product);
+    trendingCarousel.appendChild(img);
+  });
+
+  // Ajouter les meilleures ventes dans le carrousel
+  const bestSellers = products.filter(product => product.isBestSeller).slice(0, 6); // Limiter à 6 produits
+  bestSellers.forEach(product => {
+    const img = createProductImage(product);
+    bestSellersCarousel.appendChild(img);
+  });
+});
+
 function displaySimilarProducts(currentProduct) {
   const similarProductsContainer = document.querySelector('.similar-products-carousel');
   if (!similarProductsContainer) {
