@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats des Clics</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+    <h1>Résultats des Clics</h1>
+    <p id="clickCount">Nombre de clics : 0</p>
+
+    <script>
+        // Fonction pour obtenir la valeur d'un cookie
+        function getCookie(name) {
+            let value = "; " + document.cookie;
+            let parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+
+        // Afficher le nombre de clics
+        let clickCount = getCookie('clickCount') || 0;
+        document.getElementById('clickCount').innerText = 'Nombre de clics : ' + clickCount;
+    </script>
+</body>
+</html>

@@ -691,7 +691,7 @@ footer p {
 
 
 /* Style du formulaire */
-.form-container {
+/* .form-container {
   position: relative;
   background-color: #fff;
   padding: 30px;
@@ -773,7 +773,7 @@ footer p {
 
 
 /* Style du modal */
-.form-popup {
+/* .form-popup {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -786,10 +786,10 @@ footer p {
   background-color: rgba(0, 0, 0, 0.5);
   overflow: auto;
   padding: 50px 20px;
-}
+} */
 
 /* Animation du modal */
-@keyframes modalFadeIn {
+/* @keyframes modalFadeIn {
   from {
     opacity: 0;
     transform: translateY(-20px);
@@ -798,10 +798,10 @@ footer p {
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
 /* Style pour le modal */
-.form-popup {
+/* .form-popup {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -837,10 +837,10 @@ footer p {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
+} */
 
 /* Style pour le formulaire */
-.order-form {
+/* .order-form {
   display: flex;
   flex-direction: column;
 }
@@ -876,14 +876,14 @@ button[type="submit"]:hover {
 
 .g-recaptcha {
   margin-bottom: 12px;
-}
+}  */
 
 /* Media query pour rendre le formulaire plus compact sur les petits écrans */
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .form-container {
     width: 90%;
   }
-}
+} */
 
 /* promotion */
 .product-card {

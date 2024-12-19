@@ -718,7 +718,7 @@ rating: 4.5
 {
   id: 34,
   name: 'Ensemble deux pièces',
-  description: 'Ensemble deux pièces',
+  description: 'X, L, XL, XXL, 3XL',
   price: 2500,
   category: 'vetements',
   images: [
@@ -743,7 +743,7 @@ rating: 4.5
 
 {
 id: 4,
-name: 'Ensemble deux pièces',
+name: 'Ensemble',
 description: 'L XL XXL 3XL',
 price: 7500,
 category: 'vetements',
@@ -925,7 +925,7 @@ rating: 4.5
 {
 id: 10, 
 name: 'H-P EliteBook 640G9', 
-description: 'WINDOWS 11 HOME',
+description: 'WINDOWS 11',
 price: 250000,
 category: 'electronique',
 images: [
@@ -1033,7 +1033,7 @@ rating: 4.5
 {
 id: 14, 
 name: 'Chemises Hommes', 
-description: '	Polyester / coton',
+description: '	Polyester/coton',
 price: 6000,
 category: 'vetements',
 images: [

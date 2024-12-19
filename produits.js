@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const img = document.createElement('img');
     img.src = product.images[0];
     img.alt = product.name;
-    img.dataset.id = product.id; // Ajouter l'ID du produit comme attribut de données
+    img.dataset.id = product.id; 
     img.addEventListener('click', () => {
       window.location.href = `details.html?id=${product.id}`;
     });
@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Ajouter les produits tendances dans le carrousel
-  const trendingProducts = products.filter(product => product.isTrending).slice(0, 6); // Limiter à 6 produits
+  const trendingProducts = products.filter(product => product.isTrending).slice(0, 6); 
   trendingProducts.forEach(product => {
     const img = createProductImage(product);
     trendingCarousel.appendChild(img);
   });
 
   // Ajouter les meilleures ventes dans le carrousel
-  const bestSellers = products.filter(product => product.isBestSeller).slice(0, 6); // Limiter à 6 produits
+  const bestSellers = products.filter(product => product.isBestSeller).slice(0, 6);
   bestSellers.forEach(product => {
     const img = createProductImage(product);
     bestSellersCarousel.appendChild(img);
@@ -88,11 +88,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // 
 
 // Fonction pour ouvrir/fermer le panier
+// function toggleCart() {
+//   const cartPopup = document.querySelector('.cart-popup');
+//   if (cartPopup) {
+//     cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+//   }
+// }
+
 function toggleCart() {
-  const cartPopup = document.querySelector('.cart-popup');
-  if (cartPopup) {
-    cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
-  }
+  window.location.href = 'cart.html';
 }
 
 // Fonction pour afficher les produits dans le panier
