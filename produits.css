@@ -81,6 +81,18 @@ nav {
 
 /* Responsive Menu */
 @media (max-width: 968px) {
+  .logo a {
+    color: #f2ae01;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center; 
+  }
+  
   .nav-links {
       display: none;
       flex-direction: column;
@@ -126,6 +138,7 @@ nav {
       left: 0;
   }
 }
+
 
 /* Styles de base */
 /* Contenu principal */
@@ -192,14 +205,6 @@ main {
     position: relative;
     font-weight: 800;
   }
-
-  /* .product-card .seller-name {
-    font-size: 14px;
-    color: #555;
-    font-weight: bold;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-  } */
 
   .seller-info {
     font-size: 14px;
@@ -367,7 +372,113 @@ main {
 
   
 /* Début style filtre */
-  .filters {
+
+/* === Styles de la section de liste de produits === */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.search-container {
+  margin-top: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Barre de filtres */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filter-label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.search-box input {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.pagination-btn {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-btn:hover {
+  background-color: #0056b3;
+}
+
+.pagination-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.page-info {
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+
+/* === Version mobile === */
+@media (max-width: 768px) {
+  .filter-bar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .filter-item {
+      width: 100%;
+      justify-content: space-between;
+  }
+} 
+
+
+  /* .filters {
     display: none;
     align-items: center;
     justify-content: center;
@@ -412,10 +523,10 @@ main {
     font-weight: 600;
     color: #333;
     margin-left: 0.5rem;
-  }
+  } */
   
   /* Styles pour le curseur de l'input range */
-  .filters input[type="range"]::-webkit-slider-thumb {
+  /* .filters input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 16px;
@@ -423,15 +534,15 @@ main {
     background-color: #000361;
     border-radius: 50%;
     cursor: pointer;
-  }
+  } */
   
-  .filters input[type="range"]::-moz-range-thumb {
+  /* .filters input[type="range"]::-moz-range-thumb {
     width: 16px;
     height: 16px;
     background-color: #000361;
     border-radius: 50%;
     cursor: pointer;
-  }
+  } */
   /* Fin style filtre */
   
   
@@ -484,7 +595,7 @@ footer p {
       margin-right: 0;
       margin-bottom: 2rem;
     }
-    .filters {
+    /* .filters {
       display: none;
       align-items: center;
       justify-content: center;
@@ -496,7 +607,7 @@ footer p {
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       position: relative;
       top: 20px;
-    }
+    } */
   }
   @media (max-width: 300px) {
     main {
@@ -508,7 +619,7 @@ footer p {
       margin-right: 0;
       margin-bottom: 2rem;
     }
-    .filters {
+    /* .filters {
       display: none;
       align-items: center;
       justify-content: center;
@@ -520,7 +631,7 @@ footer p {
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       position: relative;
       top: 20px;
-    }
+    } */
   }
 
   /* Modal pour la galerie d'images */
@@ -1691,7 +1802,7 @@ a:hover {
 
 /* Bannière */
 .banner {
-  background: linear-gradient(135deg, #000447 0%, #22d2e6 100%);
+  background: linear-gradient(135deg, #470000 0%, #e65322 100%);
   padding: 20px;
   color: #fff;
   text-align: center;
@@ -3675,4 +3786,3 @@ a:hover {
             transform: translateY(100%);
   }
 }
-/*# sourceMappingURL=button.css.map */

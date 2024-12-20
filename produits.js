@@ -87,13 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // 
 // 
 
-// Fonction pour ouvrir/fermer le panier
-// function toggleCart() {
-//   const cartPopup = document.querySelector('.cart-popup');
-//   if (cartPopup) {
-//     cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
-//   }
-// }
 
 function toggleCart() {
   window.location.href = 'cart.html';
@@ -274,7 +267,7 @@ function showAlert(message) {
   // Supprimez l'alerte après 3 secondes
   setTimeout(() => {
     alertBox.remove();
-  }, 3000);
+  }, 5000);
 }
 
 // 
@@ -822,7 +815,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fonction pour mettre à jour les informations de pagination
   function updatePaginationInfo(totalProducts) {
       const totalPages = Math.ceil(totalProducts / productsPerPage);
-      pageInfo.textContent = `Page ${currentPage} sur ${totalPages}`;
+      pageInfo.textContent = ` ${currentPage} sur ${totalPages}`;
 
       prevBtn.disabled = currentPage === 1;
       nextBtn.disabled = currentPage === totalPages;

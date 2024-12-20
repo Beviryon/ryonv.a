@@ -243,7 +243,7 @@ const products = [
   id: 49,
   name: "Brosse nettoyante",
   description: 'Élimination des points noirs',
-  price: 2250,
+  price: 3250,
   category: 'sport',
   images: [
   'https://s.alicdn.com/@sc04/kf/H9a016652dd7d4693a51cbf2d094496ffn.jpg?avif=close',
