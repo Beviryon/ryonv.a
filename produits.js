@@ -750,8 +750,6 @@ function openOrderForm(product) {
     return nameValid && cityValid && countryValid;
   }
 }
-
-
 // Variables pour la pagination //////////////////////////////////
 
 
@@ -760,7 +758,7 @@ function openOrderForm(product) {
 setInterval(() => {
   shuffleProducts(products); 
   displayProducts(products); 
-}, 60000);
+}, 70000);
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!products || products.length === 0) {

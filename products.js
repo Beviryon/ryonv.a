@@ -1,6 +1,205 @@
 const products = [
 
 {
+  id: 64,
+  name: "Drap de luxe",
+  description: "Semblable à la soie",
+  price: 12000,
+  category: 'maison',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/He26129dfa08742cea5a0b8360fdd811e6.png?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hac18b4d16b8c460d9d737730625e3990R.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Ha53bc8da82c7489b92c9751ac9ec2e6fT.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/Hb852a9d338324686ac9dc27d2d4014d3r.jpg?avif=close',
+  'https://s.alicdn.com/@sc04/kf/H7e753c881cf044d99e78868df884352en.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'Sasa',
+    phone: '+242066262052',
+    country: 'CG',
+    rating: 4.8
+  },
+  vendorPhone: '+242066262052',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 4.9,
+  isTrending: true,
+},
+{
+  id: 63,
+  name: "Parfun H&F",
+  description: "Soyez inoubliable",
+  price: 10000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54219468514_7bfb36310b_w.jpg',
+  'https://live.staticflickr.com/65535/54218330397_b1ec448738_w.jpg',
+  'https://live.staticflickr.com/65535/54219468499_2524da1d65_w.jpg',
+  'https://live.staticflickr.com/65535/54219635465_752193c441_w.jpg',
+  'https://live.staticflickr.com/65535/54219468494_7649dc85dd_w.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'Sasa',
+    phone: '+242066262052',
+    country: 'CG',
+    rating: 4.8
+  },
+  vendorPhone: '+242066262052',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 4.9,
+  isTrending: true,
+},
+
+{
+  id: 62,
+  name: "Parfun H&F",
+  description: "Sentez la magie",
+  price: 9000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54219635530_42defb866c_n.jpg',
+  'https://live.staticflickr.com/65535/54218330412_683eac9333.jpg',
+  'https://live.staticflickr.com/65535/54218330412_683eac9333.jpg',
+  'https://live.staticflickr.com/65535/54219468504_6799c41f72.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'Sasa',
+    phone: '+242066262052',
+    country: 'CG',
+    rating: 4.8
+  },
+  vendorPhone: '+242066262052',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 4.9,
+  isTrending: true,
+},
+
+{
+  id: 61,
+  name: "Parfun H&F",
+  description: "Éveillez vos sens ",
+  price: 9000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54219635595_0dd113ca44_n.jpg',
+  'https://live.staticflickr.com/65535/54219244286_c9fbe142fd_w.jpg',
+  'https://live.staticflickr.com/65535/54218330452_9f34b3b3a1_n.jpg',
+  'https://live.staticflickr.com/65535/54219468559_c0aa3930d5.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'Sasa',
+    phone: '+242066262052',
+    country: 'CG',
+    rating: 4.8
+  },
+  vendorPhone: '+242066262052',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 4.9,
+  isTrending: true,
+},
+
+{
+  id: 60,
+  name: "Montre homme",
+  description: "Montre",
+  price: 16000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54218330487_84c91e1320_w.jpg',
+  'https://live.staticflickr.com/65535/54219635580_ac57aa281d_n.jpg',
+  'https://live.staticflickr.com/65535/54218330447_5a2e18f5b8_n.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'Sasa',
+    phone: '+242066262052',
+    country: 'CG',
+    rating: 4.8
+  },
+  vendorPhone: '+242066262052',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 4.9,
+  isTrending: true,
+},
+
+{
+  id: 59,
+  name: "Montre homme",
+  description: "Montre",
+  price: 16000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54219635620_639ffbee85_n.jpg',
+  'https://live.staticflickr.com/65535/54218330487_84c91e1320_w.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'Sasa',
+    phone: '+242066262052',
+    country: 'CG',
+    rating: 4.8
+  },
+  vendorPhone: '+242066262052',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 4.9,
+  isTrending: true,
+},
+
+{
+  id: 58,
+  name: "Montre homme",
+  description: "Montre",
+  price: 12000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54219244251_fc5bbed7fa_n.jpg',
+  'https://live.staticflickr.com/65535/54218330422_6951641c8c_n.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'Sasa',
+    phone: '+242066262052',
+    country: 'CG',
+    rating: 4.8
+  },
+  vendorPhone: '+242066262052',
+  promotion: {
+    discount: 10, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 4.9,
+  isTrending: true,
+},
+
+{
   id: 57,
   name: "Robe sexy",
   description: "Robe de bal",

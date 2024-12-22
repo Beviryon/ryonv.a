@@ -31,16 +31,9 @@ if (product) {
   stock.textContent = `Quantité en stock : ${product.stock}`;
   productInfo.appendChild(stock);
 
-  // Ajouter le bouton "Plus de détails"
-  const moreDetailsBtn = document.createElement('button');
-  moreDetailsBtn.id = 'more-details-btn';
-  moreDetailsBtn.textContent = 'Plus de détails';
-  productInfo.appendChild(moreDetailsBtn);
-
   // Ajouter les informations spécifiques du produit sous forme de tableau en bas de la page
   const detailsTable = document.createElement('table');
   detailsTable.classList.add('details-table');
-  detailsTable.style.display = 'none'; // Masquer le tableau par défaut
 
   // Créer l'en-tête du tableau
   const tableHeader = document.createElement('thead');
@@ -89,15 +82,6 @@ if (product) {
 
   // Ajouter le tableau à la page
   productInfo.appendChild(detailsTable);
-
-  // Ajouter le gestionnaire d'événements pour le bouton "Plus de détails"
-  moreDetailsBtn.addEventListener('click', () => {
-    if (detailsTable.style.display === 'none') {
-      detailsTable.style.display = 'table';
-    } else {
-      detailsTable.style.display = 'none';
-    }
-  });
 
   // === Affichage des informations du vendeur ===
   const sellerInfo = document.createElement('div');
