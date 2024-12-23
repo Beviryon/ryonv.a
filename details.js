@@ -69,7 +69,7 @@ if (product) {
     { label: 'Pays du vendeur', value: product.seller.country },
     { label: 'Note du vendeur', value: product.seller.rating },
     { label: 'Téléphone du vendeur', value: product.vendorPhone },
-    { label: 'Promotion', value: `${product.promotion.discount}% jusqu'au ${new Date(product.promotion.endDate).toLocaleDateString()}` },
+    { label: 'Promotion', value: `${product.promotion.discount}% jusqu\'au ${new Date(product.promotion.endDate).toLocaleDateString()}` },
     { label: 'Stock', value: product.stock },
     { label: 'Note du produit', value: product.rating },
   ];
@@ -98,12 +98,6 @@ if (product) {
       detailsTable.style.display = 'none';
     }
   });
-
-  // === Affichage des informations du vendeur ===
-  const sellerInfo = document.createElement('div');
-  sellerInfo.classList.add('seller-info');
-
-  productInfo.appendChild(sellerInfo);
 
   // === Gestion du carrousel d'images ===
   const carouselInner = document.querySelector('.carousel-inner');
@@ -165,6 +159,104 @@ if (product) {
     // Ouvrir la discussion WhatsApp dans un nouvel onglet
     window.open(whatsappUrl, '_blank');
   });
+
+  // Ajouter les avis des clients dans une section masquée par défaut
+  const reviewsSection = document.createElement('div');
+  reviewsSection.id = 'reviews-section';
+  reviewsSection.style.display = 'none'; // Masquer la section par défaut
+
+  // Charger les avis des clients depuis le fichier JSON
+  fetch('reviews.json')
+    .then(response => response.json())
+    .then(reviewsData => {
+      const productReviews = reviewsData.find(review => review.productId === parseInt(productId));
+      if (productReviews) {
+        const reviewsToShow = 3; // Nombre d'avis à afficher initialement
+        let displayedReviews = 0;
+
+        productReviews.reviews.forEach(review => {
+          if (displayedReviews < reviewsToShow) {
+            const reviewDiv = document.createElement('div');
+            reviewDiv.classList.add('review');
+
+            const reviewName = document.createElement('h4');
+            reviewName.textContent = review.name;
+            reviewDiv.appendChild(reviewName);
+
+            const reviewCountry = document.createElement('p');
+            reviewCountry.textContent = `Pays : ${review.country}`;
+            reviewDiv.appendChild(reviewCountry);
+
+            const reviewImage = document.createElement('img');
+            reviewImage.src = review.image;
+            reviewImage.alt = `${review.name}'s image`;
+            reviewImage.style.maxWidth = '100px'; // Ajuster la taille de l'image
+            reviewDiv.appendChild(reviewImage);
+
+            const reviewComment = document.createElement('p');
+            reviewComment.textContent = review.comment;
+            reviewDiv.appendChild(reviewComment);
+
+            const reviewRating = document.createElement('p');
+            reviewRating.textContent = `Note : ${review.rating}/5`;
+            reviewDiv.appendChild(reviewRating);
+
+            reviewsSection.appendChild(reviewDiv);
+            displayedReviews++;
+          }
+        });
+
+        // Ajouter le bouton "Voir plus" si nécessaire
+        if (productReviews.reviews.length > reviewsToShow) {
+          const viewMoreBtn = document.createElement('button');
+          viewMoreBtn.id = 'view-more-btn';
+          viewMoreBtn.textContent = 'Voir plus';
+          reviewsSection.appendChild(viewMoreBtn);
+
+          viewMoreBtn.addEventListener('click', () => {
+            productReviews.reviews.slice(reviewsToShow).forEach(review => {
+              const reviewDiv = document.createElement('div');
+              reviewDiv.classList.add('review');
+
+              const reviewName = document.createElement('h4');
+              reviewName.textContent = review.name;
+              reviewDiv.appendChild(reviewName);
+
+              const reviewCountry = document.createElement('p');
+              reviewCountry.textContent = `Pays : ${review.country}`;
+              reviewDiv.appendChild(reviewCountry);
+
+              const reviewImage = document.createElement('img');
+              reviewImage.src = review.image;
+              reviewImage.alt = `${review.name}'s image`;
+              reviewDiv.appendChild(reviewImage);
+
+              const reviewComment = document.createElement('p');
+              reviewComment.textContent = review.comment;
+              reviewDiv.appendChild(reviewComment);
+
+              const reviewRating = document.createElement('p');
+              reviewRating.textContent = `Note : ${review.rating}/5`;
+              reviewDiv.appendChild(reviewRating);
+
+              reviewsSection.insertBefore(reviewDiv, viewMoreBtn);
+            });
+
+            viewMoreBtn.style.display = 'none'; // Masquer le bouton après avoir affiché tous les avis
+          });
+        }
+      }
+    })
+    .catch(error => console.error('Erreur lors du chargement des avis :', error));
+
+  // Ajouter la section des avis à la page
+  productInfo.appendChild(reviewsSection);
+
+  // === Affichage des informations du vendeur ===
+  const sellerInfo = document.createElement('div');
+  sellerInfo.classList.add('seller-info');
+
+  productInfo.appendChild(sellerInfo);
 }
 
 const navSlide = () => {

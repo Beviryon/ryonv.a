@@ -29,6 +29,7 @@ const products = [
   rating: 4.9,
   isTrending: true,
 },
+
 {
   id: 63,
   name: "Parfun H&F",

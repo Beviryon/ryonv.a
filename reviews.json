@@ -1,0 +1,83 @@
+[
+    {
+      "productId": 64,
+      "reviews": [
+        {
+          "name": "Jean Dupont",
+          "country": "France",
+          "image": "https://s.alicdn.com/@sc04/kf/He26129dfa08742cea5a0b8360fdd811e6.png?avif=close",
+          "comment": "Excellent produit, très satisfait de mon achat.",
+          "rating": 5
+        },
+        {
+          "name": "Marie Martin",
+          "country": "Canada",
+          "image": "https://live.staticflickr.com/65535/54219468514_7bfb36310b_w.jpg",
+          "comment": "Très bon rapport qualité/prix.",
+          "rating": 4
+        },
+        {
+          "name": "Marie Martin",
+          "country": "Canada",
+          "image": "https://live.staticflickr.com/65535/54219468514_7bfb36310b_w.jpg",
+          "comment": "Très bon rapport qualité/prix.",
+          "rating": 4
+        },
+        {
+          "name": "Marie Martin",
+          "country": "Canada",
+          "image": "https://live.staticflickr.com/65535/54219468514_7bfb36310b_w.jpg",
+          "comment": "Très bon rapport qualité/prix.",
+          "rating": 4
+        },
+        {
+          "name": "Marie Martin",
+          "country": "Canada",
+          "image": "https://live.staticflickr.com/65535/54219468514_7bfb36310b_w.jpg",
+          "comment": "Très bon rapport qualité/prix.",
+          "rating": 4
+        }
+      ]
+    },
+
+    {
+      "productId": 63,
+      "reviews": [
+        {
+          "name": "Jean Dupont",
+          "country": "France",
+          "image": "https://s.alicdn.com/@sc04/kf/He26129dfa08742cea5a0b8360fdd811e6.png?avif=close",
+          "comment": "Excellent produit, très satisfait de mon achat.",
+          "rating": 5
+        },
+        {
+          "name": "Marie Martin",
+          "country": "Canada",
+          "image": "https://live.staticflickr.com/65535/54219468514_7bfb36310b_w.jpg",
+          "comment": "Très bon rapport qualité/prix.",
+          "rating": 4
+        }
+      ]
+    },
+
+    {
+      "productId": 62,
+      "reviews": [
+        {
+          "name": "Jean Dupont",
+          "country": "France",
+          "image": "https://s.alicdn.com/@sc04/kf/He26129dfa08742cea5a0b8360fdd811e6.png?avif=close",
+          "comment": "Excellent produit, très satisfait de mon achat.",
+          "rating": 5
+        },
+        {
+          "name": "Marie Martin",
+          "country": "Canada",
+          "image": "https://live.staticflickr.com/65535/54219468514_7bfb36310b_w.jpg",
+          "comment": "Très bon rapport qualité/prix.",
+          "rating": 4
+        }
+      ]
+    }
+  ]
+  

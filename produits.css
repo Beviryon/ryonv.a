@@ -317,7 +317,7 @@ main {
   /* Fin style du bouton voir le produit */ 
 
   /* Responsive */
-  @media (max-width: 968px) {
+  @media (max-width: 868px) {
     .product-list {
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
@@ -585,7 +585,7 @@ footer p {
 }
  
   /* Responsive */
-  @media (max-width: 968px) {
+  @media (max-width: 868px) {
     main {
       flex-direction: column;
     }
