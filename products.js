@@ -1,6 +1,64 @@
 const products = [
 
 {
+  id: 66,
+  name: "Sac de perles",
+  description: "Sac femme",
+  price: 5200,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54228270748_0c38306427_w.jpg',
+  'https://s.alicdn.com/@sc04/kf/A9e242b649c704adf90933e3cc9d67c58p.jpg_720x720q50.jpg',
+  'https://s.alicdn.com/@sc04/kf/A95ac419bfb5f4e46ba9d4c83175ab1462.jpg_720x720q50.jpg',
+  'https://s.alicdn.com/@sc04/kf/A654206ed8aed4320b8c1e67b89e65a09a.jpg_720x720q50.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+33758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33758146261',
+  promotion: {
+    discount: 8, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  // isBestSeller: true
+},
+
+{
+  id: 65,
+  name: "Outil de Réparation",
+  description: "32 en 1",
+  price: 5200,
+  category: 'sport',
+  images: [
+  'https://s.alicdn.com/@sc04/kf/Ad7199eb957a748a89109961d289b539dp.jpg_720x720q50.jpg',
+  'https://s.alicdn.com/@sc04/kf/A9e242b649c704adf90933e3cc9d67c58p.jpg_720x720q50.jpg',
+  'https://s.alicdn.com/@sc04/kf/A95ac419bfb5f4e46ba9d4c83175ab1462.jpg_720x720q50.jpg',
+  'https://s.alicdn.com/@sc04/kf/A654206ed8aed4320b8c1e67b89e65a09a.jpg_720x720q50.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+33758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33758146261',
+  promotion: {
+    discount: 8, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  isBestSeller: true
+},
+
+{
   id: 64,
   name: "Drap de luxe",
   description: "Semblable à la soie",

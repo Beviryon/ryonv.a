@@ -32,3 +32,4 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.display = 'none'; // Cache le curseur personnalisé
   }
 });
+

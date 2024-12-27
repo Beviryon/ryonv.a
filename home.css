@@ -6,10 +6,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-img {
-  cursor: none; 
-}
-
 .cursor {
   width: 15px;
   height: 15px;
@@ -155,7 +151,7 @@ nav {
 
 /* Section d'en-tête principale */
 .hero {
-  height: 100vh;
+  height: 70vh;
   background-image: url('https://s.alicdn.com/@sc04/kf/Hf20b47f788564493b0d70e63c7911e0f3.jpg?avif=close');
   /* background-image: url('https://s.alicdn.com/@sc04/kf/Hb24901150d644862865e4360ebca4ca2s.jpg?avif=close'); */
   /* background-image: url('https://s.alicdn.com/@sc04/kf/H83b8adf683094afda3923c98d2155fb4l.jpg'); */
@@ -357,7 +353,7 @@ footer p {
 }
 
 
-@media (max-width: 300px) {
+/* @media (max-width: 300px) {
   #installBanner div, #salesPopup div {
     padding: 1em;
     font-size: 14px;
@@ -371,36 +367,277 @@ footer p {
   h2 {
     font-size: 18px;
   }
-}
+} */
 
-/* Style pour la pop-up de consentement aux cookies */
-.cookie-consent {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  text-align: center;
+/* Nouvelle section promo */
+/* Nouvelle section promo */
+.promo-section {
+  background-color: #000000;
   padding: 20px;
-  border-radius: 10px;
-  z-index: 1000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  font-family: Arial, sans-serif;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 64px;
+  height: auto;
 }
 
-.cookie-consent button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
+@media (max-width: 800px) {
+  .promo-section {
+    z-index: 999;
+  }
+}
+@media (max-width: 600px) {
+  .promo-section {
+    z-index: 999;
+  }
+}
+@media (max-width: 400px) {
+  .promo-section {
+    z-index: 999;
+  }
+}
+
+.coupon-banner {
+  background-color: #e60000;
+  color: #fff;
   padding: 10px 20px;
-  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
   border-radius: 5px;
-  margin-top: 10px;
+}
+
+.coupon-banner p {
+  margin: 0;
   font-size: 16px;
 }
 
-.cookie-consent button:hover {
-  background-color: #45a049;
+.coupon-banner .coupon-button {
+  background-color: #f2ae01;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.coupon-banner .coupon-button:hover {
+  background-color: #138d1b;
+}
+
+.promo-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.promo-left, .promo-center, .promo-right {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.promo-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .promo-left .promo-box P{
+    font-size: 1.5rem;
+  }
+  .promo-left .promo-box .voirPlus{
+    font-size: 1rem;
+    /* background-color: #e8a700; */
+    color: #464545;
+    border-radius: 10px;
+    padding: 8px 10px;
+    transition: background-color 0.3s;
+    margin: 20px auto;
+  }
+  .promo-center {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .promo-left .promo-box P{
+    font-size: 1.5rem;
+  }
+  .promo-left .promo-box .voirPlus{
+    font-size: 1rem;
+    /* background-color: #e8a700; */
+    color: #464545;
+    border-radius: 10px;
+    padding: 8px 10px;
+    transition: background-color 0.3s;
+    margin: 20px auto;
+  }
+  .promo-center {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .promo-left .promo-box P{
+    font-size: 1.5rem;
+  }
+  .promo-left .promo-box .voirPlus{
+    font-size: 1rem;
+    /* background-color: #e8a700; */
+    color: #464545;
+    border-radius: 10px;
+    padding: 8px 10px;
+    transition: background-color 0.3s;
+    margin: 20px auto;
+  }
+  .promo-center {
+    display: none;
+  }
+  .coupon-banner p {
+    font-size: 12px;
+  }
+  .coupon-banner .coupon-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .promo-left .promo-box P{
+    font-size: 1.5rem;
+  }
+  .promo-left .promo-box .voirPlus{
+    font-size: 1rem;
+    /* background-color: #e8a700; */
+    color: #464545;
+    border-radius: 10px;
+    padding: 8px 10px;
+    transition: background-color 0.3s;
+    margin: 20px auto;
+  }
+  .promo-center {
+    display: none;
+  }
+  .coupon-banner p {
+    font-size: 9px;
+  }
+  .coupon-banner .coupon-button {
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+}
+
+.promo-box {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.promo-box p {
+  font-size: 14px;
+  color: #333;
+}
+
+.promo-box h3 {
+  font-size: 18px;
+  color: #ff6f61;
+}
+
+.promo-box a {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.promo-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.promo-center {
+  text-align: center;
+  width: 100%;
+}
+
+.promo-center h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.promo-center img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.promo-right {
+  text-align: center;
+  width: 100%;
+}
+
+.promo-right h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.promo-item {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.promo-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.promo-item p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Media query pour les écrans de taille moyenne et grande */
+@media (min-width: 768px) {
+  .promo-section {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 650px;
+  }
+
+  .promo-content {
+    flex-direction: row;
+  }
+
+  .promo-left, .promo-center, .promo-right {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .promo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
