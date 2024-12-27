@@ -352,23 +352,6 @@ footer p {
   font-weight: 300;
 }
 
-
-/* @media (max-width: 300px) {
-  #installBanner div, #salesPopup div {
-    padding: 1em;
-    font-size: 14px;
-  }
-
-  #installButton, #yesButton, #noButton {
-    padding: 0.5em 1em;
-    font-size: 12px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-} */
-
 /* Nouvelle section promo */
 /* Nouvelle section promo */
 .promo-section {
@@ -413,6 +396,12 @@ footer p {
 .coupon-banner p {
   margin: 0;
   font-size: 16px;
+}
+
+.coupon-banner p span {
+  color: #f2ae01;
+  font-size: 20px;
+  font-weight: 900;
 }
 
 .coupon-banner .coupon-button {
@@ -534,6 +523,10 @@ footer p {
   }
 }
 
+.promo-grid .promo-item .prix {
+  color: #f2ae01;
+}
+
 .promo-box {
   background-color: #ffffff;
   padding: 10px;
@@ -543,8 +536,8 @@ footer p {
 }
 
 .promo-box p {
-  font-size: 14px;
-  color: #333;
+  font-size: 18px;
+  color: #000000;
 }
 
 .promo-box h3 {
@@ -553,7 +546,7 @@ footer p {
 }
 
 .promo-box a {
-  color: #ff6f61;
+  color: #f2ae01;
   text-decoration: none;
   font-weight: bold;
 }
