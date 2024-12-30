@@ -1,25 +1,159 @@
 const products = [
 
 {
-  id: 66,
-  name: "Sac de perles",
-  description: "Sac femme",
-  price: 5200,
+  id: 71,
+  name: "Sac de parles",
+  description: "Perso de luxe",
+  price: 25000,
   category: 'sport',
   images: [
-  'https://live.staticflickr.com/65535/54228270748_0c38306427_w.jpg',
-  'https://s.alicdn.com/@sc04/kf/A9e242b649c704adf90933e3cc9d67c58p.jpg_720x720q50.jpg',
-  'https://s.alicdn.com/@sc04/kf/A95ac419bfb5f4e46ba9d4c83175ab1462.jpg_720x720q50.jpg',
-  'https://s.alicdn.com/@sc04/kf/A654206ed8aed4320b8c1e67b89e65a09a.jpg_720x720q50.jpg',
+  'https://live.staticflickr.com/65535/54228270743_01c73c8f7c_w.jpg',
+  'https://live.staticflickr.com/65535/54228441095_8883de9e26_w.jpg',
   ],
   like: 0,
   seller: {
-    name: 'RYONV',
-    phone: '+33758146261',
+    name: 'TOUTOU',
+    phone: '+33656763491',
     country: 'FR',
     rating: 4.8
   },
-  vendorPhone: '+33758146261',
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 8, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  // isBestSeller: true
+},
+
+{
+  id: 70,
+  name: "Sac de parles",
+  description: "Perso de luxe",
+  price: 20000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54236078840_fa3b86eed7_w.jpg',
+  'https://live.staticflickr.com/65535/54228270748_0c38306427_w.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 8, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  // isBestSeller: true
+},
+
+{
+  id: 69,
+  name: "Sac de parles",
+  description: "Perso de luxe",
+  price: 20000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54227128347_5398b0702f_w.jpg',
+  'https://live.staticflickr.com/65535/54227128332_205cd36f2c_w.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 8, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  // isBestSeller: true
+},
+
+{
+  id: 68,
+  name: "Sac de parles",
+  description: "Perso de luxe",
+  price: 15000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54228441110_f7c51fa0a8_w.jpg',
+  'https://live.staticflickr.com/65535/54235665601_8c0ea3a24e_w.jpg',
+  'https://live.staticflickr.com/65535/54234765232_61486189f8_w.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 8, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  // isBestSeller: true
+},
+
+{
+  id: 67,
+  name: "Eventail",
+  description: "Perso de luxe",
+  price: 35000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54234765247_5472c394c7_w.jpg',
+  'https://live.staticflickr.com/65535/54228041381_18c25090b6_w.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 8, 
+    endDate: '2024-01-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  // isBestSeller: true
+},
+
+{
+  id: 66,
+  name: "Sac de perles",
+  description: "Sac femme",
+  price: 25000,
+  category: 'sport',
+  images: [
+  'https://live.staticflickr.com/65535/54228270838_705fdc5a4a_w.jpg',
+  'https://live.staticflickr.com/65535/54227128347_5398b0702f_w.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
   promotion: {
     discount: 8, 
     endDate: '2024-01-21T23:59:59' 
