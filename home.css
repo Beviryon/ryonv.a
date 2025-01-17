@@ -355,7 +355,7 @@ footer p {
 /* Nouvelle section promo */
 /* Nouvelle section promo */
 .promo-section {
-  background-color: #000000;
+  background-color: #070115;
   padding: 20px;
   /* display: flex; */
   flex-direction: column;
@@ -632,5 +632,49 @@ footer p {
 
   .promo-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* Barre de navigation fixe en bas pour mobile */
+.mobile-navbar {
+  display: flex;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #44425e, #7993a3);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  position: relative;
+  margin: 0px 0px 40px 0px;
+  border-radius: 5px;
+}
+
+.mobile-navbar .nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.mobile-navbar .nav-icon i {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.mobile-navbar .nav-icon:hover {
+  color: #ffeb3b;
+  transform: scale(1.1);
+}
+
+@media (min-width: 1069px) {
+  .mobile-navbar {
+    display: none;
   }
 }

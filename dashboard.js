@@ -1,7 +1,7 @@
 // Charger les produits depuis products.js
-import { products as initialProducts } from './products.js'; // Assure-toi que le chemin d'accès est correct
+import { products as initialProducts } from './products.js'; 
 
-let products = [...initialProducts]; // Faire une copie des produits pour ne pas modifier l'original
+let products = [...initialProducts]; 
 
 // Fonction pour afficher la liste des produits
 function displayProducts() {

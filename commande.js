@@ -1,5 +1,3 @@
-// tracking.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const orderDetails = document.getElementById('order-details');
     const updateForm = document.getElementById('update-form');
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mettre à jour l'objet commande
         order.status = status;
-        order.notes = notes || order.notes; // Garder les anciennes notes si aucune nouvelle note n'est fournie
+        order.notes = notes || order.notes; 
 
         // Mettre à jour l'affichage
         displayOrderDetails(order);
@@ -47,8 +45,5 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             notification.textContent = '';
         }, 5000); // Effacer la notification après 5 secondes
-
-        // Vous pouvez également ajouter ici le code pour envoyer ces informations à votre serveur
-        // pour une sauvegarde dans une base de données
     });
 });

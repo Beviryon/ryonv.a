@@ -33,3 +33,16 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const navIcons = document.querySelectorAll('.mobile-navbar .nav-icon');
+
+  navIcons.forEach(icon => {
+    icon.addEventListener('click', (event) => {
+      event.preventDefault();
+      const href = icon.getAttribute('href');
+      if (href) {
+        window.location.href = href;
+      }
+    });
+  });
+});

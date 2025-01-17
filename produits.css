@@ -802,7 +802,7 @@ footer p {
 
 
 /* Style du formulaire */
-/* .form-container {
+.form-container {
   position: relative;
   background-color: #fff;
   padding: 30px;
@@ -811,6 +811,7 @@ footer p {
   max-width: 500px;
   margin: auto;
   animation: modalFadeIn 0.5s ease;
+  z-index: 99999;
 }
 
 @media (max-width: 968px) {
@@ -884,12 +885,12 @@ footer p {
 
 
 /* Style du modal */
-/* .form-popup {
+.form-popup {
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 9999;
+  z-index: 99999;
   left: 0;
   top: 0;
   width: 100%;
@@ -897,10 +898,10 @@ footer p {
   background-color: rgba(0, 0, 0, 0.5);
   overflow: auto;
   padding: 50px 20px;
-} */
+}
 
 /* Animation du modal */
-/* @keyframes modalFadeIn {
+@keyframes modalFadeIn {
   from {
     opacity: 0;
     transform: translateY(-20px);
@@ -909,13 +910,13 @@ footer p {
     opacity: 1;
     transform: translateY(0);
   }
-} */
+}
 
 /* Style pour le modal */
-/* .form-popup {
+.form-popup {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 99999;
   left: 0;
   top: 0;
   width: 100%;
@@ -933,12 +934,13 @@ footer p {
   max-width: 600px;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
 }
 
 .close {
-  color: #aaa;
+  color: #ff0000;
   float: right;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -948,10 +950,10 @@ footer p {
   color: black;
   text-decoration: none;
   cursor: pointer;
-} */
+}
 
 /* Style pour le formulaire */
-/* .order-form {
+.order-form {
   display: flex;
   flex-direction: column;
 }
@@ -987,14 +989,14 @@ button[type="submit"]:hover {
 
 .g-recaptcha {
   margin-bottom: 12px;
-}  */
+} 
 
-/* Media query pour rendre le formulaire plus compact sur les petits écrans */
-/* @media screen and (max-width: 600px) {
+/* Media query pour rendre le formulaire plus compact sur les petits écrans  */
+@media screen and (max-width: 600px) {
   .form-container {
     width: 90%;
   }
-} */
+}
 
 /* promotion */
 .product-card {
@@ -1802,7 +1804,7 @@ a:hover {
 
 /* Bannière */
 .banner {
-  background: linear-gradient(135deg, #470000 0%, #e65322 100%);
+  background: linear-gradient(135deg, #301426 0%, #f380d1 100%);
   padding: 20px;
   color: #fff;
   text-align: center;
@@ -1826,8 +1828,14 @@ a:hover {
   text-align: left;
 }
 
-.banner-text h2 {
-  font-size: 2.5rem;
+.banner-text span {
+  color: #f80000;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.banner-text .text_banner {
+  font-size: 2rem;
   margin-bottom: 10px;
   color: #fff;
   font-weight: bold;
@@ -1840,7 +1848,7 @@ a:hover {
 }
 
 .banner-button {
-  background-color: #e67e22;
+  background-color: #f80000;
   color: #fff;
   padding: 8px 18px;
   border: none;
@@ -1850,7 +1858,7 @@ a:hover {
 }
 
 .banner-button:hover {
-  background-color: #e67e22;
+  background-color: #f74848;
 }
 
 .banner-images {
@@ -1875,7 +1883,7 @@ a:hover {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #e67e22;
+  background-color: #f80000;
   padding: 10px 20px;
   border-radius: 5px;
   display: flex;
@@ -2069,24 +2077,6 @@ a:hover {
 }
 
 
-/* body {
-  min-height: 100%;
-  position: relative;
-  padding-bottom: 3rem;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  width: 100%;
-  background: linear-gradient(170deg, rgba(235, 235, 236, 0.8) 20%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.5) 35%, rgba(185, 186, 186, 0.6) 35%, rgba(219, 230, 250, 0.8) 45%, rgba(239, 243, 250, 0.5) 45%, rgba(192, 193, 195, 0.8) 75%, rgba(49, 57, 73, 0.5) 75%), linear-gradient(45deg, rgba(190, 191, 193, 0.8) 0%, rgba(223, 232, 249, 0.8) 50%, rgba(194, 198, 209, 0.8) 50%, rgba(133, 146, 173, 0.8) 100%) #eaeaec;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-} */
-
-/*
- * Animated CSS button
- * Copyright Alexander Bodin 2019-09-07
- *
- * Useage: .class {@import button($button-size, $hue, $sat);}
- */
 .animated-button {
   background: linear-gradient(-30deg, #0b1b3d 50%, #08142b 50%);
   padding: 10px 20px;

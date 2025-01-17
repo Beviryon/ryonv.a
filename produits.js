@@ -564,197 +564,200 @@ function isPromotionValid(promotion) {
   return now < endDate;
 }
 
-function openOrderForm(product) {
-  // Créer le modal
-  const modal = document.createElement('div');
-  modal.id = 'user-info-modal';
-  modal.classList.add('modal');
+// function openOrderForm(product) {
+//   // Créer le modal
+//   const modal = document.createElement('div');
+//   modal.id = 'user-info-modal';
+//   modal.classList.add('modal');
 
-  // Créer le contenu du modal
-  const modalContent = document.createElement('div');
-  modalContent.classList.add('modal-content');
+//   // Créer le contenu du modal
+//   const modalContent = document.createElement('div');
+//   modalContent.classList.add('modal-content');
 
-  // Bouton de fermeture du modal
-  const closeModalSpan = document.createElement('span');
-  closeModalSpan.classList.add('close');
-  closeModalSpan.textContent = '×';
-  closeModalSpan.addEventListener('click', () => {
-    modal.style.display = 'none';
-    form.reset(); 
-  });
+//   // Bouton de fermeture du modal
+//   const closeModalSpan = document.createElement('span');
+//   closeModalSpan.classList.add('close');
+//   closeModalSpan.textContent = '×';
+//   closeModalSpan.addEventListener('click', () => {
+//     modal.style.display = 'none';
+//     form.reset(); 
+//   });
 
-  // Formulaire à l'intérieur du modal
-  const form = document.createElement('form');
-  form.id = 'user-info-form';
+//   // Formulaire à l'intérieur du modal
+//   const form = document.createElement('form');
+//   form.id = 'user-info-form';
 
-  const nameLabel = document.createElement('label');
-  nameLabel.setAttribute('for', 'name');
-  nameLabel.textContent = 'Nom :';
-  const nameInput = document.createElement('input');
-  nameInput.type = 'text';
-  nameInput.id = 'name';
-  nameInput.name = 'name';
-  nameInput.required = true;
-  nameLabel.appendChild(nameInput);
+//   const nameLabel = document.createElement('label');
+//   nameLabel.setAttribute('for', 'name');
+//   nameLabel.textContent = 'Nom :';
+//   const nameInput = document.createElement('input');
+//   nameInput.type = 'text';
+//   nameInput.id = 'name';
+//   nameInput.name = 'name';
+//   nameInput.required = true;
+//   nameLabel.appendChild(nameInput);
 
-  const cityLabel = document.createElement('label');
-  cityLabel.setAttribute('for', 'city');
-  cityLabel.textContent = 'Ville :';
-  const cityInput = document.createElement('input');
-  cityInput.type = 'text';
-  cityInput.id = 'city';
-  cityInput.name = 'city';
-  cityInput.required = true;
-  cityLabel.appendChild(cityInput);
+//   const cityLabel = document.createElement('label');
+//   cityLabel.setAttribute('for', 'city');
+//   cityLabel.textContent = 'Ville :';
+//   const cityInput = document.createElement('input');
+//   cityInput.type = 'text';
+//   cityInput.id = 'city';
+//   cityInput.name = 'city';
+//   cityInput.required = true;
+//   cityLabel.appendChild(cityInput);
 
-  const countryLabel = document.createElement('label');
-  countryLabel.setAttribute('for', 'country');
-  countryLabel.textContent = 'Pays :';
-  const countrySelect = document.createElement('select');
-  countrySelect.id = 'country';
-  countrySelect.name = 'country';
-  countrySelect.required = true;
+//   const countryLabel = document.createElement('label');
+//   countryLabel.setAttribute('for', 'country');
+//   countryLabel.textContent = 'Pays :';
+//   const countrySelect = document.createElement('select');
+//   countrySelect.id = 'country';
+//   countrySelect.name = 'country';
+//   countrySelect.required = true;
 
-  const countries = [
-    { code: 'DZ', name: 'Algérie' },
-    { code: 'AO', name: 'Angola' },
-    { code: 'BJ', name: 'Bénin' },
-    { code: 'BW', name: 'Botswana' },
-    { code: 'BF', name: 'Burkina Faso' },
-    { code: 'BI', name: 'Burundi' },
-    { code: 'CM', name: 'Cameroun' },
-    { code: 'CV', name: 'Cap-Vert' },
-    { code: 'CF', name: 'République centrafricaine' },
-    { code: 'TD', name: 'Tchad' },
-    { code: 'KM', name: 'Comores' },
-    { code: 'CG', name: 'Congo' },
-    { code: 'CD', name: 'République Démocratique du Congo' },
-    { code: 'DJ', name: 'Djibouti' },
-    { code: 'EG', name: 'Égypte' },
-    { code: 'GQ', name: 'Guinée équatoriale' },
-    { code: 'ER', name: 'Érythrée' },
-    { code: 'ET', name: 'Éthiopie' },
-    { code: 'GA', name: 'Gabon' },
-    { code: 'GM', name: 'Gambie' },
-    { code: 'GH', name: 'Ghana' },
-    { code: 'GN', name: 'Guinée' },
-    { code: 'GW', name: 'Guinée-Bissau' },
-    { code: 'CI', name: "Côte d'Ivoire" },
-    { code: 'KE', name: 'Kenya' },
-    { code: 'LS', name: 'Lesotho' },
-    { code: 'LR', name: 'Libéria' },
-    { code: 'LY', name: 'Libye' },
-    { code: 'MG', name: 'Madagascar' },
-    { code: 'MW', name: 'Malawi' },
-    { code: 'ML', name: 'Mali' },
-    { code: 'MR', name: 'Mauritanie' },
-    { code: 'MU', name: 'Maurice' },
-    { code: 'MA', name: 'Maroc' },
-    { code: 'MZ', name: 'Mozambique' },
-    { code: 'NA', name: 'Namibie' },
-    { code: 'NE', name: 'Niger' },
-    { code: 'NG', name: 'Nigéria' },
-    { code: 'RW', name: 'Rwanda' },
-    { code: 'ST', name: 'Sao Tomé-et-Principe' },
-    { code: 'SN', name: 'Sénégal' },
-    { code: 'SC', name: 'Seychelles' },
-    { code: 'SL', name: 'Sierra Leone' },
-    { code: 'SO', name: 'Somalie' },
-    { code: 'ZA', name: 'Afrique du Sud' },
-    { code: 'SS', name: 'Soudan du Sud' },
-    { code: 'SD', name: 'Soudan' },
-    { code: 'SZ', name: 'Eswatini' },
-    { code: 'TZ', name: 'Tanzanie' },
-    { code: 'TG', name: 'Togo' },
-    { code: 'TN', name: 'Tunisie' },
-    { code: 'UG', name: 'Ouganda' },
-    { code: 'ZM', name: 'Zambie' },
-    { code: 'ZW', name: 'Zimbabwe' }
-  ];
+//   const countries = [
+//     { code: 'DZ', name: 'Algérie' },
+//     { code: 'AO', name: 'Angola' },
+//     { code: 'BJ', name: 'Bénin' },
+//     { code: 'BW', name: 'Botswana' },
+//     { code: 'BF', name: 'Burkina Faso' },
+//     { code: 'BI', name: 'Burundi' },
+//     { code: 'CM', name: 'Cameroun' },
+//     { code: 'CV', name: 'Cap-Vert' },
+//     { code: 'CF', name: 'République centrafricaine' },
+//     { code: 'TD', name: 'Tchad' },
+//     { code: 'KM', name: 'Comores' },
+//     { code: 'CG', name: 'Congo' },
+//     { code: 'CD', name: 'République Démocratique du Congo' },
+//     { code: 'DJ', name: 'Djibouti' },
+//     { code: 'EG', name: 'Égypte' },
+//     { code: 'GQ', name: 'Guinée équatoriale' },
+//     { code: 'ER', name: 'Érythrée' },
+//     { code: 'ET', name: 'Éthiopie' },
+//     { code: 'GA', name: 'Gabon' },
+//     { code: 'GM', name: 'Gambie' },
+//     { code: 'GH', name: 'Ghana' },
+//     { code: 'GN', name: 'Guinée' },
+//     { code: 'GW', name: 'Guinée-Bissau' },
+//     { code: 'CI', name: "Côte d'Ivoire" },
+//     { code: 'KE', name: 'Kenya' },
+//     { code: 'LS', name: 'Lesotho' },
+//     { code: 'LR', name: 'Libéria' },
+//     { code: 'LY', name: 'Libye' },
+//     { code: 'MG', name: 'Madagascar' },
+//     { code: 'MW', name: 'Malawi' },
+//     { code: 'ML', name: 'Mali' },
+//     { code: 'MR', name: 'Mauritanie' },
+//     { code: 'MU', name: 'Maurice' },
+//     { code: 'MA', name: 'Maroc' },
+//     { code: 'MZ', name: 'Mozambique' },
+//     { code: 'NA', name: 'Namibie' },
+//     { code: 'NE', name: 'Niger' },
+//     { code: 'NG', name: 'Nigéria' },
+//     { code: 'RW', name: 'Rwanda' },
+//     { code: 'ST', name: 'Sao Tomé-et-Principe' },
+//     { code: 'SN', name: 'Sénégal' },
+//     { code: 'SC', name: 'Seychelles' },
+//     { code: 'SL', name: 'Sierra Leone' },
+//     { code: 'SO', name: 'Somalie' },
+//     { code: 'ZA', name: 'Afrique du Sud' },
+//     { code: 'SS', name: 'Soudan du Sud' },
+//     { code: 'SD', name: 'Soudan' },
+//     { code: 'SZ', name: 'Eswatini' },
+//     { code: 'TZ', name: 'Tanzanie' },
+//     { code: 'TG', name: 'Togo' },
+//     { code: 'TN', name: 'Tunisie' },
+//     { code: 'UG', name: 'Ouganda' },
+//     { code: 'ZM', name: 'Zambie' },
+//     { code: 'ZW', name: 'Zimbabwe' }
+//   ];
 
 
-  countries.forEach(country => {
-    const option = document.createElement('option');
-    option.value = country.code;
-    option.textContent = country.name;
-    countrySelect.appendChild(option);
-  });
+//   countries.forEach(country => {
+//     const option = document.createElement('option');
+//     option.value = country.code;
+//     option.textContent = country.name;
+//     countrySelect.appendChild(option);
+//   });
 
-  const submitButton = document.createElement('button');
-  submitButton.type = 'submit';
-  submitButton.textContent = 'Discuter avec le vendeur';
+//   const submitButton = document.createElement('button');
+//   submitButton.type = 'submit';
+//   submitButton.textContent = 'Discuter avec le vendeur';
 
-  form.appendChild(nameLabel);
-  form.appendChild(cityLabel);
-  form.appendChild(countryLabel);
-  form.appendChild(countrySelect);
-  form.appendChild(submitButton);
+//   form.appendChild(nameLabel);
+//   form.appendChild(cityLabel);
+//   form.appendChild(countryLabel);
+//   form.appendChild(countrySelect);
+//   form.appendChild(submitButton);
 
-  modalContent.appendChild(closeModalSpan);
-  modalContent.appendChild(form);
-  modal.appendChild(modalContent);
-  document.body.appendChild(modal);
+//   modalContent.appendChild(closeModalSpan);
+//   modalContent.appendChild(form);
+//   modal.appendChild(modalContent);
+//   document.body.appendChild(modal);
 
-  // Afficher le modal
-  modal.style.display = 'block';
+//   // Afficher le modal
+//   modal.style.display = 'block';
 
-  // Ajouter un événement de soumission au formulaire
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (validateForm()) {
-        const name = nameInput.value;
-        const city = cityInput.value;
-        const country = countrySelect.options[countrySelect.selectedIndex].text;
+//   // Ajouter un événement de soumission au formulaire
+//   form.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     if (validateForm()) {
+//         const name = nameInput.value;
+//         const city = cityInput.value;
+//         const country = countrySelect.options[countrySelect.selectedIndex].text;
 
-        // Récupérer le numéro de téléphone du vendeur et vérifier qu'il est valide
-        const vendorPhone = product.vendorPhone ? product.vendorPhone.replace(/^\+/, '') : null;
-        if (!vendorPhone) {
-          alert("Numéro de téléphone du vendeur indisponible pour ce produit.");
-          return;
-        }
+//         // Récupérer le numéro de téléphone du vendeur et vérifier qu'il est valide
+//         const vendorPhone = product.vendorPhone ? product.vendorPhone.replace(/^\+/, '') : null;
+//         if (!vendorPhone) {
+//           alert("Numéro de téléphone du vendeur indisponible pour ce produit.");
+//           return;
+//         }
 
-        // Construire le message WhatsApp
-        const productLink = `https://ryone.netlify.app/details.html?id=${product.id}`;
-        let message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\n` +
-                      `Je souhaite commander le produit :\n` +
-                      `- Nom : ${product.name}\n` +
-                      `- Description : ${product.description}\n` +
-                      `- Prix : ${product.price} FCFA\n` +
-                      `- Lien : ${productLink}\n`;
+//         // Construire le message WhatsApp
+//         const productLink = `https://ryone.netlify.app/details.html?id=${product.id}`;
+//         let message = `Bonjour, je m'appelle ${name}.\nJ'habite à ${city}, ${country}.\n\n` +
+//                       `Je souhaite commander le produit :\n` +
+//                       `- Nom : ${product.name}\n` +
+//                       `- Description : ${product.description}\n` +
+//                       `- Prix : ${product.price} FCFA\n` +
+//                       `- Lien : ${productLink}\n`;
 
-        // Ajouter les images au message
-        if (product.images && product.images.length > 0) {
-            message += `- Images :\n`;
-            product.images.forEach((image, index) => {
-                message += `   ${index + 1}. ${image}\n`;
-            });
-        }
+//         // Ajouter les images au message
+//         if (product.images && product.images.length > 0) {
+//             message += `- Images :\n`;
+//             product.images.forEach((image, index) => {
+//                 message += `   ${index + 1}. ${image}\n`;
+//             });
+//         }
 
-        // Encodage de l'URL de WhatsApp
-        const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-        modal.style.display = 'none';
-        form.reset();
-        location.reload();
-    } else {
-        alert('Veuillez remplir correctement tous les champs.');
-    }
-  });
+//         // Encodage de l'URL de WhatsApp
+//         const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
+//         window.open(whatsappUrl, '_blank');
+//         modal.style.display = 'none';
+//         form.reset();
+//         location.reload();
+//     } else {
+//         alert('Veuillez remplir correctement tous les champs.');
+//     }
+//   });
 
-  // Validation du formulaire
-  function validateForm() {
-    const nameValid = /^[a-zA-Z\s,;_\-'\u00C0-\u017F]+$/.test(nameInput.value);
-    const cityValid = /^[a-zA-Z\s,;_\-'\u00C0-\u017F]+$/.test(cityInput.value);
-    const countryValid = countrySelect.value !== '';
+//   // Validation du formulaire
+//   function validateForm() {
+//     const nameValid = /^[a-zA-Z\s,;_\-'\u00C0-\u017F]+$/.test(nameInput.value);
+//     const cityValid = /^[a-zA-Z\s,;_\-'\u00C0-\u017F]+$/.test(cityInput.value);
+//     const countryValid = countrySelect.value !== '';
   
-    return nameValid && cityValid && countryValid;
-  }
-}
+//     return nameValid && cityValid && countryValid;
+//   }
+// }
 // Variables pour la pagination //////////////////////////////////
 
 
 ////////////////////////////////////////////////////////////////////////
 // Mettre à jour l'affichage toutes les minutes avec un ordre aléatoire
+function openOrderForm(product) {
+  window.location.href = `details.html?id=${product.id}`;
+}
 setInterval(() => {
   shuffleProducts(products); 
   displayProducts(products); 
