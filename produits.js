@@ -137,8 +137,6 @@ function showCartItems() {
                           `Prix : ${product.price} FCFA\n` +
                           `Quantité : ${product.quantity}\n` +
                           `Lien : https://ryone.netlify.app/details.html?id=${product.id}\n`;
-                          `- Lien : ${productLink}\n`;
-
 
           const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
           window.open(whatsappUrl, '_blank');
@@ -205,8 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
                      `- Prix : ${item.price} FCFA\n` +
                      `- Quantité : ${item.quantity}\n` +
                      `- Lien : https://ryone.netlify.app/details.html?id=${item.id}\n`;
-                     `- Lien : ${productLink}\n`;
-
 
           if (item.images && item.images.length > 0) {
             message += `- Images :\n`;
@@ -402,7 +398,7 @@ modernButtonsContainer.appendChild(shareBtn);
 const modernWhatsappBtn = document.createElement('a');
 modernWhatsappBtn.classList.add('modern-btn', 'comment');
 modernWhatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>'; // Icône WhatsApp
-modernWhatsappBtn.href = `https://wa.me/${product.seller?.phone}?text=Bonjour, je suis intéressé par "${product.name}", ${productLink}`;
+modernWhatsappBtn.href = `https://wa.me/${product.seller?.phone}?text=Bonjour, je suis intéressé par "${product.name}"`;
 modernWhatsappBtn.target = '_blank';
 
 modernButtonsContainer.appendChild(modernWhatsappBtn);

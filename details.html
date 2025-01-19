@@ -70,7 +70,6 @@
     <section class="product-details">
       <div id="product-info">
         <!-- Informations sur le produit (nom, description, prix) seront insérées ici via JavaScript -->
- 
       </div>
       
     
@@ -83,7 +82,8 @@
         <button class="carousel-control next">&gt;</button>
       </div>
       <div id="carousel-counter"></div>
-  
+
+      <button class="btn-panier" id="add-to-cart-btn">Ajouter au panier</button>
       <!-- Bouton pour discuter avec le vendeur -->
       <button id="contact-seller-btn">Discuter avec le vendeur</button>
     </section>  
@@ -111,6 +111,14 @@
       <p>&copy; 2024 RYONV. Développé par Beviryon.</p>
     </div>
   </footer>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>Produit ajouté au panier !</p>
+      <button  id="view-cart-btn">Voir le panier</button>
+      <button class="fermer" id="close-popup">Fermer</button>
+    </div>
+  </div>
 
   <script  nonce="xyz" src="./data.js"></script>
   <script type="module" nonce="xyz" src="./details.js"></script>

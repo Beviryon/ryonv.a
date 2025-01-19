@@ -673,3 +673,132 @@ p-far {
 #view-reviews-btn:hover {
   background-color: #0056b3;
 }
+
+/* Styles pour la section des détails du produit */
+#product-info button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #2f2f2f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#product-info button:hover {
+  background-color: #030303;
+}
+
+#product-info .material-icons {
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+#product-info .material-icons:hover {
+  color: #e55a5a;
+}
+
+.btn-panier {
+  background-color: #515151; 
+  color: white; 
+  border: none; 
+  padding: 7px 13px;
+  font-size: 14px; 
+  margin: 2px;
+  width: 11.6rem;
+  margin-top: 1.2rem;
+  cursor: pointer; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.popup-content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #e55a5a;
+}
+
+@media (max-width: 768px) {
+  .btn-panier {
+    background-color: #515151; 
+    color: white; 
+    border: none; 
+    padding: 7px 13px;
+    font-size: 16px; 
+    margin: 2px;
+    width: 16.6rem;
+    margin-top: 1.7rem;
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+  }
+  .popup-content button {
+    padding: 8px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #008b07;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .popup-content .fermer {
+    background-color: #4f0101;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .popup-content p {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+
