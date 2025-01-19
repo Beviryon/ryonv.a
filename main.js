@@ -46,3 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+//redirection vers chaque page detail de chaque produit
+document.addEventListener('DOMContentLoaded', () => {
+  const productCards = document.querySelectorAll('.product-card a');
+
+  productCards.forEach(card => {
+    card.addEventListener('click', (event) => {
+      event.preventDefault();
+      const productId = card.getAttribute('href').split('=')[1];
+      window.location.href = `details.html?id=${productId}`;
+    });
+  });
+});
