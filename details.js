@@ -145,12 +145,20 @@ if (product) {
   contactBtn.addEventListener('click', () => {
     const phoneNumber = product.vendorPhone.replace(/[^0-9]/g, '');
 
+    // Récupérer les valeurs des champs de formulaire
+    const quantity = document.getElementById('quantity').value;
+    const color = document.getElementById('color').value;
+    const size = document.getElementById('size').value;
+
     // Créer un message WhatsApp prédéfini avec les informations du produit
     const message = `Bonjour, je suis intéressé par votre produit :
     *Nom :* ${product.name}
     *Description :* ${product.description}
     *Prix :* ${product.price} FCFA
-    *Quantité disponible :* ${product.stock || 'N/A'}
+    *Quantité souhaitée :* ${quantity}
+    *Couleur :* ${color}
+    *Taille :* ${size}
+    *Image :* \${product.images[0]}
     Pouvez-vous me donner plus de détails ?`;
 
     // Créer le lien WhatsApp avec le message prédéfini
@@ -294,8 +302,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const product = products.find(p => p.id === parseInt(productId));
 
     if (product) {
-      // Ajouter le produit au panier
-      addToCart(product);
+      // Récupérer les valeurs des champs de formulaire
+      const quantity = document.getElementById('quantity').value;
+      const color = document.getElementById('color').value;
+      const size = document.getElementById('size').value;
+
+      // Ajouter le produit au panier avec les informations supplémentaires
+      addToCart(product, quantity, color, size);
 
       // Afficher le pop-up de confirmation
       popup.style.display = 'block';
@@ -312,14 +325,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function addToCart(product) {
+function addToCart(product, quantity, color, size) {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const productIndex = cart.findIndex(item => item.id === product.id);
+  const productIndex = cart.findIndex(item => item.id === product.id && item.color === color && item.size === size);
 
   if (productIndex !== -1) {
-    cart[productIndex].quantity += 1;
+    cart[productIndex].quantity += parseInt(quantity);
   } else {
-    cart.push({ ...product, quantity: 1 });
+    cart.push({ ...product, quantity: parseInt(quantity), color, size });
   }
 
   localStorage.setItem('cart', JSON.stringify(cart));
@@ -448,3 +461,22 @@ function renderSuggestionsCarousel(products) {
 
 // Appeler la fonction avec vos données de produits
 renderSuggestionsCarousel(products);
+
+document.querySelectorAll('.color-box').forEach(box => {
+  box.addEventListener('click', function() {
+    const colorInput = document.getElementById('color');
+    colorInput.value = this.dataset.color;
+    document.querySelectorAll('.color-box').forEach(box => box.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+document.getElementById('color').addEventListener('input', function() {
+  document.querySelectorAll('.color-box').forEach(box => {
+    if (box.dataset.color === this.value.toLowerCase()) {
+      box.style.borderColor = '#000'; // Indique la couleur sélectionnée
+    } else {
+      box.style.borderColor = '#ccc';
+    }
+  });
+});

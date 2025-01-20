@@ -802,3 +802,80 @@ p-far {
   }
 }
 
+/* Styles pour la section du formulaire de contact */
+#product-form {
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 17px;
+}
+
+#product-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+#color-options {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.color-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.color-box:hover {
+  transform: scale(1.1);
+}
+
+.color-box.selected {
+  border-color: #007bff;
+}
+
+#product-form input, #product-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+#product-form input:focus, #product-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#product-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4f4f4f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#product-form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+#product-form button:active {
+  transform: translateY(1px);
+}
