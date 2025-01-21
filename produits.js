@@ -1,4 +1,5 @@
 import { products } from "./products.js";
+import "./produitBottomNav.js"
 console.log(products)
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1038,5 +1039,18 @@ searchInput.addEventListener('input', filterProducts);
 
 };
 
-
 navSlide();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const featuredItems = document.querySelectorAll('.featured-item');
+
+  featuredItems.forEach(item => {
+    const img = item.querySelector('img');
+    img.addEventListener('click', () => {
+      const productId = item.getAttribute('data-id');
+      window.location.href = `details.html?id=${productId}`;
+    });
+  });
+});
+
+
