@@ -2,7 +2,7 @@ const products = [
 
 {
   id: 71,
-  name: "Sac de parles",
+  name: "Sac de perles",
   description: "Perso de luxe",
   price: 25000,
   category: 'sport',
