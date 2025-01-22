@@ -472,34 +472,23 @@
 
 <!-- Menu  -->
 <div class="bottom-nav">
-  <a href="./home.html" class="nav-icon">
+  <a href="./home.html" class="nav-icon home">
     <i class="fas fa-home"></i>
   </a>
-  <a href="./profile.html" class="nav-icon">
+  <a href="./profile.html" class="nav-icon profile">
     <i class="fas fa-user"></i>
   </a>
-  <a href="./cart.html" class="nav-icon">
+  <a href="./cart.html" class="nav-icon cart">
     <i class="fas fa-shopping-cart"></i>
     <span class="cart-counter">0</span>
   </a>
-  <div class="category-dropdown nav-icon">
-    <i class="fas fa-list"></i>
-    <div class="category-list">
-      <label for="category-select" class="filter-label">📂 Catégories :</label>
-      <select id="category-select" class="filter-select">
-        <option value="all">Toutes les catégories</option>
-        <option value="vetements">👕 Vêtements</option>
-        <option value="electronique">💻 Électronique</option>
-        <option value="maison">🏠 Maison</option>
-        <option value="sport">⚽ Accessoires</option>
-      </select>
-    </div>
-  </div>
-  <a href="./notifications.html" class="nav-icon">
+  <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/22/19/20250122195047-9MTGIIUD.json" class="nav-icon assistance">
+    <i class="fa-brands fa-rocketchat"></i>
+  </a>
+  <a href="./notifications.html" class="nav-icon notifications">
     <i class="fas fa-bell"></i>
   </a>
 </div>
-
 
 <div id="chat-popup">
   <button id="close-chat-popup">✖</button>
@@ -508,11 +497,11 @@
   </button>
 </div>
 <script nonce="xyz" type="module"  src="./popupWhatsapp.js"></script>
-
 <script nonce="xyz" type="module" src="./produits.js"></script>
 <script nonce="xyz" type="module"  src="./products.js"></script>
 <script nonce="xyz" type="module"  src="./lib/bundle.js"></script>
 <script nonce="xyz" type="module"  src="./contact.js"></script>
+<script nonce="xyz" type="module"  src="./produitBottomNav.js"></script>
 
 <script nonce="xyz" type="module">
   document.getElementById('see-more-button').addEventListener('click', function() {
