@@ -179,6 +179,7 @@ main {
     flex-direction: column;
     justify-content: space-between; 
     transition: transform 0.2s ease;
+    position: relative;
   }
 
   .product-card:hover {

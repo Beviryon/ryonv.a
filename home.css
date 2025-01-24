@@ -353,9 +353,8 @@ footer p {
 }
 
 /* Nouvelle section promo */
-/* Nouvelle section promo */
 .promo-section {
-  background-color: #070115;
+  background-color: #150c01;
   padding: 20px;
   /* display: flex; */
   flex-direction: column;
@@ -675,6 +674,42 @@ footer p {
 
 @media (min-width: 1069px) {
   .mobile-navbar {
-    display: none;
+    /* display: none; */
   }
+}
+
+/* Animation au survol */
+.mobile-navbar .nav-icon:hover {
+  transform: translateY(-5px);
+  color: #ffeb3b;
+  transition: background-color 0.3s;
+  border-radius: 18%;
+}
+
+/* Couleurs spécifiques pour chaque icône */
+#formations-link i {
+  color: #4caf50;
+}
+#boutique-link i {
+  color: #ff5722;
+}
+#livraison-link i {
+  color: #03a9f4;
+}
+#abonnement-link i {
+  color: #e91e63;
+}
+
+/* Hover color animation */
+#formations-link:hover i {
+  color: #81c784;
+}
+#boutique-link:hover i {
+  color: #ff8a65;
+}
+#livraison-link:hover i {
+  color: #4fc3f7;
+}
+#abonnement-link:hover i {
+  color: #f48fb1;
 }
