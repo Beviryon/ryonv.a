@@ -27,7 +27,9 @@
     <title>RYONV - Boutique en ligne de style et qualité</title>
     <title>Page d'Accueil</title>
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./produits.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="manifest" href="./manifest.json">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-xyz';">
     <meta http-equiv="Content-Security-Policy" content="
@@ -199,7 +201,7 @@
   </section>
 
   <!-- Section Produits Phare -->
-  <section class="featured-products">
+  <!-- <section class="featured-products">
       <h2>Nos Produits Phares</h2>
       <div class="product-gallery">
           <div class="product-card">
@@ -221,7 +223,7 @@
               <a href="./produits.html" class="btn">Voir plus</a>
           </div>
       </div>
-  </section>
+  </section> -->
 
   <!-- Section Abonnement pour vendre -->
   <section class="subscription-section">
@@ -231,6 +233,26 @@
           <a href="./Abonnement.html" class="cta-button">Abonnez-vous</a>
       </div>
   </section>
+
+  <!-- Menu  -->
+<div class="bottom-nav">
+  <a href="./produits.html" class="nav-icon home">
+    <i class="fas fa-store"></i>
+  </a>
+  <a href="./profile.html" class="nav-icon profile">
+    <i class="fas fa-user"></i>
+  </a>
+  <a href="./cart.html" class="nav-icon cart">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-counter">0</span>
+  </a>
+  <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/22/19/20250122195047-9MTGIIUD.json" class="nav-icon assistance">
+    <i class="fa-brands fa-rocketchat"></i>
+  </a>
+  <a href="./notifications.html" class="nav-icon notifications">
+    <i class="fas fa-bell"></i>
+  </a>
+</div>
 
   <!-- Pied de page -->
   <footer>
@@ -245,7 +267,8 @@
     </div>
   </footer>
 
-  <script nonce="xyz" src="./main.js"></script>
+  <script nonce="xyz" src="./main.js"></script>*
+  <script nonce="xyz" type="module"  src="./produitBottomNav.js"></script>
     
  <!-- Script temporaire pour effacer les anciens caches et les Service Workers -->
 <script nonce="xyz">
