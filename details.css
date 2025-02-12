@@ -879,3 +879,38 @@ p-far {
 #product-form button:active {
   transform: translateY(1px);
 }
+
+
+/* Pop-up styles */
+.popup-auth {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup-content-auth {
+  text-align: center;
+}
+
+.popup-content-auth p {
+  margin-bottom: 20px;
+}
+
+#close-auth-popup {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#close-auth-popup:hover {
+  background-color: #005bb5;
+}

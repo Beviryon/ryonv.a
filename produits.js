@@ -2,6 +2,18 @@ import { products } from "./products.js";
 import "./produitBottomNav.js"
 console.log(products)
 
+function filterProductsByCategory(category) {
+  const products = document.querySelectorAll('.product-card');
+  products.forEach(product => {
+    const productCategory = product.getAttribute('data-category');
+    if (productCategory === category || category === 'all') {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Récupérer les éléments du carrousel des produits tendances et des meilleures ventes
   const trendingCarousel = document.querySelector('.trending-carousel');
@@ -39,7 +51,7 @@ function displaySimilarProducts(currentProduct) {
   if (!similarProductsContainer) {
     console.error("Conteneur des produits similaires non trouvé !");
     return;
-  }
+  }c
   similarProductsContainer.innerHTML = '';
 
   const similarProducts = getSimilarProducts(currentProduct);
@@ -1052,5 +1064,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
-

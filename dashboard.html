@@ -1,93 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta property="og:title" content="RYONV.A">
-    <meta property="og:description" content="La boutique en ligne où la qualité et le style se rencontrent. RYONV vous permets d'être en contact en temps réel avec un vendeur de votre choix pour un achat plus adapter à vos besoins">
-    <meta property="og:image" content="./images/icons/icon-192x192.png">
-    <meta property="og:url" content="https://ryonv.com">
-  
-    <link rel="icon" href="./images//icons/icon-192x192.png" type="image/x-icon">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Gestion des Articles</title>
-    <link rel="stylesheet" href="dashboard.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord - RYONV</title>
+  <link rel="stylesheet" href="./dashboard.css">
 </head>
 <body>
+  <header class="dashboard-header">
+    <nav>
+      <div class="logo">
+        <a href="./home.html" class="logo-image"><img class="image" src="https://live.staticflickr.com/65535/54122923674_3c0c43d1b4_n.jpg" alt="logo"></a>
+        <a href="./home.html">RYONV</a>
+      </div>
+    </nav>
+  </header>
 
-    <div class="container">
-        <h1>Dashboard - Gestion des Articles</h1>
-
-        <!-- Section pour afficher les produits -->
-        <section id="products-section">
-            <h2>Liste des Produits</h2>
-            <div id="products-container"></div>
-        </section>
-
-        <!-- Formulaire pour ajouter ou modifier un produit -->
-        <section id="product-form-section">
-          <h2>Ajouter / Modifier un Produit</h2>
-          <form id="product-form">
-              <input type="hidden" id="product-id">
-              <div>
-                  <label for="product-name">Nom du Produit:</label>
-                  <input type="text" id="product-name" required>
-              </div>
-              <div>
-                  <label for="product-description">Description:</label>
-                  <input type="text" id="product-description" required>
-              </div>
-              <div>
-                  <label for="product-price">Prix:</label>
-                  <input type="number" id="product-price" required>
-              </div>
-              <div>
-                  <label for="product-category">Catégorie:</label>
-                  <input type="text" id="product-category" required>
-              </div>
-              <div>
-                  <label for="product-stock">Stock:</label>
-                  <input type="number" id="product-stock" required>
-              </div>
-              <div>
-                  <label for="product-discount">Promotion (en %):</label>
-                  <input type="number" id="product-discount" required>
-              </div>
-              <div>
-                  <label for="product-end-date">Date de Fin de la Promotion:</label>
-                  <input type="datetime-local" id="product-end-date" required>
-              </div>
-              <div>
-                  <label for="product-images">Images (URLs séparées par des virgules):</label>
-                  <input type="text" id="product-images">
-              </div>
-              <div>
-                  <label for="product-seller-name">Nom du Vendeur:</label>
-                  <input type="text" id="product-seller-name" required>
-              </div>
-              <div>
-                  <label for="product-seller-phone">Téléphone du Vendeur:</label>
-                  <input type="text" id="product-seller-phone" required>
-              </div>
-              <div>
-                  <label for="product-seller-country">Pays du Vendeur:</label>
-                  <select id="product-seller-country" required>
-                      <option value="" disabled selected>Choisissez un pays</option>
-                      <option value="SN">Sénégal (+221)</option>
-                      <option value="FR">France (+33)</option>
-                      <option value="CI">Côte d'Ivoire (+225)</option>
-                      <option value="MG">Madagascar (+261)</option>
-                      <option value="MA">Maroc (+212)</option>
-                      <!-- Ajoute d'autres pays selon besoin -->
-                  </select>
-              </div>
-              <button type="submit">Enregistrer</button>
-          </form>
-      </section>
-      
+  <main class="dashboard-main">
+    <h1>Tableau de bord du vendeur</h1>
+    <div id="products-section">
+      <!-- Les produits du vendeur seront affichés ici -->
     </div>
+  </main>
 
-    <script type="module" src="dashboard.js"></script> 
-    <script type="module" src="products.js"></script>
+  <script type="module" src="./dashboard.js"></script>
 </body>
 </html>

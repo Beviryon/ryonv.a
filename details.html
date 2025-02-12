@@ -111,13 +111,13 @@
 
         <label for="color-options">Couleur :</label>
         <div id="color-options">
-          <div class="color-box" data-color="#ff0000" style="background-color: #ff0000;"></div>
-          <div class="color-box" data-color="#00ff00" style="background-color: #00ff00;"></div>
-          <div class="color-box" data-color="#0000ff" style="background-color: #0000ff;"></div>
-          <div class="color-box" data-color="#ffff00" style="background-color: #000000;"></div>
-          <div class="color-box" data-color="#ff00ff" style="background-color: #ffffff;"></div>
-          <div class="color-box" data-color="#00ffff" style="background-color: #00ffff;"></div>
-          <input type="color" id="color" name="color" value="#ff0000" hidden>
+          <div class="color-box" data-color="red" style="background-color: red;"></div>
+          <div class="color-box" data-color="lime" style="background-color: lime;"></div>
+          <div class="color-box" data-color="blue" style="background-color: blue;"></div>
+          <div class="color-box" data-color="yellow" style="background-color: black;"></div>
+          <div class="color-box" data-color="fuchsia" style="background-color: white;"></div>
+          <div class="color-box" data-color="aqua" style="background-color: aqua;"></div>
+          <input type="color" id="color" name="color" value="red" hidden>    
         </div>
 
         <label for="size">Taille :</label>
@@ -169,6 +169,15 @@
       <button class="fermer" id="close-popup">Fermer</button>
     </div>
   </div>
+
+  <!-- Pop-up -->
+<div id="auth-popup" class="popup">
+  <div class="popup-content">
+    <p>Veuillez vous connecter ou créer un compte pour discuter avec le vendeur.</p>
+    <button id="close-auth-popup">Fermer</button>
+  </div>
+</div>
+
 
   <script  nonce="xyz" src="./data.js"></script>
   <script type="module" nonce="xyz" src="./details.js"></script>

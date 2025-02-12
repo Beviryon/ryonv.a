@@ -1,63 +1,344 @@
-/* Style général de la page */
+/* Styles généraux */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
 }
 
-/* Style du conteneur du formulaire */
-.login-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+main {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* Style du titre */
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+  margin-bottom: 1.5rem;
+  color: #333;
 }
 
-/* Style des labels */
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ddd;
 }
 
-/* Style des champs de saisie */
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.input-container i {
+  margin-right: 0.5rem;
+  color: #888;
 }
 
-/* Style des boutons */
-button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+.input-container input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 0.5rem 0;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+button {
+  background: #6e8efb;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background: #5a7de0;
+}
+
+.animated-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #6e8efb;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.animated-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #6e8efb;
+  left: 0;
+  bottom: -2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.animated-link:hover {
+  color: #5a7de0;
+}
+
+.animated-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+  
+/* Barre de navigation fixe en bas pour mobile */
+.mobile-navbar {
+  display: flex;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #44425e, #7993a3);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  position: relative;
+  margin: 0px 0px 40px 0px;
+  border-radius: 5px;
+}
+
+.mobile-navbar .nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.mobile-navbar .nav-icon i {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.mobile-navbar .nav-icon:hover {
+  color: #ffeb3b;
+  transform: scale(1.1);
+}
+
+@media (min-width: 1069px) {
+  .mobile-navbar {
+    /* display: none; */
+  }
+}
+
+/* Animation au survol */
+.mobile-navbar .nav-icon:hover {
+  transform: translateY(-5px);
+  color: #ffeb3b;
+  transition: background-color 0.3s;
+  border-radius: 18%;
+}
+
+/* Couleurs spécifiques pour chaque icône */
+#formations-link i {
+  color: #4caf50;
+}
+#boutique-link i {
+  color: #ff5722;
+}
+#livraison-link i {
+  color: #03a9f4;
+}
+#abonnement-link i {
+  color: #e91e63;
+}
+
+/* Hover color animation */
+#formations-link:hover i {
+  color: #81c784;
+}
+#boutique-link:hover i {
+  color: #ff8a65;
+}
+#livraison-link:hover i {
+  color: #4fc3f7;
+}
+#abonnement-link:hover i {
+  color: #f48fb1;
+}
+
+/* Bottom navigation bar with individual styles for each icon */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px 0;
+  border-top: 2px solid #eee;
+}
+
+.nav-icon {
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+  width: 50px;
+  transition: color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+/* Home Icon */
+.nav-icon.home {
+  color: #4caf50;
+}
+
+.nav-icon.home:hover {
+  color: #66bb6a;
+  transform: scale(1.1);
+}
+
+/* Profile Icon */
+.nav-icon.profile {
+  color: #2196f3;
+}
+
+.nav-icon.profile:hover {
+  color: #42a5f5;
+  transform: scale(1.1);
+}
+
+/* Cart Icon */
+.nav-icon.cart {
+  color: #ff9800;
+}
+
+.nav-icon.cart:hover {
+  color: #ffb74d;
+  transform: scale(1.1);
+}
+
+.cart-counter {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Assistance Icon */
+.nav-icon.assistance {
+  color: #9c27b0;
+}
+
+.nav-icon.assistance:hover {
+  color: #ba68c8;
+  transform: scale(1.1);
+}
+
+/* Notifications Icon */
+.nav-icon.notifications {
+  color: #ff5722;
+}
+
+.nav-icon.notifications:hover {
+  color: #ff7043;
+  transform: scale(1.1);
+}
+
+/* Icon animation */
+.nav-icon i {
+  transition: transform 0.3s, color 0.3s;
+}
+
+.nav-icon:hover i {
+  transform: rotate(10deg);
+}
+
+/* Styles pour la fenêtre modale */
+.modal {
+  display: none; /* Masquée par défaut */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  animation: fadeIn 0.5s; /* Animation d'apparition */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: none;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.5s; /* Animation de glissement */
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); }
+  to { transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+  text-decoration: none;
 }
