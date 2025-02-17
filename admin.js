@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function fetchUsers() {
     try {
-      const response = await fetch('http://localhost:4000/users', {
+      const response = await fetch('https://ryonv-shop.netlify.app/.netlify/functions/users', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function deleteUser(userId) {
     try {
-      const response = await fetch(`http://localhost:4000/users/${userId}`, {
+      const response = await fetch(`https://ryonv-shop.netlify.app/.netlify/functions/users/${userId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function updateUser(userId, updatedData) {
     try {
-      const response = await fetch(`http://localhost:4000/users/${userId}`, {
+      const response = await fetch(`https://ryonv-shop.netlify.app/.netlify/functions/users/${userId}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
