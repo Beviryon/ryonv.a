@@ -20,7 +20,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 // Route pour l'inscription des clients
 app.post('/register', async (req, res) => {
   const { first_name, phone, city, country, password } = req.body;
-  const role_id = 1; // Attribuer automatiquement le rôle 'client'
+  const role_id = 1; 
 
   const { data: roleData, error: roleError } = await supabase
     .from('roles')
@@ -238,7 +238,6 @@ app.get('/user-stats', async (req, res) => {
   res.status(200).json({ stats: data });
 });
 
-// Route pour enregistrer les administrateurs
 // Route pour enregistrer les administrateurs
 app.post('/register-admin', async (req, res) => {
     const { first_name, phone, city, country, password } = req.body;
