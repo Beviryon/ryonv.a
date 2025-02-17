@@ -499,7 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('token');
     if (!token) {
       alert('Veuillez vous connecter ou créer un compte pour discuter avec le vendeur.');
-      window.location.href = './login.html'; // Redirigez vers la page de connexion
+      window.location.href = '/desloSite/login.html'; // Redirigez vers la page de connexion
     } else {
       const phoneNumber = product.vendorPhone.replace(/[^0-9]/g, '');
 
