@@ -1,5 +1,5 @@
 [build]
-  base = "github.com/Beviryon/ryonv.a"  
+  base = "."  
   publish = "." 
   command = "echo 'No build command needed for static HTML'"  
 
