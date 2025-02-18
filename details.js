@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Créer le lien WhatsApp avec le message pré-rempli
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-      // Ouvrir la discussion WhatsApp dans un nouvel onglet
+      // Ouvrir la discussion WhatsApp dans un nouvel onglet que celui est ouvert
       window.open(whatsappUrl, '_blank');
     }
   });
