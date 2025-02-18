@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     registerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const first_name = document.getElementById('first_name').value;
-      const phone = document.getElementById('phone').value;a
+      const phone = document.getElementById('phone').value;
       const city = document.getElementById('city').value;
       const country = document.getElementById('country').value;
       const password = document.getElementById('password').value;

@@ -365,10 +365,10 @@ app.delete('/vendor/products/:id', async (req, res) => {
   res.status(200).json({ message: 'Product deleted successfully' });
 });
 
-// const PORT = process.env.PORT || 4000;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 // Route pour rafraîchir le jeton
 app.post('/refresh-token', (req, res) => {
