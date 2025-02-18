@@ -13,13 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const password = document.getElementById('password').value;
   
       try {
-        const response = await fetch('https://ryonv-shop.netlify.app/.netlify/functions/register', {
+        const response = await fetch('/.netlify/functions/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ first_name, phone, city, country, password }),
         });
+        console.log('Response:', response);
   
         const data = await response.json();
         if (response.ok) {
