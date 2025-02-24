@@ -143,35 +143,29 @@ if (product) {
   // === Gestion du bouton "Discuter avec le vendeur" ===
   const contactBtn = document.getElementById('contact-seller-btn');
   contactBtn.addEventListener('click', () => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      alert('Veuillez vous connecter ou créer un compte pour discuter avec le vendeur.');
-      window.location.href = '/desloSite/login.html';
-    } else {
-      const phoneNumber = product.vendorPhone.replace(/[^0-9]/g, '');
+    const phoneNumber = product.vendorPhone.replace(/[^0-9]/g, '');
 
-      // Récupérer les valeurs des champs de formulaire
-      const quantity = document.getElementById('quantity').value;
-      const color = document.getElementById('color').value;
-      const size = document.getElementById('size').value;
+    // Récupérer les valeurs des champs de formulaire
+    const quantity = document.getElementById('quantity').value;
+    const color = document.getElementById('color').value;
+    const size = document.getElementById('size').value;
 
-      // Créer un message WhatsApp prédéfini avec les informations du produit
-      const message = `Bonjour, je suis intéressé par votre produit :
-      *Nom :* ${product.name}
-      *Description :* ${product.description}
-      *Prix :* ${product.price} FCFA
-      *Quantité souhaitée :* ${quantity}
-      *Couleur :* ${color}
-      *Taille :* ${size}
-      *Image :* ${product.images[0]}
-      Pouvez-vous me donner plus de détails ?`;
+    // Créer un message WhatsApp prédéfini avec les informations du produit
+    const message = `Bonjour, je suis intéressé par votre produit :
+    *Nom :* ${product.name}
+    *Description :* ${product.description}
+    *Prix :* ${product.price} FCFA
+    *Quantité souhaitée :* ${quantity}
+    *Couleur :* ${color}
+    *Taille :* ${size}
+    *Image :* ${product.images[0]}
+    Pouvez-vous me donner plus de détails ?`;
 
-      // Créer le lien WhatsApp avec le message prédéfini
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    // Créer le lien WhatsApp avec le message prédéfini
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-      // Ouvrir la discussion WhatsApp dans un nouvel onglet
-      window.open(whatsappUrl, '_blank');
-    }
+    // Ouvrir la discussion WhatsApp dans un nouvel onglet
+    window.open(whatsappUrl, '_blank');
   });
 
   // Ajouter les avis des clients dans une section masquée par défaut
@@ -300,30 +294,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const viewCartBtn = document.getElementById('view-cart-btn');
 
   addToCartBtn.addEventListener('click', () => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      alert('Veuillez vous connecter ou créer un compte pour ajouter des produits au panier.');
-      window.location.href = '/desloSite/login.html';
-    } else {
-      // Récupérer l'ID du produit depuis les paramètres d'URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const productId = urlParams.get('id');
+    // Récupérer l'ID du produit depuis les paramètres d'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
 
-      // Trouver le produit correspondant dans la liste des produits
-      const product = products.find(p => p.id === parseInt(productId));
+    // Trouver le produit correspondant dans la liste des produits
+    const product = products.find(p => p.id === parseInt(productId));
 
-      if (product) {
-        // Récupérer les valeurs des champs de formulaire
-        const quantity = document.getElementById('quantity').value;
-        const color = document.getElementById('color').value;
-        const size = document.getElementById('size').value;
+    if (product) {
+      // Récupérer les valeurs des champs de formulaire
+      const quantity = document.getElementById('quantity').value;
+      const color = document.getElementById('color').value;
+      const size = document.getElementById('size').value;
 
-        // Ajouter le produit au panier avec les informations supplémentaires
-        addToCart(product, quantity, color, size);
+      // Ajouter le produit au panier avec les informations supplémentaires
+      addToCart(product, quantity, color, size);
 
-        // Afficher le pop-up de confirmation
-        popup.style.display = 'block';
-      }
+      // Afficher le pop-up de confirmation
+      popup.style.display = 'block';
     }
   });
 
@@ -492,6 +480,7 @@ document.getElementById('color').addEventListener('input', function() {
     }
   });
 });
+<<<<<<< HEAD
 
 document.addEventListener('DOMContentLoaded', () => {
   const contactSellerBtn = document.getElementById('contact-seller-btn');
@@ -1010,3 +999,5 @@ document.addEventListener('DOMContentLoaded', () => {
 //     }
 //   });
 // });
+=======
+>>>>>>> 8acc083 (mise à jour du site)

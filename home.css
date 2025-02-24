@@ -62,6 +62,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 }
 
 .menu {
@@ -91,7 +92,8 @@ nav {
   list-style: none;
   display: flex;
   gap: 2.5rem;
-  align-items: center; /* Align items vertically */
+  align-items: center;
+  z-index: 999;
 }
 
 .nav-links a {
@@ -126,7 +128,6 @@ nav {
 .burger {
   display: none;
   cursor: pointer;
-  margin-left: 15px; /* Adjust margin to space from profile icon */
 }
 
 .burger div {
@@ -148,77 +149,91 @@ nav {
 }
 
 /* Responsive Design */
-@media (max-width: 968px) {
+@media screen and (max-width: 968px) {
+  body {
+    overflow-x: hidden;
+  }
+  
   .nav-links {
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: rgba(0, 0, 0, 0.9);
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 100%;
-      padding-top: 5rem;
-      display: none; /* Hide by default */
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.5s ease-in;
+    z-index: 1000;
   }
 
   .nav-links li {
-      margin: 1.5rem 0;
+    opacity: 0;
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  .nav-links li a {
+    color: white;
+    font-size: 1.2rem;
+    display: block;
+    padding: 10px 0;
   }
 
   .burger {
-      display: block;
+    display: block;
+    z-index: 1000;
   }
 
-  .burger-profile-container {
-      display: flex;
-  }
-
-  #profile-link {
-      display: block;
-  }
-
-  /* #profile-link-mobile {
-      display: flex;
-  } */
-
+  /* Classe active pour le menu */
   .nav-active {
-      display: flex;
+    right: 0;
   }
 
+  .nav-active li {
+    opacity: 1;
+  }
+
+  /* Animation du burger */
   .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
   }
 
   .toggle .line2 {
-      opacity: 0;
+    opacity: 0;
   }
 
   .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 
+  /* Assure que le menu est au-dessus des autres éléments */
   header {
-      padding: 1.5rem 5%;
+    position: relative;
+    z-index: 1000;
   }
 
   .profile {
-      padding: 1.5rem;
-      width: 90%;
+    padding: 1.5rem;
+    width: 90%;
   }
 
   .profile-header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .profile-info {
-      text-align: center;
+    text-align: center;
   }
 
   #changePhotoBtn, #editProfileBtn {
-      width: 100%;
+    width: 100%;
   }
 }
 
@@ -323,73 +338,6 @@ nav {
   background-color: #c9302c;
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-  .nav-links {
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: rgba(0, 0, 0, 0.9);
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 70%;
-      padding-top: 5rem;
-      display: none; /* Hide by default */
-  }
-
-  .nav-links li {
-      margin: 1.5rem 0;
-  }
-
-  .burger {
-      display: block;
-  }
-
-  .burger-profile-container {
-      display: flex;
-  }
-
-  .nav-active {
-      display: flex;
-  }
-
-  .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-      opacity: 0;
-  }
-
-  .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  header {
-      padding: 1.5rem 5%;
-  }
-
-  .profile {
-      padding: 1.5rem;
-      width: 90%;
-  }
-
-  .profile-header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
-
-  .profile-info {
-      text-align: center;
-  }
-
-  #changePhotoBtn, #editProfileBtn {
-      width: 100%;
-  }
-}
-
 /* Popup Message Style */
 .popup {
   position: fixed;
@@ -486,69 +434,6 @@ nav {
   background-color: #c9302c;
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.9);
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 70%;
-      padding-top: 5rem;
-  }
-
-  .nav-links li {
-      margin: 1.5rem 0;
-  }
-
-  .burger {
-      display: block;
-  }
-
-  .nav-active {
-      display: flex;
-  }
-
-  .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-      opacity: 0;
-  }
-
-  .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  header {
-      padding: 1.5rem 5%;
-  }
-
-  .profile {
-      padding: 1.5rem;
-      width: 90%;
-  }
-
-  .profile-header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
-
-  .profile-info {
-      text-align: center;
-  }
-
-  #changePhotoBtn, #editProfileBtn {
-      width: 100%;
-  }
-}
-
 /* Burger and Profile Container */
 .burger-profile-container {
   display: flex;
@@ -575,71 +460,6 @@ nav {
   border-radius: 50%;
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.9);
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 70%;
-    padding-top: 5rem;
-  }
-
-  .nav-links li {
-    margin: 1.5rem 0;
-  }
-
-  .burger {
-    display: block;
-  }
-
-  .nav-active {
-    display: flex;
-  }
-
-  .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-    opacity: 0;
-  }
-
-  .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  header {
-    padding: 1.5rem 5%;
-  }
-
-  .profile {
-    padding: 1.5rem;
-    width: 90%;
-  }
-
-  .profile-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile-info {
-    text-align: center;
-  }
-
-  #changePhotoBtn, #editProfileBtn {
-    width: 100%;
-  }
-}
-
-
-
 /* Auth Icons */
 .auth-icons {
   display: flex;
@@ -665,54 +485,6 @@ nav {
 /* ========================================================== */
 /* ========================================================== */
 /* ========================================================== */
-
-/* Responsive Menu */
-@media (max-width: 968px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.9);
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 50%;
-      padding-top: 5rem;
-  }
-
-  .nav-links li {
-      margin: 1rem 0;
-  }
-
-  .burger {
-      display: block;
-  }
-
-  .nav-active {
-      display: flex;
-  }
-
-  .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-      opacity: 0;
-  }
-
-  .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  header {
-      padding: 1rem 5%;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-  }
-}
 
 /* Section d'en-tête principale */
 .hero {
@@ -1294,4 +1066,15 @@ footer p {
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
