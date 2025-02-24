@@ -79,4 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
   handleProductRedirection();
 });
 
+<<<<<<< HEAD
 
+=======
+window.onload = function() {
+  document.getElementById('loader').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+};
+>>>>>>> b1f05062005cc3fe19e221f4459f59e44df24031
