@@ -6,9 +6,11 @@ const products = [
   description: "Perso de luxe",
   price: 25000,
   category: 'sport',
+  colors: ['#FFD700', '#C0C0C0', '#FFC0CB', '#FFFFFF'], // Or, Argent, Rose pâle, Blanc
+  sizes: ['Standard'], // Taille unique pour les sacs
   images: [
-  'https://live.staticflickr.com/65535/54228270743_01c73c8f7c_w.jpg',
-  'https://live.staticflickr.com/65535/54228441095_8883de9e26_w.jpg',
+    'https://live.staticflickr.com/65535/54228270743_01c73c8f7c_w.jpg',
+    'https://live.staticflickr.com/65535/54228441095_8883de9e26_w.jpg',
   ],
   like: 0,
   seller: {
@@ -33,9 +35,11 @@ const products = [
   description: "Perso de luxe",
   price: 20000,
   category: 'sport',
+  colors: ['#FFD700', '#FF69B4', '#4169E1', '#FFFFFF'], // Or, Rose vif, Bleu royal, Blanc
+  sizes: ['Standard'],
   images: [
-  'https://live.staticflickr.com/65535/54236078840_fa3b86eed7_w.jpg',
-  'https://live.staticflickr.com/65535/54228270748_0c38306427_w.jpg',
+    'https://live.staticflickr.com/65535/54236078840_fa3b86eed7_w.jpg',
+    'https://live.staticflickr.com/65535/54228270748_0c38306427_w.jpg',
   ],
   like: 0,
   seller: {
@@ -60,9 +64,11 @@ const products = [
   description: "Perso de luxe",
   price: 20000,
   category: 'sport',
+  colors: ['#FFD700', '#FF1493', '#000000', '#FFFFFF'], // Or, Rose foncé, Noir, Blanc
+  sizes: ['Standard'],
   images: [
-  'https://live.staticflickr.com/65535/54227128347_5398b0702f_w.jpg',
-  'https://live.staticflickr.com/65535/54227128332_205cd36f2c_w.jpg',
+    'https://live.staticflickr.com/65535/54227128347_5398b0702f_w.jpg',
+    'https://live.staticflickr.com/65535/54227128332_205cd36f2c_w.jpg',
   ],
   like: 0,
   seller: {
@@ -169,11 +175,13 @@ const products = [
   description: "32 en 1",
   price: 5200,
   category: 'sport',
+  colors: ['#C0C0C0', '#000000', '#FF0000'], // Argent, Noir, Rouge
+  sizes: ['Standard'], // Taille unique pour les outils
   images: [
-  'https://s.alicdn.com/@sc04/kf/Ad7199eb957a748a89109961d289b539dp.jpg_720x720q50.jpg',
-  'https://s.alicdn.com/@sc04/kf/A9e242b649c704adf90933e3cc9d67c58p.jpg_720x720q50.jpg',
-  'https://s.alicdn.com/@sc04/kf/A95ac419bfb5f4e46ba9d4c83175ab1462.jpg_720x720q50.jpg',
-  'https://s.alicdn.com/@sc04/kf/A654206ed8aed4320b8c1e67b89e65a09a.jpg_720x720q50.jpg',
+    'https://s.alicdn.com/@sc04/kf/Ad7199eb957a748a89109961d289b539dp.jpg_720x720q50.jpg',
+    'https://s.alicdn.com/@sc04/kf/A9e242b649c704adf90933e3cc9d67c58p.jpg_720x720q50.jpg',
+    'https://s.alicdn.com/@sc04/kf/A95ac419bfb5f4e46ba9d4c83175ab1462.jpg_720x720q50.jpg',
+    'https://s.alicdn.com/@sc04/kf/A654206ed8aed4320b8c1e67b89e65a09a.jpg_720x720q50.jpg',
   ],
   like: 0,
   seller: {
@@ -398,6 +406,8 @@ const products = [
   description: "Robe de bal",
   price: 9000,
   category: 'vetements',
+  colors: ['#C0C0C0', '#000000', '#FF0000'], // Argent, Noir, Rouge
+  sizes: ['Standard'], // Taille unique pour les outils
   images: [
   'https://live.staticflickr.com/65535/54191950658_7f59510397_n.jpg',
   'https://www.flickr.com/photos/deslogroup/54192142195/in/dateposted/',
@@ -427,6 +437,8 @@ const products = [
   description: "Robe de bal",
   price: 9500,
   category: 'vetements',
+  colors: ['#C0C0C0', '#000000', '#FF0000'], // Argent, Noir, Rouge
+  sizes: ['Standard'], // Taille unique pour les outils
   images: [
   'https://s.alicdn.com/@sc04/kf/H87f5f20a66434abf8bfba4155a504f3d0.jpg?avif=close',
   'https://s.alicdn.com/@sc04/kf/H1828d107c7704fe5a5a4d3558981403cG.jpg?avif=close',
@@ -517,6 +529,8 @@ const products = [
   description: "Sac à main en cuir ",
   price: 4950,
   category: 'sport',
+  colors: ['#C0C0C0', '#000000', '#FF0000'], // Argent, Noir, Rouge
+  sizes: ['Standard'], // Taille unique pour les outils
   images: [
   'https://s.alicdn.com/@sc04/kf/H76de0525b96449729fdb3baeeb58827cz.jpg?avif=close',
   'https://s.alicdn.com/@sc04/kf/H914bb45782cf407e8e343e9aeab6823bJ.jpg?avif=close',
@@ -607,6 +621,8 @@ const products = [
   description: 'Nylon/nylon',
   price: 1250,
   category: 'vetements',
+  colors: ['#C0C0C0', '#000000', '#FF0000'], // Argent, Noir, Rouge
+  sizes: ['Standard'], // Taille unique pour les outils
   images: [
   'https://s.alicdn.com/@sc04/kf/Hb2f9c0a0b3f043e0af24262a621339c93.jpg?avif=close',
   'https://s.alicdn.com/@sc04/kf/H0848a52d5ae74774be2a62389f1f8a70N.jpg?avif=close',
@@ -667,6 +683,8 @@ const products = [
   description: 'Polyester / Coton',
   price: 1350,
   category: 'vetements',
+  colors: ['#C0C0C0', '#000000', '#FF0000'], // Argent, Noir, Rouge
+  sizes: ['Standard'], // Taille unique pour les outils
   images: [
   'https://s.alicdn.com/@sc04/kf/Hcd3bf86f54c840d8bf06631e96dcd2dbr.png?avif=close',
   'https://s.alicdn.com/@sc04/kf/He6e2c72351b6446daa985b3d72a87037V.jpg?avif=close',
@@ -697,12 +715,14 @@ const products = [
   description: 'Polyester / Coton',
   price: 13500,
   category: 'vetements',
+  colors: ['#000000', '#808080', '#4169E1', '#8B4513'], // Noir, Gris, Bleu royal, Marron
+  sizes: ['M', 'L', 'XL', 'XXL'],
   images: [
-  'https://s.alicdn.com/@sc04/kf/He6cd3f5b412d44eaa8984613536fa793n.jpg?avif=close',
-  'https://s.alicdn.com/@sc04/kf/H49c5911454904f00a0375b82ff700bbcC.jpg?avif=close',
-  'https://s.alicdn.com/@sc04/kf/Heeb416ee0b4a49d6871388bdb41aa1fev.jpg?avif=close',
-  'https://s.alicdn.com/@sc04/kf/H22b875407d3f40d7a70bcd1cfe4fed2ad.jpg?avif=close',
-  'https://s.alicdn.com/@sc04/kf/Ha15d9c021e4a4bd78c62885b3d72c38dg.jpg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/He6cd3f5b412d44eaa8984613536fa793n.jpg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/H49c5911454904f00a0375b82ff700bbcC.jpg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/Heeb416ee0b4a49d6871388bdb41aa1fev.jpg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/H22b875407d3f40d7a70bcd1cfe4fed2ad.jpg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/Ha15d9c021e4a4bd78c62885b3d72c38dg.jpg?avif=close',
   ],
   like: 0,
   seller: {
@@ -727,12 +747,14 @@ const products = [
   description: 'Polyester / Coton',
   price: 7500,
   category: 'vetements',
+  colors: ['#FFFFFF', '#87CEEB', '#FFB6C1', '#98FB98'], // Blanc, Bleu ciel, Rose, Vert clair
+  sizes: ['S', 'M', 'L', 'XL'],
   images: [
-  'https://s.alicdn.com/@sc04/kf/H30be75e72c63440aa6a0752aadcaafbb6.jpeg?avif=close',
-  'https://s.alicdn.com/@sc04/kf/H87253c2c346945ac9369cbe7d12f2a28M.jpeg?avif=close',
-  'https://s.alicdn.com/@sc04/kf/H9f4f8f198e60435fb1cd3786c244918c3.jpeg?avif=close',
-  'https://s.alicdn.com/@sc04/kf/Hd7b21386397b4075a82f8513ceca96e3N.jpeg?avif=close',
-  'https://s.alicdn.com/@sc04/kf/Hca28d6eb9cd04535ba3206de701a8b15C.jpg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/H30be75e72c63440aa6a0752aadcaafbb6.jpeg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/H87253c2c346945ac9369cbe7d12f2a28M.jpeg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/H9f4f8f198e60435fb1cd3786c244918c3.jpeg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/Hd7b21386397b4075a82f8513ceca96e3N.jpeg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/Hca28d6eb9cd04535ba3206de701a8b15C.jpg?avif=close',
   ],
   like: 0,
   seller: {
@@ -757,6 +779,8 @@ const products = [
   description: 'Polyester / Coton',
   price: 8500,
   category: 'vetements',
+  colors: ['#C0C0C0', '#000000', '#FF0000'], // Argent, Noir, Rouge
+  sizes: ['Standard'], // Taille unique pour les outils
   images: [
   'https://s.alicdn.com/@sc04/kf/H25c22a9ac06f4cd39d531a8878e613e9X.jpg?avif=close',
   'https://s.alicdn.com/@sc04/kf/H5e670eae90854336b2912e80418ae04f0.jpg?avif=close',
@@ -845,6 +869,8 @@ name: "Chemise homme",
 description: 'Toutes les tailles',
 price: 12500,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://s.alicdn.com/@sc04/kf/Hd9cdb4b4811d40dcbf1f2f200e2443acE.jpg?avif=close',
 'https://s.alicdn.com/@sc04/kf/Hd95ee3ffa47741efbdeddc8bff2758a0D.jpg?avif=close',
@@ -874,6 +900,8 @@ name: "Complet femme",
 description: 'Toutes les tailles',
 price: 8500,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/54087796153_bd4af03e4b_w.jpg',
 'https://live.staticflickr.com/65535/54087546136_d39fdaecb1_w.jpg',
@@ -902,6 +930,8 @@ name: "Robe femme",
 description: 'Toutes les tailles',
 price: 6000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/54087877064_c388e1a914_w.jpg',
 'https://live.staticflickr.com/65535/54087796148_98db3420b3_w.jpg',
@@ -928,6 +958,8 @@ name: "Complet femme",
 description: 'Toutes les tailles',
 price: 6000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/54087877029_1dcf7f5bec_n.jpg',
 'https://live.staticflickr.com/65535/54088000940_f36f3c9fdd_n.jpg',
@@ -954,6 +986,8 @@ name: "Robe",
 description: 'Toutes les tailles',
 price: 6000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/54087877024_f67d960abf_n.jpg',
 'https://live.staticflickr.com/65535/54088000920_d7ccd65445_n.jpg',
@@ -980,6 +1014,8 @@ name: "Robe sexy",
 description: 'Toutes les tailles',
 price: 6000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/54086666967_1b79944ab4_n.jpg',
 'https://s.alicdn.com/@sc04/kf/Aeeaf6f19c9b54db699f8138117409af7x.jpg?avif=close',
@@ -1011,6 +1047,8 @@ name: "Robe Femme",
 description: 'Toutes les tailles',
 price: 13000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/54004585421_9786d774ef_w.jpg',
 'https://live.staticflickr.com/65535/54005006385_ea4b85b8e5_w.jpg',
@@ -1036,6 +1074,8 @@ name: "Robe Femme",
 description: 'Toutes les tailles',
 price: 7000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/53918079291_fd5fb40099_n.jpg',
 'https://live.staticflickr.com/65535/53918431534_3744337f06_n.jpg',
@@ -1061,6 +1101,8 @@ name: 'Ensemble femme',
 description: 'Toutes les tailles',
 price: 6500,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/53918326358_3338d3cc5a_w.jpg',
 'https://live.staticflickr.com/65535/53918525480_4f51da965d_n.jpg',
@@ -1086,6 +1128,8 @@ name: 'Perruque',
 description: 'Toutes les tailles',
 price: 25000,
 category: 'sport',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/54003722967_4476dfc92d_n.jpg',
 'https://live.staticflickr.com/65535/54003722832_4ab8cf4d60_w.jpg',
@@ -1113,6 +1157,8 @@ rating: 4.5
   description: 'X, L, XL, XXL, 3XL',
   price: 2500,
   category: 'vetements',
+  colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+  sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   images: [
   'https://live.staticflickr.com/65535/53918326223_b42c569af8_w.jpg',
   'https://live.staticflickr.com/65535/53917188547_cac5a4720d_w.jpg',
@@ -1139,6 +1185,8 @@ name: 'Ensemble',
 description: 'L XL XXL 3XL',
 price: 7500,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/53999356837_c71364c768_w.jpg',
 'https://live.staticflickr.com/65535/54000575439_d80a7113a9_n.jpg',
@@ -1167,6 +1215,8 @@ name: 'Robe',
 description: 'S L XL XXL 3XL',
 price: 7500,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/54000490618_fc587ecc95_w.jpg',
 'https://live.staticflickr.com/65535/54000575484_55fd83c68c_w.jpg',
@@ -1193,6 +1243,8 @@ name: 'Robe',
 description: 'S L XL XXL 3XL',
 price: 7500,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://live.staticflickr.com/65535/54004910659_fa98b38975_n.jpg',
 'https://live.staticflickr.com/65535/54003677497_c177414031_n.jpg',
@@ -1219,6 +1271,8 @@ name: 'Robe xxx',
 description: 'Toutes les tailles',
 price: 8000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
   'https://live.staticflickr.com/65535/53808261655_a7ccaf6301_n.jpg',
   'https://live.staticflickr.com/65535/53804063223_07ccde5008_b.jpg',
@@ -1245,6 +1299,8 @@ name: 'Robe',
 description: 'Tissu en coton',
 price: 8000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
   'https://live.staticflickr.com/65535/53808261640_81983ff3b3_w.jpg',
   'https://live.staticflickr.com/65535/53808261655_a7ccaf6301_n.jpg',
@@ -1270,6 +1326,8 @@ name: 'Robe de soirée femme',
 description: '100% Polyester',
 price: 15000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://s.alicdn.com/@sc04/kf/Hbfc38afed3fc4b3984e40cbc5ed8a49cP.jpg',
 'https://s.alicdn.com/@sc04/kf/H5710996c11594111ad7b127ee5c8cd741.jpg',
@@ -1294,6 +1352,8 @@ name: 'Sac à main',
 description: 'modèle 2023 en cuir',
 price: 6500,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://s.alicdn.com/@sc04/kf/H2aa20b2331584b08914ebfdbecc8f76eo.jpg',
 'https://s.alicdn.com/@sc04/kf/H7d09183f2f284305bb1d08834b842c4eY.jpg',
@@ -1320,6 +1380,7 @@ name: 'H-P EliteBook 640G9',
 description: 'WINDOWS 11',
 price: 250000,
 category: 'electronique',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
 images: [
 'https://s.alicdn.com/@sc04/kf/H13b354835d0742a1919dab2e5386d5d90.jpg',
 'https://s.alicdn.com/@sc04/kf/H8d3e389715e449cba5f2c41c6f2a752cb.jpg',
@@ -1346,6 +1407,8 @@ name: 'Pull ',
 description: 'Coton/Fibre de bambou',
 price: 6000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://s.alicdn.com/@sc04/kf/H41b80ca10ccd4bac8264eefd48316704V.jpg',
 'https://s.alicdn.com/@sc04/kf/H491e6c1e4845486abc3afc8718c9a964W.jpg',
@@ -1371,6 +1434,8 @@ name: 'Robe',
 description: 'Polyester',
 price: 10000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
 'https://s.alicdn.com/@sc04/kf/H58cb15421aa94bc5a813bf8f4b883a3bY.png',
 'https://s.alicdn.com/@sc04/kf/H9d075e179f454d2388796c5bda521df3Q.jpg',
@@ -1399,6 +1464,8 @@ id: 13,
 name: 'Chemises Hommes', 
 description: 'Col rabattu',
 price: 6500,
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 category: 'vetements',
 images: [
   'https://s.alicdn.com/@sc04/kf/H12cdfb8eaa3a4929be28cba2d2c701cbW.jpg',
@@ -1428,7 +1495,10 @@ name: 'Chemises Hommes',
 description: '	Polyester/coton',
 price: 6000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
+  
   'https://s.alicdn.com/@sc04/kf/H414fc4a08f8f4b0690dd30d2118a0f8eU.jpg',
   'https://s.alicdn.com/@sc04/kf/H1be3e820295b438588483000eb45c891l.jpg',
   'https://s.alicdn.com/@sc04/kf/Hefe0c5fe5f644ea8a8dd90ba8f0d98e0I.jpg',
@@ -1452,6 +1522,8 @@ name: 'Shorts',
 description: '100% Polyester',
 price: 7000,
 category: 'vetements',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 images: [
   'https://s.alicdn.com/@sc04/kf/Hc13922b4f77741a1971d5d3ea8164f73P.png',
   'https://s.alicdn.com/@sc04/kf/H70702c2fbcca4385add27f95d2f9f5fcp.png',
@@ -1476,6 +1548,7 @@ name: 'Draps plats',
 description: '100% Polyester',
 price: 6500,
 category: 'maison',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
 images: [
   'https://s.alicdn.com/@sc04/kf/Ha9658f0230284f87ac87c68821d68bb2G.jpg',
   'https://s.alicdn.com/@sc04/kf/H5423e303cfbb47529b3600661f20c20cx.jpg',
@@ -1504,6 +1577,7 @@ name: 'Drap-housse',
 description: 'Polyester/cotonr',
 price: 6000,
 category: 'maison',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
 images: [
   'https://s.alicdn.com/@sc04/kf/Hb9327b0ad28d4d7592200ae312ad278be.jpg',
   'https://s.alicdn.com/@sc04/kf/Hd563096c298245a59a298ff69c296e67C.jpg',
@@ -1533,6 +1607,7 @@ name: 'Mixeur',
 description: 'Fruit et Légumes',
 price: 5000,
 category: 'maison',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
 images: [
   'https://s.alicdn.com/@sc04/kf/H2890d50f345f4056ac236fad8fbb5f8cU.png',
   'https://s.alicdn.com/@sc04/kf/Hdde0ea2ed30944f0ada91c76439c16e8V.png',
@@ -1562,6 +1637,7 @@ name: 'Manette',
 description: 'Pour téléphone Mobile',
 price: 8000,
 category: 'electronique',
+colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
 images: [
   'https://s.alicdn.com/@sc04/kf/Hc1c0b699684b42b6a00dd234944547184.jpg',
   'https://s.alicdn.com/@sc04/kf/H206a15ef54194c5c831b9c5ae6fe2b6fR.jpg',
@@ -1591,12 +1667,14 @@ rating: 4.5
   description: 'Toutes les tailles',
   price: 8000,
   category: 'vetements',
+  colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+  sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   images: [
     'https://live.staticflickr.com/65535/53808149299_845e11f25b_w.jpg',
     'https://live.staticflickr.com/65535/53806891127_2371ca23f1_w.jpg',
     'https://live.staticflickr.com/65535/53807824346_a454c0bc44_w.jpg',
     'https://live.staticflickr.com/65535/53808261690_3762aca3df_w.jpg'
-  ],
+    ],
   like: 0,
   seller: {
     name: 'MCRShop',
@@ -1618,6 +1696,8 @@ rating: 4.5
   description: 'Toutes les tailles',
   price: 8000,
   category: 'vetements',
+  colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+  sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   images: [
     'https://live.staticflickr.com/65535/53806891132_5b166f4f7c_w.jpg',
     'https://live.staticflickr.com/65535/53808066533_a7ee9543a0_w.jpg',
@@ -1643,6 +1723,8 @@ rating: 4.5
   description: 'Toutes les tailles',
   price: 6500,
   category: 'vetements',
+  colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+  sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   images: [
     'https://live.staticflickr.com/65535/53808261695_161b2c5f85_w.jpg',
     'https://live.staticflickr.com/65535/53807824376_456948f358_w.jpg',
@@ -1667,6 +1749,8 @@ rating: 4.5
   description: 'Toutes les tailles',
   price: 6000,
   category: 'vetements',
+  colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+  sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   images: [
     'https://live.staticflickr.com/65535/53808149329_59e6f358e4_w.jpg',
     'https://live.staticflickr.com/65535/53806891147_67fec9235b_w.jpg',
@@ -1694,6 +1778,8 @@ rating: 4.5
   description: 'Toutes les tailles',
   price: 6000,
   category: 'vetements',
+  colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+  sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   images: [
     'https://live.staticflickr.com/65535/53806891187_ee975c0252_w.jpg',
     'https://live.staticflickr.com/65535/53807824386_ed8b86f2b0_w.jpg',
@@ -1721,6 +1807,8 @@ rating: 4.5
   description: 'Toutes les tailles',
   price: 6500,
   category: 'vetements',
+  colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+  sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   images: [
     'https://live.staticflickr.com/65535/53806891187_ee975c0252_w.jpg',
     'https://live.staticflickr.com/65535/53807824376_456948f358_w.jpg',
@@ -1745,6 +1833,8 @@ rating: 4.5
   description: 'Toutes les tailles',
   price: 6000,
   category: 'vetements',
+  colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+  sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   images: [
     'https://live.staticflickr.com/65535/53808261755_e378a6ecb9_w.jpg',
     'https://live.staticflickr.com/65535/53806891177_413d86dc4a_w.jpg',
@@ -1765,6 +1855,8 @@ rating: 4.5
   description: 'Toutes les tailles',
   price: 6500,
   category: 'vetements',
+  colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
+  sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   images: [
     'https://live.staticflickr.com/65535/53807824286_05c79659ab_n.jpg',
     'https://live.staticflickr.com/65535/53808261645_240d0c12aa_w.jpg',
@@ -1790,6 +1882,8 @@ rating: 4.5
   description: 'Toutes les tailles',
   price: 7000,
   category: 'vetements',
+  colors: ['#000000', '#FF69B4', '#4169E1', '#800080'], // Noir, Rose, Bleu royal, Violet
+  sizes: ['S', 'M', 'L', 'XL'],
   images: [
     'https://live.staticflickr.com/65535/53806891072_2c565e3b87_w.jpg',
     'https://live.staticflickr.com/65535/53806891097_5e15fa9968_n.jpg',
@@ -1816,6 +1910,8 @@ rating: 4.5
     description: 'Toutes les tailles',
     price: 6000,
     category: 'vetements',
+    colors: ['#000000', '#FF69B4', '#4169E1', '#FFFFFF'], // Noir, Rose, Bleu royal, Blanc
+    sizes: ['S', 'M', 'L', 'XL'],
     images: [
       'https://live.staticflickr.com/65535/53808149244_2e6ec6330a_n.jpg',
       'https://live.staticflickr.com/65535/53808149274_c14f032e24_n.jpg',
@@ -1839,9 +1935,14 @@ rating: 4.5
     description: 'Toutes les tailles',
     price: 3000,
     category: 'vetements',
+    colors: ['#FF69B4', '#FF0000', '#000000', '#4169E1'], // Rose, Rouge, Noir, Bleu royal
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
     images: [
       'https://live.staticflickr.com/65535/53918326268_f077d3d109_n.jpg',
       'https://live.staticflickr.com/65535/53917188587_36e66481d6_n.jpg',
+      'https://live.staticflickr.com/65535/53917188592_f36f3c9fdd_n.jpg',
+      'https://live.staticflickr.com/65535/53917188602_8ee1da5c3d_n.jpg',
+      'https://live.staticflickr.com/65535/53917188612_c9fbe142fd_n.jpg',
     ],
     like: 0,
     seller: {
@@ -1864,6 +1965,8 @@ rating: 4.5
       description: 'Toutes les tailles',
       price: 7000,
       category: 'vetements',
+      colors: ['#FF0000', '#000000', '#800080', '#FFC0CB'], // Rouge, Noir, Violet, Rose pâle
+      sizes: ['XS', 'S', 'M', 'L', 'XL'],
       images: [
       'https://live.staticflickr.com/65535/53917188752_4573f5fef5_n.jpg',
       'https://live.staticflickr.com/65535/53917188777_b67c965e64_w.jpg',
@@ -1889,9 +1992,11 @@ rating: 4.5
         description: 'Sacs de Téléphone portable',
         price: 2500,
         category: 'sport',
+        colors: ['#000000', '#FF0000', '#0000FF', '#008000'], // Noir, Rouge, Bleu, Vert
+        sizes: ['Standard'], // Pour les accessoires qui n'ont qu'une taille
         images: [
         'https://s.alicdn.com/@sc04/kf/HTB1FQLZXOnrK1Rjy1Xcq6yeDVXah.jpg',
-        'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSszcq6zwhFXaW.jpg',
+        'https://s.alicdn.com/@sc04/kf/HTB1XuTUinlYBeNjSspdq6zugXXaQ.jpg',
         'https://s.alicdn.com/@sc04/kf/HTB11gOaiXmWBuNjSspdq6zugXXaQ.jpg',
         ],
         like: 0,
@@ -1915,36 +2020,12 @@ rating: 4.5
           description: 'Costumes de pantalon',
           price: 80000,
           category: 'vetements',
+          colors: ['#000000', '#1F1F1F', '#2F4F4F', '#000080'], // Noir, Noir charbon, Gris foncé, Bleu marine
+          sizes: ['46', '48', '50', '52', '54'], // Tailles européennes pour costumes
           images: [
-          'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
-          'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
-          'https://s.alicdn.com/@sc04/kf/H6db20e92226c43bc996db6197dd5be93l.jpg'
-          ],
-          like: 0,
-          seller: {
-            name: 'RYONV',
-            phone: '+33758146261',
-            country: 'CG',
-          },
-          promotion: {
-            discount: 20, 
-            endDate: '2024-09-15T23:59:59' 
-          },
-          vendorPhone: '+33758146261',
-          stock: 10,
-          rating: 4
-          },
-
-          {
-            id: 36,
-            name: 'Femmes Sexy Jupe',
-            description: '100% coton Denim',
-            price: 6500,
-            category: 'vetements',
-            images: [
-            'https://s.alicdn.com/@sc04/kf/H85526e7e55e443c593b9302487ad2ba2R.jpg',
-            'https://s.alicdn.com/@sc04/kf/H1f7aaa81232649b4b352c4e228268009O.jpg',
-            'https://s.alicdn.com/@sc04/kf/Hfde0ff53a70a41ad82d118ee575586ffY.jpg'
+            'https://s.alicdn.com/@sc04/kf/H3a17680c893a4090abfe94b2ad36b21cR.jpg',
+            'https://s.alicdn.com/@sc04/kf/Hd9c68838f4444723a0c5a633cffe073dn.jpg',
+            'https://s.alicdn.com/@sc04/kf/H6db20e92226c43bc996db6197dd5be93l.jpg'
             ],
             like: 0,
             seller: {
@@ -1952,14 +2033,42 @@ rating: 4.5
               phone: '+33758146261',
               country: 'CG',
             },
-            vendorPhone: '+33758146261',
             promotion: {
               discount: 20, 
               endDate: '2024-09-15T23:59:59' 
             },
-            stock: 15,
-            rating: 4.5
+            vendorPhone: '+33758146261',
+            stock: 10,
+            rating: 4
             },
+
+            {
+              id: 36,
+              name: 'Femmes Sexy Jupe',
+              description: '100% coton Denim',
+              price: 6500,
+              category: 'vetements',
+              colors: ['#1E90FF', '#000080', '#000000'], // Bleu denim clair, Bleu denim foncé, Noir
+              sizes: ['XS', 'S', 'M', 'L'],
+              images: [
+                'https://s.alicdn.com/@sc04/kf/H85526e7e55e443c593b9302487ad2ba2R.jpg',
+                'https://s.alicdn.com/@sc04/kf/H1f7aaa81232649b4b352c4e228268009O.jpg',
+                'https://s.alicdn.com/@sc04/kf/Hfde0ff53a70a41ad82d118ee575586ffY.jpg'
+                ],
+                like: 0,
+                seller: {
+                  name: 'RYONV',
+                  phone: '+33758146261',
+                  country: 'CG',
+                },
+                vendorPhone: '+33758146261',
+                promotion: {
+                  discount: 20, 
+                  endDate: '2024-09-15T23:59:59' 
+                },
+                stock: 15,
+                rating: 4.5
+                },
 
 ];
 

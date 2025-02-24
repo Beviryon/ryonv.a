@@ -482,61 +482,140 @@ document.getElementById('color').addEventListener('input', function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Récupérer l'ID du produit depuis l'URL
   const urlParams = new URLSearchParams(window.location.search);
   const productId = parseInt(urlParams.get('id'));
 
-  // Fonction pour afficher les détails du produit
   function displayProductDetails(product) {
     if (!product) {
       console.error('Produit non trouvé');
       return;
     }
 
-    // Mettre à jour le titre
-    document.title = `${product.name} - RYONV`;
+    try {
+      // Mise à jour du titre
+      document.title = `${product.name} - RYONV`;
 
-    // Mettre à jour les images
-    const mainImage = document.querySelector('.main-image img');
-    const thumbnails = document.querySelector('.thumbnails');
-    
-    if (mainImage && product.images && product.images.length > 0) {
-      mainImage.src = product.images[0];
-      mainImage.alt = product.name;
+      // Mise à jour des images
+      const mainImage = document.querySelector('.main-image img');
+      const thumbnails = document.querySelector('.thumbnails');
+      
+      if (mainImage && thumbnails && product.images && product.images.length > 0) {
+        mainImage.src = product.images[0];
+        mainImage.alt = product.name;
 
-      // Afficher les miniatures
-      thumbnails.innerHTML = product.images.map(image => `
-        <img src="${image}" alt="${product.name}" onclick="changeMainImage('${image}')">
-      `).join('');
-    }
+        thumbnails.innerHTML = product.images.map(image => `
+          <img src="${image}" alt="${product.name}" onclick="changeMainImage('${image}')">
+        `).join('');
+      }
 
-    // Mettre à jour les informations du produit
-    document.querySelector('.product-title').textContent = product.name;
-    document.querySelector('.product-price').textContent = `${product.price} FCFA`;
-    document.querySelector('.product-description').textContent = product.description;
-    
-    // Mettre à jour les informations du vendeur si disponibles
-    if (product.seller) {
-      document.querySelector('.seller-name').textContent = product.seller.name;
-      document.querySelector('.seller-rating').textContent = `${product.seller.rating}/5`;
-    }
+      // Mise à jour des informations du produit
+      const productTitle = document.querySelector('.product-title');
+      const productPrice = document.querySelector('.product-price');
+      const productDescription = document.querySelector('.product-description');
 
-    // Activer les boutons
-    const addToCartBtn = document.querySelector('.add-to-cart');
-    if (addToCartBtn) {
-      addToCartBtn.onclick = () => addToCart(product);
+      if (productTitle) productTitle.textContent = product.name;
+      if (productPrice) productPrice.textContent = `${product.price} FCFA`;
+      if (productDescription) productDescription.textContent = product.description;
+
+      // Gestion de l'affichage des options du produit
+      const productForm = document.getElementById('product-form');
+      const colorOptionsLabel = productForm.querySelector('label[for="color-options"]');
+      const colorOptionsDiv = document.getElementById('color-options');
+      const sizeLabel = productForm.querySelector('label[for="size"]');
+      const sizeSelect = document.getElementById('size');
+      const quantityLabel = productForm.querySelector('label[for="quantity"]');
+      const quantityInput = document.getElementById('quantity');
+
+      // Gestion des couleurs
+      if (product.colors && product.colors.length > 0) {
+        colorOptionsLabel.style.display = 'block';
+        colorOptionsDiv.style.display = 'flex';
+        colorOptionsDiv.innerHTML = product.colors.map(color => `
+          <div class="color-box" data-color="${color}" style="background-color: ${color};"></div>
+        `).join('') + '<input type="color" id="color" name="color" value="red" hidden>';
+
+        // Réattacher les événements des color-box
+        document.querySelectorAll('.color-box').forEach(box => {
+          box.addEventListener('click', function() {
+            const colorInput = document.getElementById('color');
+            colorInput.value = this.dataset.color;
+            document.querySelectorAll('.color-box').forEach(b => b.classList.remove('selected'));
+            this.classList.add('selected');
+          });
+        });
+      } else {
+        colorOptionsLabel.style.display = 'none';
+        colorOptionsDiv.style.display = 'none';
+      }
+
+      // Gestion des tailles
+      if (product.sizes && product.sizes.length > 0) {
+        sizeLabel.style.display = 'block';
+        sizeSelect.style.display = 'block';
+        sizeSelect.innerHTML = product.sizes.map(size => `
+          <option value="${size}">${size}</option>
+        `).join('');
+      } else {
+        sizeLabel.style.display = 'none';
+        sizeSelect.style.display = 'none';
+      }
+
+      // La quantité est toujours visible
+      quantityLabel.style.display = 'block';
+      quantityInput.style.display = 'block';
+
+      // Mise à jour des informations du vendeur
+      const sellerName = document.querySelector('.seller-name');
+      const sellerRating = document.querySelector('.seller-rating');
+      
+      if (product.seller) {
+        if (sellerName) sellerName.textContent = product.seller.name;
+        if (sellerRating) sellerRating.textContent = `${product.seller.rating}/5`;
+      }
+
+      // Ajouter cet appel à la fin de la fonction
+      initializeImageModal();
+
+    } catch (error) {
+      console.error('Erreur lors de l\'affichage des détails du produit:', error);
     }
   }
 
-  // Fonction pour changer l'image principale
-  window.changeMainImage = function(imageUrl) {
-    const mainImage = document.querySelector('.main-image img');
-    if (mainImage) {
-      mainImage.src = imageUrl;
+  // Fonctions de sélection
+  window.selectColor = function(color) {
+    try {
+      document.querySelectorAll('.color-option').forEach(option => {
+        option.classList.remove('active');
+      });
+      const selectedColor = document.querySelector(`[data-color="${color}"]`);
+      if (selectedColor) selectedColor.classList.add('active');
+    } catch (error) {
+      console.error('Erreur lors de la sélection de la couleur:', error);
     }
   };
 
-  // Charger les données du produit
+  window.selectSize = function(size) {
+    try {
+      document.querySelectorAll('.size-option').forEach(option => {
+        option.classList.remove('active');
+      });
+      const selectedSize = document.querySelector(`[data-size="${size}"]`);
+      if (selectedSize) selectedSize.classList.add('active');
+    } catch (error) {
+      console.error('Erreur lors de la sélection de la taille:', error);
+    }
+  };
+
+  window.changeMainImage = function(imageUrl) {
+    try {
+      const mainImage = document.querySelector('.main-image img');
+      if (mainImage) mainImage.src = imageUrl;
+    } catch (error) {
+      console.error('Erreur lors du changement d\'image:', error);
+    }
+  };
+
+  // Chargement des produits
   import('./products.js')
     .then(module => {
       const products = module.products;
@@ -550,42 +629,145 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => {
       console.error('Erreur lors du chargement des produits:', error);
     });
-
-  // Fonction pour ajouter au panier
-  function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingProduct = cart.find(item => item.id === product.id);
-
-    if (existingProduct) {
-      existingProduct.quantity += 1;
-    } else {
-      cart.push({ ...product, quantity: 1 });
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCounter();
-    showAlert('Produit ajouté au panier !');
-  }
-
-  // Fonction pour mettre à jour le compteur du panier
-  function updateCartCounter() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const counter = document.querySelector('.cart-counter');
-    if (counter) {
-      counter.textContent = total;
-    }
-  }
-
-  // Fonction pour afficher une alerte
-  function showAlert(message) {
-    const alert = document.querySelector('.alert-popup');
-    if (alert) {
-      alert.textContent = message;
-      alert.style.display = 'block';
-      setTimeout(() => {
-        alert.style.display = 'none';
-      }, 3000);
-    }
-  }
 });
+
+function initializeImageModal() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalMainImage');
+    const modalThumbnails = document.querySelector('.modal-thumbnails');
+    const closeBtn = document.querySelector('.close-modal');
+    let currentImageIndex = 0;
+
+    // Variables pour le tactile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function openModal(imageUrl, index) {
+        modal.classList.add('show');
+        modalImg.src = imageUrl;
+        currentImageIndex = index;
+        updateModalThumbnails();
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+
+    function updateModalThumbnails() {
+        modalThumbnails.innerHTML = product.images.map((img, index) => `
+            <img src="${img}" 
+                 alt="Miniature ${index + 1}"
+                 class="${index === currentImageIndex ? 'active' : ''}"
+                 onclick="changeModalImage(${index})">
+        `).join('');
+    }
+
+    window.changeModalImage = function(index) {
+        currentImageIndex = index;
+        modalImg.src = product.images[index];
+        updateModalThumbnails();
+    };
+
+    // Gestion du tactile pour le modal
+    modalImg.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+
+    modalImg.addEventListener('touchmove', (e) => {
+        e.preventDefault(); // Empêche le défilement de la page
+    });
+
+    modalImg.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeDistance = touchEndX - touchStartX;
+        const minSwipeDistance = 50; // Distance minimale pour un swipe
+
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+            if (swipeDistance > 0) {
+                // Swipe vers la droite -> image précédente
+                currentImageIndex = (currentImageIndex - 1 + product.images.length) % product.images.length;
+            } else {
+                // Swipe vers la gauche -> image suivante
+                currentImageIndex = (currentImageIndex + 1) % product.images.length;
+            }
+            changeModalImage(currentImageIndex);
+        }
+    }
+
+    // Gestion du tactile pour le carrousel principal
+    const carouselInner = document.querySelector('.carousel-inner');
+    
+    carouselInner.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+
+    carouselInner.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+    });
+
+    carouselInner.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    // Ajout des écouteurs d'événements pour les images du carrousel
+    document.querySelectorAll('.carousel-inner img').forEach((img, index) => {
+        img.addEventListener('click', () => openModal(img.src, index));
+    });
+
+    // Ajout des écouteurs pour les miniatures du carrousel principal
+    document.querySelectorAll('.thumbnails img').forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            currentImageIndex = index;
+            const mainImg = document.querySelector('.carousel-inner img');
+            mainImg.src = product.images[index];
+            updateThumbnailsActive(index);
+        });
+    });
+
+    function updateThumbnailsActive(index) {
+        document.querySelectorAll('.thumbnails img').forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === index);
+        });
+    }
+
+    // Navigation dans le modal
+    document.querySelector('.modal-nav.prev').addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex - 1 + product.images.length) % product.images.length;
+        changeModalImage(currentImageIndex);
+    });
+
+    document.querySelector('.modal-nav.next').addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex + 1) % product.images.length;
+        changeModalImage(currentImageIndex);
+    });
+
+    // Fermeture du modal
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Gestion des touches du clavier
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('show')) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                closeModal();
+                break;
+            case 'ArrowLeft':
+                document.querySelector('.modal-nav.prev').click();
+                break;
+            case 'ArrowRight':
+                document.querySelector('.modal-nav.next').click();
+                break;
+        }
+    });
+}

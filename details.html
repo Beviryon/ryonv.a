@@ -136,6 +136,19 @@
       <!-- <button class="btn-panier" id="add-to-cart-btn">Ajouter au panier</button> -->
       <!-- Bouton pour discuter avec le vendeur -->
       <button id="contact-seller-btn">Discuter avec le vendeur</button>
+
+      <!-- Dans votre section de détails du produit -->
+      <div class="product-options">
+        <div class="color-selector" style="display: none;">
+          <h3>Couleurs disponibles</h3>
+          <div class="color-options"></div>
+        </div>
+
+        <div class="size-selector" style="display: none;">
+          <h3>Tailles disponibles</h3>
+          <div class="size-options"></div>
+        </div>
+      </div>
     </section>  
   </main>
 
@@ -178,6 +191,20 @@
   </div>
 </div>
 
+<!-- Modal pour les images -->
+<div id="imageModal" class="image-modal">
+    <span class="close-modal">&times;</span>
+    <div class="modal-content">
+        <div class="modal-gallery">
+            <img id="modalMainImage" src="" alt="Image en grand format">
+            <button class="modal-nav prev">&#10094;</button>
+            <button class="modal-nav next">&#10095;</button>
+        </div>
+        <div class="modal-thumbnails">
+            <!-- Les miniatures seront insérées ici par JavaScript -->
+        </div>
+    </div>
+</div>
 
   <script  nonce="xyz" src="./data.js"></script>
   <script type="module" nonce="xyz" src="./details.js"></script>
