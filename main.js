@@ -80,10 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+=======
+>>>>>>> 14a5b7b4f08bb94bf8c18f85a644730a41ac0ca5
 window.onload = function() {
   document.getElementById('loader').style.display = 'none';
   document.getElementById('content').style.display = 'block';
 };
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8acc083 (mise à jour du site)
+=======
+>>>>>>> b1f05062005cc3fe19e221f4459f59e44df24031
+>>>>>>> 14a5b7b4f08bb94bf8c18f85a644730a41ac0ca5
