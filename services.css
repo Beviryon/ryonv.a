@@ -20,117 +20,6 @@
     font-size: 10px;
   }
   
-/* Barre de navigation */
-/* header {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 1rem 5%;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo a {
-  color: #f2ae01;
-  text-decoration: none;
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.logo {
-  display: flex;
-  align-items: center; 
-}
-
-.logo-image img {
-  width: 27px; 
-  height: auto; 
-  margin-right: 10px; 
-  border-radius: 100%;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #f2ae01;
-}
-
-.burger {
-  display: none;
-  cursor: pointer;
-}
-
-.burger div {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 5px;
-  transition: all 0.3s ease;
-} */
-
-/* Responsive Menu */
-/* @media (max-width: 968px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.9);
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 50%;
-      padding-top: 5rem;
-  }
-
-  .nav-links li {
-      margin: 1rem 0;
-  }
-
-  .burger {
-      display: block;
-  }
-
-  .nav-active {
-      display: flex;
-  }
-
-  .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-      opacity: 0;
-  }
-
-  .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  header {
-      padding: 1rem 5%;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-  }
-} */
 
 /* ========================================================== */
 /* ========================================================== */
@@ -221,7 +110,7 @@ nav {
 .burger {
   display: none;
   cursor: pointer;
-  margin-left: 15px; /* Adjust margin to space from profile icon */
+  z-index: 1001;
 }
 
 .burger div {
@@ -243,77 +132,73 @@ nav {
 }
 
 /* Responsive Design */
-@media (max-width: 968px) {
+@media screen and (max-width: 968px) {
+  body.menu-active {
+    overflow: hidden;
+  }
+  
   .nav-links {
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: rgba(0, 0, 0, 0.9);
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 100%;
-      padding-top: 5rem;
-      display: none; /* Hide by default */
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .nav-links li {
-      margin: 1.5rem 0;
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  .nav-links li a {
+    color: white;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 2px 6px;
+    width: 100%;
   }
 
   .burger {
-      display: block;
+    display: block;
+    position: relative;
   }
 
-  .burger-profile-container {
-      display: flex;
-  }
-
-  #profile-link {
-      display: block;
-  }
-
-  /* #profile-link-mobile {
-      display: flex;
-  } */
-
+  /* Classe active pour le menu */
   .nav-active {
-      display: flex;
+    right: 0;
+    opacity: 1;
+    pointer-events: all;
   }
 
+  .nav-active li {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease 0.2s;
+  }
+
+  /* Animation du burger */
   .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
   }
 
   .toggle .line2 {
-      opacity: 0;
+    opacity: 0;
   }
 
   .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  header {
-      padding: 1.5rem 5%;
-  }
-
-  .profile {
-      padding: 1.5rem;
-      width: 90%;
-  }
-
-  .profile-header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
-
-  .profile-info {
-      text-align: center;
-  }
-
-  #changePhotoBtn, #editProfileBtn {
-      width: 100%;
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 }
 
@@ -418,73 +303,6 @@ nav {
   background-color: #c9302c;
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-  .nav-links {
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: rgba(0, 0, 0, 0.9);
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 70%;
-      padding-top: 5rem;
-      display: none; /* Hide by default */
-  }
-
-  .nav-links li {
-      margin: 1.5rem 0;
-  }
-
-  .burger {
-      display: block;
-  }
-
-  .burger-profile-container {
-      display: flex;
-  }
-
-  .nav-active {
-      display: flex;
-  }
-
-  .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-      opacity: 0;
-  }
-
-  .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  header {
-      padding: 1.5rem 5%;
-  }
-
-  .profile {
-      padding: 1.5rem;
-      width: 90%;
-  }
-
-  .profile-header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
-
-  .profile-info {
-      text-align: center;
-  }
-
-  #changePhotoBtn, #editProfileBtn {
-      width: 100%;
-  }
-}
-
 /* Popup Message Style */
 .popup {
   position: fixed;
@@ -580,160 +398,6 @@ nav {
 #logoutBtn:hover {
   background-color: #c9302c;
 }
-
-/* Responsive Design */
-@media (max-width: 968px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.9);
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 70%;
-      padding-top: 5rem;
-  }
-
-  .nav-links li {
-      margin: 1.5rem 0;
-  }
-
-  .burger {
-      display: block;
-  }
-
-  .nav-active {
-      display: flex;
-  }
-
-  .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-      opacity: 0;
-  }
-
-  .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  header {
-      padding: 1.5rem 5%;
-  }
-
-  .profile {
-      padding: 1.5rem;
-      width: 90%;
-  }
-
-  .profile-header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
-
-  .profile-info {
-      text-align: center;
-  }
-
-  #changePhotoBtn, #editProfileBtn {
-      width: 100%;
-  }
-}
-
-/* Burger and Profile Container */
-.burger-profile-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  gap: 15px;
-}
-
-/* Profile Link */
-#profile-link {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-
-#profile-link a {
-  display: flex;
-  align-items: center;
-}
-
-#navProfileImage {
-  width: 380px;
-  height: 30px;
-  border-radius: 50%;
-}
-
-/* Responsive Design */
-@media (max-width: 968px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.9);
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 70%;
-    padding-top: 5rem;
-  }
-
-  .nav-links li {
-    margin: 1.5rem 0;
-  }
-
-  .burger {
-    display: block;
-  }
-
-  .nav-active {
-    display: flex;
-  }
-
-  .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-    opacity: 0;
-  }
-
-  .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  header {
-    padding: 1.5rem 5%;
-  }
-
-  .profile {
-    padding: 1.5rem;
-    width: 90%;
-  }
-
-  .profile-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile-info {
-    text-align: center;
-  }
-
-  #changePhotoBtn, #editProfileBtn {
-    width: 100%;
-  }
-}
-
-
 
 /* Auth Icons */
 .auth-icons {
@@ -978,4 +642,14 @@ footer p {
   font-weight: 300;
 }
 
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
   

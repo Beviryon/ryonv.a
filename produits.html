@@ -26,9 +26,15 @@
     <meta name="description" content="Découvrez RYONV, la boutique de mode en ligne qui allie qualité et style. Achetez des vêtements modernes et profitez d'une livraison rapide.">
     <title>RYONV - Boutique en ligne de style et qualité</title>
 
+    <!-- Précharger les ressources critiques -->
+    <link rel="preload" href="./produits.css" as="style">
+    <link rel="preload" href="./produitLike.css" as="style">
+    <link rel="preload" href="./produitBarre.css" as="style">
+    
+    <!-- Charger les styles de manière optimisée -->
     <link rel="stylesheet" href="./produits.css">
-    <link rel="stylesheet" href="produitLike.css">
-    <link rel="stylesheet" href="produitBarre.css">
+    <link rel="stylesheet" href="./produitLike.css">
+    <link rel="stylesheet" href="./produitBarre.css">
     <!-- <link rel="stylesheet" href="./produitTest.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
@@ -51,30 +57,6 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- <header>
-    <nav>
-        <div class="logo">
-          <a href="./home.html" class="logo-image"><img class="image" src="https://live.staticflickr.com/65535/54122923674_3c0c43d1b4_n.jpg" alt="logo"></a>
-          <a href="./home.html">RYONV</a>
-        </div>
-        <div class="menu">
-            <ul class="nav-links">
-                <li><a class="active" href="./home.html">Accueil</a></li>
-                <li><a href="./produits.html">Produits</a></li>
-                <li><a href="./services.html">Nos services</a></li>
-                <li><a href="./about.html">À propos</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./formations.html">Formations</a></li>
-                <li><a href="./Abonnement.html">Vendre avec nous</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </div>
-    </nav>
-  </header>  -->
   <header>
     <nav>
         <div class="logo">
@@ -136,7 +118,7 @@
  <section class="banner">
   <div class="banner-content" id="see-more-button">
     <div class="banner-text">
-      <h2 class="text_banner">OFFRES <span>SAINT VALENTIN</span></h2>
+      <h2 class="text_banner">NOUVELLE <span>COLLECTION</span></h2>
       <p>Toutes les catégories</p>
       <button class="banner-button" id="see-more-button">Voir plus</button>
     </div>

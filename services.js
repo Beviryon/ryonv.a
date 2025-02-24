@@ -1,26 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Fonction pour le menu burger
-  const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
-  
-    if (burger && nav) {
-      burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-active');
-        burger.classList.toggle('toggle');
-      });
-    }
-  
-    navLinks.forEach((link) => {
+const navSlide = () => {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+    burger.classList.toggle('toggle');
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('nav-active');
+      burger.classList.remove('toggle');
+    });
+  });
+};
+
+navSlide();
+
+    // Fermer le menu quand on clique sur un lien
+    navLinks.forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('nav-active');
         burger.classList.remove('toggle');
+        navLinks.forEach(link => link.style.animation = '');
       });
     });
-  };
-  
-  navSlide();
+
+    // Fermer le menu quand on clique en dehors
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('nav-active')) {
+        nav.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+        navLinks.forEach(link => link.style.animation = '');
+      }
+    });
+  }
 
   // Gestion du pop-up
   const popup = document.getElementById('popup');
