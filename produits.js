@@ -721,46 +721,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //////////////////////////////////////////////////////////////// //////
 
-// Événement pour détecter le changement dans le <select>
-document.getElementById('category-select').addEventListener('change', function() {
-  const selectedCategory = this.value; 
-  filterProductsByCategory(selectedCategory); 
+// Gestion des catégories
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryItems = document.querySelectorAll('.category-item');
+    const categorySelect = document.getElementById('category-select');
+    
+    // Garder la logique de filtrage existante
+    function updateCategory(category) {
+        categoryItems.forEach(item => {
+            item.classList.remove('active');
+            if(item.dataset.category === category) {
+                item.classList.add('active');
+            }
+        });
+
+        if (categorySelect) {
+            categorySelect.value = category;
+            // Utiliser votre fonction de filtrage existante
+            const event = new Event('change');
+            categorySelect.dispatchEvent(event);
+        }
+    }
+
+    // Conserver les événements existants
+    categoryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const category = this.dataset.category;
+            updateCategory(category);
+        });
+    });
+
+    // Garder la synchronisation avec le select original s'il existe encore
+    if (categorySelect) {
+        categorySelect.addEventListener('change', function() {
+            updateCategory(this.value);
+        });
+    }
+
+    // Conserver toute autre logique de filtrage existante
+    const searchInput = document.getElementById('search-input');
+    const sellerCountry = document.getElementById('seller-country');
+    const sellerName = document.getElementById('seller-name');
+
+    // Laisser vos fonctions de filtrage existantes intactes
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            // Votre logique de recherche existante
+        });
+    }
+
+    if (sellerCountry) {
+        sellerCountry.addEventListener('change', function() {
+            // Votre logique de filtrage par pays existante
+        });
+    }
+
+    if (sellerName) {
+        sellerName.addEventListener('change', function() {
+            // Votre logique de filtrage par vendeur existante
+        });
+    }
 });
-
-// Fonction pour filtrer les produits par catégorie, pays ou vendeur
-function filterProducts() {
-  const selectedCategory = document.getElementById('category-select').value;
-  const selectedCountry = document.getElementById('seller-country').value;
-  const selectedSeller = document.getElementById('seller-name').value;
-
-  let filteredProducts = products;
-
-  // Filtrage par catégorie
-  if (selectedCategory !== 'all') {
-      filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
-  }
-
-  // Filtrage par pays du vendeur
-  if (selectedCountry !== 'all') {
-      filteredProducts = filteredProducts.filter(product => 
-          product.seller && product.seller.country === selectedCountry // Vérifie que seller existe avant d'accéder à country
-      );
-  }
-
-  // Filtrage par nom du vendeur
-  if (selectedSeller !== 'all') {
-      filteredProducts = filteredProducts.filter(product => 
-          product.seller && product.seller.name === selectedSeller // Vérifie que seller existe avant d'accéder à name
-      );
-  }
-
-  displayProducts(filteredProducts);
-}
-
-// Événements pour détecter les changements de filtre
-document.getElementById('category-select').addEventListener('change', filterProducts);
-document.getElementById('seller-country').addEventListener('change', filterProducts);
-document.getElementById('seller-name').addEventListener('change', filterProducts);
 
 // Fonction pour trier les produits
 function sortProducts() {
@@ -925,3 +946,213 @@ function initializeProductStates() {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Synchronisation des sélecteurs de pays
+    const countryBanner = document.getElementById('seller-country-banner');
+    const countryOriginal = document.getElementById('seller-country');
+    
+    // Synchronisation des sélecteurs de vendeurs
+    const sellerBanner = document.getElementById('seller-name-banner');
+    const sellerOriginal = document.getElementById('seller-name');
+    
+    // Synchronisation des champs de recherche
+    const searchBanner = document.getElementById('search-input-banner');
+    const searchOriginal = document.getElementById('search-input');
+
+    // Fonction de synchronisation bidirectionnelle
+    function syncSelects(select1, select2) {
+        if (!select1 || !select2) return;
+        
+        select1.addEventListener('change', function() {
+            select2.value = this.value;
+            select2.dispatchEvent(new Event('change'));
+        });
+
+        select2.addEventListener('change', function() {
+            select1.value = this.value;
+        });
+    }
+
+    // Fonction de synchronisation des champs de recherche
+    function syncSearch(search1, search2) {
+        if (!search1 || !search2) return;
+        
+        search1.addEventListener('input', function() {
+            search2.value = this.value;
+            search2.dispatchEvent(new Event('input'));
+        });
+
+        search2.addEventListener('input', function() {
+            search1.value = this.value;
+        });
+    }
+
+    // Initialiser les synchronisations
+    syncSelects(countryBanner, countryOriginal);
+    syncSelects(sellerBanner, sellerOriginal);
+    syncSearch(searchBanner, searchOriginal);
+
+    // Code existant pour les catégories...
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const priceRange = document.getElementById('price-range');
+    
+    priceRange.addEventListener('change', function() {
+        const range = this.value;
+        let minPrice, maxPrice;
+        
+        switch(range) {
+            case '0-5000':
+                minPrice = 0;
+                maxPrice = 5000;
+                break;
+            case '5000-10000':
+                minPrice = 5000;
+                maxPrice = 10000;
+                break;
+            case '10000-25000':
+                minPrice = 10000;
+                maxPrice = 25000;
+                break;
+            case '25000-50000':
+                minPrice = 25000;
+                maxPrice = 50000;
+                break;
+            case '50000-100000':
+                minPrice = 50000;
+                maxPrice = 100000;
+                break;
+            case '100000+':
+                minPrice = 100000;
+                maxPrice = Infinity;
+                break;
+            default:
+                minPrice = 0;
+                maxPrice = Infinity;
+        }
+
+        // Filtrer les produits
+        const filteredProducts = products.filter(product => {
+            // Prendre en compte le prix avec la promotion si elle existe
+            let finalPrice = product.price;
+            if (product.promotion && product.promotion.discount) {
+                finalPrice = product.price * (1 - product.promotion.discount / 100);
+            }
+            return range === 'all' || (finalPrice >= minPrice && finalPrice < maxPrice);
+        });
+
+        // Mettre à jour l'affichage
+        updateProductDisplay(filteredProducts);
+    });
+});
+
+function updateProductDisplay(filteredProducts) {
+    const productContainer = document.querySelector('.products-container');
+    productContainer.innerHTML = ''; // Vider le conteneur
+
+    if (filteredProducts.length === 0) {
+        productContainer.innerHTML = '<p class="no-results">Aucun produit trouvé dans cette gamme de prix</p>';
+        return;
+    }
+
+    filteredProducts.forEach(product => {
+        // Utiliser votre fonction existante de création de carte produit
+        const productCard = createProductCard(product);
+        productContainer.appendChild(productCard);
+    });
+}
+
+// Fonction pour combiner les filtres (prix, catégorie, vendeur, pays, recherche)
+function applyAllFilters() {
+    let filteredProducts = products;
+
+    // Filtre par prix
+    const priceRange = document.getElementById('price-range').value;
+    if (priceRange !== 'all') {
+        const [minPrice, maxPrice] = getPriceRange(priceRange);
+        filteredProducts = filteredProducts.filter(product => {
+            let finalPrice = product.price;
+            if (product.promotion && product.promotion.discount) {
+                finalPrice = product.price * (1 - product.promotion.discount / 100);
+            }
+            return finalPrice >= minPrice && finalPrice < maxPrice;
+        });
+    }
+
+    // Filtre par pays
+    const selectedCountry = document.getElementById('seller-country').value;
+    if (selectedCountry !== 'all') {
+        filteredProducts = filteredProducts.filter(product => 
+            product.seller.country === selectedCountry
+        );
+    }
+
+    // Filtre par vendeur
+    const selectedSeller = document.getElementById('seller-name').value;
+    if (selectedSeller !== 'all') {
+        filteredProducts = filteredProducts.filter(product => 
+            product.seller.name === selectedSeller
+        );
+    }
+
+    // Filtre par recherche
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    if (searchTerm) {
+        filteredProducts = filteredProducts.filter(product => 
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm)
+        );
+    }
+
+    updateProductDisplay(filteredProducts);
+}
+
+function getPriceRange(range) {
+    switch(range) {
+        case '0-5000': return [0, 5000];
+        case '5000-10000': return [5000, 10000];
+        case '10000-25000': return [10000, 25000];
+        case '25000-50000': return [25000, 50000];
+        case '50000-100000': return [50000, 100000];
+        case '100000+': return [100000, Infinity];
+        default: return [0, Infinity];
+    }
+}
+// Ajouter les écouteurs d'événements pour tous les filtres
+document.getElementById('price-range').addEventListener('change', applyAllFilters);
+document.getElementById('seller-country').addEventListener('change', applyAllFilters);
+document.getElementById('seller-name').addEventListener('change', applyAllFilters);
+document.getElementById('search-input').addEventListener('input', applyAllFilters);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Sélecteurs pour les filtres
+    const sortSelect = document.getElementById('sort');
+    const categorySelect = document.getElementById('category-select');
+    const countrySelect = document.getElementById('seller-country');
+    const sellerSelect = document.getElementById('seller-name');
+    const searchInput = document.getElementById('search-input');
+    const productsSection = document.getElementById('products-section');
+    const productList = document.querySelector('.product-list');
+
+    function filterProducts() {
+        let filteredProducts = window.products;
+
+        // ... votre logique de filtrage existante ...
+
+        // Afficher les produits
+        displayProducts(filteredProducts);
+
+        // Faire défiler jusqu'à la section des produits
+        setTimeout(() => {
+            productsSection.scrollIntoView({
+                behavior: 'smooth', 
+                block: 'start',
+                inline: 'nearest'
+            });
+        }, 100);
+    }
+
+    // ... reste du code inchangé ...
+});

@@ -6,37 +6,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.cursor {
-  width: 15px;
-  height: 15px;
-  background-color: #e91e63;
-  border-radius: 50%;
-  position: fixed; 
-  pointer-events: none; 
-  animation: pulse 1s infinite;
-  display: none; 
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-
-.active {
-  background-color: #f2ae01;
-}
-
 /* ========================================================== */
 /* ========================================================== */
 /* ========================================================== */
@@ -727,7 +696,7 @@ footer p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
   border-radius: 5px;
 }
 
@@ -1077,4 +1046,100 @@ footer p {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/* Bottom navigation bar with individual styles for each icon */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px 0;
+  border-top: 2px solid #eee;
+}
+
+.nav-icon {
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+  width: 50px;
+  transition: color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+/* Home Icon */
+.nav-icon.home {
+  color: #4caf50;
+}
+
+.nav-icon.home:hover {
+  color: #66bb6a;
+  transform: scale(1.1);
+}
+
+/* Profile Icon */
+.nav-icon.profile {
+  color: #2196f3;
+}
+
+.nav-icon.profile:hover {
+  color: #42a5f5;
+  transform: scale(1.1);
+}
+
+/* Cart Icon */
+.nav-icon.cart {
+  color: #ff9800;
+}
+
+.nav-icon.cart:hover {
+  color: #ffb74d;
+  transform: scale(1.1);
+}
+
+.cart-counter {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Assistance Icon */
+.nav-icon.assistance {
+  color: #9c27b0;
+}
+
+.nav-icon.assistance:hover {
+  color: #ba68c8;
+  transform: scale(1.1);
+}
+
+/* Notifications Icon */
+.nav-icon.notifications {
+  color: #ff5722;
+}
+
+.nav-icon.notifications:hover {
+  color: #ff7043;
+  transform: scale(1.1);
+}
+
+/* Icon animation */
+.nav-icon i {
+  transition: transform 0.3s, color 0.3s;
+}
+
+.nav-icon:hover i {
+  transform: rotate(10deg);
 }

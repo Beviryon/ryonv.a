@@ -26,7 +26,6 @@
     <meta name="description" content="Découvrez RYONV, la boutique de mode en ligne qui allie qualité et style. Achetez des vêtements modernes et profitez d'une livraison rapide.">
     <title>RYONV - Boutique en ligne de style et qualité</title>
 
-<<<<<<< HEAD
     <!-- Précharger les ressources critiques -->
     <link rel="preload" href="./produits.css" as="style">
     <link rel="preload" href="./produitLike.css" as="style">
@@ -36,11 +35,6 @@
     <link rel="stylesheet" href="./produits.css">
     <link rel="stylesheet" href="./produitLike.css">
     <link rel="stylesheet" href="./produitBarre.css">
-=======
-    <link rel="stylesheet" href="./produits.css" onload="this.rel='stylesheet'">
-    <link rel="stylesheet" href="produitLike.css" onload="this.rel='stylesheet'">
-    <link rel="stylesheet" href="produitBarre.css" onload="this.rel='stylesheet'">
->>>>>>> b1f05062005cc3fe19e221f4459f59e44df24031
     <!-- <link rel="stylesheet" href="./produitTest.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
@@ -122,51 +116,182 @@
 
  <!-- Bannière -->
  <section class="banner">
-  <div class="banner-content" id="see-more-button">
-    <div class="banner-text">
-      <h2 class="text_banner">NOUVELLE <span>COLLECTION</span></h2>
-      <p>Toutes les catégories</p>
-      <button class="banner-button" id="see-more-button">Voir plus</button>
-    </div>
-    <div class="banner-images" id="see-more-button">
-      <img src="https://s.alicdn.com/@sc04/kf/H9a016652dd7d4693a51cbf2d094496ffn.jpg?avif=close" alt="Brosse nettoyante">
-      <img src="https://s.alicdn.com/@sc04/kf/H0b9102cfe0814ff8b2aa22345a6bc8ddv.jpg_720x720q50.jpg" alt="Brosse nettoyante">
-      <img src="https://s.alicdn.com/@sc04/kf/Hb53394b7cafb4bd184b05c406af4a030n.jpg?avif=close" alt="Lisseur à cheveux">
-    </div>
-  </div>
-  <div class="banner-bottom" id="see-more-button">
-    <p>JUSQU'À -15%</p>
-    <p>Réduction</p>
-  </div>
-</section>
+    <div class="banner-content">
+        <div class="banner-text">
+            <h2 class="text_banner">NOUVELLE <span>COLLECTION</span></h2>
+            <p class="subtitle">Découvrez nos dernières tendances</p>
+        </div>
+        
+        <div class="filters-container">
+            <!-- Catégories avec les mêmes valeurs -->
+            <div class="categories-row">
+                <div class="category-item active" data-category="all">
+                    <i class="fas fa-border-all"></i>
+                    <span>Toutes les catégories</span>
+                </div>
+                <div class="category-item" data-category="vetements">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Vêtements</span>
+                </div>
+                <div class="category-item" data-category="electronique">
+                    <i class="fas fa-laptop"></i>
+                    <span>Électronique</span>
+                </div>
+                <div class="category-item" data-category="maison">
+                    <i class="fas fa-home"></i>
+                    <span>Maison</span>
+                </div>
+                <div class="category-item" data-category="sport">
+                    <i class="fas fa-futbol"></i>
+                    <span>Accessoires</span>
+                </div>
+            </div>
 
-  <!-- Section pour les tendances et les meilleures ventes -->
-  <!-- <section class="trending-products">
-    <div class="trending-section">
-      <a href="#" class="animated-button1">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Top tendances
-      </a>
-      <div class="trending-carousel"> -->
-        <!-- Les produits tendances seront insérés ici via JavaScript -->
-      <!-- </div>
+            <!-- Filtres avec les mêmes IDs et classes -->
+            <div class="filters-bar">
+                <!-- Filtre Prix -->
+                <div class="filter-item">
+                    <div class="filter-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <select id="sort" class="compact-select">
+                        <option value="default">Par défaut</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                    </select>
+                </div>
+
+                <!-- Filtre Catégorie -->
+                <div class="filter-item">
+                    <div class="filter-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <select id="category-select" class="compact-select">
+                        <option value="all">Toutes les catégories</option>
+                        <option value="vetements">👕 Vêtements</option>
+                        <option value="electronique">💻 Électronique</option>
+                        <option value="maison">🏠 Maison</option>
+                        <option value="sport">⚽ Accessoires</option>
+                    </select>
+                </div>
+
+                <!-- Filtre Pays -->
+                <div class="filter-item">
+                    <div class="filter-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <select id="seller-country" class="compact-select">
+                        <option value="all">Tous les pays</option>
+                        <optgroup label="Afrique">
+                            <option value="DZ">Algérie</option>
+                            <option value="AO">Angola</option>
+                            <option value="BJ">Bénin</option>
+                            <option value="BW">Botswana</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="BI">Burundi</option>
+                            <option value="CM">Cameroun</option>
+                            <option value="CV">Cap-Vert</option>
+                            <option value="CF">République centrafricaine</option>
+                            <option value="TD">Tchad</option>
+                            <option value="KM">Comores</option>
+                            <option value="CG">Congo (Brazzaville)</option>
+                            <option value="CD">Congo (Kinshasa)</option>
+                            <option value="CI">Côte d'Ivoire</option>
+                            <option value="DJ">Djibouti</option>
+                            <option value="EG">Égypte</option>
+                            <option value="GQ">Guinée équatoriale</option>
+                            <option value="ER">Érythrée</option>
+                            <option value="SZ">Eswatini</option>
+                            <option value="ET">Éthiopie</option>
+                            <option value="GA">Gabon</option>
+                            <option value="GM">Gambie</option>
+                            <option value="GH">Ghana</option>
+                            <option value="GN">Guinée</option>
+                            <option value="GW">Guinée-Bissau</option>
+                            <option value="KE">Kenya</option>
+                            <option value="LS">Lesotho</option>
+                            <option value="LR">Libéria</option>
+                            <option value="LY">Libye</option>
+                            <option value="MG">Madagascar</option>
+                            <option value="MW">Malawi</option>
+                            <option value="ML">Mali</option>
+                            <option value="MR">Mauritanie</option>
+                            <option value="MU">Maurice</option>
+                            <option value="MA">Maroc</option>
+                            <option value="MZ">Mozambique</option>
+                            <option value="NA">Namibie</option>
+                            <option value="NE">Niger</option>
+                            <option value="NG">Nigéria</option>
+                            <option value="RW">Rwanda</option>
+                            <option value="ST">Sao Tomé-et-Principe</option>
+                            <option value="SN">Sénégal</option>
+                            <option value="SC">Seychelles</option>
+                            <option value="SL">Sierra Leone</option>
+                            <option value="SO">Somalie</option>
+                            <option value="ZA">Afrique du Sud</option>
+                            <option value="SS">Soudan du Sud</option>
+                            <option value="SD">Soudan</option>
+                            <option value="TZ">Tanzanie</option>
+                            <option value="TG">Togo</option>
+                            <option value="TN">Tunisie</option>
+                            <option value="UG">Ouganda</option>
+                            <option value="ZM">Zambie</option>
+                            <option value="ZW">Zimbabwe</option>
+                        </optgroup>
+                        <optgroup label="Europe">
+                            <option value="FR">France</option>
+                            <option value="DE">Allemagne</option>
+                            <option value="IT">Italie</option>
+                            <option value="ES">Espagne</option>
+                            <option value="GB">Royaume-Uni</option>
+                            <option value="PT">Portugal</option>
+                            <option value="NL">Pays-Bas</option>
+                            <option value="BE">Belgique</option>
+                            <option value="CH">Suisse</option>
+                            <option value="SE">Suède</option>
+                            <option value="NO">Norvège</option>
+                            <option value="FI">Finlande</option>
+                            <option value="IE">Irlande</option>
+                            <option value="PL">Pologne</option>
+                            <option value="GR">Grèce</option>
+                            <option value="AT">Autriche</option>
+                            <option value="DK">Danemark</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- Filtre Vendeur -->
+                <div class="filter-item">
+                    <div class="filter-icon">
+                        <i class="fas fa-store-alt"></i>
+                    </div>
+                    <select id="seller-name" class="compact-select">
+                        <option value="all">Tous les vendeurs</option>
+                        <option value="RAAM">RAAM</option>
+                        <option value="MCRShop">MCRShop</option>
+                        <option value="RYONV">RYONV</option>
+                        <option value="Vendeur">Vendeur</option>
+                        <option value="Sasa">Sasa Vente</option>
+                        <option value="TOUTOU">TOUTOU BEAUTY</option>
+                    </select>
+                </div>
+
+                <!-- Barre de recherche -->
+                <div class="filter-item search">
+                    <div class="filter-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input type="text" id="search-input" placeholder="Rechercher...">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="best-sellers-section">
-      <a href="#" class="animated-button1">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Top ventes
-      </a>
-      <div class="best-sellers-carousel"> -->
-        <!-- Les meilleures ventes seront insérées ici via JavaScript -->
-      <!-- </div>
+    
+    <div class="banner-bottom">
+        <span class="promo-text">JUSQU'À</span>
+        <span class="promo-value">-20%</span>
     </div>
-  </section> -->
+</section>
 
 
   <section class="featured-products">
@@ -227,7 +352,7 @@
   </section>  
     
   <section class="product-listing">
-      <nav class="filter-bar">
+      <!-- <nav class="filter-bar">
           <div class="filter-item">
               <label for="sort" class="filter-label">🔃 Trier par :</label>
               <select id="sort" class="filter-select">
@@ -343,7 +468,7 @@
               <label for="search-input" class="filter-label">🔍 Rechercher :</label>
               <input type="text" id="search-input" class="filter-select" placeholder="Recherchez un produit...">
           </div>
-      </nav>
+      </nav> -->
 
       <div class="product-list">
           <!-- Affichage des produits -->
@@ -356,15 +481,15 @@
       </div>
   </section>
 
-    <section class="recommended-section">
-      <h3>Produits similaires</h3>
-      <div class="similar-products-carousel"></div>
-    </section>
+  <section class="recommended-section">
+    <h3>Produits similaires</h3>
+    <div class="similar-products-carousel"></div>
+  </section>
   
-    <section class="recently-viewed-section">
-        <h3>Vos produits récemment consultés</h3>
-        <div class="recently-viewed-carousel"></div>
-    </section>
+  <section class="recently-viewed-section">
+      <h3>Vos produits récemment consultés</h3>
+      <div class="recently-viewed-carousel"></div>
+  </section>
  </main>
 
   <section id="products-section">
@@ -523,7 +648,7 @@
 <script nonce="xyz" type="module"  src="./contact.js"></script>
 <script nonce="xyz" type="module"  src="./produitBottomNav.js"></script>
 
-<script nonce="xyz" type="module">
+<script nonce="xyz">
   document.getElementById('see-more-button').addEventListener('click', function() {
     document.location.href = '#products-section';
   });
