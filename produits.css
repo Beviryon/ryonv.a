@@ -1715,12 +1715,12 @@ a:hover {
 
 /*  */
 .featured-products {
-  padding: 20px 10px;
+  padding: 10px 5px;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  margin-top: -7px; /* Pour chevaucher légèrement la bannière */
+  margin-top: 54px; /* Pour chevaucher légèrement la bannière */
   border-radius: 30px 30px 0 0;
   position: relative;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .featured-products h2 {
@@ -2464,9 +2464,10 @@ a:hover {
     padding: 15px;
     color: #fff;
     position: relative;
-    margin-top: 34px;
+    margin-top: 5px;
     height: auto;
     min-height: 200px; /* Hauteur réduite */
+    border-radius: 14px 14px 0 0;
 }
 
 .banner-content {
