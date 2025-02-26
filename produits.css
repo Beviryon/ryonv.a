@@ -141,6 +141,60 @@ nav {
   }
 } */
 
+/* Responsive Menu */
+@media (max-width: 968px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 50%;
+      padding-top: 5rem;
+  }
+
+  .nav-links li {
+      margin: 1rem 0;
+  }
+
+  .burger {
+      display: block;
+  }
+
+  .nav-active {
+      display: flex;
+  }
+
+  .toggle .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+      opacity: 0;
+  }
+
+  .toggle .line3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  header {
+      padding: 1rem 5%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+  }
+}
+
+@media (max-width: 968px) {
+  main {
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+}
 /* ========================================================== */
 /* ========================================================== */
 /* ========================================================== */
@@ -613,10 +667,6 @@ nav {
       display: block;
   }
 
-  .burger-profile-container {
-      display: flex;
-  }
-
   .nav-active {
       display: flex;
   }
@@ -747,7 +797,6 @@ nav {
 }
 
 
-
 /* Auth Icons */
 .auth-icons {
   display: flex;
@@ -773,7 +822,6 @@ nav {
 /* ========================================================== */
 /* ========================================================== */
 /* ========================================================== */
-
 /* Responsive Menu */
 @media (max-width: 968px) {
   .nav-links {
@@ -1718,7 +1766,7 @@ a:hover {
 .featured-products {
   padding: 10px 5px;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  margin-top: 54px; /* Pour chevaucher légèrement la bannière */
+  margin-top: 5px; /* Pour chevaucher légèrement la bannière */
   border-radius: 30px 30px 0 0;
   position: relative;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
@@ -2737,7 +2785,7 @@ a:hover {
 }
 
 .filter-icon i {
-    color: white;
+    color: rgb(255, 0, 0);
     font-size: 0.9rem;
 }
 
@@ -2846,7 +2894,7 @@ a:hover {
 
 /* Style spécifique pour l'icône de prix */
 .filter-item:first-child .filter-icon {
-    background: linear-gradient(45deg, #00c853, #64dd17);
+  background: linear-gradient(45deg, #ff3366, #ff9933);
 }
 
 /* Animation pour l'icône de prix */
@@ -3245,4 +3293,19 @@ a:hover {
 .regular-price {
   color: #333;
   font-weight: 600;
+}
+
+.favorite-button {
+    margin-top: 10px; /* Ajoutez ou augmentez cette valeur selon vos besoins */
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

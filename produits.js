@@ -3,6 +3,27 @@ import "./produitBottomNav.js"
 import { checkIfFavorite, toggleFavorite } from './favoris.js';
 console.log(products)
 
+// Gestion de la navigation mobile
+const navSlide = () => {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+    burger.classList.toggle('toggle');
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('nav-active');
+      burger.classList.remove('toggle');
+    });
+  });
+};
+
+navSlide();
+
 function filterProductsByCategory(category) {
   const products = document.querySelectorAll('.product-card');
   products.forEach(product => {
@@ -816,59 +837,7 @@ document.getElementById('sort').addEventListener('change', sortProducts);
 // Afficher tous les produits au chargement initial
 displayProducts(products);
 
-const navSlide = () => {
-const burger = document.querySelector('.burger');
-const nav = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links li');
 
-burger.addEventListener('click', () => {
-nav.classList.toggle('nav-active');
-burger.classList.toggle('toggle');
-});
-
-navLinks.forEach(link => {
-link.addEventListener('click', () => {
-nav.classList.remove('nav-active');
-burger.classList.remove('toggle');
-});
-});
-
-
-const searchInput = document.getElementById('search-input');
-const productList = document.querySelector('.product-list');
-
-function filterProducts() {
-  const searchTerm = searchInput.value.toLowerCase();
-  const cards = productList.getElementsByClassName('product-card');
-
-  for (let i = 0; i < cards.length; i++) {
-  const card = cards[i];
-  const productName = card.querySelector('h3').textContent.toLowerCase();
-
-  if (productName.includes(searchTerm)) {
-  card.style.display = 'block';
-  } else {
-  card.style.display = 'none';
-    }
-  }
-}
-searchInput.addEventListener('input', filterProducts);
-
-};
-
-navSlide();
-
-document.addEventListener('DOMContentLoaded', () => {
-  const featuredItems = document.querySelectorAll('.featured-item');
-
-  featuredItems.forEach(item => {
-    const img = item.querySelector('img');
-    img.addEventListener('click', () => {
-      const productId = item.getAttribute('data-id');
-      window.location.href = `details.html?id=${productId}`;
-    });
-  });
-});
 
 // Supprimer le reload automatique
 document.addEventListener('DOMContentLoaded', function() {
