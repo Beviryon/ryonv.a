@@ -1821,7 +1821,7 @@ rating: 4.5
   },
   promotion: {
     discount: 20, 
-    endDate: '2024-09-15T23:59:59' 
+    endDate: '2025-09-15T23:59:59' 
   },
   vendorPhone: '+221784743356',
   stock: 30,
@@ -2064,7 +2064,7 @@ rating: 4.5
                 vendorPhone: '+33758146261',
                 promotion: {
                   discount: 20, 
-                  endDate: '2024-09-15T23:59:59' 
+                  endDate: '2025-09-15T23:59:59' 
                 },
                 stock: 15,
                 rating: 4.5

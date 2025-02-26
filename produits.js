@@ -338,87 +338,6 @@ function createProductCard(product) {
     window.location.href = `details.html?id=${product.id}`;
   });
 
-  card.appendChild(image);
-
-// Début bouton like
-// Conteneur pour les boutons modernes
-const modernButtonsContainer = document.createElement('div');
-modernButtonsContainer.classList.add('modern-buttons-container');
-
-// Bouton J'aime
-const likeBtn = document.createElement('button');
-likeBtn.classList.add('modern-btn', 'like-btn');
-likeBtn.innerHTML = '<i class="fas fa-heart"></i>'; // Icône cœur
-
-// Compteur pour "J'aime"
-const likeCount = document.createElement('span');
-likeCount.classList.add('like-count');
-const likesKey = `likes_${product.id}`;
-let savedLikes = parseInt(localStorage.getItem(likesKey), 10) || 0;
-likeCount.textContent = savedLikes;
-
-// Ajout du compteur à l'intérieur du bouton
-likeBtn.appendChild(likeCount);
-
-likeBtn.addEventListener('click', () => {
-  savedLikes += 1;
-  likeCount.textContent = savedLikes;
-  localStorage.setItem(likesKey, savedLikes); // Sauvegarde locale
-});
-
-modernButtonsContainer.appendChild(likeBtn);
-
-// Bouton Partager
-const shareBtn = document.createElement('button');
-shareBtn.classList.add('modern-btn', 'share-btn');
-shareBtn.innerHTML = '<i class="fas fa-share"></i>'; // Icône partage
-
-// Compteur pour "Partager"
-const shareCount = document.createElement('span');
-shareCount.classList.add('share-count');
-const sharesKey = `shares_${product.id}`;
-let savedShares = parseInt(localStorage.getItem(sharesKey), 10) || 0;
-shareCount.textContent = savedShares;
-
-// Ajout du compteur à l'intérieur du bouton
-shareBtn.appendChild(shareCount);
-
-shareBtn.addEventListener('click', () => {
-  const shareLink = `${window.location.origin}/details.html?id=${product.id}`;
-  if (navigator.share) {
-    navigator.share({
-      title: product.name,
-      text: `Découvrez ce produit : ${product.name}`,
-      url: shareLink,
-    }).then(() => {
-      savedShares += 1;
-      shareCount.textContent = savedShares;
-      localStorage.setItem(sharesKey, savedShares);
-    });
-  } else {
-    navigator.clipboard.writeText(shareLink).then(() => {
-      alert('Lien copié dans le presse-papier !');
-      savedShares += 1;
-      shareCount.textContent = savedShares;
-      localStorage.setItem(sharesKey, savedShares);
-    });
-  }
-});
-
-modernButtonsContainer.appendChild(shareBtn);
-
-// Bouton WhatsApp (remplaçant commentaire)
-const modernWhatsappBtn = document.createElement('a');
-modernWhatsappBtn.classList.add('modern-btn', 'comment');
-modernWhatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>'; // Icône WhatsApp
-modernWhatsappBtn.href = `https://wa.me/${product.seller?.phone}?text=Bonjour, je suis intéressé par "${product.name}"`;
-modernWhatsappBtn.target = '_blank';
-
-modernButtonsContainer.appendChild(modernWhatsappBtn);
-
-// Fin du bouton like
-
-
   const name = document.createElement('h3');
   name.textContent = product.name;
   card.appendChild(name);
@@ -427,40 +346,13 @@ modernButtonsContainer.appendChild(modernWhatsappBtn);
   description.textContent = product.description;
   card.appendChild(description);
 
-  const price = document.createElement('p-prix');
-  price.textContent = `Prix : ${product.price} Fcfa`;
-  card.appendChild(price);
-
-  ////////////////////////////////
-  const ratingContainer = document.createElement('div');
-  ratingContainer.classList.add('product-rating');
-
-  const rating = product.rating || 0; 
-  const stars = '★'.repeat(Math.floor(rating)) + '☆'.repeat(5 - Math.floor(rating));
-  ratingContainer.textContent = `${stars} (${rating}/5)`;
-
-  card.appendChild(ratingContainer);
-  ////////////////////////////////
-
-  const button = document.createElement('a');
-  button.classList.add('btn-voir-produit');
-  button.textContent = 'Voir le produit';
-  button.addEventListener('click', () => showProductModal(product));
-  card.appendChild(button);
-
   const whatsappBtn = document.createElement('a');
   whatsappBtn.classList.add('btn', 'whatsapp-btn');
   whatsappBtn.textContent = 'Commander';
   whatsappBtn.addEventListener('click', () => openOrderForm(product));
   card.appendChild(whatsappBtn);
 
-  // const detailsBtn = document.createElement('a');
-  // detailsBtn.classList.add('btn-detail');
-  // detailsBtn.textContent = 'Détails du produit';
-  // detailsBtn.href = `details.html?id=${product.id}`;
-  // card.appendChild(detailsBtn);
-
- // Bouton Ajouter au panier
+  // Bouton Ajouter au panier
   const addToCartBtn = document.createElement('button');
   addToCartBtn.classList.add('btn-panier', 'add-to-cart-btn');
   addToCartBtn.textContent = 'Ajouter au panier';
@@ -491,14 +383,41 @@ modernButtonsContainer.appendChild(modernWhatsappBtn);
 
   // Ajout du pop-up de promotion
   if (product.promotion && isPromotionValid(product.promotion)) {
-    const promoPopup = document.createElement('div');
-    promoPopup.classList.add('promo-popup');
-    promoPopup.innerHTML = `
-      <p>Promotion ${product.promotion.discount}% !</p>
-      <p class="promo-timer" data-end="${product.promotion.endDate}"></p>
-    `;
-    card.appendChild(promoPopup);
-    updatePromoTimer(promoPopup.querySelector('.promo-timer'), card);
+    // Création du conteneur de prix
+    const priceContainer = document.createElement('div');
+    priceContainer.classList.add('price-container');
+
+    // Prix original barré
+    const originalPrice = document.createElement('span');
+    originalPrice.classList.add('original-price');
+    originalPrice.textContent = `${product.price.toLocaleString()} FCFA`;
+
+    // Prix en promotion
+    const promoPrice = document.createElement('span');
+    promoPrice.classList.add('promo-price');
+    const discountedPrice = Math.round(product.price * (1 - product.promotion.discount / 100));
+    promoPrice.textContent = `${discountedPrice.toLocaleString()} FCFA`;
+
+    // Assemblage des prix
+    priceContainer.appendChild(originalPrice);
+    priceContainer.appendChild(promoPrice);
+
+    card.appendChild(priceContainer);
+
+    // Badge de promotion
+    const promoBadge = document.createElement('div');
+    promoBadge.classList.add('promo-badge');
+    promoBadge.textContent = `-${product.promotion.discount}%`;
+    card.appendChild(promoBadge);
+  } else {
+    // Prix normal sans promotion
+    const priceContainer = document.createElement('div');
+    priceContainer.classList.add('price-container');
+    const normalPrice = document.createElement('span');
+    normalPrice.classList.add('normal-price');
+    normalPrice.textContent = `${product.price.toLocaleString()} FCFA`;
+    priceContainer.appendChild(normalPrice);
+    card.appendChild(priceContainer);
   }
 
   // Ajout du pop-up de stock
@@ -517,7 +436,6 @@ modernButtonsContainer.appendChild(modernWhatsappBtn);
   }
 
   card.appendChild(stockStatus);
-  card.appendChild(modernButtonsContainer);
 
   return card;
 } 
@@ -1101,8 +1019,7 @@ function applyAllFilters() {
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
     if (searchTerm) {
         filteredProducts = filteredProducts.filter(product => 
-            product.name.toLowerCase().includes(searchTerm) ||
-            product.description.toLowerCase().includes(searchTerm)
+            product.name.toLowerCase().includes(searchTerm)
         );
     }
 

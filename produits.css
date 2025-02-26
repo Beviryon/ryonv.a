@@ -847,6 +847,7 @@ main {
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1rem;
     align-items: center;
+    margin-top: 13px;
   }
   
 
@@ -2467,7 +2468,7 @@ a:hover {
     margin-top: 5px;
     height: auto;
     min-height: 200px; /* Hauteur réduite */
-    border-radius: 14px 14px 0 0;
+    border-radius: 14px;
 }
 
 .banner-content {
@@ -2964,4 +2965,87 @@ a:hover {
 
 .nav-icon:hover i {
   transform: rotate(10deg);
+}
+
+/* Style du conteneur de prix */
+.price-container {
+  margin: 8px 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Prix normal (pour produits sans promotion) */
+.normal-price {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Style pour les prix en promotion */
+.original-price {
+  color: #666;
+  text-decoration: line-through;
+  font-size: 1rem;
+}
+
+.promo-price {
+  color: #B12704;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .price-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .original-price {
+  color: #666;
+  text-decoration: line-through;
+  font-size: 0.8rem;
+}
+
+.promo-price {
+  color: #B12704;
+  font-size: 1rem;
+  font-weight: 700;
+}
+}
+
+/* Badge de promotion */
+.promo-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #CC0C39;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Pop-up timer */
+.promo-popup {
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  background: white;
+  border-radius: 3px;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 10;
+  width: auto;
+  min-width: 150px;
+  display: none;
+  font-size: 0.8rem;
+}
+
+.promo-popup.show {
+  display: block;
 }
