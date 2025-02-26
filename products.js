@@ -22,7 +22,7 @@ const products = [
   vendorPhone: '+33656763491',
   promotion: {
     discount: 8, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 5.9,
@@ -51,7 +51,7 @@ const products = [
   vendorPhone: '+33656763491',
   promotion: {
     discount: 8, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 5.9,
@@ -80,7 +80,7 @@ const products = [
   vendorPhone: '+33656763491',
   promotion: {
     discount: 8, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 5.9,
@@ -108,7 +108,7 @@ const products = [
   vendorPhone: '+33656763491',
   promotion: {
     discount: 8, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 5.9,
@@ -135,7 +135,7 @@ const products = [
   vendorPhone: '+33656763491',
   promotion: {
     discount: 8, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 5.9,
@@ -162,7 +162,7 @@ const products = [
   vendorPhone: '+33656763491',
   promotion: {
     discount: 8, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 5.9,
@@ -193,7 +193,7 @@ const products = [
   vendorPhone: '+33758146261',
   promotion: {
     discount: 8, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 5.9,
@@ -223,7 +223,7 @@ const products = [
   vendorPhone: '+242066262052',
   promotion: {
     discount: 10, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 4.9,
@@ -253,7 +253,7 @@ const products = [
   vendorPhone: '+242066262052',
   promotion: {
     discount: 10, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 4.9,
@@ -282,7 +282,7 @@ const products = [
   vendorPhone: '+242066262052',
   promotion: {
     discount: 10, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 4.9,
@@ -311,7 +311,7 @@ const products = [
   vendorPhone: '+242066262052',
   promotion: {
     discount: 10, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 4.9,
@@ -339,7 +339,7 @@ const products = [
   vendorPhone: '+242066262052',
   promotion: {
     discount: 10, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 4.9,
@@ -366,7 +366,7 @@ const products = [
   vendorPhone: '+242066262052',
   promotion: {
     discount: 10, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 4.9,
@@ -393,7 +393,7 @@ const products = [
   vendorPhone: '+242066262052',
   promotion: {
     discount: 10, 
-    endDate: '2024-01-21T23:59:59' 
+    endDate: '2025-01-21T23:59:59' 
   },
   stock: 10,
   rating: 4.9,
@@ -424,7 +424,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 10,
   rating: 4.9,
@@ -456,7 +456,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 5,
   rating: 4.9,
@@ -486,7 +486,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -516,7 +516,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -548,7 +548,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -578,7 +578,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -608,7 +608,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -640,7 +640,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -670,7 +670,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -702,7 +702,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -734,7 +734,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -766,7 +766,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -798,7 +798,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9
@@ -826,7 +826,7 @@ const products = [
   vendorPhone: '+330758146261',
   promotion: {
     discount: 10, 
-    endDate: '2024-10-21T23:59:59' 
+    endDate: '2025-10-21T23:59:59' 
   },
   stock: 9,
   rating: 4.9,
@@ -856,7 +856,7 @@ seller: {
 vendorPhone: '+330758146261',
 promotion: {
   discount: 10, 
-  endDate: '2024-10-21T23:59:59' 
+  endDate: '2025-10-21T23:59:59' 
 },
 stock: 9,
 rating: 4.9,
@@ -888,7 +888,7 @@ seller: {
 vendorPhone: '+330758146261',
 promotion: {
   discount: 10, 
-  endDate: '2024-10-21T23:59:59' 
+  endDate: '2025-10-21T23:59:59' 
 },
 stock: 9,
 rating: 4.9
@@ -918,7 +918,7 @@ seller: {
 vendorPhone: '+242069954916',
 promotion: {
   discount: 10, 
-  endDate: '2024-10-21T23:59:59' 
+  endDate: '2025-10-21T23:59:59' 
 },
 stock: 9,
 rating: 4.9
@@ -946,7 +946,7 @@ seller: {
 vendorPhone: '+242069954916',
 promotion: {
   discount: 10, 
-  endDate: '2024-10-21T23:59:59' 
+  endDate: '2025-10-21T23:59:59' 
 },
 stock: 9,
 rating: 4.9
@@ -974,7 +974,7 @@ seller: {
 vendorPhone: '+242069954916',
 promotion: {
   discount: 10, 
-  endDate: '2024-10-21T23:59:59' 
+  endDate: '2025-10-21T23:59:59' 
 },
 stock: 9,
 rating: 4.9
@@ -1002,7 +1002,7 @@ seller: {
 vendorPhone: '+242069954916',
 promotion: {
   discount: 10, 
-  endDate: '2024-10-21T23:59:59' 
+  endDate: '2025-10-21T23:59:59' 
 },
 stock: 9,
 rating: 4.9
@@ -1030,7 +1030,7 @@ seller: {
 vendorPhone: '+242069954916',
 promotion: {
   discount: 10, 
-  endDate: '2024-10-21T23:59:59' 
+  endDate: '2025-10-21T23:59:59' 
 },
 stock: 9,
 rating: 4.5
@@ -1062,7 +1062,7 @@ seller: {
 vendorPhone: '+221781520600',
 promotion: {
   discount: 10, 
-  endDate: '2024-10-25T23:59:59' 
+  endDate: '2025-10-25T23:59:59' 
 },
 stock: 15,
 rating: 4.5
@@ -1089,7 +1089,7 @@ seller: {
 vendorPhone: '+221784743356',
 promotion: {
   discount: 10, 
-  endDate: '2024-10-25T23:59:59' 
+  endDate: '2025-10-25T23:59:59' 
 },
 stock: 15,
 rating: 4.5
@@ -1116,7 +1116,7 @@ seller: {
 vendorPhone: '+33758146261',
 promotion: {
   discount: 20, 
-  endDate: '2024-10-25T23:59:59' 
+  endDate: '2025-10-25T23:59:59' 
 },
 stock: 5,
 rating: 4.5
@@ -1144,7 +1144,7 @@ seller: {
 },
 promotion: {
   discount: 20, 
-  endDate: '2024-10-29T23:59:59' 
+  endDate: '2025-10-29T23:59:59' 
 },
 vendorPhone: '+221781520600',
 stock: 15,
@@ -1171,8 +1171,8 @@ rating: 4.5
     country: 'SN',
   },
   promotion: {
-    discount: 20, 
-    endDate: '2024-10-29T23:59:59' 
+    discount: 10, 
+    endDate: '2025-10-29T23:59:59' 
   },
   vendorPhone: '+221784743356',
   stock: 15,
@@ -1201,8 +1201,8 @@ seller: {
   country: 'SN',
 },
 promotion: {
-  discount: 20, 
-  endDate: '2024-10-29T23:59:59' 
+  discount: 10, 
+  endDate: '2025-10-29T23:59:59' 
 },
 vendorPhone: '+221784743356',
 stock: 15,
@@ -1229,8 +1229,8 @@ seller: {
   country: 'SN',
 },
 promotion: {
-  discount: 20, 
-  endDate: '2024-10-29T23:59:59' 
+  discount: 10, 
+  endDate: '2025-10-29T23:59:59' 
 },
 vendorPhone: '+221784743356',
 stock: 15,
@@ -1256,8 +1256,8 @@ seller: {
   country: 'SN'
 },
 promotion: {
-  discount: 20, 
-  endDate: '2024-10-29T23:59:59' 
+  discount: 15, 
+  endDate: '2025-10-29T23:59:59' 
 },
 vendorPhone: '+221781520600',
 stock: 15,
@@ -1286,7 +1286,7 @@ seller: {
 },
 promotion: {
   discount: 20, 
-  endDate: '2024-10-15T23:59:59' 
+  endDate: '2025-10-15T23:59:59' 
 },
 vendorPhone: '+221784743356',
 stock: 20,
@@ -1313,7 +1313,7 @@ images: [
   },
   promotion: {
     discount: 20, 
-    endDate: '2024-10-15T23:59:59' 
+    endDate: '2025-10-15T23:59:59' 
   },
 vendorPhone: '+221784743356',
 stock: 20,
@@ -1335,14 +1335,14 @@ images: [
 ],
 promotion: {
   discount: 20, 
-  endDate: '2024-10-15T23:59:59' 
+  endDate: '2025-10-15T23:59:59' 
 },
 vendorPhone: '+33758146261',
 stock: 15,
 rating: 4.5,
 promotion: {
   discount: 10, // 10% de réduction
-  endDate: '2024-10-15T23:59:59' // Date de fin de la promotion
+  endDate: '2025-10-15T23:59:59' // Date de fin de la promotion
 },
 },
 
@@ -1367,7 +1367,7 @@ seller: {
 },
 promotion: {
   discount: 20, 
-  endDate: '2024-10-15T23:59:59' 
+  endDate: '2025-10-15T23:59:59' 
 },
 vendorPhone: '+33758146261',
 stock: 20,
@@ -1397,7 +1397,7 @@ stock: 10,
 rating: 4.5,
 promotion: {
   discount: 10, // 10% de réduction
-  endDate: '2024-10-15T23:59:59' // Date de fin de la promotion
+  endDate: '2025-10-15T23:59:59' // Date de fin de la promotion
 },
 },
 
@@ -1424,7 +1424,7 @@ stock: 15,
 rating: 4.5,
 promotion: {
   discount: 20, 
-  endDate: '2024-10-15T23:59:59' 
+  endDate: '2025-10-15T23:59:59' 
 },
 },
 
@@ -1455,7 +1455,7 @@ stock: 20,
 rating: 4.5,
 promotion: {
   discount: 10, // 10% de réduction
-  endDate: '2024-10-15T23:59:59' 
+  endDate: '2025-10-15T23:59:59' 
 },
 },
 
@@ -1482,7 +1482,7 @@ images: [
   },
   promotion: {
     discount: 20, 
-    endDate: '2024-10-15T23:59:59' 
+    endDate: '2025-10-15T23:59:59' 
   },
 vendorPhone: '+33758146261',
 stock: 10,
@@ -1511,6 +1511,10 @@ seller: {
   phone: '+33758146261',
   country: 'CG',
 },
+promotion: {
+  discount: 20, 
+  endDate: '2025-09-15T23:59:59' 
+},
 vendorPhone: '+33758146261',
 stock: 15,
 rating: 4.5
@@ -1536,6 +1540,10 @@ seller: {
   name: 'RYONV',
   phone: '+33758146261',
   country: 'CG',
+},
+promotion: {
+  discount: 20, 
+  endDate: '2025-09-15T23:59:59' 
 },
 vendorPhone: '+33758146261',
 stock: 20,
@@ -1564,7 +1572,7 @@ seller: {
 },
 promotion: {
   discount: 20, 
-  endDate: '2024-10-15T23:59:59' 
+  endDate: '2025-10-15T23:59:59' 
 },
 vendorPhone: '+242065235530',
 stock: 15,
@@ -1594,7 +1602,7 @@ seller: {
 },
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2025-09-15T23:59:59' 
 },
 vendorPhone: '+242065235530',
 stock: 10,
@@ -1627,7 +1635,7 @@ stock: 20,
 rating: 4.5,
 promotion: {
   discount: 10, // 10% de réduction
-  endDate: '2024-09-15T23:59:59' // Date de fin de la promotion
+  endDate: '2025-09-15T23:59:59' // Date de fin de la promotion
 },
 },
 
@@ -1654,7 +1662,7 @@ seller: {
 },
 promotion: {
   discount: 20, 
-  endDate: '2024-09-15T23:59:59' 
+  endDate: '2025-09-15T23:59:59' 
 },
 vendorPhone: '+33758146261',
 stock: 15,
@@ -1683,7 +1691,7 @@ rating: 4.5
   },
   promotion: {
     discount: 20, 
-    endDate: '2024-09-15T23:59:59' 
+    endDate: '2025-09-15T23:59:59' 
   },
   vendorPhone: '+221784743356',
   stock: 30,
@@ -1714,7 +1722,7 @@ rating: 4.5
   rating: 4.5,
   promotion: {
     discount: 10, 
-    endDate: '2024-09-15T23:59:59' 
+    endDate: '2025-09-15T23:59:59' 
   },
   },
 {
@@ -1737,7 +1745,7 @@ rating: 4.5
   },
   promotion: {
     discount: 20, 
-    endDate: '2024-09-15T23:59:59' 
+    endDate: '2025-09-15T23:59:59' 
   },
   vendorPhone: '+221784743356',
   stock: 30,
@@ -1766,7 +1774,7 @@ rating: 4.5
   },
   promotion: {
     discount: 20, 
-    endDate: '2024-09-15T23:59:59' 
+    endDate: '2025-09-15T23:59:59' 
   },
   vendorPhone: '+221784743356',
   stock: 30,
@@ -1798,7 +1806,7 @@ rating: 4.5
   rating: 4.5,
   promotion: {
     discount: 10, 
-    endDate: '2024-09-15T23:59:59' 
+    endDate: '2025-09-15T23:59:59' 
   },
   },
 {

@@ -20,30 +20,49 @@
     <title>Panier</title>
     <link rel="stylesheet" href="./cart.css" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 </head>
 <body>
     <header>
-        <h1>Votre Panier</h1>
+        <div class="header-content">
+            <h1>Votre Panier</h1>
+            <div class="header-buttons">
+                <a href="./produits.html" class="header-btn products-btn">
+                    <i class="fas fa-store"></i>
+                    Nos Produits
+                </a>
+                <a href="./favoris.html" class="header-btn favorites-btn">
+                    <i class="fas fa-heart"></i>
+                    Favoris
+                </a>
+                <!-- <button class="header-btn order-all-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    Commander tout
+                </button> -->
+            </div>
+        </div>
+        <div class="cart-controls">
+            <div class="select-controls">
+                <label class="select-all-label">
+                    <input type="checkbox" id="select-all">
+                    <span>Sélectionner tout</span>
+                </label>
+                <button id="delete-selected" class="delete-selected-btn">
+                    <i class="fas fa-trash"></i>
+                    Supprimer la sélection
+                </button>
+            </div>
+        </div>
     </header>
     <main>
-        <section id="promotion-banner">
-            <h2>Produits en Promotion</h2>
-            <div class="promotion-carousel">
-                <!-- Les produits en promotion seront affichés ici -->
-            </div>
-        </section>
+       
         <section id="cart-items">
             <div class="cart-controls">
-                <input type="checkbox" id="select-all"> Sélectionner tout
-                <button id="delete-selected">Supprimer les sélectionnés</button>
+                <!-- <input type="checkbox" id="select-all"> Sélectionner tout
+                <button id="delete-selected">Supprimer les sélectionnés</button> -->
             </div>
         </section>
-        <!-- <section id="recommendations">
-            <h2>Produits recommandés</h2>
-            <div class="recommended-products-carousel"></div>
-            <button id="view-more-btn">Voir plus</button>
-        </section> -->
         <section id="continue-shopping">
             <button id="continue-shopping-btn"><a href="./produits.html" class="continue-shopping-btn">Continuer vos achats</a></button>
         </section>

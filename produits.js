@@ -1,5 +1,6 @@
 import { products } from "./products.js";
 import "./produitBottomNav.js"
+import { checkIfFavorite, toggleFavorite } from './favoris.js';
 console.log(products)
 
 function filterProductsByCategory(category) {
@@ -271,16 +272,55 @@ function updateCartCounter() {
   }
 }
 
-function showAlert(message) {
-  const alertBox = document.createElement('div');
-  alertBox.textContent = message;
-  alertBox.classList.add('alert');
-  document.body.appendChild(alertBox);
+function showAlert(message, isAdded = true) {
+  // Supprimer toute notification existante
+  const existingNotification = document.querySelector('.favorite-notification');
+  if (existingNotification) {
+    existingNotification.remove();
+  }
+
+  // Créer l'élément de notification
+  const notification = document.createElement('div');
+  notification.className = 'favorite-notification';
   
-  // Supprimez l'alerte après 3 secondes
+  notification.innerHTML = `
+    <div class="notification-content">
+      <i class="fas ${isAdded ? 'fa-heart' : 'fa-heart-broken'}"></i>
+      <p>${message}</p>
+      <div class="notification-buttons">
+        <button class="view-favorites-btn">Voir mes favoris</button>
+        <button class="close-popup-btn">Continuer</button>
+      </div>
+    </div>
+  `;
+
+  // Ajouter au document
+  document.body.appendChild(notification);
+
+  // Gérer le bouton "Voir mes favoris"
+  const viewFavoritesBtn = notification.querySelector('.view-favorites-btn');
+  viewFavoritesBtn.addEventListener('click', () => {
+    window.location.href = './favoris.html';
+  });
+
+  // Gérer le bouton de fermeture
+  const closeBtn = notification.querySelector('.close-popup-btn');
+  closeBtn.addEventListener('click', () => {
+    notification.classList.add('fade-out');
+    setTimeout(() => {
+      notification.remove();
+    }, 300);
+  });
+
+  // Auto-fermeture après 3 secondes
   setTimeout(() => {
-    alertBox.remove();
-  }, 5000);
+    if (document.body.contains(notification)) {
+      notification.classList.add('fade-out');
+      setTimeout(() => {
+        notification.remove();
+      }, 300);
+    }
+  }, 3000);
 }
 
 // 
@@ -437,8 +477,22 @@ function createProductCard(product) {
 
   card.appendChild(stockStatus);
 
+  // Après la création de la carte mais avant le retour
+  const favoriteBtn = document.createElement('button');
+  favoriteBtn.classList.add('favorite-btn');
+  const isFavorite = checkIfFavorite(product.id);
+  favoriteBtn.innerHTML = `<i class="fas fa-heart ${isFavorite ? 'active' : ''}"></i>`;
+  
+  favoriteBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleFavorite(product);
+    favoriteBtn.querySelector('i').classList.toggle('active');
+  });
+  
+  card.appendChild(favoriteBtn);
+
   return card;
-} 
+}
 
 function displayVendorInfo(vendor) {
   const vendorCard = document.createElement('div');
@@ -911,59 +965,6 @@ document.addEventListener('DOMContentLoaded', function() {
     syncSelects(sellerBanner, sellerOriginal);
     syncSearch(searchBanner, searchOriginal);
 
-    // Code existant pour les catégories...
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const priceRange = document.getElementById('price-range');
-    
-    priceRange.addEventListener('change', function() {
-        const range = this.value;
-        let minPrice, maxPrice;
-        
-        switch(range) {
-            case '0-5000':
-                minPrice = 0;
-                maxPrice = 5000;
-                break;
-            case '5000-10000':
-                minPrice = 5000;
-                maxPrice = 10000;
-                break;
-            case '10000-25000':
-                minPrice = 10000;
-                maxPrice = 25000;
-                break;
-            case '25000-50000':
-                minPrice = 25000;
-                maxPrice = 50000;
-                break;
-            case '50000-100000':
-                minPrice = 50000;
-                maxPrice = 100000;
-                break;
-            case '100000+':
-                minPrice = 100000;
-                maxPrice = Infinity;
-                break;
-            default:
-                minPrice = 0;
-                maxPrice = Infinity;
-        }
-
-        // Filtrer les produits
-        const filteredProducts = products.filter(product => {
-            // Prendre en compte le prix avec la promotion si elle existe
-            let finalPrice = product.price;
-            if (product.promotion && product.promotion.discount) {
-                finalPrice = product.price * (1 - product.promotion.discount / 100);
-            }
-            return range === 'all' || (finalPrice >= minPrice && finalPrice < maxPrice);
-        });
-
-        // Mettre à jour l'affichage
-        updateProductDisplay(filteredProducts);
-    });
 });
 
 function updateProductDisplay(filteredProducts) {
@@ -1070,6 +1071,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, 100);
     }
-
-    // ... reste du code inchangé ...
 });
