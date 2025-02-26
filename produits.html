@@ -30,6 +30,7 @@
     <link rel="preload" href="./produits.css" as="style">
     <link rel="preload" href="./produitLike.css" as="style">
     <link rel="preload" href="./produitBarre.css" as="style">
+    <link rel="preload" href="./produitBottomBar.css" as="style">
     
     <!-- Charger les styles de manière optimisée -->
     <link rel="stylesheet" href="./produits.css">
@@ -91,14 +92,6 @@
   </header>
 
 <main>
-
-<!-- Pop-up du panier -->
-<!-- Icône du panier -->
-<!-- <div class="cart-icon-container">
-  <span class="cart-counter">0</span>
-  <i class="cart-icon">🛒</i>
-</div> -->
-
 <!-- Pop-up du panier -->
 <div class="cart-popup">
   <div class="cart-popup-content">
@@ -620,19 +613,24 @@
 <div class="bottom-nav">
   <a href="./home.html" class="nav-icon home">
     <i class="fas fa-home"></i>
+    <span class="nav-text">Accueil</span>
   </a>
   <a href="./login.html" class="nav-icon profile">
     <i class="fas fa-user"></i>
+    <span class="nav-text">Profil</span>
   </a>
   <a href="./cart.html" class="nav-icon cart">
     <i class="fas fa-shopping-cart"></i>
     <span class="cart-counter">0</span>
+    <span class="nav-text">Panier</span>
   </a>
   <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/22/19/20250122195047-9MTGIIUD.json" class="nav-icon assistance">
     <i class="fa-brands fa-rocketchat"></i>
+    <span class="nav-text">Assistance</span>
   </a>
   <a href="./notifications.html" class="nav-icon notifications">
     <i class="fas fa-bell"></i>
+    <span class="nav-text">Alertes</span>
   </a>
 </div>
 
