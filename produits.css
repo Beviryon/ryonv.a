@@ -3003,7 +3003,7 @@ a:hover {
   display: block;
 }
 
-.favorite-btn {
+/* .favorite-btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -3018,9 +3018,9 @@ a:hover {
   justify-content: center;
   transition: all 0.3s ease;
   z-index: 1;
-}
+} */
 
-.favorite-btn i {
+/* .favorite-btn i {
   color: #ccc;
   font-size: 18px;
   transition: all 0.3s ease;
@@ -3028,12 +3028,12 @@ a:hover {
 
 .favorite-btn i.active {
   color: #ff4444;
-}
+} */
 
-.favorite-btn:hover {
+/* .favorite-btn:hover {
   background: rgba(255, 255, 255, 1);
   transform: scale(1.1);
-}
+} */
 
 .product-card {
   position: relative;
@@ -3041,7 +3041,7 @@ a:hover {
 }
 
 /* Style du popup de confirmation */
-.favorite-popup {
+/* .favorite-popup {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -3096,9 +3096,9 @@ a:hover {
 
 .close-popup-btn:hover {
   background: #e8e8e8;
-}
+} */
 
-@keyframes slideIn {
+/* @keyframes slideIn {
   from {
     transform: translateX(100%);
     opacity: 0;
@@ -3157,7 +3157,7 @@ a:hover {
 
 .empty-favorites .btn:hover {
   background-color: #e09900;
-}
+} */
 
 /* Styles pour les détails du produit */
 .product-details {
@@ -3294,10 +3294,10 @@ a:hover {
   color: #333;
   font-weight: 600;
 }
-
+/* 
 .favorite-button {
-    margin-top: 10px; /* Ajoutez ou augmentez cette valeur selon vos besoins */
-}
+    margin-top: 10px;
+} */
 
 @keyframes navLinkFade {
     from {

@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         favoritesBtn.addEventListener('click', (e) => {
             e.preventDefault(); // Empêcher le comportement par défaut
             console.log('Navigation vers les favoris'); // Pour le débogage
-            window.location.href = './favoris.html'; 
+            window.location.href = 'desloSite/favoris.html'; 
         });
     } else {
         console.error('Le bouton favoris n\'a pas été trouvé'); // Pour le débogage

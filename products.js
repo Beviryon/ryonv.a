@@ -1312,7 +1312,7 @@ images: [
     country: 'SN',
   },
   promotion: {
-    discount: 20, 
+    discount: 18, 
     endDate: '2025-10-15T23:59:59' 
   },
 vendorPhone: '+221784743356',
@@ -1583,7 +1583,7 @@ rating: 4.5
 id: 17, 
 name: 'Drap-housse', 
 description: 'Polyester/cotonr',
-price: 6000,
+price: 7000,
 category: 'maison',
 colors: ['#FFFFFF', '#000000', '#4169E1', '#DC143C'], // Blanc, Noir, Bleu royal, Rouge
 images: [
@@ -1725,6 +1725,7 @@ rating: 4.5
     endDate: '2025-09-15T23:59:59' 
   },
   },
+
 {
   id: 22,// Vêtements raison
   name: 'Ensemble H&F',
@@ -1853,6 +1854,10 @@ rating: 4.5
     phone: '+221784743356',
     country: 'SN',
   },
+  promotion: {
+    discount: 8, 
+    endDate: '2025-01-21T23:59:59' 
+  },
   vendorPhone: '+221784743356',
   stock: 30,
   rating: 4.5
@@ -1876,8 +1881,8 @@ rating: 4.5
     country: 'SN',
   },
   promotion: {
-    discount: 20, 
-    endDate: '2024-09-15T23:59:59' 
+    discount: 10, 
+    endDate: '2025-09-15T23:59:59' 
   },
   vendorPhone: '+221784743356',
   stock: 30,
@@ -1905,7 +1910,7 @@ rating: 4.5
   },
   promotion: {
     discount: 20, 
-    endDate: '2024-09-15T23:59:59' 
+    endDate: '2025-09-15T23:59:59' 
   },
   vendorPhone: '+221784743356',
   stock: 30,
@@ -1932,6 +1937,10 @@ rating: 4.5
       name: 'MCRShop',
       phone: '+221784743356',
       country: 'SN',
+    },
+    promotion: {
+      discount: 8, 
+      endDate: '2025-01-21T23:59:59' 
     },
     vendorPhone: '+221784743356',
     stock: 30,
@@ -1960,7 +1969,7 @@ rating: 4.5
     },
     promotion: {
       discount: 20, 
-      endDate: '2024-09-15T23:59:59' 
+      endDate: '2025-09-15T23:59:59' 
     },
     vendorPhone: '+221784743356',
     stock: 30,
@@ -1988,7 +1997,7 @@ rating: 4.5
       vendorPhone: '+221784743356',
       promotion: {
         discount: 10, 
-        endDate: '2024-09-25T23:59:59' 
+        endDate: '2025-09-25T23:59:59' 
       },
       stock: 15,
       rating: 5
@@ -2015,7 +2024,7 @@ rating: 4.5
         },
         promotion: {
           discount: 20, 
-          endDate: '2024-09-19T23:59:59' 
+          endDate: '2025-09-19T23:59:59' 
         },
         vendorPhone: '+33758146261',
         stock: 15,
@@ -2042,8 +2051,8 @@ rating: 4.5
               country: 'CG',
             },
             promotion: {
-              discount: 20, 
-              endDate: '2024-09-15T23:59:59' 
+              discount: 15, 
+              endDate: '2025-09-15T23:59:59' 
             },
             vendorPhone: '+33758146261',
             stock: 10,

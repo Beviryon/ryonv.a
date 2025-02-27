@@ -228,3 +228,20 @@ const navSlide = () => {
 };
 
 navSlide();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const favoritesContainer = document.querySelector('#favorites-items');
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    
+    // Display favorites
+    favorites.forEach(item => {
+        const favoriteItem = document.createElement('div');
+        favoriteItem.classList.add('favorite-item');
+        favoriteItem.innerHTML = `
+            <img src="${item.images[0]}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p>${item.price} Fcfa</p>
+        `;
+        favoritesContainer.appendChild(favoriteItem);
+    });
+});

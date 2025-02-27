@@ -1,6 +1,6 @@
 /* Styles spécifiques à la page favoris */
 .favorites-section {
-  padding: 80px 20px 20px; /* Ajout de padding-top pour la navbar fixe */
+  padding: 70px 10px 20px; /* Ajout de padding-top pour la navbar fixe */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -46,7 +46,7 @@
 .empty-favorites .btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #ffffff;
+  background-color: #ff0000;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -55,7 +55,7 @@
 }
 
 .empty-favorites .btn:hover {
-  background-color: #e09900;
+  background-color: #e00000;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -187,7 +187,7 @@
 
 .seller-info i {
   margin-right: 5px;
-  color: #f2ae01;
+  color: #f20101;
 }
 
 .stock-info {
@@ -214,7 +214,7 @@
 }
 
 .view-details-btn {
-  background: #f2ae01;
+  background: #f20101;
   color: white;
 }
 
@@ -380,7 +380,7 @@
 
 .notification-content i {
   font-size: 40px;
-  color: #f2ae01;
+  color: #f20101;
   margin-bottom: 15px;
   animation: heartBeat 1s ease;
 }
@@ -408,7 +408,7 @@
 }
 
 .view-favorites-btn {
-  background: #f2ae01;
+  background: #f20101;
   color: white;
 }
 
@@ -418,7 +418,7 @@
 }
 
 .view-favorites-btn:hover {
-  background: #e09900;
+  background: #e00000;
   transform: translateY(-2px);
 }
 
@@ -476,9 +476,10 @@
 /* Bouton favori sur les cartes produits */
 .favorite-btn {
   position: absolute;
-  top: 10px;
+  top: 30px;
   right: 10px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 0, 0, 0.9) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
   border: none;
   border-radius: 50%;
   width: 35px;
@@ -492,17 +493,21 @@
 }
 
 .favorite-btn i {
-  color: #ccc;
+  color: #ffffff;
   font-size: 18px;
   transition: all 0.3s ease;
 }
 
 .favorite-btn i.active {
-  color: #ff4444;
+  color: #ff0000;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .favorite-btn:hover {
-  background: rgba(255, 255, 255, 1);
+  background: rgb(255, 0, 0);
   transform: scale(1.1);
 }
 

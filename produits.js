@@ -321,7 +321,7 @@ function showAlert(message, isAdded = true) {
   // Gérer le bouton "Voir mes favoris"
   const viewFavoritesBtn = notification.querySelector('.view-favorites-btn');
   viewFavoritesBtn.addEventListener('click', () => {
-    window.location.href = './favoris.html';
+    window.location.href = 'desloSite/favoris.html';
   });
 
   // Gérer le bouton de fermeture
