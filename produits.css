@@ -925,11 +925,25 @@ main {
   
   .product-card h3 {
     margin-top: 1rem;
-    font-size: 17px;
+    font-size: 15px;
+    /* Ajout des propriétés pour l'ellipsis */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
   
   .product-card p {
-    /* margin-bottom: 1rem; */
+    /* Ajout des propriétés pour l'ellipsis */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em;
+    line-height: 1;
+    font-size: 12px;
+    margin: 1px 0;
   }
 
   .product-card p-prix {
@@ -940,7 +954,7 @@ main {
   }
 
   .seller-info {
-    font-size: 14px;
+    font-size: 10px;
     color: #8a8989; 
     margin-top: 10px; 
     text-align: center;
@@ -948,7 +962,7 @@ main {
   
   .seller-info::before {
     content: "👤 ";
-    font-size: 10px; 
+    font-size: 8.5px; 
     vertical-align: middle; 
   }
   
@@ -3308,4 +3322,13 @@ a:hover {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+/* Ajustement des boutons pour qu'ils gardent une taille constante */
+.btn, .btn-panier {
+  min-width: 120px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

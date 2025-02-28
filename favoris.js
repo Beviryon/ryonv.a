@@ -1,12 +1,25 @@
+// Fonction pour obtenir l'ID de l'utilisateur connecté
+function getCurrentUserId() {
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  return currentUser ? currentUser.id : null;
+}
+
+// Fonction pour obtenir la clé de stockage des favoris pour le panier
+function getFavoritesKey() {
+  return 'cart_favorites';
+}
+
 // Fonction pour vérifier si un produit est en favori
 export function checkIfFavorite(productId) {
-  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const favoritesKey = getFavoritesKey();
+  const favorites = JSON.parse(localStorage.getItem(favoritesKey)) || [];
   return favorites.some(fav => fav.id === productId);
 }
 
 // Fonction pour basculer l'état favori d'un produit
 export function toggleFavorite(product) {
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const favoritesKey = getFavoritesKey();
+  let favorites = JSON.parse(localStorage.getItem(favoritesKey)) || [];
   const index = favorites.findIndex(fav => fav.id === product.id);
   
   if (index === -1) {
@@ -17,7 +30,7 @@ export function toggleFavorite(product) {
     showAlert('Produit retiré des favoris !', false);
   }
   
-  localStorage.setItem('favorites', JSON.stringify(favorites));
+  localStorage.setItem(favoritesKey, JSON.stringify(favorites));
 }
 
 // Fonction pour afficher l'alerte
@@ -77,7 +90,7 @@ export function displayFavorites() {
   const favoritesContainer = document.querySelector('.favorites-container');
   if (!favoritesContainer) return;
 
-  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const favorites = JSON.parse(localStorage.getItem(getFavoritesKey())) || [];
   
   if (favorites.length === 0) {
     favoritesContainer.innerHTML = `
@@ -228,20 +241,3 @@ const navSlide = () => {
 };
 
 navSlide();
-
-document.addEventListener('DOMContentLoaded', () => {
-    const favoritesContainer = document.querySelector('#favorites-items');
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    
-    // Display favorites
-    favorites.forEach(item => {
-        const favoriteItem = document.createElement('div');
-        favoriteItem.classList.add('favorite-item');
-        favoriteItem.innerHTML = `
-            <img src="${item.images[0]}" alt="${item.name}">
-            <h3>${item.name}</h3>
-            <p>${item.price} Fcfa</p>
-        `;
-        favoritesContainer.appendChild(favoriteItem);
-    });
-});
