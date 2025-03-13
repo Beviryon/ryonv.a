@@ -465,9 +465,30 @@ renderSuggestionsCarousel(products);
 document.querySelectorAll('.color-box').forEach(box => {
   box.addEventListener('click', function() {
     const colorInput = document.getElementById('color');
-    colorInput.value = this.dataset.color;
-    document.querySelectorAll('.color-box').forEach(box => box.classList.remove('selected'));
+    const selectedColor = this.dataset.color;
+    colorInput.value = selectedColor;
+    
+    // Retirer la sélection précédente
+    document.querySelectorAll('.color-box').forEach(b => b.classList.remove('selected'));
     this.classList.add('selected');
+    
+    // Mettre à jour les images selon la couleur sélectionnée
+    if (product.imagesByColor && product.imagesByColor[selectedColor]) {
+      const carouselInner = document.querySelector('.carousel-inner');
+      carouselInner.innerHTML = ''; // Vider le carrousel
+      
+      // Ajouter les nouvelles images
+      product.imagesByColor[selectedColor].forEach((imageUrl, index) => {
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.alt = `${product.name} - ${selectedColor}`;
+        carouselInner.appendChild(img);
+      });
+      
+      // Réinitialiser la position du carrousel
+      currentIndex = 0;
+      showImage(currentIndex);
+    }
   });
 });
 
@@ -538,9 +559,30 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.color-box').forEach(box => {
           box.addEventListener('click', function() {
             const colorInput = document.getElementById('color');
-            colorInput.value = this.dataset.color;
+            const selectedColor = this.dataset.color;
+            colorInput.value = selectedColor;
+            
+            // Retirer la sélection précédente
             document.querySelectorAll('.color-box').forEach(b => b.classList.remove('selected'));
             this.classList.add('selected');
+            
+            // Mettre à jour les images selon la couleur sélectionnée
+            if (product.imagesByColor && product.imagesByColor[selectedColor]) {
+              const carouselInner = document.querySelector('.carousel-inner');
+              carouselInner.innerHTML = ''; // Vider le carrousel
+              
+              // Ajouter les nouvelles images
+              product.imagesByColor[selectedColor].forEach((imageUrl, index) => {
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.alt = `${product.name} - ${selectedColor}`;
+                carouselInner.appendChild(img);
+              });
+              
+              // Réinitialiser la position du carrousel
+              currentIndex = 0;
+              showImage(currentIndex);
+            }
           });
         });
       } else {

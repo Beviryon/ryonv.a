@@ -3,26 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tableau de bord - RYONV</title>
-  <link rel="stylesheet" href="./dashboard.css" onload="this.rel='stylesheet'">
+  <title>Tableau de bord - Gestion des produits</title>
+  <link rel="stylesheet" href="./dashboard.css">
 </head>
 <body>
-  <header class="dashboard-header">
-    <nav>
-      <div class="logo">
-        <a href="./home.html" class="logo-image"><img class="image" src="https://live.staticflickr.com/65535/54122923674_3c0c43d1b4_n.jpg" alt="logo"></a>
-        <a href="./home.html">RYONV</a>
+  <div class="container">
+    <h1>Tableau de bord - Gestion des produits</h1>
+    
+    <form id="productForm">
+      <div class="form-group">
+        <label for="name">Nom du produit</label>
+        <input type="text" id="name" required>
       </div>
-    </nav>
-  </header>
 
-  <main class="dashboard-main">
-    <h1>Tableau de bord du vendeur</h1>
-    <div id="products-section">
-      <!-- Les produits du vendeur seront affichés ici -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Prix (en FCFA)</label>
+        <input type="number" id="price" required>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Catégorie</label>
+        <select id="category" required>
+          <option value="">Sélectionner une catégorie</option>
+          <option value="sport">Sport</option>
+          <option value="vetements">Vêtements</option>
+          <option value="maison">Maison</option>
+          <option value="electronique">Électronique</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="images">Images (URLs séparées par des virgules)</label>
+        <input type="text" id="images" placeholder="http://image1.jpg, http://image2.jpg">
+      </div>
+
+      <div class="form-group">
+        <label for="stock">Stock</label>
+        <input type="number" id="stock" required>
+      </div>
+
+      <div class="form-group">
+        <label for="sellerName">Nom du vendeur</label>
+        <input type="text" id="sellerName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="sellerPhone">Téléphone du vendeur</label>
+        <input type="text" id="sellerPhone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="sellerCountry">Pays du vendeur</label>
+        <input type="text" id="sellerCountry" required>
+      </div>
+
+      <div class="form-group">
+        <label for="discount">Promotion (%)</label>
+        <input type="number" id="discount" min="0" max="100">
+      </div>
+
+      <div class="form-group">
+        <label for="promoEndDate">Date de fin de promotion</label>
+        <input type="date" id="promoEndDate">
+      </div>
+
+      <button type="submit">Ajouter le produit</button>
+    </form>
+
+    <div class="products-list" id="productsList">
+      <!-- Les produits seront ajoutés ici dynamiquement -->
     </div>
-  </main>
+  </div>
 
-  <script type="module" src="./dashboard.js"></script>
+  <script src="js/dashboard.js"></script>
 </body>
 </html>

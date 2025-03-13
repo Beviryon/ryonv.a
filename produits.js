@@ -1,7 +1,7 @@
 import { products } from "./products.js";
-import "./produitBottomNav.js"
+import "./produitBottomNav.js";
 import { checkIfFavorite, toggleFavorite } from './favoris.js';
-console.log(products)
+console.log(products);
 
 // Gestion de la navigation mobile
 const navSlide = () => {
@@ -73,7 +73,7 @@ function displaySimilarProducts(currentProduct) {
   if (!similarProductsContainer) {
     console.error("Conteneur des produits similaires non trouvé !");
     return;
-  }c
+  }
   similarProductsContainer.innerHTML = '';
 
   const similarProducts = getSimilarProducts(currentProduct);
@@ -116,12 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error("Produit non trouvé avec l'ID:", currentProductId);
   }
 });
-
-
-// 
-// 
-// 
-
 
 function toggleCart() {
   window.location.href = 'cart.html';
@@ -344,11 +338,6 @@ function showAlert(message, isAdded = true) {
   }, 3000);
 }
 
-// 
-// 
-// 
-// 
-
 document.addEventListener('DOMContentLoaded', function() {
   const carouselInner = document.querySelector('.featured-carousel-inner');
   const items = document.querySelectorAll('.featured-item');
@@ -384,8 +373,6 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(scrollCarousel, 3000); 
 });
 
-
-// affichage et mise à jours promotion
 function createProductCard(product) {
   const card = document.createElement('div');
   card.classList.add('product-card');
@@ -534,7 +521,6 @@ function displayVendorInfo(vendor) {
   document.querySelector('.vendor-list').appendChild(vendorCard);
 }
 
-
 function updatePromoTimer(timerElement, cardElement) {
   const endDate = new Date(timerElement.dataset.end);
   
@@ -570,12 +556,10 @@ function isPromotionValid(promotion) {
   return now < endDate;
 }
 
-
-////////////////////////////////////////////////////////////////////////
-// Mettre à jour l'affichage toutes les minutes avec un ordre aléatoire
 function openOrderForm(product) {
   window.location.href = `details.html?id=${product.id}`;
 }
+
 setInterval(() => {
   shuffleProducts(products); 
   displayProducts(products); 
@@ -593,7 +577,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('next-btn');
   const pageInfo = document.getElementById('page-info');
 
-    // Fonction de mélange des produits
   function shuffleProducts(productsArray) {
     for (let i = productsArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -601,28 +584,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Affichage initial des produits avec mélange
   shuffleProducts(products); 
   displayProducts(products); 
 
-  // Fonction pour afficher les produits avec pagination et filtres
   function displayProducts(filteredProducts) {
       const productList = document.querySelector('.product-list');
       productList.innerHTML = ''; 
+
+      // Vérifier s'il y a des produits
+      if (filteredProducts.length === 0) {
+        showNoProductsMessage();
+        return;
+      }
 
       const startIndex = (currentPage - 1) * productsPerPage;
       const endIndex = startIndex + productsPerPage;
       const paginatedProducts = filteredProducts.slice(startIndex, endIndex); 
 
-      // Vérification si des produits sont disponibles
-      if (paginatedProducts.length === 0) {
-          const noProductsMessage = document.createElement('p');
-          noProductsMessage.textContent = 'Pas de produits pour cette sélection.';
-          productList.appendChild(noProductsMessage);
-          return;
-      }
-
-      // Ajouter chaque produit
       paginatedProducts.forEach(product => {
           const card = createProductCard(product); 
           if (card) productList.appendChild(card);
@@ -631,7 +609,6 @@ document.addEventListener('DOMContentLoaded', () => {
       updatePaginationInfo(filteredProducts.length);
   }
 
-  // Fonction pour mettre à jour les informations de pagination
   function updatePaginationInfo(totalProducts) {
       const totalPages = Math.ceil(totalProducts / productsPerPage);
       pageInfo.textContent = ` ${currentPage} sur ${totalPages}`;
@@ -640,7 +617,6 @@ document.addEventListener('DOMContentLoaded', () => {
       nextBtn.disabled = currentPage === totalPages;
   }
 
-  // Fonction pour filtrer les produits
   function applyFilters() {
       const selectedCategory = document.getElementById('category-select').value;
       const selectedCountry = document.getElementById('seller-country').value;
@@ -671,12 +647,20 @@ document.addEventListener('DOMContentLoaded', () => {
           );
       }
 
+      // Afficher l'en-tête de catégorie
+      const categoryName = getCategoryDisplayName(selectedCategory);
+      displayCategoryHeader(categoryName, filteredProducts.length, selectedCategory);
+
+      // Vérifier si des produits ont été trouvés
+      if (filteredProducts.length === 0) {
+        showNoProductsMessage();
+      }
+
       currentPage = 1; 
       displayProducts(filteredProducts);
       return filteredProducts; 
   }
 
-  // Événements pour les filtres et la barre de recherche
   document.getElementById('category-select').addEventListener('change', () => {
       filteredProducts = applyFilters();
   });
@@ -690,36 +674,30 @@ document.addEventListener('DOMContentLoaded', () => {
       filteredProducts = applyFilters();
   });
 
-  let filteredProducts = applyFilters();  // Initialiser avec les produits filtrés
+  let filteredProducts = applyFilters(); 
 
-  // Gestion des événements pour la pagination
   nextBtn.addEventListener('click', () => {
       const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
       if (currentPage < totalPages) {
           currentPage++;
-          displayProducts(filteredProducts);  // Afficher les produits filtrés
+          displayProducts(filteredProducts); 
       }
   });
 
   prevBtn.addEventListener('click', () => {
       if (currentPage > 1) {
           currentPage--;
-          displayProducts(filteredProducts);  // Afficher les produits filtrés
+          displayProducts(filteredProducts); 
       }
   });
 
-  // Appel initial pour afficher les produits sans filtre
   applyFilters();
 });
 
-//////////////////////////////////////////////////////////////// //////
-
-// Gestion des catégories
 document.addEventListener('DOMContentLoaded', function() {
     const categoryItems = document.querySelectorAll('.category-item');
     const categorySelect = document.getElementById('category-select');
     
-    // Garder la logique de filtrage existante
     function updateCategory(category) {
         categoryItems.forEach(item => {
             item.classList.remove('active');
@@ -730,13 +708,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (categorySelect) {
             categorySelect.value = category;
-            // Utiliser votre fonction de filtrage existante
             const event = new Event('change');
             categorySelect.dispatchEvent(event);
+            
+            // L'en-tête sera affiché via applyFilters uniquement si une catégorie spécifique est sélectionnée
         }
     }
 
-    // Conserver les événements existants
     categoryItems.forEach(item => {
         item.addEventListener('click', function() {
             const category = this.dataset.category;
@@ -744,39 +722,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Garder la synchronisation avec le select original s'il existe encore
     if (categorySelect) {
         categorySelect.addEventListener('change', function() {
             updateCategory(this.value);
         });
     }
 
-    // Conserver toute autre logique de filtrage existante
     const searchInput = document.getElementById('search-input');
     const sellerCountry = document.getElementById('seller-country');
     const sellerName = document.getElementById('seller-name');
 
-    // Laisser vos fonctions de filtrage existantes intactes
     if (searchInput) {
         searchInput.addEventListener('input', function() {
-            // Votre logique de recherche existante
         });
     }
 
     if (sellerCountry) {
         sellerCountry.addEventListener('change', function() {
-            // Votre logique de filtrage par pays existante
         });
     }
 
     if (sellerName) {
         sellerName.addEventListener('change', function() {
-            // Votre logique de filtrage par vendeur existante
         });
     }
 });
 
-// Fonction pour trier les produits
 function sortProducts() {
 const sortSelect = document.getElementById('sort');
 const sortOption = sortSelect.value;
@@ -792,7 +763,6 @@ sortedProducts.sort((a, b) => b.price - a.price);
 displayProducts(sortedProducts);
 }
 
-// Fonction pour afficher la modal de la galerie d'images
 function showProductModal(product) {
 const modal = document.getElementById('product-modal');
 const modalContent = modal.querySelector('.modal-content');
@@ -831,53 +801,40 @@ filterProductsByCategory(category);
 });
 });
 
-// document.getElementById('filter').addEventListener('input', filterProducts);
 document.getElementById('sort').addEventListener('change', sortProducts);
 
-// Afficher tous les produits au chargement initial
 displayProducts(products);
 
-
-
-// Supprimer le reload automatique
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialiser les styles immédiatement
   initializeStyles();
   
-  // Charger les produits et appliquer les filtres
   if (products && products.length > 0) {
     let currentPage = 1;
     const productsPerPage = 10;
     
-    // Mélanger et afficher les produits immédiatement
     shuffleProducts(products);
     displayProducts(products);
     applyFilters();
     
-    // Initialiser le carousel immédiatement
     initializeCarousel();
   }
 });
 
 function initializeStyles() {
-  // Forcer le recalcul des styles
   document.body.style.display = 'none';
-  document.body.offsetHeight; // Force reflow
+  document.body.offsetHeight;
   document.body.style.display = '';
   
-  // S'assurer que les styles du carousel sont appliqués
   const carouselInner = document.querySelector('.featured-carousel-inner');
   if (carouselInner) {
     carouselInner.style.transition = 'transform 0.5s ease';
   }
   
-  // Initialiser les compteurs et états visuels
   updateCartCounter();
   initializeProductStates();
 }
 
 function initializeProductStates() {
-  // Initialiser les états des boutons like, share, etc.
   document.querySelectorAll('.product-card').forEach(card => {
     const productId = card.dataset.productId;
     if (productId) {
@@ -889,19 +846,15 @@ function initializeProductStates() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Synchronisation des sélecteurs de pays
     const countryBanner = document.getElementById('seller-country-banner');
     const countryOriginal = document.getElementById('seller-country');
     
-    // Synchronisation des sélecteurs de vendeurs
     const sellerBanner = document.getElementById('seller-name-banner');
     const sellerOriginal = document.getElementById('seller-name');
     
-    // Synchronisation des champs de recherche
     const searchBanner = document.getElementById('search-input-banner');
     const searchOriginal = document.getElementById('search-input');
 
-    // Fonction de synchronisation bidirectionnelle
     function syncSelects(select1, select2) {
         if (!select1 || !select2) return;
         
@@ -915,7 +868,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fonction de synchronisation des champs de recherche
     function syncSearch(search1, search2) {
         if (!search1 || !search2) return;
         
@@ -929,7 +881,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialiser les synchronisations
     syncSelects(countryBanner, countryOriginal);
     syncSelects(sellerBanner, sellerOriginal);
     syncSearch(searchBanner, searchOriginal);
@@ -938,7 +889,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function updateProductDisplay(filteredProducts) {
     const productContainer = document.querySelector('.products-container');
-    productContainer.innerHTML = ''; // Vider le conteneur
+    productContainer.innerHTML = '';
 
     if (filteredProducts.length === 0) {
         productContainer.innerHTML = '<p class="no-results">Aucun produit trouvé dans cette gamme de prix</p>';
@@ -946,17 +897,14 @@ function updateProductDisplay(filteredProducts) {
     }
 
     filteredProducts.forEach(product => {
-        // Utiliser votre fonction existante de création de carte produit
         const productCard = createProductCard(product);
         productContainer.appendChild(productCard);
     });
 }
 
-// Fonction pour combiner les filtres (prix, catégorie, vendeur, pays, recherche)
 function applyAllFilters() {
     let filteredProducts = products;
 
-    // Filtre par prix
     const priceRange = document.getElementById('price-range').value;
     if (priceRange !== 'all') {
         const [minPrice, maxPrice] = getPriceRange(priceRange);
@@ -969,7 +917,6 @@ function applyAllFilters() {
         });
     }
 
-    // Filtre par pays
     const selectedCountry = document.getElementById('seller-country').value;
     if (selectedCountry !== 'all') {
         filteredProducts = filteredProducts.filter(product => 
@@ -977,7 +924,6 @@ function applyAllFilters() {
         );
     }
 
-    // Filtre par vendeur
     const selectedSeller = document.getElementById('seller-name').value;
     if (selectedSeller !== 'all') {
         filteredProducts = filteredProducts.filter(product => 
@@ -985,7 +931,6 @@ function applyAllFilters() {
         );
     }
 
-    // Filtre par recherche
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
     if (searchTerm) {
         filteredProducts = filteredProducts.filter(product => 
@@ -1007,14 +952,13 @@ function getPriceRange(range) {
         default: return [0, Infinity];
     }
 }
-// Ajouter les écouteurs d'événements pour tous les filtres
+
 document.getElementById('price-range').addEventListener('change', applyAllFilters);
 document.getElementById('seller-country').addEventListener('change', applyAllFilters);
 document.getElementById('seller-name').addEventListener('change', applyAllFilters);
 document.getElementById('search-input').addEventListener('input', applyAllFilters);
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Sélecteurs pour les filtres
     const sortSelect = document.getElementById('sort');
     const categorySelect = document.getElementById('category-select');
     const countrySelect = document.getElementById('seller-country');
@@ -1026,12 +970,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function filterProducts() {
         let filteredProducts = window.products;
 
-        // ... votre logique de filtrage existante ...
-
-        // Afficher les produits
         displayProducts(filteredProducts);
 
-        // Faire défiler jusqu'à la section des produits
         setTimeout(() => {
             productsSection.scrollIntoView({
                 behavior: 'smooth', 
@@ -1041,3 +981,197 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
 });
+
+// Fonction pour obtenir le nom d'affichage de la catégorie
+function getCategoryDisplayName(categoryValue) {
+  switch(categoryValue) {
+    case 'vetements': return 'Vêtements';
+    case 'vetements_hommes': return 'Vêtements Hommes';
+    case 'electronique': return 'Électronique';
+    case 'maison': return 'Maison';
+    case 'sport': return 'Accessoires';
+    default: return 'Tous les produits';
+  }
+}
+
+// Modifier la fonction displayCategoryHeader pour gérer la visibilité conditionnelle
+function displayCategoryHeader(categoryName, productCount, selectedCategory) {
+  const headerContainer = document.getElementById('category-header-container');
+  
+  // Afficher l'en-tête uniquement si une catégorie spécifique est sélectionnée (pas "all")
+  if (selectedCategory && selectedCategory !== 'all') {
+    headerContainer.innerHTML = `
+      <div class="category-header">
+        <div class="category-title">
+          <i class="fas fa-folder"></i> 
+          ${categoryName}
+        </div>
+        <div class="product-count">${productCount} produits trouvés</div>
+      </div>
+    `;
+    headerContainer.style.display = 'block';
+    // Faire défiler jusqu'à l'en-tête
+    headerContainer.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    // Cacher l'en-tête si aucune catégorie spécifique n'est sélectionnée
+    headerContainer.innerHTML = '';
+    headerContainer.style.display = 'none';
+  }
+}
+
+// Modifier la fonction applyFilters pour contrôler quand afficher l'en-tête
+function applyFilters() {
+  const selectedCategory = document.getElementById('category-select').value;
+  const selectedCountry = document.getElementById('seller-country').value;
+  const selectedSeller = document.getElementById('seller-name').value;
+  const searchTerm = document.getElementById('search-input').value.toLowerCase();
+
+  let filteredProducts = products;
+
+  if (selectedCategory !== 'all') {
+      filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
+      
+      // Afficher l'en-tête de catégorie uniquement lorsqu'une catégorie spécifique est sélectionnée
+      const categoryName = getCategoryDisplayName(selectedCategory);
+      displayCategoryHeader(categoryName, filteredProducts.length, selectedCategory);
+  } else {
+      // Cacher l'en-tête si aucune catégorie spécifique n'est sélectionnée
+      displayCategoryHeader(null, 0, 'all');
+  }
+
+  if (selectedCountry !== 'all') {
+      filteredProducts = filteredProducts.filter(product => 
+          product.seller && product.seller.country === selectedCountry
+      );
+  }
+
+  if (selectedSeller !== 'all') {
+      filteredProducts = filteredProducts.filter(product => 
+          product.seller && product.seller.name === selectedSeller
+      );
+  }
+
+  if (searchTerm) {
+      filteredProducts = filteredProducts.filter(product => 
+          product.name.toLowerCase().includes(searchTerm)
+      );
+  }
+
+  // Vérifier si des produits ont été trouvés
+  if (filteredProducts.length === 0) {
+    showNoProductsMessage();
+  }
+
+  currentPage = 1; 
+  displayProducts(filteredProducts);
+  return filteredProducts; 
+}
+
+// Fonction améliorée pour afficher le message "aucun produit trouvé"
+function showNoProductsMessage() {
+  // Supprimer tout popup existant
+  const existingPopup = document.querySelector('.no-results-popup');
+  if (existingPopup) {
+    existingPopup.remove();
+  }
+  
+  // Créer le popup
+  const noResultsPopup = document.createElement('div');
+  noResultsPopup.className = 'no-results-popup';
+  noResultsPopup.innerHTML = `
+    <div class="no-results-content">
+      <div class="no-results-icon">
+        <i class="fas fa-search"></i>
+      </div>
+      <h3>Désolé, aucun produit trouvé</h3>
+      <p>Essayez de modifier vos critères de recherche ou de filtrage</p>
+      <button class="reset-search-btn">
+        <i class="fas fa-redo"></i> Réinitialiser la recherche
+      </button>
+    </div>
+  `;
+  
+  // Ajouter au document
+  document.body.appendChild(noResultsPopup);
+  
+  // Ajouter l'écouteur au bouton de réinitialisation
+  const resetBtn = noResultsPopup.querySelector('.reset-search-btn');
+  resetBtn.addEventListener('click', function() {
+    // Réinitialiser les filtres
+    document.getElementById('search-input').value = '';
+    document.getElementById('category-select').value = 'all';
+    document.getElementById('seller-country').value = 'all';
+    document.getElementById('seller-name').value = 'all';
+    
+    // Mettre à jour l'interface des catégories
+    document.querySelectorAll('.category-item').forEach(item => {
+      item.classList.remove('active');
+      if(item.dataset.category === 'all') {
+        item.classList.add('active');
+      }
+    });
+    
+    // Cacher l'en-tête de catégorie
+    const headerContainer = document.getElementById('category-header-container');
+    if (headerContainer) {
+      headerContainer.innerHTML = '';
+      headerContainer.style.display = 'none';
+    }
+    
+    // Fermer le popup
+    noResultsPopup.remove();
+    
+    // SOLUTION: Utiliser la page 1 directement sans référence à currentPage
+    const productList = document.querySelector('.product-list');
+    if (productList) {
+      productList.innerHTML = '';
+      
+      // Afficher les produits de la page 1
+      const startIndex = 0; // Page 1 commence à l'index 0
+      const productsPerPage = 10; // Si cette variable n'est pas accessible, utilisez une valeur fixe
+      const endIndex = startIndex + productsPerPage;
+      
+      const allProductsToShow = products.slice(startIndex, endIndex);
+      
+      allProductsToShow.forEach(product => {
+        const card = createProductCard(product);
+        if (card) productList.appendChild(card);
+      });
+      
+      // Mettre à jour l'info de pagination
+      const totalPages = Math.ceil(products.length / productsPerPage);
+      const pageInfo = document.getElementById('page-info');
+      if (pageInfo) pageInfo.textContent = `1 sur ${totalPages}`;
+      
+      // Mettre à jour les boutons de pagination
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      if (prevBtn) prevBtn.disabled = true;
+      if (nextBtn && totalPages > 1) nextBtn.disabled = false;
+    }
+  });
+}
+
+// Modifier la fonction displayProducts pour vérifier s'il y a des produits
+function displayProducts(filteredProducts) {
+  const productList = document.querySelector('.product-list');
+  productList.innerHTML = ''; 
+
+  // Vérifier s'il y a des produits
+  if (filteredProducts.length === 0) {
+    showNoProductsMessage();
+    return;
+  }
+
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
+
+  paginatedProducts.forEach(product => {
+    const card = createProductCard(product); 
+    if (card) productList.appendChild(card);
+  });
+
+  updatePaginationInfo(filteredProducts.length);
+}
+

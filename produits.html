@@ -108,7 +108,7 @@
 <!-- Alerte -->
 <div class="alert-popup" style="display:none;"></div>
 
-<section class="featured-products">
+<section class="featured-products" id="featured-products">
   <h2>Nos Produits Phare</h2>
   <div class="featured-carousel">
     <div class="featured-carousel-inner">
@@ -220,6 +220,7 @@
                     <select id="category-select" class="compact-select">
                         <option value="all">Toutes les catégories</option>
                         <option value="vetements">👕 Vêtements</option>
+                        <option value="vetements_hommes">👕 Vêtements Hommes</option>
                         <option value="electronique">💻 Électronique</option>
                         <option value="maison">🏠 Maison</option>
                         <option value="sport">⚽ Accessoires</option>
@@ -343,180 +344,63 @@
         <span class="promo-value">-20%</span>
     </div> -->
 </section>
- 
-    
-  <section class="product-listing">
-      <!-- <nav class="filter-bar">
-          <div class="filter-item">
-              <label for="sort" class="filter-label">🔃 Trier par :</label>
-              <select id="sort" class="filter-select">
-                  <option value="default">Par défaut</option>
-                  <option value="price-asc">Prix croissant</option>
-                  <option value="price-desc">Prix décroissant</option>
-              </select>
-          </div>
-          <div class="filter-item">
-              <label for="category-select" class="filter-label">📂 Catégories :</label>
-              <select id="category-select" class="filter-select">
-                  <option value="all">Toutes les catégories</option>
-                  <option value="vetements">👕 Vêtements</option>
-                  <option value="electronique">💻 Électronique</option>
-                  <option value="maison">🏠 Maison</option>
-                  <option value="sport">⚽ Accessoires</option>
-              </select>
-          </div>
-          <div class="filter-item">
-              <label for="seller-country" class="filter-label">🌍 Pays :</label>
-              <select id="seller-country">
-                  <option value="all">Tous les pays</option>
-                  <optgroup label="Afrique">
-                    <option value="DZ">Algérie</option>
-                    <option value="AO">Angola</option>
-                    <option value="BJ">Bénin</option>
-                    <option value="BW">Botswana</option>
-                    <option value="BF">Burkina Faso</option>
-                    <option value="BI">Burundi</option>
-                    <option value="CM">Cameroun</option>
-                    <option value="CV">Cap-Vert</option>
-                    <option value="CF">République centrafricaine</option>
-                    <option value="TD">Tchad</option>
-                    <option value="KM">Comores</option>
-                    <option value="CG">Congo (Brazzaville)</option>
-                    <option value="CD">Congo (Kinshasa)</option>
-                    <option value="CI">Côte d'Ivoire</option>
-                    <option value="DJ">Djibouti</option>
-                    <option value="EG">Égypte</option>
-                    <option value="GQ">Guinée équatoriale</option>
-                    <option value="ER">Érythrée</option>
-                    <option value="SZ">Eswatini</option>
-                    <option value="ET">Éthiopie</option>
-                    <option value="GA">Gabon</option>
-                    <option value="GM">Gambie</option>
-                    <option value="GH">Ghana</option>
-                    <option value="GN">Guinée</option>
-                    <option value="GW">Guinée-Bissau</option>
-                    <option value="KE">Kenya</option>
-                    <option value="LS">Lesotho</option>
-                    <option value="LR">Libéria</option>
-                    <option value="LY">Libye</option>
-                    <option value="MG">Madagascar</option>
-                    <option value="MW">Malawi</option>
-                    <option value="ML">Mali</option>
-                    <option value="MR">Mauritanie</option>
-                    <option value="MU">Maurice</option>
-                    <option value="MA">Maroc</option>
-                    <option value="MZ">Mozambique</option>
-                    <option value="NA">Namibie</option>
-                    <option value="NE">Niger</option>
-                    <option value="NG">Nigéria</option>
-                    <option value="RW">Rwanda</option>
-                    <option value="ST">Sao Tomé-et-Principe</option>
-                    <option value="SN">Sénégal</option>
-                    <option value="SC">Seychelles</option>
-                    <option value="SL">Sierra Leone</option>
-                    <option value="SO">Somalie</option>
-                    <option value="ZA">Afrique du Sud</option>
-                    <option value="SS">Soudan du Sud</option>
-                    <option value="SD">Soudan</option>
-                    <option value="TZ">Tanzanie</option>
-                    <option value="TG">Togo</option>
-                    <option value="TN">Tunisie</option>
-                    <option value="UG">Ouganda</option>
-                    <option value="ZM">Zambie</option>
-                    <option value="ZW">Zimbabwe</option>
-                  </optgroup>
-                  <optgroup label="Europe">
-                    <option value="FR">France</option>
-                    <option value="DE">Allemagne</option>
-                    <option value="IT">Italie</option>
-                    <option value="ES">Espagne</option>
-                    <option value="GB">Royaume-Uni</option>
-                    <option value="PT">Portugal</option>
-                    <option value="NL">Pays-Bas</option>
-                    <option value="BE">Belgique</option>
-                    <option value="CH">Suisse</option>
-                    <option value="SE">Suède</option>
-                    <option value="NO">Norvège</option>
-                    <option value="FI">Finlande</option>
-                    <option value="IE">Irlande</option>
-                    <option value="PL">Pologne</option>
-                    <option value="GR">Grèce</option>
-                    <option value="AT">Autriche</option>
-                    <option value="DK">Danemark</option>
-                  </optgroup>
-              </select>
-                        </div>
-          <div class="filter-item">
-              <label id="seller-name-label" for="seller-name" class="filter-label" data-icon="👤">Vendeur :</label>
-              <select id="seller-name" class="filter-select">
-                  <option value="all">Tous les vendeurs</option>
-                  <option value="RAAM">RAAM</option>
-                  <option value="MCRShop">MCRShop</option>
-                  <option value="RYONV">RYONV</option>
-                  <option value="Vendeur">Vendeur</option>
-                  <option value="Sasa">Sasa Vente</option>
-                  <option value="TOUTOU">TOUTOU BEAUTY</option>
-              </select>
-          </div>
-          <div class="filter-item search-box">
-              <label for="search-input" class="filter-label">🔍 Rechercher :</label>
-              <input type="text" id="search-input" class="filter-select" placeholder="Recherchez un produit...">
-          </div>
-      </nav> -->
 
-      <div class="product-list">
-          <!-- Affichage des produits -->
-      </div>
+<!-- Conteneur pour l'en-tête de catégorie -->
+<div id="category-header-container"></div>
 
-      <div class="pagination-container">
-          <button id="prev-btn" class="pagination-btn" disabled>⬅️ Précédent</button>
-          <span id="page-info" class="page-info">1 sur 10</span>
-          <button id="next-btn" class="pagination-btn">Suivant ➡️</button>
-      </div>
-  </section>
+<section class="product-listing">
+    <div class="product-list">
+        <!-- Affichage des produits -->
+    </div>
+    <div class="pagination-container">
+        <button id="prev-btn" class="pagination-btn" disabled>⬅️ Précédent</button>
+        <span id="page-info" class="page-info">1 sur 10</span>
+        <button id="next-btn" class="pagination-btn">Suivant ➡️</button>
+    </div>
+</section>
 
-  <section class="recommended-section">
-    <h3>Produits similaires</h3>
-    <div class="similar-products-carousel"></div>
-  </section>
-  
-  <section class="recently-viewed-section">
-      <h3>Vos produits récemment consultés</h3>
-      <div class="recently-viewed-carousel"></div>
-  </section>
- </main>
+<section class="recommended-section">
+  <h3>Produits similaires</h3>
+  <div class="similar-products-carousel"></div>
+</section>
 
-  <section id="products-section">
-     <!-- Modal pour la galerie d'images -->
-  <div id="product-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="product-gallery">
-        <!-- affichage des images des produits-->
-      </div>
+<section class="recently-viewed-section">
+    <h3>Vos produits récemment consultés</h3>
+    <div class="recently-viewed-carousel"></div>
+</section>
+</main>
+
+<section id="products-section">
+   <!-- Modal pour la galerie d'images -->
+<div id="product-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="product-gallery">
+      <!-- affichage des images des produits-->
     </div>
   </div>
-  </section>
+</div>
+</section>
 
-  <div id="product-details-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="product-details">
-        <!-- Détails du produit seront affichés ici -->
-      </div>
+<div id="product-details-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="product-details">
+      <!-- Détails du produit seront affichés ici -->
     </div>
   </div>
+</div>
 
-  <div id="product-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="product-details">
-        <!-- Les détails du produit seront ajoutés ici dynamiquement -->
-      </div>
+<div id="product-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="product-details">
+      <!-- Les détails du produit seront ajoutés ici dynamiquement -->
     </div>
   </div>
-  
-  <!-- Formulaire -->
+</div>
+
+<!-- Formulaire -->
 <div id="user-info-modal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -646,6 +530,7 @@
 <script nonce="xyz" type="module"  src="./lib/bundle.js"></script>
 <script nonce="xyz" type="module"  src="./contact.js"></script>
 <script nonce="xyz" type="module"  src="./produitBottomNav.js"></script>
+<script nonce="xyz" type="module" src="./scrollButtons.js"></script>
 
 <script nonce="xyz">
   document.getElementById('see-more-button').addEventListener('click', function() {
@@ -702,5 +587,15 @@
         });
     }
   </script>
+
+  <!-- Boutons de navigation haut/bas -->
+  <div class="scroll-buttons">
+    <button id="scroll-to-top" title="Remonter en haut">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <button id="scroll-to-bottom" title="Descendre en bas">
+      <i class="fas fa-arrow-down"></i>
+    </button>
+  </div>
 </body>
 </html>
