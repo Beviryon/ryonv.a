@@ -1,0 +1,659 @@
+/* Variables de couleur et design */
+:root {
+    --primary: #f2ae01;
+    --primary-light: #ffd54f;
+    --primary-dark: #e09900;
+    --secondary: #000361;
+    --secondary-light: #0d47a1;
+    --dark: #202124;
+    --light: #ffffff;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-600: #6c757d;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --font-base: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Styles de base */
+body {
+    font-family: var(--font-base);
+    color: var(--dark);
+    background-color: var(--gray-100);
+    line-height: 1.6;
+    font-size: 16px; /* Base font size */
+}
+
+/* Conteneur principal */
+.faq-container {
+    max-width: 1200px;
+    margin: 100px auto 60px;
+    padding: 0 20px;
+}
+
+/* Entête */
+.faq-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.faq-header p {
+    font-size: 1.4rem;
+    color: var(--gray-600);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Barre de recherche */
+.faq-search {
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 25px;
+    color: var(--gray-600);
+    font-size: 22px;
+}
+
+.search-wrapper input {
+    width: 100%;
+    padding: 20px 25px 20px 60px;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    font-size: 1.2rem;
+    background: var(--light);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.search-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(242, 174, 1, 0.2);
+}
+
+/* Sélecteur de sujet */
+.faq-topics {
+    margin-bottom: 50px;
+}
+
+.topic-selector {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.topic {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 25px;
+    background: var(--light);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.topic i {
+    color: var(--gray-600);
+    font-size: 22px;
+}
+
+.topic span {
+    font-weight: 500;
+    color: var(--gray-600);
+    font-size: 1.1rem;
+}
+
+.topic:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.topic.active {
+    background: var(--primary);
+}
+
+.topic.active i,
+.topic.active span {
+    color: var(--light);
+}
+
+/* Blocs de contenu FAQ */
+.faq-content {
+    display: grid;
+    gap: 50px;
+}
+
+.faq-block {
+    background: var(--light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.faq-block h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.faq-block h2 i {
+    font-size: 1.6rem;
+}
+
+/* Process Steps */
+.faq-process {
+    padding: 35px;
+    display: grid;
+    gap: 25px;
+}
+
+.process-step {
+    display: grid;
+    grid-template-columns: auto 100px 1fr;
+    gap: 25px;
+    padding: 25px;
+    background: var(--gray-100);
+    border-radius: var(--radius-md);
+    align-items: center;
+    transition: var(--transition);
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: var(--light);
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.step-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.step-icon i {
+    font-size: 40px;
+    color: var(--primary);
+}
+
+.step-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.step-content p {
+    color: var(--gray-600);
+    font-size: 1.1rem;
+}
+
+/* Zones de livraison */
+.delivery-areas {
+    padding: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.delivery-card {
+    background: var(--gray-100);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.delivery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.delivery-header {
+    background: var(--primary);
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delivery-header i {
+    font-size: 30px;
+    color: var(--light);
+}
+
+.delivery-time {
+    background: var(--secondary);
+    color: var(--light);
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.delivery-body {
+    padding: 25px;
+}
+
+.delivery-body h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.delivery-body p {
+    color: var(--gray-600);
+    font-size: 1.1rem;
+}
+
+/* Options de paiement */
+.payment-options {
+    padding: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.payment-card {
+    padding: 35px 25px;
+    background: var(--gray-100);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.payment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.payment-icon {
+    width: 90px;
+    height: 90px;
+    background: var(--light);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+}
+
+.payment-icon i {
+    font-size: 38px;
+    color: var(--primary);
+}
+
+.payment-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.payment-card p {
+    color: var(--gray-600);
+    font-size: 1.1rem;
+}
+
+/* Options de support */
+.support-options {
+    padding: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.support-card {
+    background: var(--gray-100);
+    border-radius: var(--radius-md);
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    transition: var(--transition);
+    text-decoration: none;
+    display: block;
+}
+
+.support-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.support-icon {
+    width: 90px;
+    height: 90px;
+    background: var(--light);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+}
+
+.support-icon i {
+    font-size: 38px;
+    color: var(--primary);
+}
+
+.support-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary);
+    color: var(--light);
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.support-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.support-card p {
+    color: var(--gray-600);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.support-action {
+    background: var(--primary);
+    color: var(--light);
+    padding: 15px 25px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.support-card:hover .support-action {
+    background: var(--secondary);
+}
+
+/* Bouton retour */
+.back-home {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    z-index: 100;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.back-home i {
+    font-size: 1.2rem;
+}
+
+.back-home:hover {
+    background: var(--secondary);
+    transform: translateY(-5px);
+}
+
+/* Responsive - Optimisé pour une meilleure lisibilité sur mobile */
+@media (max-width: 992px) {
+    .faq-container {
+        margin: 70px auto 50px;
+    }
+    
+    .process-step {
+        grid-template-columns: auto 90px 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-container {
+        margin: 60px auto 40px;
+        padding: 0 15px;
+    }
+    
+    .faq-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .faq-header p {
+        font-size: 1.3rem;
+    }
+    
+    .search-wrapper input {
+        padding: 18px 20px 18px 55px;
+        font-size: 1.1rem;
+    }
+    
+    .topic {
+        padding: 15px 20px;
+    }
+    
+    .process-step {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .step-number {
+        margin: 0 auto;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .step-icon {
+        margin: 10px auto;
+        width: 110px;
+        height: 110px;
+    }
+    
+    .step-icon i {
+        font-size: 45px;
+    }
+    
+    .step-content h3 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+    
+    .step-content p {
+        font-size: 1.2rem;
+    }
+    
+    .delivery-card, .payment-card, .support-card {
+        padding: 0 0 25px 0;
+    }
+    
+    .delivery-header {
+        padding: 20px;
+    }
+    
+    .delivery-body, .payment-card, .support-card {
+        padding: 20px;
+    }
+    
+    .delivery-body h3, .payment-card h3, .support-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .delivery-body p, .payment-card p, .support-card p {
+        font-size: 1.2rem;
+    }
+    
+    .payment-icon, .support-icon {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+    }
+    
+    .payment-icon i, .support-icon i {
+        font-size: 45px;
+    }
+    
+    .support-action {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+    
+    .back-home {
+        padding: 15px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 18px;
+    }
+    
+    .faq-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .faq-header p {
+        font-size: 1.2rem;
+    }
+    
+    .topic-selector {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .topic {
+        width: 100%;
+        justify-content: center;
+        padding: 15px;
+    }
+    
+    .topic span {
+        font-size: 1.2rem;
+    }
+    
+    .faq-block h2 {
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+    
+    .faq-process, 
+    .delivery-areas, 
+    .payment-options, 
+    .support-options {
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
+    
+    .process-step {
+        padding: 25px;
+    }
+    
+    .step-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .step-content p {
+        font-size: 1.1rem;
+    }
+    
+    .delivery-body h3, .payment-card h3, .support-card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .back-home span {
+        display: none;
+    }
+    
+    .back-home {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        justify-content: center;
+        padding: 0;
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    .back-home i {
+        font-size: 1.5rem;
+    }
+    
+    .support-badge {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-block {
+    animation: fadeIn 0.5s ease forwards;
+} 

@@ -482,127 +482,167 @@ main {
 /* Styles pour la section "Nos services" */
 .services {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 80px auto 0; /* Ajout de margin-top pour compenser la navbar */
     padding: 40px 20px;
     text-align: center;
-  }
-
-  .services h1 {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    font-weight: 900;
-    padding: 8px;
-    margin:  42px;
-    color: #f2ae01;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-    animation: customAni 2s ease 0s infinite normal none;
-  }
-  /* Copy this code after the above code */
-@keyframes customAni {
-  0% {
-    animation-timing-function: ease-in;
-    opacity: 1;
-    transform: translateY(-45px);
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  40% {
-    animation-timing-function: ease-in;
-    transform: translateY(-24px);
-  }
-
-  65% {
-    animation-timing-function: ease-in;
-    transform: translateY(-12px);
-  }
-
-  82% {
-    animation-timing-function: ease-in;
-    transform: translateY(-6px);
-  }
-
-  93% {
-    animation-timing-function: ease-in;
-    transform: translateY(-4px);
-  }
-
-  25%,
-  55%,
-  75%,
-  87% {
-    animation-timing-function: ease-out;
-    transform: translateY(0px);
-  }
-
-  100% {
-    animation-timing-function: ease-out;
-    opacity: 1;
-    transform: translateY(0px);
-  }
 }
-  
-  .service-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 40px;
-  }
-  
-  .service-card {
-    width: 300px;
-    margin: 20px;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #f2ae01;
-  }
-  
-  .service-card i {
-    font-size: 48px;
+
+.services h1 {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
     color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .service-card h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .service-card p {
-    font-size: 16px;
+    position: relative;
+    display: inline-block;
+}
+
+.services h1:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #f2ae01;
+    border-radius: 2px;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style pour le conteneur d'icône */
+.icon-container {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #f2ae01 0%, #ffd700 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.icon-container:after {
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border: 2px dashed #f2ae01;
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+/* Style pour les icônes */
+.icon-container i {
+    font-size: 2.5rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Animation au survol */
+.service-card:hover .icon-container {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(242, 174, 1, 0.3);
+}
+
+.service-card:hover .icon-container i {
+    transform: scale(1.1);
+}
+
+/* Animation de rotation pour le cercle en pointillés */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Style pour les titres et textes */
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 20px 0 15px;
+    font-weight: 600;
+}
+
+.service-card p {
     color: #666;
-  }
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1rem;
+}
 
-  @media (max-width: 300px) {
-    #installBanner div, #salesPopup div {
-      padding: 1em;
-      font-size: 14px;
-    }
-  
-    #installButton, #yesButton, #noButton {
-      padding: 0.5em 1em;
-      font-size: 12px;
-    }
-  
-    h2 {
-      font-size: 18px;
-    }
-  }
+/* Animation d'apparition au scroll */
+.service-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
 
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet de survol sur la carte */
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(242, 174, 1, 0.15);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .service-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .icon-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .icon-container:after {
+        width: 90px;
+        height: 90px;
+    }
+
+    .icon-container i {
+        font-size: 2rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+}
 
 /* Pied de page */
 footer {

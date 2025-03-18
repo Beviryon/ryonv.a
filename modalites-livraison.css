@@ -178,27 +178,34 @@ footer p {
   /* Main Content */
   .delivery-content {
     max-width: 1200px;
-    margin: 30px auto;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 120px 20px 40px 20px;
   }
   
   .delivery-content section {
-    margin-bottom: 30px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .delivery-content section:hover {
+    transform: translateY(-5px);
   }
   
   .delivery-options {
-    background-color: #e6f7ff;
+    background: linear-gradient(135deg, #e6f7ff 0%, #ffffff 100%);
   }
   
   .delivery-times {
-    background-color: #fff3e6;
+    background: linear-gradient(135deg, #fff3e6 0%, #ffffff 100%);
   }
   
   .delivery-costs {
-    background-color: #e6ffe6;
+    background: linear-gradient(135deg, #e6ffe6 0%, #ffffff 100%);
   }
   
   .delivery-content h2 {
@@ -213,12 +220,28 @@ footer p {
   }
   
   .delivery-content ul {
-    list-style: disc;
-    margin-left: 20px;
+    list-style: none;
+    margin-left: 0;
   }
   
   .delivery-content li {
-    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delivery-content li:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .delivery-content li i {
+    margin-right: 15px;
+    color: #f2ae01;
+    font-size: 1.2em;
   }
   
   /* Footer */
@@ -236,7 +259,9 @@ footer p {
   /* Responsive Styles */
   @media (max-width: 768px) {
     .delivery-content {
-      padding: 15px;
+      padding-top: 100px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   
     .page-header h1 {
@@ -249,6 +274,12 @@ footer p {
   }
   
   @media (max-width: 480px) {
+    .delivery-content {
+      padding-top: 90px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
     .page-header nav {
       flex-direction: column;
       align-items: center;
@@ -259,11 +290,6 @@ footer p {
       margin-top: 15px;
     }
   
-    .delivery-content {
-      margin: 10px 5px;
-      padding: 10px;
-    }
-  
     .delivery-content h2 {
       font-size: 1.4em;
     }
@@ -272,5 +298,31 @@ footer p {
       padding: 8px;
       font-size: 0.8em;
     }
+  }
+  
+  /* Styles pour les icônes des sections */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-header i {
+    font-size: 2.5em;
+    margin-right: 20px;
+    color: #f2ae01;
+  }
+  
+  /* Animation des icônes au survol */
+  .section-header i:hover {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+  }
+  
+  /* Style pour les prix */
+  .price {
+    font-weight: bold;
+    color: #f2ae01;
+    font-size: 1.1em;
   }
   

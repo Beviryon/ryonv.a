@@ -1,6 +1,10 @@
 import { products } from "./products.js";
 import "./produitBottomNav.js";
 import { checkIfFavorite, toggleFavorite } from './favoris.js';
+
+// Exposer les produits à l'objet global window pour le comparateur
+window.products = products;
+
 console.log(products);
 
 // Gestion de la navigation mobile
@@ -259,6 +263,61 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartCounter();
 });
 
+console.log("==== DÉBOGAGE DU PANIER ====");
+
+// Créez une fonction spécifique pour les notifications de panier
+function showCartNotification(message) {
+  // Supprimer toute notification existante
+  const existingNotification = document.querySelector('.favorite-notification');
+  if (existingNotification) {
+    existingNotification.remove();
+  }
+
+  // Créer l'élément de notification
+  const notification = document.createElement('div');
+  notification.className = 'favorite-notification cart-style'; // Ajouter une classe pour le style
+  
+  notification.innerHTML = `
+    <div class="notification-content">
+      <i class="fas fa-shopping-cart"></i> <!-- Icône de panier au lieu de coeur -->
+      <p>${message}</p>
+      <div class="notification-buttons">
+        <button class="view-favorites-btn">Voir mon panier</button> <!-- Texte modifié -->
+        <button class="close-popup-btn">Continuer</button>
+      </div>
+    </div>
+  `;
+
+  // Ajouter au document
+  document.body.appendChild(notification);
+
+  // Gérer le bouton "Voir mon panier"
+  const viewFavoritesBtn = notification.querySelector('.view-favorites-btn');
+  viewFavoritesBtn.addEventListener('click', () => {
+    window.location.href = 'cart.html'; // Redirection vers le panier
+  });
+
+  // Gérer le bouton de fermeture
+  const closeBtn = notification.querySelector('.close-popup-btn');
+  closeBtn.addEventListener('click', () => {
+    notification.classList.add('fade-out');
+    setTimeout(() => {
+      notification.remove();
+    }, 300);
+  });
+
+  // Auto-fermeture après 3 secondes
+  setTimeout(() => {
+    if (document.body.contains(notification)) {
+      notification.classList.add('fade-out');
+      setTimeout(() => {
+        notification.remove();
+      }, 300);
+    }
+  }, 3000);
+}
+
+// Modifier la fonction addToCart pour utiliser cette notification spécifique
 function addToCart(product) {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const productIndex = cart.findIndex(item => item.id === product.id);
@@ -271,9 +330,9 @@ function addToCart(product) {
 
   localStorage.setItem('cart', JSON.stringify(cart));
 
-  showAlert('Produit ajouté au panier !');
-  updateCartCounter(); 
-  showCartItems();
+  // Utiliser la fonction spécifique pour les notifications de panier
+  showCartNotification('Produit ajouté au panier !');
+  updateCartCounter();
 }
 
 // Mettre à jour le compteur d'articles dans l'icône du panier
@@ -284,6 +343,16 @@ function updateCartCounter() {
   if (cartCounter) {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     cartCounter.textContent = totalItems;
+    
+    // S'assurer que le compteur est toujours visible, même à 0
+    cartCounter.style.display = 'inline-block';
+    
+    // Optionnel: vous pouvez ajouter une classe spéciale quand le panier est vide
+    if (totalItems === 0) {
+      cartCounter.classList.add('empty-cart');
+    } else {
+      cartCounter.classList.remove('empty-cart');
+    }
   }
 }
 
@@ -300,7 +369,7 @@ function showAlert(message, isAdded = true) {
   
   notification.innerHTML = `
     <div class="notification-content">
-      <i class="fas ${isAdded ? 'fa-heart' : 'fa-heart-broken'}"></i>
+      <i class="fas fa-heart"></i>
       <p>${message}</p>
       <div class="notification-buttons">
         <button class="view-favorites-btn">Voir mes favoris</button>
@@ -315,7 +384,7 @@ function showAlert(message, isAdded = true) {
   // Gérer le bouton "Voir mes favoris"
   const viewFavoritesBtn = notification.querySelector('.view-favorites-btn');
   viewFavoritesBtn.addEventListener('click', () => {
-    window.location.href = 'desloSite/favoris.html';
+    window.location.href = 'cart.html';
   });
 
   // Gérer le bouton de fermeture

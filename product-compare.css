@@ -1,0 +1,1060 @@
+/* SYSTÈME DE COMPARAISON DE PRODUITS - STYLES OPTIMISÉS */
+/* Préfixe unique: ryonv-cmp- pour tous les éléments de comparaison */
+
+/* Modal principal de comparaison - plein écran pour maximiser l'espace */
+.ryonv-cmp-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Fond plus sombre pour mettre en valeur le contenu */
+    z-index: 99999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: Arial, sans-serif !important;
+}
+
+/* Structure du modal - utilisation optimale de l'espace */
+.ryonv-cmp-modal-content {
+    width: 98% !important;
+    height: 96vh !important;
+    max-width: 1500px !important; /* Plus large pour accueillir plus de produits */
+    background-color: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* En-tête du modal */
+.ryonv-cmp-header {
+    padding: 20px 25px !important;
+    background-color: #f39c12 !important;
+    color: white !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-bottom: 2px solid #e67e22 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.ryonv-cmp-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: white !important;
+    letter-spacing: 0.5px !important;
+}
+
+.ryonv-cmp-again-btn {
+    background-color: white !important;
+    color: #f39c12 !important;
+    border: 2px solid white !important;
+    border-radius: 6px !important;
+    padding: 12px 20px !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    outline: none !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.ryonv-cmp-again-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Barre de recherche dans l'en-tête */
+.ryonv-cmp-search-bar {
+    margin-top: 15px !important;
+    display: flex !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+    max-width: 60% !important;
+    margin: 15px auto 5px auto !important;
+}
+
+.ryonv-cmp-search-input {
+    flex-grow: 1 !important;
+    padding: 10px 15px !important;
+    border: none !important;
+    outline: none !important;
+    font-size: 16px !important;
+    background: transparent !important;
+}
+
+.ryonv-cmp-search-btn {
+    background-color: #f39c12 !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 15px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+}
+
+/* Corps du modal - défilement fluide */
+.ryonv-cmp-body {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    padding: 0 !important;
+    background-color: #f5f5f5 !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #e0e0e0 #f5f5f5 !important;
+}
+
+.ryonv-cmp-body::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.ryonv-cmp-body::-webkit-scrollbar-track {
+    background: #f5f5f5 !important;
+}
+
+.ryonv-cmp-body::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0 !important;
+    border-radius: 20px !important;
+}
+
+/* Grille de cartes de produits - plus d'espace entre les cartes */
+.ryonv-cmp-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 25px !important;
+    padding: 30px !important;
+    justify-content: center !important;
+}
+
+/* Carte de produit individuelle - AGRANDIE */
+.ryonv-cmp-card {
+    width: 350px !important; /* Plus large */
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background-color: white !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1) !important;
+    transition: transform 0.3s, box-shadow 0.3s !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+    height: calc(100% - 50px) !important; /* Hauteur maîtrisée pour alignement */
+    max-height: 650px !important;
+}
+
+.ryonv-cmp-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* En-tête de la carte avec image plus grande */
+.ryonv-cmp-card-header {
+    padding: 20px !important;
+    text-align: center !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    background-color: #f9f9f9 !important;
+}
+
+.ryonv-cmp-card-img {
+    width: 200px !important; /* Image plus grande */
+    height: 200px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    border: 1px solid #e0e0e0 !important;
+    margin: 0 auto 15px auto !important;
+    display: block !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05) !important;
+    transition: transform 0.3s !important;
+}
+
+.ryonv-cmp-card:hover .ryonv-cmp-card-img {
+    transform: scale(1.05) !important;
+}
+
+.ryonv-cmp-card-title {
+    margin: 12px 0 !important;
+    font-size: 20px !important;
+    color: #333333 !important;
+    font-weight: bold !important;
+    height: 50px !important; /* Plus d'espace pour le titre */
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+}
+
+.ryonv-cmp-card-price {
+    font-size: 24px !important; /* Prix plus visible */
+    color: #f39c12 !important;
+    font-weight: bold !important;
+    margin: 12px 0 !important;
+    text-align: center !important;
+}
+
+/* Indicateurs de stock améliorés */
+.ryonv-cmp-stock {
+    display: inline-block !important;
+    padding: 10px 16px !important;
+    border-radius: 6px !important;
+    font-weight: bold !important;
+    font-size: 15px !important;
+    margin: 12px auto 5px auto !important;
+    text-align: center !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+.ryonv-cmp-stock-in {
+    background-color: #4CAF50 !important;
+    color: white !important;
+}
+
+.ryonv-cmp-stock-limited {
+    background-color: #FF9800 !important;
+    color: white !important;
+}
+
+.ryonv-cmp-stock-out {
+    background-color: #F44336 !important;
+    color: white !important;
+}
+
+.ryonv-cmp-stock-unknown {
+    background-color: #9E9E9E !important;
+    color: white !important;
+}
+
+/* Détails du produit - plus d'espace et meilleure lisibilité */
+.ryonv-cmp-card-details {
+    padding: 20px !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    background-color: white !important;
+    overflow-y: auto !important;
+    max-height: 200px !important; /* Hauteur maximum avec scroll si besoin */
+}
+
+.ryonv-cmp-detail {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    margin: 0 !important;
+}
+
+.ryonv-cmp-detail-label {
+    font-weight: bold !important;
+    color: #444444 !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.ryonv-cmp-detail-label:before {
+    content: "" !important;
+    display: inline-block !important;
+    width: 8px !important;
+    height: 8px !important;
+    background-color: #f39c12 !important;
+    border-radius: 50% !important;
+    margin-right: 8px !important;
+}
+
+.ryonv-cmp-detail-value {
+    color: #333333 !important;
+    font-size: 16px !important;
+    margin: 0 0 0 16px !important; /* Légère indentation */
+    line-height: 1.5 !important;
+}
+
+/* Actions (boutons) - plus grands et plus visibles */
+.ryonv-cmp-card-actions {
+    padding: 20px !important;
+    border-top: 1px solid #e0e0e0 !important;
+    text-align: center !important;
+    background-color: #f9f9f9 !important;
+}
+
+.ryonv-cmp-add-btn {
+    padding: 14px 24px !important;
+    background-color: #f39c12 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    transition: all 0.3s !important;
+    outline: none !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.ryonv-cmp-add-btn:hover {
+    background-color: #e67e22 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15) !important;
+}
+
+.ryonv-cmp-add-btn i {
+    margin-right: 10px !important;
+    font-size: 20px !important;
+}
+
+.ryonv-cmp-added {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    cursor: default !important;
+}
+
+.ryonv-cmp-added:hover {
+    background-color: #4CAF50 !important;
+    transform: none !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+}
+
+/* Styles pour tablettes */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .ryonv-cmp-card {
+        width: 320px !important;
+    }
+    
+    .ryonv-cmp-card-img {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    
+    .ryonv-cmp-grid {
+        padding: 20px !important;
+        gap: 20px !important;
+    }
+    
+    .ryonv-cmp-card-details {
+        max-height: 180px !important;
+    }
+}
+
+/* Adaptations pour mobile */
+@media (max-width: 767px) {
+    .ryonv-cmp-modal-content {
+        width: 100% !important;
+        height: 100vh !important;
+        border-radius: 0 !important;
+    }
+    
+    .ryonv-cmp-grid {
+        padding: 15px !important;
+        gap: 15px !important;
+    }
+    
+    .ryonv-cmp-card {
+        width: 100% !important;
+        max-width: 320px !important;
+        max-height: none !important;
+    }
+    
+    .ryonv-cmp-card-img {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    
+    .ryonv-cmp-card-title {
+        font-size: 18px !important;
+        height: 46px !important;
+    }
+    
+    .ryonv-cmp-card-price {
+        font-size: 20px !important;
+    }
+    
+    .ryonv-cmp-header {
+        padding: 15px !important;
+    }
+    
+    .ryonv-cmp-title {
+        font-size: 18px !important;
+    }
+    
+    .ryonv-cmp-again-btn {
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+    }
+    
+    .ryonv-cmp-stock {
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+    }
+    
+    .ryonv-cmp-card-details {
+        padding: 15px !important;
+        max-height: 150px !important;
+    }
+    
+    .ryonv-cmp-detail-label {
+        font-size: 15px !important;
+    }
+    
+    .ryonv-cmp-detail-value {
+        font-size: 14px !important;
+    }
+    
+    .ryonv-cmp-add-btn {
+        padding: 12px 18px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* Styles pour les très petits écrans */
+@media (max-width: 359px) {
+    .ryonv-cmp-card-img {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .ryonv-cmp-card-title {
+        font-size: 16px !important;
+        height: 42px !important;
+    }
+    
+    .ryonv-cmp-card-price {
+        font-size: 18px !important;
+    }
+    
+    .ryonv-cmp-card-details {
+        padding: 12px !important;
+    }
+    
+    .ryonv-cmp-detail-label {
+        font-size: 14px !important;
+    }
+    
+    .ryonv-cmp-detail-value {
+        font-size: 13px !important;
+    }
+    
+    .ryonv-cmp-add-btn {
+        padding: 10px 15px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* Animation d'entrée pour les cartes */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ryonv-cmp-card {
+    animation: cardFadeIn 0.5s ease forwards !important;
+}
+
+/* SYSTÈME DE COMPARAISON - STYLES ISOLÉS - FORMAT TABLEAU */
+/* Préfixe unique: ryonv-cmp- pour éviter les conflits */
+
+/* Modal principal */
+.ryonv-cmp-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    z-index: 99999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: Arial, sans-serif !important;
+}
+
+/* Structure du modal */
+.ryonv-cmp-modal-content {
+    width: 90% !important;
+    max-width: 1200px !important;
+    max-height: 90vh !important;
+    background-color: #ffffff !important;
+    border-radius: 10px !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* En-tête du modal */
+.ryonv-cmp-header {
+    padding: 16px 20px !important;
+    background-color: #f39c12 !important;
+    color: white !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-bottom: 1px solid #e67e22 !important;
+}
+
+.ryonv-cmp-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 22px !important;
+    font-weight: bold !important;
+    color: white !important;
+}
+
+.ryonv-cmp-again-btn {
+    background-color: white !important;
+    color: #f39c12 !important;
+    border: 2px solid white !important;
+    border-radius: 5px !important;
+    padding: 10px 16px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    outline: none !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.ryonv-cmp-again-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Barre de recherche dans l'en-tête */
+.ryonv-cmp-search-bar {
+    margin-top: 15px !important;
+    display: flex !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+    max-width: 60% !important;
+    margin: 15px auto 5px auto !important;
+}
+
+.ryonv-cmp-search-input {
+    flex-grow: 1 !important;
+    padding: 10px 15px !important;
+    border: none !important;
+    outline: none !important;
+    font-size: 16px !important;
+    background: transparent !important;
+}
+
+.ryonv-cmp-search-btn {
+    background-color: #f39c12 !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 15px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+}
+
+/* Corps du modal avec scroll */
+.ryonv-cmp-body {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    padding: 0 !important;
+    background-color: #ffffff !important;
+}
+
+/* Table de comparaison */
+.ryonv-cmp-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+}
+
+.ryonv-cmp-table th {
+    background-color: #f8f8f8 !important;
+    padding: 15px !important;
+    text-align: left !important;
+    font-weight: bold !important;
+    color: #333 !important;
+    font-size: 16px !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    width: 200px !important;
+    position: sticky !important;
+    left: 0 !important;
+    z-index: 10 !important;
+    box-shadow: 2px 0 5px -2px rgba(0,0,0,0.1) !important;
+}
+
+.ryonv-cmp-table td {
+    padding: 15px !important;
+    text-align: center !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    min-width: 200px !important;
+    position: relative !important;
+    vertical-align: middle !important;
+    background-color: white !important;
+}
+
+.ryonv-cmp-table tr:nth-child(odd) td {
+    background-color: #f9f9f9 !important;
+}
+
+.ryonv-cmp-table tr:nth-child(odd) th {
+    background-color: #f1f1f1 !important;
+}
+
+/* En-tête avec image et nom du produit */
+.ryonv-cmp-product-header {
+    padding: 15px !important;
+    text-align: center !important;
+}
+
+.ryonv-cmp-product-img {
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: cover !important;
+    border-radius: 5px !important;
+    border: 1px solid #e0e0e0 !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.ryonv-cmp-product-title {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    margin: 10px 0 !important;
+    color: #333 !important;
+}
+
+.ryonv-cmp-product-price {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    color: #f39c12 !important;
+    margin: 5px 0 !important;
+}
+
+/* Indicateurs de stock */
+.ryonv-cmp-stock-limited {
+    background-color: #FF9800 !important;
+    color: white !important;
+    padding: 5px 10px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+
+.ryonv-cmp-stock-in {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    padding: 5px 10px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+
+.ryonv-cmp-stock-out {
+    background-color: #F44336 !important;
+    color: white !important;
+    padding: 5px 10px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+
+/* Bouton d'ajout au panier */
+.ryonv-cmp-add-btn {
+    padding: 10px 15px !important;
+    background-color: #f39c12 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: all 0.3s !important;
+    margin-top: 10px !important;
+    display: inline-block !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+.ryonv-cmp-add-btn:hover {
+    background-color: #e67e22 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+}
+
+.ryonv-cmp-added {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    cursor: default !important;
+}
+
+/* Adaptations pour mobile */
+@media (max-width: 767px) {
+    .ryonv-cmp-modal-content {
+        width: 100% !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
+    }
+    
+    .ryonv-cmp-body {
+        overflow-x: auto !important;
+    }
+    
+    .ryonv-cmp-table th {
+        width: 120px !important;
+        font-size: 14px !important;
+        padding: 10px !important;
+    }
+    
+    .ryonv-cmp-table td {
+        min-width: 150px !important;
+        padding: 10px !important;
+        font-size: 14px !important;
+    }
+    
+    .ryonv-cmp-product-img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .ryonv-cmp-product-title {
+        font-size: 16px !important;
+    }
+    
+    .ryonv-cmp-product-price {
+        font-size: 18px !important;
+    }
+    
+    .ryonv-cmp-add-btn {
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+    }
+    
+    .ryonv-cmp-search-bar {
+        max-width: 90% !important;
+    }
+}
+
+/* Styles pour le bouton d'ajout à la comparaison */
+.add-to-compare-btn {
+    background-color: #f39c12 !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 15px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    font-size: 14px !important;
+    transition: background-color 0.3s ease !important;
+    z-index: 10 !important;
+    position: relative !important;
+}
+
+.add-to-compare-btn:hover {
+    background-color: #e67e22 !important;
+}
+
+.add-to-compare-btn:active {
+    transform: translateY(1px) !important;
+}
+
+.add-to-compare-btn:disabled {
+    background-color: #4CAF50 !important;
+    cursor: default !important;
+}
+
+/* Style pour le conteneur de liste de comparaison */
+.compare-products {
+    display: block !important;
+    margin: 0 auto 20px auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 270px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Style pour le bouton de comparaison */
+.compare-btn {
+    width: 100% !important;
+    background-color: #f39c12 !important;
+    color: white !important;
+    border: none !important;
+    padding: 15px 20px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+    text-align: center !important;
+}
+
+.compare-btn:hover {
+    background-color: #e67e22 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15) !important;
+}
+
+.compare-btn i {
+    margin-right: 8px !important;
+}
+
+/* Cacher la liste de comparaison jusqu'à ce qu'elle soit utilisée */
+.compare-list {
+    display: none !important;
+}
+
+/* Animation pour attirer l'attention */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.compare-btn {
+    animation: pulse 2s infinite;
+}
+
+/* Modal de comparaison - popup centré */
+.compare-products-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.compare-modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.compare-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+    z-index: 10;
+}
+
+.compare-modal-close:hover {
+    color: #f44336;
+}
+
+.compare-modal-title {
+    font-size: 28px;
+    color: #333;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.compare-modal-divider {
+    height: 3px;
+    background-color: #f39c12;
+    margin: 10px 0 15px 0;
+    border-radius: 2px;
+}
+
+.compare-modal-subtitle {
+    color: #666;
+    font-size: 16px;
+    margin: 0 0 20px 0;
+}
+
+/* Grille des produits à comparer */
+.compare-products-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.compare-product-cell {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.compare-product-image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.compare-product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.compare-remove-product {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #f44336;
+    font-size: 16px;
+}
+
+.compare-product-cell.empty {
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.compare-product-cell.empty:hover {
+    border-color: #f39c12;
+    background-color: #fff9e6;
+}
+
+.compare-empty-slot {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compare-empty-slot i {
+    font-size: 48px;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.compare-product-cell.empty:hover .compare-empty-slot i {
+    color: #f39c12;
+}
+
+/* Bouton d'action */
+.compare-action-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 10px 0;
+}
+
+.compare-action-button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    min-width: 180px;
+    justify-content: center;
+}
+
+.compare-action-button:hover:not(:disabled) {
+    background-color: #e67e22;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.compare-action-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Bouton pour ouvrir le modal sur la page de produit */
+.open-compare-modal-btn {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
+.open-compare-modal-btn:hover {
+    background-color: #e67e22;
+}
+
+.compare-button-container {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+} 

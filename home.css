@@ -1167,6 +1167,9 @@ footer p {
 #boutique-link i {
   color: #ff5722;
 }
+#faq-link i {
+  color: #2196f3;
+}
 #livraison-link i {
   color: #03a9f4;
 }
@@ -1180,6 +1183,9 @@ footer p {
 }
 #boutique-link:hover i {
   color: #ff8a65;
+}
+#faq-link:hover i {
+  color: #64b5f6;
 }
 #livraison-link:hover i {
   color: #4fc3f7;

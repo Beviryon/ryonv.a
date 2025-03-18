@@ -817,75 +817,175 @@ nav {
 
 /* Section "À propos" */
 .about {
-  max-width: 1060px;
-  margin: 0 auto;
-  padding: 2rem;
-  margin-top: 2rem;
+  max-width: 1200px;
+  margin: 100px auto 40px;
+  padding: 0 20px;
 }
 
 .about h1 {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-size: 2.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.about h1 i {
   color: #f2ae01;
-  font-weight: 900;
-  border-bottom: 2px solid #f2ae01;
-  padding-bottom: 0.5rem;
 }
 
 .about-content {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
-.about-text h2 {
-  margin-top: 1.5rem;
-  color: #000361;
-  border-bottom: 2px solid #f2ae01;
-  padding-bottom: 0.5rem;
+.about-section {
+  padding: 40px;
+  border-bottom: 1px solid #eee;
 }
 
-.about-text p {
-  margin: 1rem 0;
+.about-section:last-child {
+  border-bottom: none;
 }
 
-.about-text ul {
-  list-style: none;
-  padding: 0;
+.about-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
 }
 
-.about-text li {
-  background-color: #f9f9f9;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.about-section h2 i {
+  color: #f2ae01;
 }
 
+.about-section p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Style pour la grille des valeurs */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.value-card {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.value-card i {
+  font-size: 2.5rem;
+  color: #f2ae01;
+  margin-bottom: 15px;
+}
+
+.value-card strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Style pour la section Rejoignez-nous */
 .join-us {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 60px;
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .join-us h2 {
-  margin-bottom: 1rem;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.join-us h2 i {
   color: #f2ae01;
 }
 
-.join-us p {
-  margin: 0.5rem 0;
+.contact-buttons {
+  margin: 30px 0;
 }
 
-.join-us a {
-  color: #f2ae01;
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
   text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.join-us a:hover {
-  text-decoration: underline;
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
 }
 
+/* Media Queries */
+@media (max-width: 768px) {
+  .about {
+    margin-top: 80px;
+  }
+
+  .about-section {
+    padding: 30px 20px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about h1 {
+    font-size: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .join-us h2 {
+    font-size: 1.5rem;
+  }
+}
 
 /* Pied de page */
 footer {
@@ -937,4 +1037,43 @@ footer p {
   .join-us p {
       font-size: 0.9rem;
   }
+}
+
+.faq-section {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.faq-section h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.faq-section h3 i {
+    color: #f2ae01;
+}
+
+.faq-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #f2ae01;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.faq-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(242, 174, 1, 0.3);
+    background: #e09900;
 }

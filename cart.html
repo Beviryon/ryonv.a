@@ -13,60 +13,426 @@
     <meta property="og:image" content="./images/icons/icon-192x192.png">
     <meta property="og:url" content="https://ryonv.com">
     <meta name="description" content="Découvrez RYONV, la boutique de mode en ligne qui allie qualité et style. Achetez des vêtements modernes et profitez d'une livraison rapide.">
-    <title>RYONV - Boutique en ligne de style et qualité</title>
-    <link rel="icon" href="./images//icons/icon-192x192.png" type="image/x-icon">
+    <title>RYONV - Votre panier</title>
+    <link rel="icon" href="./images/icons/icon-192x192.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panier</title>
     <link rel="stylesheet" href="./cart.css" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>Votre Panier</h1>
-            <div class="header-buttons">
-                <a href="./produits.html" class="header-btn products-btn">
-                    <i class="fas fa-store"></i>
-                    Nos Produits
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./images/icons/icon-192x192.png" alt="RYONV" class="logo-img">
+                    <span class="logo-text">RYONV</span>
                 </a>
-                <a href="./favoris.html" class="header-btn favorites-btn">
-                    <i class="fas fa-heart"></i>
-                    Favoris
-                </a>
-                <!-- <button class="header-btn order-all-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Commander tout
-                </button> -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="./produits.html"><i class="fas fa-store"></i> Boutique</a></li>
+                <li><a href="./favoris.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                <li class="active"><a href="./cart.html"><i class="fas fa-shopping-cart"></i> Panier</a></li>
+            </ul>
+            <div class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
-        <div class="cart-controls">
-            <div class="select-controls">
-                <label class="select-all-label">
-                    <input type="checkbox" id="select-all">
-                    <span>Sélectionner tout</span>
-                </label>
-                <button id="delete-selected" class="delete-selected-btn">
-                    <i class="fas fa-trash"></i>
-                    Supprimer la sélection
+    </nav>
+
+    <!-- Hero section -->
+    <section class="cart-hero">
+        <div class="container">
+            <div class="cart-hero-content">
+                <h1 class="page-title">Votre Panier</h1>
+                <p class="subtitle">Vérifiez vos articles et procédez au paiement</p>
+            </div>
+            <div class="cart-hero-image">
+                <img src="https://cdn-icons-png.flaticon.com/512/4555/4555971.png" alt="Shopping cart illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main cart section -->
+    <main class="cart-main">
+        <div class="container">
+            <!-- Cart selection controls -->
+            <div class="cart-header">
+                <div class="selection-controls">
+                    <label class="select-all-checkbox">
+                        <input type="checkbox" id="select-all">
+                        <span class="checkmark"></span>
+                        <span class="label-text">Sélectionner tout</span>
+                    </label>
+                    <button id="delete-selected" class="delete-btn">
+                        <i class="fas fa-trash-alt"></i>
+                        <span>Supprimer la sélection</span>
+                    </button>
+                </div>
+                <div class="cart-actions">
+                    <a href="./produits.html" id="continue-shopping-btn" class="continue-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Continuer vos achats</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cart content wrapper -->
+            <div class="cart-content">
+                <!-- Cart items list -->
+                <div class="cart-items-wrapper">
+                    <div id="cart-items" class="cart-items">
+                        <!-- Les produits seront générés dynamiquement et regroupés par vendeur -->
+                    </div>
+                    
+                    <!-- Empty cart state -->
+                    <div id="empty-cart" class="empty-cart hidden">
+                        <div class="empty-cart-illustration">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4076/4076432.png" alt="Empty cart">
+                        </div>
+                        <h2>Votre panier est vide</h2>
+                        <p>Les articles que vous ajouterez apparaîtront ici.</p>
+                        <a href="./produits.html" class="shop-now-btn">
+                            <i class="fas fa-shopping-bag"></i>
+                            Découvrir nos produits
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cart summary -->
+                <div class="cart-summary">
+                    <div class="summary-header">
+                        <h2>Récapitulatif</h2>
+                        <span class="summary-count" id="items-count">0 articles</span>
+                    </div>
+                    
+                    <div class="summary-content">
+                        <div class="summary-row">
+                            <span>Sous-total</span>
+                            <span id="subtotal">0 Fcfa</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Livraison</span>
+                            <span>Calculé à l'étape suivante</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Taxes</span>
+                            <span>Calculé à l'étape suivante</span>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="total">0 Fcfa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-footer">
+                        <!-- <button class="checkout-btn">
+                            <i class="fas fa-lock"></i>
+                            Procéder au paiement
+                        </button> -->
+                        <div class="payment-methods">
+                            <span>Méthodes de paiement acceptées</span>
+                            <div class="payment-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-paypal"></i>
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section des options de commande personnalisée avec noms des vendeurs -->
+                    <div class="checkout-options">
+                        <h3>Options de commande par vendeur</h3>
+                        <div class="checkout-option">
+                            <button id="order-all-btn" class="checkout-option-btn">
+                                <i class="fas fa-users"></i>
+                                <span>Commander auprès de chaque vendeur</span>
+                            </button>
+                            <p class="option-description">Contactez chaque vendeur individuellement</p>
+                        </div>
+                        <div class="checkout-option">
+                            <button id="bulk-order-btn" class="checkout-option-btn">
+                                <i class="fas fa-list-check"></i>
+                                <span>Générer liste de commande</span>
+                            </button>
+                            <p class="option-description">Créez une liste pour faciliter vos commandes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Related products section -->
+    <section class="related-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vous pourriez aussi aimer</h2>
+                <a href="./produits.html" class="view-all">Voir tout <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="products-scroll">
+                <div class="scroll-arrow left">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div id="recommended-products" class="products-row">
+                    <!-- Recommended products will be populated by JavaScript -->
+                </div>
+                <div class="scroll-arrow right">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sale banner -->
+    <section class="sale-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2>PROMO <span class="highlight">SPÉCIALE</span></h2>
+                    <p>Utilisez le code <strong>RYONV20</strong> pour obtenir <span class="highlight">20%</span> de réduction sur votre première commande !</p>
+                    <a href="./produits.html" class="banner-btn">En profiter maintenant</a>
+                </div>
+                <div class="banner-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3761/3761695.png" alt="Special sale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust badges -->
+    <section class="trust-badges">
+        <div class="container">
+            <div class="badge">
+                <i class="fas fa-truck"></i>
+                <div class="badge-text">
+                    <h3>Livraison rapide</h3>
+                    <p>Partout en Afrique</p>
+                </div>
+            </div>
+            <div class="badge">
+                <i class="fas fa-shield-alt"></i>
+                <div class="badge-text">
+                    <h3>Paiement sécurisé</h3>
+                    <p>Transactions 100% sécurisées</p>
+                </div>
+            </div>
+            <div class="badge">
+                <i class="fas fa-headset"></i>
+                <div class="badge-text">
+                    <h3>Support client</h3>
+                    <p>Assistance 7j/7</p>
+                </div>
+            </div>
+            <div class="badge">
+                <i class="fas fa-undo"></i>
+                <div class="badge-text">
+                    <h3>Retours faciles</h3>
+                    <p>14 jours pour changer d'avis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="./images/icons/icon-192x192.png" alt="RYONV">
+                        <span>RYONV</span>
+                    </div>
+                    <p class="footer-tagline">La qualité et le style se rencontrent</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liens utiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="./home.html">Accueil</a></li>
+                        <li><a href="./produits.html">Boutique</a></li>
+                        <li><a href="./favoris.html">Favoris</a></li>
+                        <li><a href="./cart.html">Panier</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Aide</h3>
+                    <ul class="footer-links">
+                        <li><a href="./faq.html">FAQ</a></li>
+                        <li><a href="./modalites-livraison.html">Livraison</a></li>
+                        <li><a href="./contact.html">Nous contacter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Inscrivez-vous pour recevoir nos offres spéciales</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 RYONV. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Cart item template (for JavaScript) -->
+    <template id="cart-item-template">
+        <div class="cart-item">
+            <div class="item-select">
+                <input type="checkbox" class="select-item">
+                <span class="checkmark"></span>
+            </div>
+            <div class="item-image">
+                <img src="" alt="">
+                <div class="item-badges">
+                    <span class="badge new">Nouveau</span>
+                </div>
+            </div>
+            <div class="item-details">
+                <h3 class="item-name"></h3>
+                <div class="item-meta">
+                    <span class="item-vendor">Vendeur: <span class="vendor-name"></span></span>
+                </div>
+                <div class="item-price">
+                    <span class="current-price"></span>
+                </div>
+                <div class="item-controls">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-actions">
+                <button class="action-btn view-btn">
+                    <i class="fas fa-eye"></i>
+                    <span>Voir</span>
+                </button>
+                <button class="action-btn order-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Commander</span>
+                </button>
+                <button class="action-btn remove-btn">
+                    <i class="fas fa-trash-alt"></i>
                 </button>
             </div>
         </div>
-    </header>
-    <main>
-       
-        <section id="cart-items">
-            <div class="cart-controls">
-                <!-- <input type="checkbox" id="select-all"> Sélectionner tout
-                <button id="delete-selected">Supprimer les sélectionnés</button> -->
+    </template>
+
+    <!-- Recommended product template (for JavaScript) -->
+    <template id="recommended-product-template">
+        <div class="product-card">
+            <div class="product-badge">
+                <span>Populaire</span>
             </div>
-        </section>
-        <section id="continue-shopping">
-            <button id="continue-shopping-btn"><a href="./produits.html" class="continue-shopping-btn">Continuer vos achats</a></button>
-        </section>
-    </main>
+            <div class="product-image">
+                <img src="" alt="">
+                <div class="product-actions">
+                    <button class="quick-view" aria-label="Quick view">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="add-to-cart" aria-label="Add to cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="add-to-wishlist" aria-label="Add to wishlist">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <h3 class="product-name"></h3>
+                <div class="product-price">
+                    <span class="current"></span>
+                </div>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-count">(24)</span>
+                </div>
+            </div>
+        </div>
+    </template>
+
     <script src="./cart.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-nav-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Scroll arrows for product carousels
+        document.querySelector('.scroll-arrow.left').addEventListener('click', () => {
+            document.querySelector('.products-row').scrollBy({
+                left: -300,
+                behavior: 'smooth'
+            });
+        });
+
+        document.querySelector('.scroll-arrow.right').addEventListener('click', () => {
+            document.querySelector('.products-row').scrollBy({
+                left: 300,
+                behavior: 'smooth'
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Check if cart is empty
+        window.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                document.getElementById('empty-cart').classList.remove('hidden');
+                document.getElementById('cart-items').classList.add('hidden');
+                document.querySelector('.cart-header').classList.add('hidden');
+            } else {
+                document.getElementById('items-count').textContent = `${cart.length} article${cart.length > 1 ? 's' : ''}`;
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1130,3 +1130,12 @@ nav {
 /* ========================================================== */
 /* ========================================================== */
 /* ========================================================== */
+
+/* Ajoutez ces styles à votre fichier CSS */
+.favorite-notification.cart-style i.fa-shopping-cart {
+  color: #4CAF50 !important; /* Vert pour l'icône du panier */
+}
+
+.favorite-notification.cart-style .view-favorites-btn {
+  background-color: #4CAF50 !important; /* Vert pour le bouton */
+}

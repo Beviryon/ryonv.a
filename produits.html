@@ -37,16 +37,19 @@
     <link rel="stylesheet" href="./produitLike.css">
     <link rel="stylesheet" href="./produitBarre.css">
     <link rel="stylesheet" href="./favoris.css">
+    <!-- <link rel="stylesheet" href="./product-compare.css"> -->
     <!-- <link rel="stylesheet" href="./produitTest.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
     <link rel="manifest" href="./manifest.json">
     <meta http-equiv="Content-Security-Policy" content="
     default-src 'self'; 
-    script-src 'self' 'nonce-xyz'; 
-    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
-    img-src 'self' https://s.alicdn.com https://live.staticflickr.com;
-    font-src 'self' https://cdnjs.cloudflare.com;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.clarity.ms https://www.googletagmanager.com 'nonce-xyz';
+    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+    img-src 'self' data: https://s.alicdn.com https://live.staticflickr.com https://via.placeholder.com;
+    font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;
+    connect-src 'self' https://www.google.com https://www.clarity.ms;
+    frame-src 'self' https://www.googletagmanager.com;
   ">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -359,17 +362,7 @@
     </div>
 </section>
 
-<section class="recommended-section">
-  <h3>Produits similaires</h3>
-  <div class="similar-products-carousel"></div>
-</section>
-
-<section class="recently-viewed-section">
-    <h3>Vos produits récemment consultés</h3>
-    <div class="recently-viewed-carousel"></div>
-</section>
 </main>
-
 <section id="products-section">
    <!-- Modal pour la galerie d'images -->
 <div id="product-modal" class="modal">
@@ -480,18 +473,6 @@
     </div>
 </div> 
 
-  <!-- Pied de page -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-links">
-            <a href="./home.html">Accueil</a>
-            <a href="./modalites-livraison.html">Livraison</a>
-            <a href="./Abonnement.html">Abonnement</a>
-            <a href="./contact.html">Contact</a>  
-        </div>
-        <p>&copy; 2024 RYONV. Développé par Beviryon.</p>
-    </div>
-</footer>
 
 <!-- Menu  -->
 <div class="bottom-nav">
@@ -597,5 +578,357 @@
       <i class="fas fa-arrow-down"></i>
     </button>
   </div>
+
+<section class="product-reviews">
+    <h3>Avis clients <span class="rating-average"><i class="fas fa-star"></i> 4.7/5</span></h3>
+    <div class="reviews-summary">
+        <div class="rating-bars">
+            <div class="rating-bar">
+                <div class="rating-bar-label">5 <i class="fas fa-star"></i></div>
+                <div class="bar-container"><div class="bar" style="width: 75%"></div></div>
+                <div class="bar-percentage">75%</div>
+            </div>
+            <div class="rating-bar">
+                <div class="rating-bar-label">4 <i class="fas fa-star"></i></div>
+                <div class="bar-container"><div class="bar" style="width: 20%"></div></div>
+                <div class="bar-percentage">20%</div>
+            </div>
+            <div class="rating-bar">
+                <div class="rating-bar-label">3 <i class="fas fa-star"></i></div>
+                <div class="bar-container"><div class="bar" style="width: 3%"></div></div>
+                <div class="bar-percentage">3%</div>
+            </div>
+            <div class="rating-bar">
+                <div class="rating-bar-label">2 <i class="fas fa-star"></i></div>
+                <div class="bar-container"><div class="bar" style="width: 1%"></div></div>
+                <div class="bar-percentage">1%</div>
+            </div>
+            <div class="rating-bar">
+                <div class="rating-bar-label">1 <i class="fas fa-star"></i></div>
+                <div class="bar-container"><div class="bar" style="width: 1%"></div></div>
+                <div class="bar-percentage">1%</div>
+            </div>
+        </div>
+        <div class="reviews-stats">
+            <div class="big-rating">4.7</div>
+            <div class="stars-display">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="reviews-count">Basé sur 128 avis</div>
+        </div>
+    </div>
+    
+    <div class="review-list">
+        <div class="review-item">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <img src="./images/icons/profile.jpg" alt="Reviewer" class="reviewer-avatar">
+                    <div>
+                        <div class="reviewer-name">Sophie K.</div>
+                        <div class="review-date">15 juin 2024</div>
+                    </div>
+                </div>
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="review-content">
+                <p>Ce sac est magnifique et de haute qualité. Les perles sont parfaitement attachées et les finitions impeccables. Je l'ai utilisé lors d'une soirée et j'ai reçu beaucoup de compliments. La livraison a été rapide et le produit correspond exactement aux photos. Je recommande vivement!</p>
+                <span class="verified-purchase"><i class="fas fa-check-circle"></i> Achat vérifié</span>
+            </div>
+            <div class="review-images">
+                <img src="https://live.staticflickr.com/65535/54228270743_01c73c8f7c_w.jpg" alt="Review image">
+                <img src="https://live.staticflickr.com/65535/54228441095_8883de9e26_w.jpg" alt="Review image">
+            </div>
+        </div>
+        
+        <div class="review-item">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <img src="./images/icons/profile.jpg" alt="Reviewer" class="reviewer-avatar">
+                    <div>
+                        <div class="reviewer-name">Marie T.</div>
+                        <div class="review-date">2 juin 2024</div>
+                    </div>
+                </div>
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+            <div class="review-content">
+                <p>Je suis satisfaite de mon achat. Le sac est élégant et de bonne qualité. Il est un peu plus petit que ce que j'imaginais, mais cela reste un excellent rapport qualité-prix. Je le recommande pour les occasions spéciales.</p>
+                <span class="verified-purchase"><i class="fas fa-check-circle"></i> Achat vérifié</span>
+            </div>
+        </div>
+        
+        <div class="review-item">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <img src="./images/icons/profile.jpg" alt="Reviewer" class="reviewer-avatar">
+                    <div>
+                        <div class="reviewer-name">Jean L.</div>
+                        <div class="review-date">18 mai 2024</div>
+                    </div>
+                </div>
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="review-content">
+                <p>J'ai acheté ce sac pour ma femme et elle l'adore ! La qualité est exceptionnelle et le design unique. Je n'hésiterai pas à commander à nouveau sur ce site. Service client très réactif également.</p>
+                <span class="verified-purchase"><i class="fas fa-check-circle"></i> Achat vérifié</span>
+            </div>
+        </div>
+        
+        <div class="review-item">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <img src="./images/icons/profile.jpg" alt="Reviewer" class="reviewer-avatar">
+                    <div>
+                        <div class="reviewer-name">Céline R.</div>
+                        <div class="review-date">5 mai 2024</div>
+                    </div>
+                </div>
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+            <div class="review-content">
+                <p>Le sac est beau mais j'ai remarqué quelques imperfections dans les coutures. Pour le prix, j'attendais une qualité irréprochable. Néanmoins, il reste élégant et attire les regards. La livraison a été rapide et bien emballée.</p>
+                <span class="verified-purchase"><i class="fas fa-check-circle"></i> Achat vérifié</span>
+            </div>
+        </div>
+    </div>
+    
+    <button class="see-more-reviews">Voir tous les 128 avis</button>
+</section>
+
+<div class="trust-badges">
+    <div class="badge">
+        <i class="fas fa-shield-alt"></i>
+        <span>Paiement sécurisé</span>
+    </div>
+    <div class="badge">
+        <i class="fas fa-truck"></i>
+        <span>Livraison rapide</span>
+    </div>
+    <div class="badge">
+        <i class="fas fa-exchange-alt"></i>
+        <span>Retours sous 14 jours</span>
+    </div>
+    <div class="badge">
+        <i class="fas fa-headset"></i>
+        <span>Support 7j/7</span>
+    </div>
+</div>
+
+<section class="frequently-bought-together">
+    <h3>Complétez votre achat</h3>
+    <div class="bundle-products">
+        <div class="bundle-product current">
+            <img src="https://live.staticflickr.com/65535/54228270743_01c73c8f7c_w.jpg" alt="Sac de perles">
+            <div class="bundle-product-name">Sac de perles</div>
+            <p class="bundle-price">25,000 FCFA</p>
+        </div>
+        <div class="bundle-plus">+</div>
+        <div class="bundle-product">
+            <img src="https://live.staticflickr.com/65535/54236078840_fa3b86eed7_w.jpg" alt="Sac en perle">
+            <div class="bundle-product-name">Sac en perle - Argent</div>
+            <p class="bundle-price">20,000 FCFA</p>
+            <input type="checkbox" checked>
+        </div>
+        <div class="bundle-plus">+</div>
+        <div class="bundle-product">
+            <img src="https://live.staticflickr.com/65535/54003722967_4476dfc92d_n.jpg" alt="Perruque">
+            <div class="bundle-product-name">Perruque élégante</div>
+            <p class="bundle-price">25,000 FCFA</p>
+            <input type="checkbox" checked>
+        </div>
+        <div class="bundle-equals">=</div>
+        <div class="bundle-total">
+            <p class="total-price">63,000 FCFA <span class="original-total">70,000 FCFA</span></p>
+            <p class="total-savings">Économisez 7,000 FCFA</p>
+            <button class="add-bundle-to-cart"><i class="fas fa-shopping-cart"></i> Ajouter l'ensemble</button>
+        </div>
+    </div>
+</section>
+
+<div class="product-popularity">
+    <div class="visitor-counter">
+        <i class="fas fa-eye"></i>
+        <span>142 personnes consultent ce produit</span>
+    </div>
+    <div class="sales-counter">
+        <i class="fas fa-shopping-bag"></i>
+        <span>28 vendus ces dernières 24h</span>
+    </div>
+    <div class="stock-warning">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>Plus que 5 en stock!</span>
+    </div>
+</div>
+
+<section class="product-faq">
+    <h3>Questions fréquentes</h3>
+    <div class="faq-item">
+        <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h4>Comment vérifier la taille?</h4>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+            <p>Consultez notre guide des tailles dans la description du produit ou contactez-nous directement via WhatsApp pour des conseils personnalisés.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h4>Quel est le délai de livraison?</h4>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+            <p>La livraison prend généralement 1-2 jours à Brazzaville, 2-3 jours à Pointe-Noire et 3-7 jours pour les autres villes. <a href="./modalites-livraison.html">Plus d'infos</a></p>
+        </div>
+    </div>
+    <a href="./faq.html" class="see-more-faq">Voir toutes les questions</a>
+</section>
+
+<div class="social-share">
+    <p>Partager ce produit:</p>
+    <div class="share-buttons">
+        <a href="https://wa.me/+33758146261" class="share-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.fb.com/l/6lp1kJRRR" class="share-btn facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.fb.com/l/6lp1kJRRR" class="share-btn twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href=" https://wa.me/message/SGMUQCXAETSCA1 " class="share-btn copy-link">
+            <i class="fas fa-link"></i>
+        </a>
+    </div>
+</div>
+
+<div class="compare-products">
+    <button class="compare-btn">
+        <i class="fas fa-exchange-alt"></i>
+        <span>Comparer ce produit</span>
+    </button>
+    <div class="compare-list">
+        <div class="compare-item">
+            <img src="PRODUCT_IMAGE" alt="Produit à comparer">
+            <i class="fas fa-times remove-compare"></i>
+        </div>
+        <div class="add-to-compare">
+            <i class="fas fa-plus"></i>
+        </div>
+    </div>
+</div>
+
+<div class="recent-sales">
+    <h3>Derniers achats</h3>
+    <div class="sales-ticker">
+        <div class="sale-item">
+            <img src="./images/icons/profile.jpg" alt="Acheteur">
+            <div class="sale-info">
+                <p class="buyer">Romain D. de Brazzaville</p>
+                <p class="product">a acheté ce produit</p>
+                <p class="time">il y a 22 minutes</p>
+            </div>
+        </div>
+        <!-- D'autres éléments de vente récente -->
+    </div>
+</div>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="./home.html">Accueil</a>
+            <a href="./modalites-livraison.html">Livraison</a>
+            <a href="./Abonnement.html">Abonnement</a>
+            <a href="./contact.html">Contact</a>  
+        </div>
+        <p>&copy; 2024 RYONV. Développé par Beviryon.</p>
+    </div>
+</footer>
+<script nonce="xyz" src="./product-features.js"></script>
+
+<script nonce="xyz">
+    // Fonction de gestion du panier globale
+    window.updateCartCounter = function() {
+        try {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            
+            // Mettre à jour le compteur dans l'interface
+            const counter = document.querySelector('.cart-counter');
+            if (counter) {
+                counter.textContent = totalItems;
+                counter.style.display = totalItems > 0 ? 'flex' : 'none';
+            }
+            
+            console.log("Compteur du panier mis à jour:", totalItems);
+        } catch (e) {
+            console.error("Erreur lors de la mise à jour du compteur:", e);
+        }
+    };
+    
+    // S'assurer que le panier est initialisé
+    document.addEventListener('DOMContentLoaded', function() {
+        window.updateCartCounter();
+    });
+</script>
+
+<!-- Ajouter ce script à la fin du body, juste avant les scripts existants -->
+<script nonce="xyz">
+  // Fonction de débogage pour surveiller les clics
+  document.addEventListener('click', function(e) {
+      const target = e.target;
+      
+      // Chercher si c'est un bouton d'ajout à la comparaison ou un parent proche
+      const addButton = target.classList.contains('add-to-compare-btn') 
+          ? target 
+          : target.closest('.add-to-compare-btn');
+      
+      if (addButton) {
+          console.log("Clic détecté sur un bouton d'ajout avec ID:", addButton.getAttribute('data-id'));
+      }
+  });
+  
+  // Fonction de secours pour l'initialisation
+  window.addEventListener('load', function() {
+      setTimeout(function() {
+          if (typeof window.ProductCompare === 'undefined') {
+              console.warn("ProductCompare n'est pas défini après le chargement de la page");
+          } else {
+              console.log("Réinitialisation du système de comparaison");
+              window.ProductCompare.init();
+          }
+      }, 2000);
+  });
+</script>
 </body>
 </html>

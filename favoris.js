@@ -24,10 +24,10 @@ export function toggleFavorite(product) {
   
   if (index === -1) {
     favorites.push(product);
-    showAlert('Produit ajouté aux favoris !', true);
+    showAlert("Produit ajouté aux favoris !", true);
   } else {
     favorites.splice(index, 1);
-    showAlert('Produit retiré des favoris !', false);
+    showAlert("Produit retiré des favoris !", false);
   }
   
   localStorage.setItem(favoritesKey, JSON.stringify(favorites));
