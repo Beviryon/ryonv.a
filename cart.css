@@ -2,19 +2,19 @@
     /* Main colors */
     --primary: #01071b;
     --primary-hover: #01071b;
-    --primary-light: #eef2ff;
-    --secondary: #5c0110;
+    --primary-light: #dedede;
+    --secondary: #ff002b;
     --secondary-hover: #e11d48;
-    --accent: #01071b;
+    --accent: #4d4d4e;
     
     /* Neutral colors */
-    --background: #f9fafb;
-    --surface: #ffffff;
+    --background: #cecccc;
+    --surface: #ededed;
     --text-primary: #111827;
-    --text-secondary: #4b5563;
-    --text-tertiary: #9ca3af;
+    --text-secondary: #110042;
+    --text-tertiary: #ff0000;
     --border: #e5e7eb;
-    --border-light: #f3f4f6;
+    --border-light: #c0c0c0;
     
     /* Status colors */
     --success: #10b981;
