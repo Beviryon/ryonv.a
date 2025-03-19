@@ -19,7 +19,7 @@ const products = [
   ],
   like: 0,
   seller: {
-    name: 'RYONV.A',
+    name: 'RYONV',
     phone: '+33758146261',
     country: 'FR',
     rating: 4.8
@@ -49,7 +49,7 @@ const products = [
   ],
   like: 0,
   seller: {
-    name: 'RYONV.A',
+    name: 'RYONV',
     phone: '+33758146261',
     country: 'FR',
     rating: 4.8
@@ -79,7 +79,7 @@ const products = [
   ],
   like: 0,
   seller: {
-    name: 'RYONV.A',
+    name: 'RYONV',
     phone: '+33758146261',
     country: 'FR',
     rating: 4.8
