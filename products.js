@@ -1,6 +1,281 @@
 const products = [
 
 //Données à déplacer sur mysql
+
+
+{
+  id: 80,
+  name: "Porte-clés",
+  description: "motif floral bohème, pour téléphone portable",
+  price: 1850,
+  category: 'accessoires',
+  // colors: ["#000080", "#8B0000"],
+  // sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54397332010_b90714f16e_n.jpg',
+    'https://live.staticflickr.com/65535/54397332030_603b3317c0_n.jpg',
+    'https://s.alicdn.com/@sc04/kf/Hfac4a761dacf452dbeffb46b1a62eae2l.jpg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/Hbe50da84df7f43a0845e47236d74ba50e.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV.A',
+    phone: '+33758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33758146261',
+  promotion: {
+    discount: 18, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  isBestSeller: true
+},
+{
+  id: 79,
+  name: "Bracelet de cheville",
+  description: "Acier inoxydable",
+  price: 1900,
+  category: 'accessoires',
+  // colors: ["#000080", "#8B0000"],
+  // sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54396079117_8165724a88_n.jpg',
+    'https://live.staticflickr.com/65535/54396079122_df1895a532_n.jpg',
+    'https://s.alicdn.com/@sc04/kf/H13fbf2e163394d03afc4970ff75c323de.jpg?avif=close',
+    'https://s.alicdn.com/@sc04/kf/Hcfb5234de2a0430b88792f8672917602f.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV.A',
+    phone: '+33758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33758146261',
+  promotion: {
+    discount: 18, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  isBestSeller: true
+},
+
+{
+  id: 78,
+  name: "Collier sexy",
+  description: "Acier inoxydable",
+  price: 1900,
+  category: 'accessoires',
+  // colors: ["#000080", "#8B0000"],
+  // sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54397145824_6318080470_n.jpg',
+    'https://live.staticflickr.com/65535/54397145819_4089753b54_n.jpg',
+    'https://s.alicdn.com/@sc04/kf/H26be67c457ec47f2b38f89d8360b4bfbk.jpg?avif=close',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV.A',
+    phone: '+33758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33758146261',
+  promotion: {
+    discount: 18, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  isBestSeller: true
+},
+
+{
+  id: 77,
+  name: "Costume élégant Fernando",
+  description: "Costume bleu marine à rayures avec cravate assortie",
+  price: 90000,
+  category: 'vetements',
+  colors: ["#000080", "#8B0000"],
+  sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54395511752_474d37c528_m.jpg',
+    'https://live.staticflickr.com/65535/54395511792_95ed49de5a_m.jpg',
+    'https://live.staticflickr.com/65535/54396577694_f9cb3fb6e2_m.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 18, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  isBestSeller: true
+},
+
+{
+  id: 76,
+  name: "Costume élégant Fernando",
+  description: "Costume bleu marine à rayures avec cravate assortie",
+  price: 89000,
+  category: 'vetements',
+  colors: ["#000080", "#8B0000"],
+  sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54396401286_607af3ea64_m.jpg',
+    'https://live.staticflickr.com/65535/54396634028_5d664c1e98_m.jpg',
+    'https://live.staticflickr.com/65535/54395511762_abb40be369_m.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 18, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  isBestSeller: true
+},
+
+{
+  id: 75,
+  name: "Costume élégant Fernando",
+  description: "Costume bleu marine à rayures avec cravate assortie",
+  price: 85000,
+  category: 'vetements',
+  colors: ["#000080", "#8B0000"],
+  sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54396401256_63d41c17c9_m.jpg',
+    'https://live.staticflickr.com/65535/54396633933_96d4bb9542_m.jpg',
+    'https://live.staticflickr.com/65535/54396577629_3a58be9d28_m.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 11, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  isBestSeller: true
+},
+
+{
+  id: 74,
+  name: "Costume élégant Fernando",
+  description: "Costume bleu marine à rayures avec cravate assortie",
+  price: 90000,
+  category: 'vetements',
+  colors: ["#000080", "#8B0000"],
+  sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54396762480_0e16aa823e_m.jpg',
+    'https://live.staticflickr.com/65535/54396577649_a20d47eae4_m.jpg',
+    'https://live.staticflickr.com/65535/54396633913_72ccf7431f_m.jpg',
+    'https://live.staticflickr.com/65535/54396633958_123a2b4dc6_m.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 18, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  isBestSeller: true
+},
+
+{
+  id: 73,
+  name: "Costume élégant Fernando",
+  description: "Costume bleu marine à rayures avec cravate assortie",
+  price: 85000,
+  category: 'vetements',
+  colors: ["#000080", "#8B0000"],
+  sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54396762540_8e3abd45d8_m.jpg',
+    'https://live.staticflickr.com/65535/54396762545_d2dd5f52e3_m.jpg',
+    'https://live.staticflickr.com/65535/54395511682_b1b747e10c_m.jpg',
+    'https://live.staticflickr.com/65535/54396401286_607af3ea64_m.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 18, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  isBestSeller: true
+},
+
+{
+  id: 72,
+  name: "Costume élégant Fernando",
+  description: "Costume bleu marine à rayures avec cravate assortie",
+  price: 70000,
+  category: 'vetements',
+  colors: ["#000080", "#8B0000"],
+  sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54396762505_4e80c32642_m.jpg',
+    'https://live.staticflickr.com/65535/54396633953_5e763249d1_m.jpg',
+    'https://live.staticflickr.com/65535/54396633978_ccdf3646db_m.jpg',
+    'https://live.staticflickr.com/65535/54396762640_569d5818d9_m.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'TOUTOU',
+    phone: '+33656763491',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33656763491',
+  promotion: {
+    discount: 8, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 10,
+  rating: 5.9,
+  isBestSeller: true
+},
   
   {
     id: 71,
