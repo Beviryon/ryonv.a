@@ -147,6 +147,18 @@ const products = [
 
   ];
   
+  // Function to fix phone numbers by removing duplicate country code prefixes
+  function fixPhoneNumber(phoneNumber) {
+    if (!phoneNumber) return phoneNumber;
+    
+    // If the number starts with +221, remove the 221 part
+    if (phoneNumber.startsWith('+221')) {
+      return '+' + phoneNumber.substring(4); // Keep the + but remove 221
+    }
+    
+    return phoneNumber;
+  }
+  
   // Fonction pour créer une carte de produit
   function createProductCard(product) {
     const card = document.createElement('div');
@@ -178,7 +190,10 @@ const products = [
     const whatsappBtn = document.createElement('a');
     whatsappBtn.classList.add('btn', 'whatsapp-btn');
     whatsappBtn.textContent = 'Commander';
-    whatsappBtn.href = `https://wa.me/${product.vendorPhone}?text=Bonjour,%20je%20souhaite%20commander%20le%20produit%20:%20${product.name}.%20Voici%20le%20lien%20de%20l'image%20:%20${encodeURIComponent(product.images[0])}`;
+    
+    // Fix the phone number before creating the WhatsApp link
+    const fixedPhone = fixPhoneNumber(product.vendorPhone);
+    whatsappBtn.href = `https://wa.me/${fixedPhone}?text=Bonjour,%20je%20souhaite%20commander%20le%20produit%20:%20${product.name}.%20Voici%20le%20lien%20de%20l'image%20:%20${encodeURIComponent(product.images[0])}`;
     whatsappBtn.target = '_blank';
     card.appendChild(whatsappBtn);
 
@@ -629,7 +644,8 @@ form.addEventListener('submit', (event) => {
       }
 
       // Encodage de l'URL de WhatsApp
-      const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
+      const fixedPhone = fixPhoneNumber(vendorPhone);
+      const whatsappUrl = `https://wa.me/${fixedPhone}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
       modal.style.display = 'none';
       form.reset();

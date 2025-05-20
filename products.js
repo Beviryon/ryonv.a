@@ -1,7 +1,90 @@
 const products = [
 
-//Données à déplacer sur mysql
+{
+  id: 83,
+  name: "Boîte à bijoux",
+  description: "Boîte à bijoux disponible par commande",
+  price: 0,
+  category: 'accessoires',
+  salesType: 'wholesale',
+  // colors: ["#000080", "#8B0000"],
+  // sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54531807768_49708bb01c_w.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+33758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33758146261',
+  promotion: {
+    discount: 5, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 0,
+  rating: 5.9,
+  isBestSeller: true
+},
+{
+  id: 82,
+  name: "Pinceaux",
+  description: "Pinceaux de maquillage disponible par commande",
+  price: 0,
+  category: 'accessoires',
+  salesType: 'wholesale',
+  // colors: ["#000080", "#8B0000"],
+  // sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54530686722_5b253274bb_w.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+33758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33758146261',
+  promotion: {
+    discount: 5, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 0,
+  rating: 5.9,
+  isBestSeller: true
+},
 
+{
+  id: 81,
+  name: "Veste femme",
+  description: "Veste femme disponible que par commande",
+  price: 0,
+  category: 'accessoires',
+  salesType: 'wholesale',
+  // colors: ["#000080", "#8B0000"],
+  sizes: ['M', 'L', 'XL', 'XXL'],
+  images: [
+    'https://live.staticflickr.com/65535/54530686717_0c2ac16f01_w.jpg',
+  ],
+  like: 0,
+  seller: {
+    name: 'RYONV',
+    phone: '+33758146261',
+    country: 'FR',
+    rating: 4.8
+  },
+  vendorPhone: '+33758146261',
+  promotion: {
+    discount: 5, 
+    endDate: '2025-08-21T23:59:59' 
+  },
+  stock: 0,
+  rating: 5.9,
+  isBestSeller: true
+},
 
 {
   id: 80,
@@ -9,6 +92,7 @@ const products = [
   description: "motif floral bohème, pour téléphone portable",
   price: 1850,
   category: 'accessoires',
+  salesType: 'wholesale',
   // colors: ["#000080", "#8B0000"],
   // sizes: ['M', 'L', 'XL', 'XXL'],
   images: [
@@ -33,11 +117,13 @@ const products = [
   rating: 5.9,
   isBestSeller: true
 },
+
 {
   id: 79,
   name: "Bracelet de cheville",
   description: "Acier inoxydable",
   price: 1900,
+  salesType: 'retail',
   category: 'accessoires',
   // colors: ["#000080", "#8B0000"],
   // sizes: ['M', 'L', 'XL', 'XXL'],
@@ -2382,6 +2468,5 @@ const products = [
                   },
   
   ];
-  
-  export  {products};
+    export  {products};
   

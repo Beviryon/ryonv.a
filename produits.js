@@ -165,13 +165,57 @@ function showCartItems() {
         const product = cart.find(item => item.id === productId);
 
         if (product) {
-          const message = `Bonjour, je souhaite commander :\n` +
-                          `Produit : ${product.name}\n` +
-                          `Prix : ${product.price} FCFA\n` +
-                          `Quantité : ${product.quantity}\n` +
-                          `Lien : https://ryone.netlify.app/details.html?id=${product.id}\n`;
-
-          const whatsappUrl = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
+          // Créer un numéro de référence unique
+          const date = new Date();
+          const formattedDate = date.toLocaleDateString('fr-FR');
+          const reference = `RYONVA-${date.getFullYear()}${(date.getMonth()+1).toString().padStart(2, '0')}${date.getDate().toString().padStart(2, '0')}-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
+          
+          // Créer le message du bon de commande
+          let message = `*BON DE COMMANDE RYON.A*\n`;
+          message += `------------------------------------------\n`;
+          message += `*RÉFÉRENCE:* ${reference}\n`;
+          message += `*DATE:* ${formattedDate}\n`;
+          message += `------------------------------------------\n\n`;
+          
+          // Détails du produit
+          message += `*ARTICLE:* ${product.name}\n`;
+          message += `• Référence: ART-${reference.substring(reference.length-6)}\n`;
+          message += `• Prix unitaire: *${product.price.toLocaleString()} FCFA*\n`;
+          message += `• Quantité: *${product.quantity}*\n`;
+          message += `• Sous-total: *${(product.price * product.quantity).toLocaleString()} FCFA*\n`;
+          
+          // Ajouter le lien de l'image si disponible
+          if (product.images && product.images.length > 0) {
+            message += `• Lien image: ${product.images[0]}\n`;
+          }
+          
+          message += `------------------------------------------\n\n`;
+          
+          // Récapitulatif financier
+          message += `*RÉCAPITULATIF DE LA COMMANDE*\n`;
+          message += `------------------------------------------\n`;
+          // message += `• Nombre d'articles: *${product.quantity}*\n`;
+          message += `• Total: *${(product.price * product.quantity).toLocaleString()} FCFA*\n`;
+          message += `------------------------------------------\n\n`;
+          
+          message += `Cordialement,\n`;
+          message += `*Service Commandes RYONV*\n\n`;
+          
+          message += `_Document généré automatiquement via la plateforme RYONV.A_\n`;
+          message += `_www.ryonv.com_`;
+          
+          // Fix the phone number to avoid duplicate country codes
+          let phoneNumber = vendorPhone;
+          if (typeof fixPhoneNumber === 'function') {
+            phoneNumber = fixPhoneNumber(phoneNumber);
+          }
+          
+          // Remove + for WhatsApp URL
+          if (phoneNumber.startsWith('+')) {
+            phoneNumber = phoneNumber.substring(1);
+          }
+          
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
           window.open(whatsappUrl, '_blank');
         }
       });
@@ -232,10 +276,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cart.forEach(item => {
           message += `- Produit : ${item.name}\n` +
-                     `- Description : ${item.description}\n` +
-                     `- Prix : ${item.price} FCFA\n` +
-                     `- Quantité : ${item.quantity}\n` +
-                     `- Lien : https://ryone.netlify.app/details.html?id=${item.id}\n`;
+                    `- Description : ${item.description}\n` +
+                    `- Prix : ${item.price} FCFA\n` +
+                    `- Quantité : ${item.quantity}\n` +
+                    `- Lien : https://ryone.netlify.app/details.html?id=${item.id}\n`;
 
           if (item.images && item.images.length > 0) {
             message += `- Images :\n`;
@@ -435,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 carouselInner.style.transition = 'transform 0.5s ease';
             }, 50);
         }, 500);
-         
+        
       }
   }
 
@@ -444,7 +488,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function createProductCard(product) {
   const card = document.createElement('div');
-  card.classList.add('product-card');
+  card.className = 'product-card';
+  card.dataset.id = product.id;
 
   const image = document.createElement('img');
   image.src = product.images[0];
@@ -463,11 +508,134 @@ function createProductCard(product) {
   description.textContent = product.description;
   card.appendChild(description);
 
-  const whatsappBtn = document.createElement('a');
-  whatsappBtn.classList.add('btn', 'whatsapp-btn');
-  whatsappBtn.textContent = 'Commander';
-  whatsappBtn.addEventListener('click', () => openOrderForm(product));
-  card.appendChild(whatsappBtn);
+  // Ajout du pop-up de promotion
+  if (product.promotion && isPromotionValid(product.promotion)) {
+    // Création du conteneur de prix
+    const priceContainer = document.createElement('div');
+    priceContainer.classList.add('price-container');
+
+    // Prix original barré
+    const originalPrice = document.createElement('span');
+    originalPrice.classList.add('original-price');
+    originalPrice.textContent = `${product.price.toLocaleString()} FCFA`;
+
+    // Prix en promotion
+    const promoPrice = document.createElement('span');
+    promoPrice.classList.add('promo-price');
+    const discountedPrice = Math.round(product.price * (1 - product.promotion.discount / 100));
+    promoPrice.textContent = `${discountedPrice.toLocaleString()} FCFA`;
+
+    // Assemblage des prix
+    priceContainer.appendChild(originalPrice);
+    priceContainer.appendChild(promoPrice);
+
+    // Ajouter l'étiquette de type de vente si elle existe
+    if (product.salesType) {
+      const salesTypeLabel = document.createElement('div');
+      salesTypeLabel.className = 'sales-type-label';
+      if (product.salesType === 'wholesale') {
+        salesTypeLabel.innerHTML = '</i>En gros à partir de 10 pièce';
+        salesTypeLabel.classList.add('wholesale');
+      } else if (product.salesType === 'retail') {
+        salesTypeLabel.innerHTML = 'En détail à partir 1 pièce ';
+        salesTypeLabel.classList.add('retail');
+      }
+      priceContainer.appendChild(salesTypeLabel);
+    }
+
+    card.appendChild(priceContainer);
+
+    // Badge de promotion
+    const promoBadge = document.createElement('div');
+    promoBadge.classList.add('promo-badge');
+    promoBadge.textContent = `-${product.promotion.discount}%`;
+    card.appendChild(promoBadge);
+  } else {
+    // Prix normal sans promotion
+    const priceContainer = document.createElement('div');
+    priceContainer.classList.add('price-container');
+    const normalPrice = document.createElement('span');
+    normalPrice.classList.add('normal-price');
+    normalPrice.textContent = `${product.price.toLocaleString()} FCFA`;
+    priceContainer.appendChild(normalPrice);
+
+    // Ajouter l'étiquette de type de vente si elle existe
+    if (product.salesType) {
+      const salesTypeLabel = document.createElement('div');
+      salesTypeLabel.className = 'sales-type-label';
+      if (product.salesType === 'wholesale') {
+        salesTypeLabel.innerHTML = '<i class="fas fa-store"></i> Vente en gros';
+        salesTypeLabel.classList.add('wholesale');
+      } else if (product.salesType === 'retail') {
+        salesTypeLabel.innerHTML = '<i class="fas fa-shopping-cart"></i> Vente au détail';
+        salesTypeLabel.classList.add('retail');
+      }
+      priceContainer.appendChild(salesTypeLabel);
+    }
+    card.appendChild(priceContainer);
+  }
+
+  // Bouton Commander
+  const commanderBtn = document.createElement('button');
+  commanderBtn.classList.add('btn-commander');
+  commanderBtn.textContent = 'Commander';
+  commanderBtn.addEventListener('click', () => {
+    if (product.seller && product.seller.phone) {
+      // Créer un numéro de référence unique
+      const date = new Date();
+      const formattedDate = date.toLocaleDateString('fr-FR');
+      const reference = `RYONVA-${date.getFullYear()}${(date.getMonth()+1).toString().padStart(2, '0')}${date.getDate().toString().padStart(2, '0')}-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
+      
+      // Créer le message du bon de commande
+      let message = `*BON DE COMMANDE RYON.A*\n`;
+      message += `------------------------------------------\n`;
+      message += `*RÉFÉRENCE:* ${reference}\n`;
+      message += `*DATE:* ${formattedDate}\n`;
+      message += `------------------------------------------\n\n`;
+      
+      // Détails du produit
+      message += `*ARTICLE:* ${product.name}\n`;
+      message += `• Référence: ART-${reference.substring(reference.length-6)}\n`;
+      message += `• Prix unitaire: *${product.price.toLocaleString()} FCFA*\n`;
+      message += `• Quantité: *1*\n`;
+      message += `• Sous-total: *${product.price.toLocaleString()} FCFA*\n`;
+      
+      // Ajouter le lien de l'image si disponible
+      if (product.images && product.images.length > 0) {
+        message += `• Lien image: ${product.images[0]}\n`;
+      }
+      
+      message += `------------------------------------------\n\n`;
+      
+      // Récapitulatif financier
+      message += `*RÉCAPITULATIF DE LA COMMANDE*\n`;
+      message += `------------------------------------------\n`;
+      message += `• Nombre d'articles: *1*\n`;
+      message += `• Total: *${product.price.toLocaleString()} FCFA*\n`;
+      message += `------------------------------------------\n\n`;
+      
+      message += `Cordialement,\n`;
+      message += `*Service Commandes RYONV*\n\n`;
+      
+      message += `_Document généré automatiquement via la plateforme RYONV.A_\n`;
+      message += `_www.ryonv.com_`;
+      
+      // Fix the phone number to avoid duplicate country codes
+      let phoneNumber = product.seller.phone;
+      if (typeof fixPhoneNumber === 'function') {
+        phoneNumber = fixPhoneNumber(phoneNumber);
+      }
+      
+      // Remove + for WhatsApp URL
+      if (phoneNumber.startsWith('+')) {
+        phoneNumber = phoneNumber.substring(1);
+      }
+      
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  });
+  card.appendChild(commanderBtn);
 
   // Bouton Ajouter au panier
   const addToCartBtn = document.createElement('button');
@@ -497,45 +665,6 @@ function createProductCard(product) {
   
   card.appendChild(sellerInfo);
   sellerInfo.appendChild(sellerLink);
-
-  // Ajout du pop-up de promotion
-  if (product.promotion && isPromotionValid(product.promotion)) {
-    // Création du conteneur de prix
-    const priceContainer = document.createElement('div');
-    priceContainer.classList.add('price-container');
-
-    // Prix original barré
-    const originalPrice = document.createElement('span');
-    originalPrice.classList.add('original-price');
-    originalPrice.textContent = `${product.price.toLocaleString()} FCFA`;
-
-    // Prix en promotion
-    const promoPrice = document.createElement('span');
-    promoPrice.classList.add('promo-price');
-    const discountedPrice = Math.round(product.price * (1 - product.promotion.discount / 100));
-    promoPrice.textContent = `${discountedPrice.toLocaleString()} FCFA`;
-
-    // Assemblage des prix
-    priceContainer.appendChild(originalPrice);
-    priceContainer.appendChild(promoPrice);
-
-    card.appendChild(priceContainer);
-
-    // Badge de promotion
-    const promoBadge = document.createElement('div');
-    promoBadge.classList.add('promo-badge');
-    promoBadge.textContent = `-${product.promotion.discount}%`;
-    card.appendChild(promoBadge);
-  } else {
-    // Prix normal sans promotion
-    const priceContainer = document.createElement('div');
-    priceContainer.classList.add('price-container');
-    const normalPrice = document.createElement('span');
-    normalPrice.classList.add('normal-price');
-    normalPrice.textContent = `${product.price.toLocaleString()} FCFA`;
-    priceContainer.appendChild(normalPrice);
-    card.appendChild(priceContainer);
-  }
 
   // Ajout du pop-up de stock
   const stockStatus = document.createElement('div');

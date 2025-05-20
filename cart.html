@@ -89,44 +89,44 @@
                     </div>
                     
                     <!-- Empty cart state -->
-                    <div id="empty-cart" class="empty-cart hidden">
+                <div id="empty-cart" class="empty-cart hidden">
                         <div class="empty-cart-illustration">
                             <img src="https://cdn-icons-png.flaticon.com/512/4076/4076432.png" alt="Empty cart">
                         </div>
-                        <h2>Votre panier est vide</h2>
-                        <p>Les articles que vous ajouterez apparaîtront ici.</p>
-                        <a href="./produits.html" class="shop-now-btn">
-                            <i class="fas fa-shopping-bag"></i>
-                            Découvrir nos produits
-                        </a>
-                    </div>
+                    <h2>Votre panier est vide</h2>
+                    <p>Les articles que vous ajouterez apparaîtront ici.</p>
+                    <a href="./produits.html" class="shop-now-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        Découvrir nos produits
+                    </a>
+                </div>
                 </div>
 
                 <!-- Cart summary -->
                 <div class="cart-summary">
                     <div class="summary-header">
-                        <h2>Récapitulatif</h2>
+                    <h2>Récapitulatif</h2>
                         <span class="summary-count" id="items-count">0 articles</span>
                     </div>
                     
                     <div class="summary-content">
-                        <div class="summary-row">
-                            <span>Sous-total</span>
-                            <span id="subtotal">0 Fcfa</span>
-                        </div>
+                    <div class="summary-row">
+                        <span>Sous-total</span>
+                        <span id="subtotal">0 Fcfa</span>
+                    </div>
                         <div class="summary-row">
                             <span>Livraison</span>
-                            <span>Calculé à l'étape suivante</span>
+                            <span>A discuter avec le vendeur</span>
                         </div>
                         <div class="summary-row">
                             <span>Taxes</span>
-                            <span>Calculé à l'étape suivante</span>
+                            <span>A discuter avec le vendeur</span>
                         </div>
-                        <div class="summary-divider"></div>
-                        <div class="summary-row total">
-                            <span>Total</span>
-                            <span id="total">0 Fcfa</span>
-                        </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="total">0 Fcfa</span>
+                    </div>
                     </div>
                     
                     <div class="summary-footer">
@@ -135,30 +135,30 @@
                             Procéder au paiement
                         </button> -->
                         <div class="payment-methods">
-                            <span>Méthodes de paiement acceptées</span>
-                            <div class="payment-icons">
+                            <span>Contactez chaque vendeur individuellement pour passer une commande</span>
+                            <!-- <div class="payment-icons">
                                 <i class="fab fa-cc-visa"></i>
                                 <i class="fab fa-cc-mastercard"></i>
                                 <i class="fab fa-cc-paypal"></i>
                                 <i class="fas fa-money-bill-wave"></i>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
                     <!-- Section des options de commande personnalisée avec noms des vendeurs -->
                     <div class="checkout-options">
-                        <h3>Options de commande par vendeur</h3>
+                        <h3>Comment passer une commande ?</h3>
                         <div class="checkout-option">
                             <button id="order-all-btn" class="checkout-option-btn">
                                 <i class="fas fa-users"></i>
                                 <span>Commander auprès de chaque vendeur</span>
                             </button>
-                            <p class="option-description">Contactez chaque vendeur individuellement</p>
+                            <p class="option-description">Contactez chaque vendeur individuellement pour passer une commande</p>
                         </div>
                         <div class="checkout-option">
                             <button id="bulk-order-btn" class="checkout-option-btn">
                                 <i class="fas fa-list-check"></i>
-                                <span>Générer liste de commande</span>
+                                <span>Liste de vendeurs : </span>
                             </button>
                             <p class="option-description">Créez une liste pour faciliter vos commandes</p>
                         </div>
@@ -169,7 +169,7 @@
     </main>
 
     <!-- Related products section -->
-    <section class="related-products">
+    <!-- <section class="related-products">
         <div class="container">
             <div class="section-header">
                 <h2>Vous pourriez aussi aimer</h2>
@@ -180,14 +180,14 @@
                     <i class="fas fa-chevron-left"></i>
                 </div>
                 <div id="recommended-products" class="products-row">
-                    <!-- Recommended products will be populated by JavaScript -->
+                    
                 </div>
                 <div class="scroll-arrow right">
                     <i class="fas fa-chevron-right"></i>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Sale banner -->
     <section class="sale-banner">
@@ -240,7 +240,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -290,10 +290,10 @@
                 <p>&copy; 2023 RYONV. Tous droits réservés.</p>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     <!-- Back to top button -->
-    <button id="back-to-top" class="back-to-top">
+    <button id="back-to-top" class="back-to-top" aria-label="Retour en haut de la page" title="Retour en haut">
         <i class="fas fa-chevron-up"></i>
     </button>
 
@@ -383,6 +383,7 @@
         </div>
     </template>
 
+    <script src="./fix-phone-numbers.js"></script>
     <script src="./cart.js"></script>
     <script>
         // Mobile menu toggle

@@ -3,83 +3,507 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tableau de bord - Gestion des produits</title>
-  <link rel="stylesheet" href="./dashboard.css">
+    <title>Dashboard - Gestion des Produits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Tableau de bord - Gestion des produits</h1>
-    
-    <form id="productForm">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%234CAF50'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='white' text-anchor='middle' dy='.3em'%3ER%3C/text%3E%3C/svg%3E" alt="Logo RYONV">
+                <h2>Dashboard</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#products"><i class="fas fa-box"></i> Produits</a>
+                    </li>
+                    <li>
+                        <a href="#categories"><i class="fas fa-tags"></i> Catégories</a>
+                    </li>
+                    <li>
+                        <a href="#stats"><i class="fas fa-chart-bar"></i> Statistiques</a>
+                    </li>
+                    <li>
+                        <a href="#settings"><i class="fas fa-cog"></i> Paramètres</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Rechercher un produit...">
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="action-btn add-btn" id="addProductBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>Nouveau Produit</span>
+                    </button>
+                    <div class="dropdown">
+                        <button class="action-btn export-btn" id="exportBtn">
+                            <i class="fas fa-download"></i>
+                            <span>Exporter</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content" id="exportOptions">
+                            <a href="#" id="exportCSV">
+                                <i class="fas fa-file-csv"></i>
+                                Format CSV
+                            </a>
+                            <a href="#" id="exportPDF">
+                                <i class="fas fa-file-pdf"></i>
+                                Format PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Statistics Section -->
+            <section id="stats" class="dashboard-section stats-section">
+                <div class="section-header">
+                    <h2>Statistiques</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card total-products">
+                        <div class="stat-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Produits</h3>
+                            <p class="stat-value" id="totalProducts">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card total-categories">
+                        <div class="stat-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Catégories</h3>
+                            <p class="stat-value" id="totalCategories">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card total-sellers">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Vendeurs</h3>
+                            <p class="stat-value" id="totalSellers">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card total-value">
+                        <div class="stat-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Valeur Totale</h3>
+                            <p class="stat-value" id="totalValue">0 FCFA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Container -->
+                <div class="charts-container">
+                    <div class="chart-card">
+                        <h3>Produits par Catégorie</h3>
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Distribution des Prix</h3>
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Top 5 Vendeurs</h3>
+                        <canvas id="sellerChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Types de Vente</h3>
+                        <canvas id="salesTypeChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Seller Analytics -->
+                <div class="seller-analytics">
+                    <h3>Analyse des Vendeurs</h3>
+                    <div class="seller-stats-grid">
+                        <div class="stat-card best-seller">
+                            <div class="stat-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Meilleur Vendeur</h3>
+                                <p class="stat-value" id="bestSeller">-</p>
+                                <p class="stat-subtext" id="bestSellerProducts">0 produits</p>
+                            </div>
+                        </div>
+                        <div class="stat-card avg-rating">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Note Moyenne Vendeurs</h3>
+                                <p class="stat-value" id="avgSellerRating">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card countries">
+                            <div class="stat-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Pays Représentés</h3>
+                                <p class="stat-value" id="totalCountries">0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Seller Table -->
+                    <div class="seller-table-container">
+                        <h3>Détails par Vendeur</h3>
+                        <div class="table-actions">
+                            <div class="table-search">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="sellerSearch" placeholder="Rechercher un vendeur...">
+                            </div>
+                            <div class="table-sort">
+                                <select id="sellerSort" title="Options de tri des vendeurs">
+                                    <option value="products">Trier par nombre de produits</option>
+                                    <option value="value">Trier par valeur totale</option>
+                                    <option value="rating">Trier par note</option>
+                                    <option value="name">Trier par nom</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-wrapper">
+                            <table class="seller-table">
+                                <thead>
+                                    <tr>
+                                        <th>Vendeur</th>
+                                        <th>Nombre de Produits</th>
+                                        <th>Valeur Totale</th>
+                                        <th>Prix Moyen</th>
+                                        <th>Note</th>
+                                        <th>Contact</th>
+                                        <th>Pays</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sellerTableBody">
+                                    <!-- Filled dynamically by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Gestion des Produits</h2>
+                    <div class="filters">
+                        <select id="categoryFilter" title="Filtrer par catégorie">
+                            <option value="">Toutes les catégories</option>
+                        </select>
+                        <select id="sortFilter" title="Trier les produits">
+                            <option value="name">Nom</option>
+                            <option value="price">Prix</option>
+                            <option value="date">Date d'ajout</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="productsGrid">
+                    <!-- Les produits seront injectés ici dynamiquement -->
+                </div>
+            </section>
+
+            <!-- Categories Section -->
+            <section id="categories" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Gestion des Catégories</h2>
+                    <button class="action-btn add-btn" id="addCategoryBtn">
+                        <i class="fas fa-plus"></i>
+                        Nouvelle Catégorie
+                    </button>
+                </div>
+
+                <div class="categories-grid">
+                    <!-- Categories will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Paramètres</h2>
+                </div>
+
+                <div class="settings-container">
+                    <!-- General Settings -->
+                    <div class="settings-group">
+                        <h3>Paramètres Généraux</h3>
+                        <div class="setting-item">
+                            <label for="siteName">Nom du Site</label>
+                            <input type="text" id="siteName" value="RYONV">
+                        </div>
+                        <div class="setting-item">
+                            <label for="currency">Devise</label>
+                            <select id="currency" title="Sélectionner la devise">
+                                <option value="FCFA">FCFA</option>
+                                <option value="EUR">EUR</option>
+                                <option value="USD">USD</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label for="language">Langue</label>
+                            <select id="language" title="Sélectionner la langue">
+                                <option value="fr">Français</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Display Settings -->
+                    <div class="settings-group">
+                        <h3>Affichage</h3>
+                        <div class="setting-item">
+                            <label for="itemsPerPage">Produits par page</label>
+                            <input type="number" id="itemsPerPage" min="4" max="100" value="12">
+                        </div>
+                        <div class="setting-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="showOutOfStock" checked>
+                                <span>Afficher les produits en rupture de stock</span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="enableDarkMode">
+                                <span>Mode sombre</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div class="settings-group">
+                        <h3>Notifications</h3>
+                        <div class="setting-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="lowStockAlert" checked>
+                                <span>Alertes stock bas</span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label for="lowStockThreshold">Seuil d'alerte stock bas</label>
+                            <input type="number" id="lowStockThreshold" min="1" value="5">
+                        </div>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="settings-actions">
+                        <button class="btn-save" id="saveSettings">
+                            <i class="fas fa-save"></i>
+                            Enregistrer les paramètres
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category Modal -->
+            <div id="categoryModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Ajouter une Catégorie</h2>
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <form id="categoryForm">
+                        <div class="form-group">
+                            <label for="categoryName">Nom de la catégorie</label>
+                            <input type="text" id="categoryName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="categoryDescription">Description</label>
+                            <textarea id="categoryDescription" name="description" rows="3"></textarea>
+                        </div>
       <div class="form-group">
-        <label for="name">Nom du produit</label>
-        <input type="text" id="name" required>
+                            <label for="categoryIcon">Icône</label>
+                            <select id="categoryIcon" name="icon" title="Sélectionner une icône">
+                                <option value="tshirt">👕 Vêtements</option>
+                                <option value="shoe">👟 Chaussures</option>
+                                <option value="jewelry">💍 Bijoux</option>
+                                <option value="watch">⌚ Montres</option>
+                                <option value="bag">👜 Sacs</option>
+                                <option value="beauty">💄 Beauté</option>
+                                <option value="tech">📱 Tech</option>
+                                <option value="home">🏠 Maison</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel">
+                                <i class="fas fa-times"></i>
+                                Annuler
+                            </button>
+                            <button type="submit" class="btn-save">
+                                <i class="fas fa-check"></i>
+                                Enregistrer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+      </div>
+
+    <!-- Product Form Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ajouter un Produit</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="productForm">
+      <div class="form-group">
+                    <label for="productName">Nom du produit</label>
+                    <input type="text" id="productName" name="name" required>
       </div>
 
       <div class="form-group">
-        <label for="description">Description</label>
-        <textarea id="description" required></textarea>
+                    <label for="productPrice">Prix</label>
+                    <input type="number" id="productPrice" name="price" required>
       </div>
 
       <div class="form-group">
-        <label for="price">Prix (en FCFA)</label>
-        <input type="number" id="price" required>
-      </div>
-
-      <div class="form-group">
-        <label for="category">Catégorie</label>
-        <select id="category" required>
+                    <label for="productCategory">Catégorie</label>
+                    <select id="productCategory" name="category" required>
           <option value="">Sélectionner une catégorie</option>
-          <option value="sport">Sport</option>
+                        <option value="accessoires">Accessoires</option>
           <option value="vetements">Vêtements</option>
-          <option value="maison">Maison</option>
-          <option value="electronique">Électronique</option>
+                        <option value="chaussures">Chaussures</option>
+                        <option value="bijoux">Bijoux</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="images">Images (URLs séparées par des virgules)</label>
-        <input type="text" id="images" placeholder="http://image1.jpg, http://image2.jpg">
+                    <label for="productImage">Image</label>
+                    <div class="file-input-container">
+                        <label for="productImage" class="file-input-button">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            Choisir un fichier
+                        </label>
+                        <input type="file" id="productImage" name="image" accept="image/*" multiple>
+                        <div class="selected-file"></div>
+                    </div>
       </div>
 
       <div class="form-group">
-        <label for="stock">Stock</label>
-        <input type="number" id="stock" required>
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" name="description" rows="4"></textarea>
       </div>
 
+                <div class="form-group">
+                    <label for="salesType">Type de vente</label>
+                    <select id="salesType" name="salesType" required>
+                        <option value="">Sélectionner le type de vente</option>
+                        <option value="retail">Détail</option>
+                        <option value="wholesale">Gros</option>
+                    </select>
+                </div>
+
+                <!-- Informations vendeur -->
+                <div class="form-section">
+                    <h3>Informations vendeur</h3>
       <div class="form-group">
         <label for="sellerName">Nom du vendeur</label>
-        <input type="text" id="sellerName" required>
+                        <input type="text" id="sellerName" name="seller.name" required>
       </div>
 
       <div class="form-group">
         <label for="sellerPhone">Téléphone du vendeur</label>
-        <input type="text" id="sellerPhone" required>
+                        <input type="tel" id="sellerPhone" name="seller.phone" pattern="^\+[0-9]{11,}" required>
       </div>
 
       <div class="form-group">
         <label for="sellerCountry">Pays du vendeur</label>
-        <input type="text" id="sellerCountry" required>
+                        <input type="text" id="sellerCountry" name="seller.country" required>
       </div>
 
       <div class="form-group">
-        <label for="discount">Promotion (%)</label>
-        <input type="number" id="discount" min="0" max="100">
+                        <label for="sellerRating">Note du vendeur</label>
+                        <input type="number" id="sellerRating" name="seller.rating" min="0" max="5" step="0.1" required>
+                    </div>
+                </div>
+
+                <!-- Promotion -->
+                <div class="form-section">
+                    <h3>Promotion</h3>
+                    <div class="form-group">
+                        <label for="promoDiscount">Réduction (%)</label>
+                        <input type="number" id="promoDiscount" name="promotion.discount" min="0" max="100">
       </div>
 
       <div class="form-group">
-        <label for="promoEndDate">Date de fin de promotion</label>
-        <input type="date" id="promoEndDate">
+                        <label for="promoEndDate">Date de fin</label>
+                        <input type="datetime-local" id="promoEndDate" name="promotion.endDate">
+                    </div>
       </div>
 
-      <button type="submit">Ajouter le produit</button>
-    </form>
+                <div class="form-group">
+                    <label for="productStock">Stock</label>
+                    <input type="number" id="productStock" name="stock" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productRating">Note produit</label>
+                    <input type="number" id="productRating" name="rating" min="0" max="5" step="0.1" required>
+                </div>
 
-    <div class="products-list" id="productsList">
-      <!-- Les produits seront ajoutés ici dynamiquement -->
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="isBestSeller" name="isBestSeller">
+                        <span>Meilleure vente</span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="isLiked" name="like" value="0">
+                        <span>Aimé</span>
+                    </label>
     </div>
+                
+                <div class="form-group">
+                    <label for="productStatus">Statut</label>
+                    <select id="productStatus" name="status">
+                        <option value="active">Actif</option>
+                        <option value="inactive">Inactif</option>
+                    </select>
   </div>
 
-  <script src="js/dashboard.js"></script>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel">
+                        <i class="fas fa-times"></i>
+                        Annuler
+                    </button>
+                    <button type="submit" class="btn-save">
+                        <i class="fas fa-check"></i>
+                        Enregistrer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>

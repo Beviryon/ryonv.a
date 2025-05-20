@@ -1,265 +1,182 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "pged0bpb14");
-</script>
-  <meta property="og:title" content="RYONV.A">
-  <meta property="og:description" content="La boutique en ligne où la qualité et le style se rencontrent. RYONV vous permets d'être en contact en temps réel avec un vendeur de votre choix pour un achat plus adapter à vos besoins">
-  <meta property="og:image" content="./images/icons/icon-192x192.png">
-  <meta property="og:url" content="https://ryonv.com">
-
-  <link rel="icon" href="./images//icons/icon-192x192.png" type="image/x-icon">
-
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-KJR2FXZ7');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez RYONV, la boutique de mode en ligne qui allie qualité et style. Achetez des vêtements modernes et profitez d'une livraison rapide.">
-  <title>RYONV - Boutique en ligne de style et qualité</title>
-  <title>Détails du produit</title>
-  <link rel="stylesheet" href="./details.css"  onload="this.rel='stylesheet'">
-  <link rel="manifest" href="./manifest.json">
-  <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self'; 
-  script-src 'self' 'nonce-xyz'; 
-  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
-  img-src 'self' https://s.alicdn.com https://live.staticflickr.com;
-  font-src 'self' https://cdnjs.cloudflare.com;
-">
+  <title>Détail du produit</title>
+  <link rel="stylesheet" href="./details.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script type="module" src="./fix-phone-numbers.js"></script>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJR2FXZ7"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <!-- Header -->
   <header>
-    <nav>
-        <div class="logo">
-          <a href="./home.html" class="logo-image"><img src="https://live.staticflickr.com/65535/54122923674_3c0c43d1b4_n.jpg" alt="logo"></a>
-          <a href="./home.html">RYONV</a>
-        </div>
-        <div class="menu">
-            <ul class="nav-links">
-                <li><a class="active" href="./home.html">Accueil</a></li>
-                <li><a href="./produits.html">Produits</a></li>
-                <li><a href="./services.html">Nos services</a></li>
-                <li><a href="./about.html">À propos</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./formations.html">Formations</a></li>
-                <li><a href="./Abonnement.html">Vendre avec nous</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </div>
+    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <a href="home.html" class="site-logo">
+      <img src="logo.png" alt="RYONV">
+      <span>RYONV.A</span>
+    </a>
+    
+    <nav class="main-nav">
+      <a href="home.html" class="nav-link">Accueil</a>
+      <a href="produits.html" class="nav-link">Catégories</a>
+      <a href="produits.html" class="nav-link">Promotions</a>
     </nav>
+    
+    <div class="header-actions">
+      <!-- <a href="search.html" class="header-icon-btn" aria-label="Rechercher">
+        <i class="fas fa-search"></i>
+      </a> -->
+      <a href="login.html" class="header-icon-btn" aria-label="Mon compte">
+        <i class="fas fa-user"></i>
+      </a>
+      <a href="cart.html" class="header-icon-btn" aria-label="Voir le panier">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-counter">3</span>
+      </a>
+    </div>
   </header>
-
-  <main>
-    <section class="product-details">
-      <div id="product-info">
-        <!-- Informations sur le produit (nom, description, prix) seront insérées ici via JavaScript -->
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-header">
+        <div class="site-logo">
+          <img src="logo.png" alt="RYONV">
+          <span>RYONV.A</span>
+        </div>
+        <button class="close-menu" id="closeMenu" aria-label="Fermer le menu">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
       
-    
-      <!-- Carrousel d'images -->
-      <div id="carousel" class="carousel">
-        <div class="carousel-inner">
-          <!-- Les images du produit seront insérées ici via JavaScript -->
-        </div>
-        <button class="carousel-control prev">&lt;</button>
-        <button class="carousel-control next">&gt;</button>
-      </div>
-      <div id="carousel-counter"></div>
-
-      <!-- Formulaire pour choisir la quantité, la couleur et la taille -->
-      <!-- <form id="product-form">
-        <label for="quantity">Quantité :</label>
-        <input type="number" id="quantity" name="quantity" min="1" value="1">
-
-        <label for="color">Couleur :</label>
-        <input type="color" id="color" name="color" value="#ff0000">
-
-        <label for="size">Taille :</label>
-        <select id="size" name="size">
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-          <option value="XXL">XXL</option>
-          <option value="SX">SX</option>
-        </select>
-
-        <button type="button" id="add-to-cart-btn">Ajouter au panier</button>
-      </form> -->
-
-      <!-- Formulaire pour choisir la quantité, la couleur et la taille -->
-      <form id="product-form">
-        <label for="quantity">Quantité :</label>
-        <input type="number" id="quantity" name="quantity" min="1" value="1">
-
-        <label for="color-options">Couleur :</label>
-        <div id="color-options">
-          <div class="color-box" data-color="red" style="background-color: red;"></div>
-          <div class="color-box" data-color="lime" style="background-color: lime;"></div>
-          <div class="color-box" data-color="blue" style="background-color: blue;"></div>
-          <div class="color-box" data-color="yellow" style="background-color: black;"></div>
-          <div class="color-box" data-color="fuchsia" style="background-color: white;"></div>
-          <div class="color-box" data-color="aqua" style="background-color: aqua;"></div>
-          <input type="color" id="color" name="color" value="red" hidden>    
-        </div>
-
-        <label for="size">Taille :</label>
-        <select id="size" name="size">
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-          <option value="XXL">XXL</option>
-          <option value="SX">SX</option>
-        </select>
-
-        <button type="button" id="add-to-cart-btn">Ajouter au panier</button>
-      </form>
-
-      <!-- <button class="btn-panier" id="add-to-cart-btn">Ajouter au panier</button> -->
-      <!-- Bouton pour discuter avec le vendeur -->
-      <button id="contact-seller-btn">Discuter avec le vendeur</button>
-
-      <!-- Dans votre section de détails du produit -->
-      <div class="product-options">
-        <div class="color-selector" style="display: none;">
-          <h3>Couleurs disponibles</h3>
-          <div class="color-options"></div>
-        </div>
-
-        <div class="size-selector" style="display: none;">
-          <h3>Tailles disponibles</h3>
-          <div class="size-options"></div>
-        </div>
-      </div>
-    </section>  
-  </main>
-
-  <section class="suggestions">
-    <h2>Suggestions de produits</h2>
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <!-- Les cartes de produits seront insérées ici via JavaScript -->
-      </div>
-      <button class="carousel-control prev">&#10094;</button>
-      <button class="carousel-control next">&#10095;</button>
+      <ul class="mobile-nav-links">
+        <li><a href="home.html" class="mobile-nav-link">Accueil</a></li>
+        <li><a href="produits.html" class="mobile-nav-link">Nouveautés</a></li>
+        <li><a href="about.html" class="mobile-nav-link">A propos</a></li>
+      </ul>
+      
+      <div class="mobile-nav-divider"></div>
+      
+      <ul class="mobile-nav-links">
+        <li><a href="login.html" class="mobile-nav-link">Mon compte</a></li>
+        <li><a href="panier.html" class="mobile-nav-link">Panier</a></li>
+        <!-- <li><a href="commandes.html" class="mobile-nav-link">Mes commandes</a></li> -->
+      </ul>
+      
+      <!-- <div class="mobile-nav-footer">
+        <p>&copy; 2023 Deslo Market. Tous droits réservés.</p>
+      </div> -->
     </div>
-  </section>   
+  </div>
+
+  <main id="product-detail"></main>
   
-  <footer>
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="./home.html">Accueil</a>
-        <a href="./modalites-livraison.html">Livraison</a>
-        <a href="./Abonnement.html">Abonnement</a>
-        <a href="./contact.html">Contact</a>
+  <!-- Pop-up de confirmation d'ajout au panier -->
+  <div id="cart-popup" class="cart-popup hidden">
+    <div class="cart-popup-content">
+      <span id="cart-popup-message"></span>
+      <div class="cart-popup-actions">
+        <button id="view-cart-btn" class="btn btn-primary">Voir le panier</button>
+        <button id="close-popup-btn" class="btn">Continuer mes achats</button>
       </div>
-      <p>&copy; 2024 RYONV. Développé par Beviryon.</p>
     </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <!-- <div class="footer-content">
+      <div class="footer-column">
+        <h3>Catégories</h3>
+        <ul class="footer-links">
+          <li><a href="produits.html" class="footer-link">Vêtements</a></li>
+          <li><a href="produits.html" class="footer-link">Chaussures</a></li>
+          <li><a href="produits.html" class="footer-link">Accessoires</a></li>
+          <li><a href="produits.html" class="footer-link">Électronique</a></li>
+          <li><a href="produits.html" class="footer-link">Maison</a></li>
+        </ul>
+      </div> -->
+
+      <!-- <div class="footer-column">
+        <h3>À propos</h3>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">Notre histoire</a></li>
+          <li><a href="#" class="footer-link">Blog</a></li>
+          <li><a href="#" class="footer-link">Carrières</a></li>
+          <li><a href="#" class="footer-link">Devenir vendeur</a></li>
+        </ul>
+      </div> -->
+
+      <div class="footer-column">
+        <h3>Aide</h3>
+        <ul class="footer-links">
+          <li><a href="faq.html*" class="footer-link">FAQ</a></li>
+          <li><a href="modalites-livraison.html" class="footer-link">Livraison</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column footer-newsletter">
+        <h3>Restez informé au +33 758 14 61 62</h3>
+        <p>Recevez nos dernières offres et nouveautés.</p>
+        <!-- <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Votre email">
+          <button type="submit" class="newsletter-btn">OK</button>
+        </form> -->
+
+        <!-- <h3>Suivez-nous</h3>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- <div class="footer-bottom">
+      <div class="footer-copyright">
+        &copy; 2023 Deslo Market - Tous droits réservés
+      </div>
+
+      <div class="payment-methods">
+        <img src="images/payment-visa.png" alt="Visa">
+        <img src="images/payment-mastercard.png" alt="Mastercard">
+        <img src="images/payment-momo.png" alt="Mobile Money">
+        <img src="images/payment-orange.png" alt="Orange Money">
+      </div>
+    </div> -->
   </footer>
 
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <p>Produit ajouté au panier !</p>
-      <button  id="view-cart-btn">Voir le panier</button>
-      <button class="fermer" id="close-popup">Fermer</button>
-    </div>
-  </div>
-
-  <!-- Pop-up -->
-<div id="auth-popup" class="popup">
-  <div class="popup-content">
-    <p>Veuillez vous connecter ou créer un compte pour discuter avec le vendeur.</p>
-    <button id="close-auth-popup">Fermer</button>
-  </div>
-</div>
-
-<!-- Modal pour les images -->
-<div id="imageModal" class="image-modal">
-    <span class="close-modal">&times;</span>
-    <div class="modal-content">
-        <div class="modal-gallery">
-            <img id="modalMainImage" src="" alt="Image en grand format">
-            <button class="modal-nav prev">&#10094;</button>
-            <button class="modal-nav next">&#10095;</button>
-        </div>
-        <div class="modal-thumbnails">
-            <!-- Les miniatures seront insérées ici par JavaScript -->
-        </div>
-    </div>
-</div>
-
-  <script  nonce="xyz" src="./data.js"></script>
-  <script type="module" nonce="xyz" src="./details.js"></script>
-  <script  nonce="xyz" src="./products.js"></script>
-
-<!-- JavaScript pour le pop-up -->
-<script nonce="xyz">
-document.addEventListener('DOMContentLoaded', () => {
-  const popup = document.getElementById('popup');
-  const closePopup = document.querySelector('.close-popup');
-
-  // Afficher le pop-up au chargement de la page
-  function showPopup() {
-    popup.style.display = 'block';
-  }
-
-  // Fermer le pop-up
-  closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-
-  // Afficher le pop-up après un délai ou immédiatement
-  setTimeout(showPopup, 1000); 
-});
-</script>
-
-<script nonce="xyz">
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./service-worker.js').then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }, error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
-    });
-  }
-</script>
-<script nonce="xyz">
+  <script type="module" src="./details.js"></script>
+  <script>
+    // Mobile menu toggle
     document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        location.reload();
-      }, 300000); // Recharge la page toutes les 5 minutes (300000 ms)
+      const menuToggle = document.getElementById('menuToggle');
+      const closeMenu = document.getElementById('closeMenu');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+      if (menuToggle && closeMenu && mobileMenu && mobileMenuOverlay) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.add('active');
+          mobileMenuOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+
+        function closeMenuFunc() {
+          mobileMenu.classList.remove('active');
+          mobileMenuOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+
+        closeMenu.addEventListener('click', closeMenuFunc);
+        mobileMenuOverlay.addEventListener('click', closeMenuFunc);
+      }
     });
-</script>
-     
-<script nonce="xyz">
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('Service Worker registered with scope:', registration.scope);
-      })
-      .catch(error => {
-        console.log('Service Worker registration failed:', error);
-      });
-  }
-</script>
+  </script>
 </body>
 </html>

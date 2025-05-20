@@ -1355,3 +1355,86 @@ footer p {
     font-size: 16px;
   }
 }
+
+/* Styles pour les contrôles de navigation */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 1rem;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+/* Style du sélecteur de langue */
+.language-select {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: border-color var(--transition-speed) var(--transition-timing);
+}
+
+.language-select:hover {
+    border-color: var(--accent-color);
+}
+
+.language-select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Style du bouton de thème */
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color var(--transition-speed) var(--transition-timing),
+                color var(--transition-speed) var(--transition-timing);
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-color);
+}
+
+.theme-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Ajustements pour mobile */
+@media (max-width: 768px) {
+    .nav-controls {
+        position: fixed;
+        bottom: 70px;
+        right: 1rem;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        padding: 0.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px var(--shadow-color);
+        z-index: 1000;
+    }
+
+    .language-select {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .theme-toggle {
+        width: 100%;
+        padding: 0.75rem;
+    }
+}
+

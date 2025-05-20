@@ -1,0 +1,268 @@
+:root {
+    /* Variables de couleur pour le thème clair (par défaut) */
+    --primary: #007bff;
+    --secondary: #00c6ff;
+    --accent: #4d4d4e;
+    --background: #fffefe;
+    --surface: #ffffff;
+    --text-primary: #111827;
+    --text-secondary: #110042;
+    --text-tertiary: #ff0000;
+    --border: #ffffff;
+    --border-light: #c0c0c0;
+    --text-color: #333333;
+    --hover-color: #f0f0f0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    
+    /* Variables de transition */
+    --transition-speed: 0.3s;
+    --transition-timing: ease-in-out;
+}
+
+/* Thème sombre */
+[data-theme="dark"] {
+    --primary-color: #1a1a1a;
+    --secondary-color: #2d2d2d;
+    --text-color: #ffffff;
+    --accent-color: #0d6efd;
+    --border-color: #404040;
+    --hover-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+}
+
+/* Styles de base */
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed) var(--transition-timing),
+                color var(--transition-speed) var(--transition-timing);
+}
+
+/* Styles des cartes */
+.card {
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: transform var(--transition-speed) var(--transition-timing),
+                box-shadow var(--transition-speed) var(--transition-timing);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* Styles des boutons */
+.btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) var(--transition-timing);
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* Styles des formulaires */
+input, textarea, select {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: border-color var(--transition-speed) var(--transition-timing);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+/* Styles des notifications */
+.notification {
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+/* Styles des badges */
+.badge {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+}
+
+/* Styles des icônes */
+.icon {
+    color: var(--text-color);
+    transition: color var(--transition-speed) var(--transition-timing);
+}
+
+/* Styles des liens */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) var(--transition-timing);
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+/* Styles des tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+th {
+    background-color: var(--secondary-color);
+}
+
+/* Styles des listes */
+ul, ol {
+    padding-left: 1.5rem;
+    color: var(--text-color);
+}
+
+/* Styles des citations */
+blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    color: var(--text-color);
+}
+
+/* Styles des codes */
+code {
+    background-color: var(--secondary-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Styles des tooltips */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* Styles des modales */
+.modal {
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Styles des animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn var(--transition-speed) var(--transition-timing);
+}
+
+.slide-in {
+    animation: slideIn var(--transition-speed) var(--transition-timing);
+}
+
+/* Styles des utilitaires */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 2rem; }
+
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 1rem; }
+.p-4 { padding: 1.5rem; }
+.p-5 { padding: 2rem; }
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+    .card {
+        margin: 0.5rem;
+    }
+    
+    .modal {
+        width: 90%;
+        margin: 1rem;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+} 

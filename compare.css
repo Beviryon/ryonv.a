@@ -1,0 +1,299 @@
+/* Styles pour le comparateur */
+.compare-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.compare-toggle {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.compare-toggle:hover {
+  transform: scale(1.1);
+}
+
+.compare-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compare-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+  padding: 1.5rem;
+  display: none;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.compare-panel.active {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ... Reste des styles du fichier CSS précédent ... */
+
+/* Ajout des styles pour le mode mobile */
+@media (max-width: 768px) {
+  .compare-wrapper {
+    bottom: 70px; /* Ajusté pour éviter le chevauchement avec la barre de navigation mobile */
+  }
+
+  .compare-toggle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .compare-panel {
+    width: calc(100% - 40px);
+    left: 20px;
+    right: 20px;
+  }
+}
+
+/* Ajouter ces styles au fichier CSS existant */
+
+.compare-prompt {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.compare-prompt.active {
+  display: flex;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.prompt-content {
+  background: white;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.compare-prompt.active .prompt-content {
+  transform: translateY(0);
+}
+
+.prompt-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.prompt-icon {
+  font-size: 1.5rem;
+  color: #f1c40f;
+}
+
+.prompt-header h3 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.prompt-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #95a5a6;
+  padding: 0.5rem;
+}
+
+.prompt-body {
+  display: grid;
+  gap: 2rem;
+}
+
+.current-product {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.prompt-product-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-info h4 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.product-info p {
+  margin: 0.5rem 0 0;
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.similar-products h4 {
+  margin: 0 0 1rem;
+  color: #2c3e50;
+}
+
+.similar-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.similar-product-card {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.similar-product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-checkbox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.card-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.card-checkbox label {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #3498db;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-checkbox label::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #3498db;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card-checkbox input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
+.similar-product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.card-info h5 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #2c3e50;
+}
+
+.card-info p {
+  margin: 0.5rem 0 0;
+  color: #e74c3c;
+  font-size: 0.9rem;
+}
+
+.prompt-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.compare-now-btn {
+  padding: 1rem 2rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compare-now-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .prompt-content {
+    padding: 1rem;
+  }
+
+  .similar-products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .current-product {
+    flex-direction: column;
+    text-align: center;
+  }
+} 

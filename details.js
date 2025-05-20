@@ -1,815 +1,578 @@
-import { products } from './products.js'; // Importer les données depuis products.js
+import { products } from './products.js';
 
-// Récupérer l'ID du produit depuis les paramètres d'URL
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id');
-
-// Trouver le produit correspondant dans la liste des produits
-const product = products.find(p => p.id === parseInt(productId));
-
-if (product) {
-  // Récupérer l'élément product-info où afficher les informations du produit
-  const productInfo = document.getElementById('product-info');
-
-  // Ajouter le nom du produit
-  const name = document.createElement('h2');
-  name.textContent = product.name;
-  productInfo.appendChild(name);
-
-  // Ajouter la description du produit
-  const description = document.createElement('p');
-  description.textContent = product.description;
-  productInfo.appendChild(description);
-
-  // Ajouter le prix du produit
-  const price = document.createElement('p');
-  price.textContent = `Prix : ${product.price} FCFA`;
-  productInfo.appendChild(price);
-
-  // Ajouter le stock du produit
-  const stock = document.createElement('p');
-  stock.textContent = `Quantité en stock : ${product.stock}`;
-  productInfo.appendChild(stock);
-
-  // Ajouter le bouton "Plus de détails"
-  const moreDetailsBtn = document.createElement('button');
-  moreDetailsBtn.id = 'more-details-btn';
-  moreDetailsBtn.textContent = 'Plus de détails';
-  productInfo.appendChild(moreDetailsBtn);
-
-  // Ajouter les informations spécifiques du produit sous forme de tableau en bas de la page
-  const detailsTable = document.createElement('table');
-  detailsTable.classList.add('details-table');
-  detailsTable.style.display = 'none'; // Masquer le tableau par défaut
-
-  // Créer l'en-tête du tableau
-  const tableHeader = document.createElement('thead');
-  const headerRow = document.createElement('tr');
-  const headerAttribute = document.createElement('th');
-  headerAttribute.textContent = 'Détail';
-  const headerValue = document.createElement('th');
-  headerValue.textContent = 'Valeur';
-  headerRow.appendChild(headerAttribute);
-  headerRow.appendChild(headerValue);
-  tableHeader.appendChild(headerRow);
-  detailsTable.appendChild(tableHeader);
-
-  // Créer le corps du tableau
-  const tableBody = document.createElement('tbody');
-
-  // Ajouter les détails du produit
-  const productDetails = [
-    { label: 'Nom', value: product.name },
-    { label: 'Description', value: product.description },
-    { label: 'Prix', value: `${product.price} FCFA` },
-    { label: 'Catégorie', value: product.category },
-    { label: 'Like', value: product.like },
-    { label: 'Vendeur', value: product.seller.name },
-    { label: 'Téléphone du vendeur', value: product.seller.phone },
-    { label: 'Pays du vendeur', value: product.seller.country },
-    { label: 'Note du vendeur', value: product.seller.rating },
-    { label: 'Téléphone du vendeur', value: product.vendorPhone },
-    { label: 'Promotion', value: `${product.promotion.discount}% jusqu\'au ${new Date(product.promotion.endDate).toLocaleDateString()}` },
-    { label: 'Stock', value: product.stock },
-    { label: 'Note du produit', value: product.rating },
-  ];
-
-  productDetails.forEach(detail => {
-    const row = document.createElement('tr');
-    const attributeCell = document.createElement('td');
-    attributeCell.textContent = detail.label;
-    const valueCell = document.createElement('td');
-    valueCell.textContent = detail.value;
-    row.appendChild(attributeCell);
-    row.appendChild(valueCell);
-    tableBody.appendChild(row);
-  });
-
-  detailsTable.appendChild(tableBody);
-
-  // Ajouter le tableau à la page
-  productInfo.appendChild(detailsTable);
-
-  // Ajouter le gestionnaire d'événements pour le bouton "Plus de détails"
-  moreDetailsBtn.addEventListener('click', () => {
-    if (detailsTable.style.display === 'none') {
-      detailsTable.style.display = 'table';
-    } else {
-      detailsTable.style.display = 'none';
-    }
-  });
-
-  // === Gestion du carrousel d'images ===
-  const carouselInner = document.querySelector('.carousel-inner');
-  let currentIndex = 0;
-
-  // Ajouter les images du produit dans le carrousel
-  product.images.forEach((imageUrl, index) => {
-    const img = document.createElement('img');
-    img.src = imageUrl;
-    img.alt = product.name;
-    carouselInner.appendChild(img);
-  });
-
-  const totalImages = product.images.length;
-
-  // Fonction pour mettre à jour le compteur d'images
-  function updateCounter(currentIndex, totalImages) {
-    const counter = document.getElementById('carousel-counter');
-    counter.textContent = `Image ${currentIndex + 1} sur ${totalImages}`;
+// Function to fix phone numbers by removing duplicate country code prefixes
+function fixPhoneNumber(phoneNumber) {
+  if (!phoneNumber) return phoneNumber;
+  
+  // If the number starts with +221, remove the 221 part
+  if (phoneNumber.startsWith('+221')) {
+    return '+' + phoneNumber.substring(4); // Keep the + but remove 221
   }
-
-  // Fonction pour afficher l'image courante
-  function showImage(index) {
-    const offset = -index * 100;
-    carouselInner.style.transform = `translateX(${offset}%)`;
-    updateCounter(index, totalImages);
-  }
-
-  // Gestion des boutons du carrousel
-  document.querySelector('.carousel-control.prev').addEventListener('click', () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalImages - 1;
-    showImage(currentIndex);
-  });
-
-  document.querySelector('.carousel-control.next').addEventListener('click', () => {
-    currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
-    showImage(currentIndex);
-  });
-
-  // Afficher la première image par défaut
-  showImage(currentIndex);
-
-  // === Gestion du bouton "Discuter avec le vendeur" ===
-  const contactBtn = document.getElementById('contact-seller-btn');
-  contactBtn.addEventListener('click', () => {
-    const phoneNumber = product.vendorPhone.replace(/[^0-9]/g, '');
-
-    // Récupérer les valeurs des champs de formulaire
-    const quantity = document.getElementById('quantity').value;
-    const color = document.getElementById('color').value;
-    const size = document.getElementById('size').value;
-
-    // Créer un message WhatsApp prédéfini avec les informations du produit
-    const message = `Bonjour, je suis intéressé par votre produit :
-    *Nom :* ${product.name}
-    *Description :* ${product.description}
-    *Prix :* ${product.price} FCFA
-    *Quantité souhaitée :* ${quantity}
-    *Couleur :* ${color}
-    *Taille :* ${size}
-    *Image :* ${product.images[0]}
-    Pouvez-vous me donner plus de détails ?`;
-
-    // Créer le lien WhatsApp avec le message prédéfini
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-    // Ouvrir la discussion WhatsApp dans un nouvel onglet
-    window.open(whatsappUrl, '_blank');
-  });
-
-  // Ajouter les avis des clients dans une section masquée par défaut
-  const reviewsSection = document.createElement('div');
-  reviewsSection.id = 'reviews-section';
-  reviewsSection.style.display = 'none'; // Masquer la section par défaut
-
-  // Charger les avis des clients depuis le fichier JSON
-  fetch('reviews.json')
-    .then(response => response.json())
-    .then(reviewsData => {
-      const productReviews = reviewsData.find(review => review.productId === parseInt(productId));
-      if (productReviews) {
-        const reviewsToShow = 3; // Nombre d'avis à afficher initialement
-        let displayedReviews = 0;
-
-        productReviews.reviews.forEach(review => {
-          if (displayedReviews < reviewsToShow) {
-            const reviewDiv = document.createElement('div');
-            reviewDiv.classList.add('review');
-
-            const reviewName = document.createElement('h4');
-            reviewName.textContent = review.name;
-            reviewDiv.appendChild(reviewName);
-
-            const reviewCountry = document.createElement('p');
-            reviewCountry.textContent = `Pays : ${review.country}`;
-            reviewDiv.appendChild(reviewCountry);
-
-            const reviewImage = document.createElement('img');
-            reviewImage.src = review.image;
-            reviewImage.alt = `${review.name}'s image`;
-            reviewImage.style.maxWidth = '100px'; // Ajuster la taille de l'image
-            reviewDiv.appendChild(reviewImage);
-
-            const reviewComment = document.createElement('p');
-            reviewComment.textContent = review.comment;
-            reviewDiv.appendChild(reviewComment);
-
-            const reviewRating = document.createElement('p');
-            reviewRating.textContent = `Note : ${review.rating}/5`;
-            reviewDiv.appendChild(reviewRating);
-
-            reviewsSection.appendChild(reviewDiv);
-            displayedReviews++;
-          }
-        });
-
-        // Ajouter le bouton "Voir plus" si nécessaire
-        if (productReviews.reviews.length > reviewsToShow) {
-          const viewMoreBtn = document.createElement('button');
-          viewMoreBtn.id = 'view-more-btn';
-          viewMoreBtn.textContent = 'Voir plus';
-          reviewsSection.appendChild(viewMoreBtn);
-
-          viewMoreBtn.addEventListener('click', () => {
-            productReviews.reviews.slice(reviewsToShow).forEach(review => {
-              const reviewDiv = document.createElement('div');
-              reviewDiv.classList.add('review');
-
-              const reviewName = document.createElement('h4');
-              reviewName.textContent = review.name;
-              reviewDiv.appendChild(reviewName);
-
-              const reviewCountry = document.createElement('p');
-              reviewCountry.textContent = `Pays : ${review.country}`;
-              reviewDiv.appendChild(reviewCountry);
-
-              const reviewImage = document.createElement('img');
-              reviewImage.src = review.image;
-              reviewImage.alt = `${review.name}'s image`;
-              reviewDiv.appendChild(reviewImage);
-
-              const reviewComment = document.createElement('p');
-              reviewComment.textContent = review.comment;
-              reviewDiv.appendChild(reviewComment);
-
-              const reviewRating = document.createElement('p');
-              reviewRating.textContent = `Note : ${review.rating}/5`;
-              reviewDiv.appendChild(reviewRating);
-
-              reviewsSection.insertBefore(reviewDiv, viewMoreBtn);
-            });
-
-            viewMoreBtn.style.display = 'none'; // Masquer le bouton après avoir affiché tous les avis
-          });
-        }
-      }
-    })
-    .catch(error => console.error('Erreur lors du chargement des avis :', error));
-
-  // Ajouter la section des avis à la page
-  productInfo.appendChild(reviewsSection);
-
-  // === Affichage des informations du vendeur ===
-  const sellerInfo = document.createElement('div');
-  sellerInfo.classList.add('seller-info');
-
-  productInfo.appendChild(sellerInfo);
+  
+  return phoneNumber;
 }
 
-const navSlide = () => {
-  const burger = document.querySelector('.burger');
-  const nav = document.querySelector('.nav-links');
-  const navLinks = document.querySelectorAll('.nav-links li');
+function getProductIdFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return parseInt(params.get('id'), 10);
+}
 
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
-    burger.classList.toggle('toggle');
-  });
+function displayProductDetail() {
+  const productId = getProductIdFromUrl();
+  const product = products.find(p => p.id === productId);
+  const container = document.getElementById('product-detail');
+  if (!product) {
+    container.innerHTML = `
+      <div class="error-container">
+        <div class="error-message">
+          <h2>Produit introuvable</h2>
+          <p>Désolé, le produit que vous recherchez n'existe pas ou a été retiré.</p>
+          <a href="produits.html" class="btn btn-primary">Retour à la boutique</a>
+        </div>
+      </div>
+    `;
+    return;
+  }
+  
+  // Enregistrer la visite du produit
+  addProductToRecentlyViewed(product);
+  
+  // Prix promo
+  let promo = '';
+  let oldPrice = '';
+  let price = product.price;
+  if (product.promotion && product.promotion.discount) {
+    const discounted = Math.round(product.price * (1 - product.promotion.discount / 100));
+    oldPrice = `<span class="old-price">${product.price.toLocaleString()} FCFA</span>`;
+    price = discounted;
+    promo = `<span class="promo-badge">-${product.promotion.discount}%</span>`;
+  }
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('nav-active');
-      burger.classList.remove('toggle');
+  // Stock
+  let stock = '';
+  if (typeof product.stock === 'number') {
+    if (product.stock > 10) stock = `<span class="stock">En stock</span>`;
+    else if (product.stock > 0) stock = `<span class="stock low-stock">Stock limité (${product.stock})</span>`;
+    else stock = `<span class="stock out-stock">Rupture de stock</span>`;
+  }
+
+  // Couleurs
+  let colors = '';
+  if (Array.isArray(product.colors) && product.colors.length) {
+    colors = `<div class="options">
+      <span>Couleur :</span>
+      <div class="color-dots-container">
+        ${product.colors.map((c, i) =>
+          `<span class="color-dot" style="background:${c}" data-color="${c}" tabindex="0" aria-label="Couleur ${c}" role="button"></span>`
+        ).join('')}
+      </div>
+    </div>`;
+  }
+
+  // Tailles
+  let sizes = '';
+  if (Array.isArray(product.sizes) && product.sizes.length) {
+    sizes = `<div class="options"><span>Taille :</span>
+      <select class="size-select" aria-label="Sélectionner une taille">
+        ${product.sizes.map(s => `<option>${s}</option>`).join('')}
+      </select>
+    </div>`;
+  }
+
+  // Vendeur
+  let seller = '';
+  if (product.seller && product.seller.name) {
+    seller = `<div class="seller">Vendu par <b>${product.seller.name}</b>${product.seller.country ? ' (' + product.seller.country + ')' : ''}</div>`;
+  }
+
+  // Carrousel d'images (toujours au moins une image)
+  let carousel = '';
+  if (Array.isArray(product.images) && product.images.length) {
+    carousel = `
+      <section class="product-images card">
+        <div class="main-image-container">
+          <img id="main-img" src="${product.images[0]}" alt="${product.name}" class="main-product-img" style="cursor:zoom-in;">
+          <div class="image-overlay">
+            <span class="zoom-hint">Appuyez pour zoomer</span>
+          </div>
+        </div>
+        <div class="image-thumbnails">
+          ${product.images.map((img, i) =>
+            `<img src="${img}" class="thumbnail-img${i === 0 ? ' active' : ''}" data-index="${i}" alt="Miniature ${i + 1}" loading="lazy">`
+          ).join('')}
+        </div>
+        ${product.images.length > 4 ? '<div class="scroll-hint">Faire défiler pour voir plus d\'images →</div>' : ''}
+      </section>
+      <div class="image-modal" id="image-modal">
+        <div class="modal-content">
+          <span class="close-modal" id="close-modal" aria-label="Fermer">&times;</span>
+          <div class="modal-gallery">
+            <img id="modalMainImage" src="${product.images[0]}" alt="${product.name}">
+            <button class="modal-nav prev" id="modalPrev" aria-label="Image précédente">&#10094;</button>
+            <button class="modal-nav next" id="modalNext" aria-label="Image suivante">&#10095;</button>
+          </div>
+          <div class="modal-thumbnails">
+            ${product.images.map((img, i) =>
+              `<img src="${img}" class="modal-thumb${i === 0 ? ' active' : ''}" data-index="${i}" alt="Miniature ${i + 1}" loading="lazy">`
+            ).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Section infos produit
+  const infoSection = `
+    <section class="product-info card">
+      <div class="product-info-header" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <h1 class="product-title">${product.name}</h1>
+        <button class="btn btn-fav" id="add-fav" title="Ajouter aux favoris" aria-label="Ajouter aux favoris">❤</button>
+      </div>
+      <div class="product-pricing">
+        <span class="price">${price.toLocaleString()} FCFA</span>
+        ${oldPrice} ${promo}
+      </div>
+      <div class="product-badges">
+        ${stock}
+        ${product.category ? `<span class="category-badge">${product.category}</span>` : ''}
+      </div>
+      <p class="product-description">${product.description || ''}</p>
+      ${colors}
+      ${sizes}
+      <div class="actions">
+        <button class="btn btn-primary" id="add-cart"><i class="fas fa-shopping-cart"></i> Ajouter au panier</button>
+      </div>
+      ${seller}
+    </section>
+  `;
+
+  // Section vendeur (si dispo)
+  let sellerSection = '';
+  if (product.seller && product.seller.name) {
+    sellerSection = `
+      <section class="seller-section card">
+        <div class="seller-badge">
+          <div class="seller-avatar">
+            <img src="${product.seller.avatar || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(product.seller.name)}" alt="${product.seller.name}" loading="lazy">
+          </div>
+          <div class="seller-info">
+            <h3>${product.seller.name}</h3>
+            ${product.seller.country ? `<div class="seller-location"><i class="fas fa-map-marker-alt"></i> ${product.seller.country}</div>` : ''}
+            ${product.seller.phone ? `<div class="seller-phone"><i class="fas fa-phone"></i> ${product.seller.phone}</div>` : ''}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  // Section détails supplémentaires (ex: caractéristiques, livraison, etc.)
+  let extraSection = '';
+  if (product.features && Array.isArray(product.features) && product.features.length) {
+    extraSection = `
+      <section class="product-extra card">
+        <h2>Caractéristiques</h2>
+        <ul class="features-list">
+          ${product.features.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+      </section>
+    `;
+  }
+
+  // Ajout d'une section "Vous pourriez aussi aimer"
+  const similarProducts = getSimilarProducts(product);
+  let similarProductsSection = '';
+  
+  if (similarProducts && similarProducts.length > 0) {
+    similarProductsSection = `
+      <section class="similar-products-section">
+        <h2>Vous pourriez aussi aimer</h2>
+        <div class="similar-products-container">
+          ${similarProducts.slice(0, 4).map(p => `
+            <div class="similar-product-card" data-id="${p.id}">
+              <div class="similar-product-img">
+                <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
+              </div>
+              <div class="similar-product-info">
+                <h3>${p.name}</h3>
+                <div class="similar-product-price">${p.price.toLocaleString()} FCFA</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  }
+
+  container.innerHTML = `
+    <div class="product-detail-layout">
+      ${carousel}
+      <div class="product-info-block">
+        ${infoSection}
+        ${sellerSection}
+        ${extraSection}
+      </div>
+    </div>
+    ${similarProductsSection}
+  `;
+
+  // --- JS pour la visionneuse d'images ---
+  if (Array.isArray(product.images) && product.images.length) {
+    const mainImg = document.getElementById('main-img');
+    const thumbs = container.querySelectorAll('.thumbnail-img');
+    let current = 0;
+    
+    // Swipe detection for touch devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    function showImg(i) {
+      current = (i + product.images.length) % product.images.length;
+      mainImg.src = product.images[current];
+      thumbs.forEach((t, idx) => t.classList.toggle('active', idx === current));
+    }
+    
+    function handleSwipe() {
+      if (touchEndX < touchStartX) {
+        // Swipe left - next image
+        showImg(current + 1);
+      }
+      if (touchEndX > touchStartX) {
+        // Swipe right - prev image
+        showImg(current - 1);
+      }
+    }
+    
+    thumbs.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => showImg(i));
+      // Remove mouseenter event for better mobile experience
+    });
+    
+    // Add touch events for main image
+    mainImg.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+    
+    mainImg.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, {passive: true});
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', e => {
+      if (document.activeElement.tagName === 'INPUT' || 
+          document.activeElement.tagName === 'TEXTAREA' || 
+          document.activeElement.tagName === 'SELECT') {
+        return; // Don't navigate when focusing form elements
+      }
+      
+      if (e.key === 'ArrowLeft') {
+        showImg(current - 1);
+      } else if (e.key === 'ArrowRight') {
+        showImg(current + 1);
+      }
+    });
+    
+    // Visionneuse modale
+    const modal = document.getElementById('image-modal');
+    const modalMain = document.getElementById('modalMainImage');
+    const modalThumbs = modal.querySelectorAll('.modal-thumb');
+    const modalPrev = document.getElementById('modalPrev');
+    const modalNext = document.getElementById('modalNext');
+    
+    mainImg.addEventListener('click', () => {
+      modal.classList.add('show');
+      modalMain.src = product.images[current];
+      modalThumbs.forEach((t, idx) => t.classList.toggle('active', idx === current));
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+    
+    modalThumbs.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => {
+        modalMain.src = product.images[i];
+        current = i;
+        modalThumbs.forEach((t, idx) => t.classList.toggle('active', idx === current));
+      });
+    });
+    
+    modalPrev.addEventListener('click', () => {
+      current = (current - 1 + product.images.length) % product.images.length;
+      modalMain.src = product.images[current];
+      modalThumbs.forEach((t, idx) => t.classList.toggle('active', idx === current));
+    });
+    
+    modalNext.addEventListener('click', () => {
+      current = (current + 1) % product.images.length;
+      modalMain.src = product.images[current];
+      modalThumbs.forEach((t, idx) => t.classList.toggle('active', idx === current));
+    });
+    
+    document.getElementById('close-modal').onclick = () => {
+      modal.classList.remove('show');
+      document.body.style.overflow = ''; // Restore scrolling
+    };
+    
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+    });
+    
+    // Add touch events for modal
+    modalMain.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+    
+    modalMain.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX < touchStartX) {
+        // Swipe left - next image
+        current = (current + 1) % product.images.length;
+        modalMain.src = product.images[current];
+        modalThumbs.forEach((t, idx) => t.classList.toggle('active', idx === current));
+      }
+      if (touchEndX > touchStartX) {
+        // Swipe right - prev image
+        current = (current - 1 + product.images.length) % product.images.length;
+        modalMain.src = product.images[current];
+        modalThumbs.forEach((t, idx) => t.classList.toggle('active', idx === current));
+      }
+    }, {passive: true});
+  }
+
+  // Couleur sélection
+  if (Array.isArray(product.colors) && product.colors.length) {
+    const colorDots = container.querySelectorAll('.color-dot');
+    colorDots.forEach(dot => {
+      dot.onclick = () => {
+        colorDots.forEach(d => d.classList.remove('selected'));
+        dot.classList.add('selected');
+      };
+    });
+  }
+
+  // Favoris (localStorage)
+  const favBtn = document.getElementById('add-fav');
+  favBtn.classList.toggle('active', checkIfFavorite(product.id));
+  favBtn.textContent = checkIfFavorite(product.id) ? '❤' : '❤';
+  
+  favBtn.onclick = () => {
+    let favs = JSON.parse(localStorage.getItem('favs') || '[]');
+    if (!favs.includes(product.id)) {
+      favs.push(product.id);
+      favBtn.classList.add('active');
+      favBtn.textContent = '❤';
+      // Animation pour l'ajout aux favoris
+      animateFavButton(favBtn);
+    } else {
+      favs = favs.filter(id => id !== product.id);
+      favBtn.classList.remove('active');
+      favBtn.textContent = '❤';
+    }
+    localStorage.setItem('favs', JSON.stringify(favs));
+  };
+
+  // Actions (ajout panier, favoris, discuter vendeur)
+  const actionsDiv = container.querySelector('.actions');
+
+  // Bouton discuter avec le vendeur (si numéro dispo)
+  if (product.seller && product.seller.phone) {
+    const chatBtn = document.createElement('button');
+    chatBtn.className = 'btn btn-chat';
+    chatBtn.textContent = 'Discuter avec le vendeur';
+    chatBtn.onclick = () => {
+      // Créer un numéro de référence unique
+      const date = new Date();
+      const formattedDate = date.toLocaleDateString('fr-FR');
+      const reference = `RYONVA-${date.getFullYear()}${(date.getMonth()+1).toString().padStart(2, '0')}${date.getDate().toString().padStart(2, '0')}-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
+      
+      // Créer le message du bon de commande
+      let message = `*BON DE COMMANDE RYON.A*\n`;
+      message += `------------------------------------------\n`;
+      message += `*RÉFÉRENCE:* ${reference}\n`;
+      message += `*DATE:* ${formattedDate}\n`;
+      message += `------------------------------------------\n\n`;
+      
+      // Détails du produit
+      message += `*ARTICLE:* ${product.name}\n`;
+      message += `• Référence: ART-${reference.substring(reference.length-6)}\n`;
+      message += `• Prix unitaire: *${price.toLocaleString()} FCFA*\n`;
+      message += `• Quantité: *1*\n`;
+      message += `• Sous-total: *${price.toLocaleString()} FCFA*\n`;
+      
+      // Ajouter le lien de l'image si disponible
+      if (product.images && product.images.length > 0) {
+        message += `• Lien image: ${product.images[0]}\n`;
+      }
+      
+      message += `------------------------------------------\n\n`;
+      
+      // Récapitulatif financier
+      message += `*RÉCAPITULATIF DE LA COMMANDE*\n`;
+      message += `------------------------------------------\n`;
+      message += `• Nombre d'articles: *1*\n`;
+      message += `• Total: *${price.toLocaleString()} FCFA*\n`;
+      message += `------------------------------------------\n\n`;
+      
+      message += `Cordialement,\n`;
+      message += `*Service Commandes RYONV*\n\n`;
+      
+      message += `_Document généré automatiquement via la plateforme RYONV.A_\n`;
+      message += `_www.ryonv.com_`;
+      
+      // Fix the phone number before creating the WhatsApp link
+      const fixedPhone = fixPhoneNumber(product.seller.phone);
+      
+      // Prepare the phone number for WhatsApp URL
+      let phoneNumber = fixedPhone;
+      if (phoneNumber.startsWith('+')) {
+        phoneNumber = phoneNumber.substring(1);
+      }
+      
+      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    };
+    actionsDiv.appendChild(chatBtn);
+  }
+
+  // Panier (localStorage) + pop-up
+  const addToCartBtn = document.getElementById('add-cart');
+  addToCartBtn.onclick = () => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: price,
+      images: product.images || [],
+      quantity: 1,
+      seller: product.seller || {},
+      category: product.category || ''
+    });
+    showCartPopup(product.name);
+    animateCartButton(addToCartBtn);
+  };
+  
+  // Handle similar products clicks
+  document.querySelectorAll('.similar-product-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const productId = parseInt(card.getAttribute('data-id'), 10);
+      window.location.href = `details.html?id=${productId}`;
     });
   });
-};
-
-navSlide();
-
-document.addEventListener('DOMContentLoaded', () => {
-  const addToCartBtn = document.getElementById('add-to-cart-btn');
-  const popup = document.getElementById('popup');
-  const closePopup = document.getElementById('close-popup');
-  const viewCartBtn = document.getElementById('view-cart-btn');
-
-  addToCartBtn.addEventListener('click', () => {
-    // Récupérer l'ID du produit depuis les paramètres d'URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
-
-    // Trouver le produit correspondant dans la liste des produits
-    const product = products.find(p => p.id === parseInt(productId));
-
-    if (product) {
-      // Récupérer les valeurs des champs de formulaire
-      const quantity = document.getElementById('quantity').value;
-      const color = document.getElementById('color').value;
-      const size = document.getElementById('size').value;
-
-      // Ajouter le produit au panier avec les informations supplémentaires
-      addToCart(product, quantity, color, size);
-
-      // Afficher le pop-up de confirmation
-      popup.style.display = 'block';
-    }
-  });
-
-  closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-
-  viewCartBtn.addEventListener('click', () => {
-    // Rediriger vers la page du panier
-    window.location.href = 'cart.html';
-  });
-});
-
-function addToCart(product, quantity, color, size) {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const productIndex = cart.findIndex(item => item.id === product.id && item.color === color && item.size === size);
-
-  if (productIndex !== -1) {
-    cart[productIndex].quantity += parseInt(quantity);
-  } else {
-    cart.push({ ...product, quantity: parseInt(quantity), color, size });
-  }
-
-  localStorage.setItem('cart', JSON.stringify(cart));
-
-  // Mettre à jour le compteur d'articles dans l'icône du panier
-  updateCartCounter();
 }
 
+// Helper function to check if a product is in favorites
+function checkIfFavorite(productId) {
+  const favs = JSON.parse(localStorage.getItem('favs') || '[]');
+  return favs.includes(productId);
+}
+
+// Animation for favorite button
+function animateFavButton(button) {
+  button.classList.add('pulse-animation');
+  setTimeout(() => {
+    button.classList.remove('pulse-animation');
+  }, 700);
+}
+
+// Animation for cart button
+function animateCartButton(button) {
+  button.classList.add('scale-animation');
+  setTimeout(() => {
+    button.classList.remove('scale-animation');
+  }, 300);
+}
+
+// Function to get similar products
+function getSimilarProducts(product) {
+  if (!product || !product.category) return [];
+  
+  return products
+    .filter(p => p.id !== product.id && p.category === product.category)
+    .sort(() => 0.5 - Math.random()) // Shuffle
+    .slice(0, 4);
+}
+
+// Function to add product to recently viewed
+function addProductToRecentlyViewed(product) {
+  const recentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+  
+  // Remove if already exists
+  const filtered = recentlyViewed.filter(p => p.id !== product.id);
+  
+  // Add to the beginning
+  filtered.unshift({
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.images && product.images.length > 0 ? product.images[0] : '',
+    timestamp: Date.now()
+  });
+  
+  // Keep only the last 10
+  const trimmed = filtered.slice(0, 10);
+  
+  // Save back to localStorage
+  localStorage.setItem('recentlyViewed', JSON.stringify(trimmed));
+}
+
+function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const found = cart.find(item => item.id === product.id);
+    if (found) {
+        found.quantity += 1;
+        if (typeof found.price === 'undefined' && typeof product.price !== 'undefined') {
+            found.price = product.price;
+        }
+        if (!found.images && product.images) {
+            found.images = product.images;
+        }
+    } else {
+        product.quantity = 1;
+        cart.push(product);
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    if (typeof updateCartCounter === 'function') updateCartCounter();
+}
+
+function showCartPopup(productName) {
+  const popup = document.getElementById('cart-popup');
+  const message = document.getElementById('cart-popup-message');
+  const viewBtn = document.getElementById('view-cart-btn');
+  const closeBtn = document.getElementById('close-popup-btn');
+  if (!popup) return;
+  message.textContent = `« ${productName} » a bien été ajouté au panier !`;
+  popup.classList.remove('hidden');
+  viewBtn.onclick = () => {
+    window.location.href = 'cart.html';
+  };
+  closeBtn.onclick = () => {
+    popup.classList.add('hidden');
+  };
+  // Fermer le pop-up si on clique en dehors
+  popup.onclick = (e) => {
+    if (e.target === popup) popup.classList.add('hidden');
+  };
+  
+  // Auto-close after 3 seconds
+  setTimeout(() => {
+    if (!popup.classList.contains('hidden')) {
+      popup.classList.add('hidden');
+    }
+  }, 3000);
+}
+
+// Update cart counter if it exists
 function updateCartCounter() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const cartCounter = document.querySelector('.cart-counter');
-
+  
   if (cartCounter) {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     cartCounter.textContent = totalItems;
+    cartCounter.style.display = totalItems > 0 ? 'inline-block' : 'none';
   }
 }
 
-function renderSuggestionsCarousel(products) {
-  const track = document.querySelector('.carousel-track');
-
-  // Ajouter les produits au carrousel
-  products.forEach(product => {
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
-
-    const img = document.createElement('img');
-    img.src = product.images[0];
-    img.alt = product.name;
-    img.title = product.name;
-
-    const name = document.createElement('h3');
-    name.textContent = product.name;
-
-    const price = document.createElement('p');
-    price.classList.add('price');
-    price.textContent = `${product.price} FCFA`;
-
-    const icon = document.createElement('span');
-    icon.classList.add('icon');
-
-    // Insérer un SVG pour l'icône de panier
-    icon.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-      </svg>
-    `;
-
-    // Ajouter les éléments dans la carte produit
-    productCard.appendChild(img);
-    productCard.appendChild(name);
-    productCard.appendChild(price);
-    productCard.appendChild(icon);
-
-    // Ajouter la carte produit au carrousel
-    track.appendChild(productCard);
-
-    // Ajouter un clic pour rediriger vers la page de détails
-    img.addEventListener('click', () => {
-      window.location.href = `details.html?id=${product.id}`;
-    });
-
-    // Ajouter l'événement de clic sur l'icône "ajouter au panier"
-    icon.addEventListener('click', () => {
-      alert(`Produit ajouté au panier : ${product.name}`);
-    });
-  });
-
-  let currentIndex = 0;
-  const totalItems = products.length;
-  const visibleWidth = track.parentNode.offsetWidth;
-  const itemWidth = track.firstElementChild.offsetWidth + 20; // Largeur de l'élément + marge
-  const itemsPerView = Math.floor(visibleWidth / itemWidth);
-
-  // Fonction pour mettre à jour la position du carrousel
-  function updateCarouselPosition() {
-    const offset = -(itemWidth * currentIndex);
-    track.style.transform = `translateX(${offset}px)`;
-  }
-
-  // Gestion des boutons de défilement
-  document.querySelector('.carousel-control.next').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % totalItems;
-    updateCarouselPosition();
-  });
-
-  document.querySelector('.carousel-control.prev').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-    updateCarouselPosition();
-  });
-
-  // Fonction pour permettre de faire défiler avec le doigt (touch events)
-  let touchStartX = 0;
-  track.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX; // Enregistrer la position de départ du toucher
-  });
-
-  track.addEventListener('touchmove', (e) => {
-    const touchEndX = e.touches[0].clientX; // Enregistrer la position du toucher actuel
-    const moveX = touchStartX - touchEndX;
-
-    // Si l'utilisateur fait glisser vers la gauche ou la droite
-    if (Math.abs(moveX) > 50) {
-      if (moveX > 0) {
-        currentIndex = (currentIndex + 1) % totalItems;
-      } else {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-      }
-      updateCarouselPosition();
-      touchStartX = touchEndX; // Réinitialiser la position de départ
-    }
-  });
-
-  // Défilement automatique toutes les 5 secondes
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % totalItems;
-    updateCarouselPosition();
-  }, 5000); // 5 secondes
-
-  // Rotation immédiate après 5 secondes (cela pourrait être redondant avec setInterval, mais laissé ici pour rotation immédiate)
-  setTimeout(() => {
-    currentIndex = (currentIndex + 1) % totalItems;
-    updateCarouselPosition();
-  }, 5000); // Change les images après 5 secondes
-}
-
-// Appeler la fonction avec vos données de produits
-renderSuggestionsCarousel(products);
-
-document.querySelectorAll('.color-box').forEach(box => {
-  box.addEventListener('click', function() {
-    const colorInput = document.getElementById('color');
-    const selectedColor = this.dataset.color;
-    colorInput.value = selectedColor;
-    
-    // Retirer la sélection précédente
-    document.querySelectorAll('.color-box').forEach(b => b.classList.remove('selected'));
-    this.classList.add('selected');
-    
-    // Mettre à jour les images selon la couleur sélectionnée
-    if (product.imagesByColor && product.imagesByColor[selectedColor]) {
-      const carouselInner = document.querySelector('.carousel-inner');
-      carouselInner.innerHTML = ''; // Vider le carrousel
-      
-      // Ajouter les nouvelles images
-      product.imagesByColor[selectedColor].forEach((imageUrl, index) => {
-        const img = document.createElement('img');
-        img.src = imageUrl;
-        img.alt = `${product.name} - ${selectedColor}`;
-        carouselInner.appendChild(img);
-      });
-      
-      // Réinitialiser la position du carrousel
-      currentIndex = 0;
-      showImage(currentIndex);
-    }
-  });
+window.addEventListener('DOMContentLoaded', () => {
+  displayProductDetail();
+  updateCartCounter(); // Initialize cart counter
 });
-
-document.getElementById('color').addEventListener('input', function() {
-  document.querySelectorAll('.color-box').forEach(box => {
-    if (box.dataset.color === this.value.toLowerCase()) {
-      box.style.borderColor = '#000'; // Indique la couleur sélectionnée
-    } else {
-      box.style.borderColor = '#ccc';
-    }
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = parseInt(urlParams.get('id'));
-
-  function displayProductDetails(product) {
-    if (!product) {
-      console.error('Produit non trouvé');
-      return;
-    }
-
-    try {
-      // Mise à jour du titre
-      document.title = `${product.name} - RYONV`;
-
-      // Mise à jour des images
-      const mainImage = document.querySelector('.main-image img');
-      const thumbnails = document.querySelector('.thumbnails');
-      
-      if (mainImage && thumbnails && product.images && product.images.length > 0) {
-        mainImage.src = product.images[0];
-        mainImage.alt = product.name;
-
-        thumbnails.innerHTML = product.images.map(image => `
-          <img src="${image}" alt="${product.name}" onclick="changeMainImage('${image}')">
-        `).join('');
-      }
-
-      // Mise à jour des informations du produit
-      const productTitle = document.querySelector('.product-title');
-      const productPrice = document.querySelector('.product-price');
-      const productDescription = document.querySelector('.product-description');
-
-      if (productTitle) productTitle.textContent = product.name;
-      if (productPrice) productPrice.textContent = `${product.price} FCFA`;
-      if (productDescription) productDescription.textContent = product.description;
-
-      // Gestion de l'affichage des options du produit
-      const productForm = document.getElementById('product-form');
-      const colorOptionsLabel = productForm.querySelector('label[for="color-options"]');
-      const colorOptionsDiv = document.getElementById('color-options');
-      const sizeLabel = productForm.querySelector('label[for="size"]');
-      const sizeSelect = document.getElementById('size');
-      const quantityLabel = productForm.querySelector('label[for="quantity"]');
-      const quantityInput = document.getElementById('quantity');
-
-      // Gestion des couleurs
-      if (product.colors && product.colors.length > 0) {
-        colorOptionsLabel.style.display = 'block';
-        colorOptionsDiv.style.display = 'flex';
-        colorOptionsDiv.innerHTML = product.colors.map(color => `
-          <div class="color-box" data-color="${color}" style="background-color: ${color};"></div>
-        `).join('') + '<input type="color" id="color" name="color" value="red" hidden>';
-
-        // Réattacher les événements des color-box
-        document.querySelectorAll('.color-box').forEach(box => {
-          box.addEventListener('click', function() {
-            const colorInput = document.getElementById('color');
-            const selectedColor = this.dataset.color;
-            colorInput.value = selectedColor;
-            
-            // Retirer la sélection précédente
-            document.querySelectorAll('.color-box').forEach(b => b.classList.remove('selected'));
-            this.classList.add('selected');
-            
-            // Mettre à jour les images selon la couleur sélectionnée
-            if (product.imagesByColor && product.imagesByColor[selectedColor]) {
-              const carouselInner = document.querySelector('.carousel-inner');
-              carouselInner.innerHTML = ''; // Vider le carrousel
-              
-              // Ajouter les nouvelles images
-              product.imagesByColor[selectedColor].forEach((imageUrl, index) => {
-                const img = document.createElement('img');
-                img.src = imageUrl;
-                img.alt = `${product.name} - ${selectedColor}`;
-                carouselInner.appendChild(img);
-              });
-              
-              // Réinitialiser la position du carrousel
-              currentIndex = 0;
-              showImage(currentIndex);
-            }
-          });
-        });
-      } else {
-        colorOptionsLabel.style.display = 'none';
-        colorOptionsDiv.style.display = 'none';
-      }
-
-      // Gestion des tailles
-      if (product.sizes && product.sizes.length > 0) {
-        sizeLabel.style.display = 'block';
-        sizeSelect.style.display = 'block';
-        sizeSelect.innerHTML = product.sizes.map(size => `
-          <option value="${size}">${size}</option>
-        `).join('');
-      } else {
-        sizeLabel.style.display = 'none';
-        sizeSelect.style.display = 'none';
-      }
-
-      // La quantité est toujours visible
-      quantityLabel.style.display = 'block';
-      quantityInput.style.display = 'block';
-
-      // Mise à jour des informations du vendeur
-      const sellerName = document.querySelector('.seller-name');
-      const sellerRating = document.querySelector('.seller-rating');
-      
-      if (product.seller) {
-        if (sellerName) sellerName.textContent = product.seller.name;
-        if (sellerRating) sellerRating.textContent = `${product.seller.rating}/5`;
-      }
-
-      // Ajouter cet appel à la fin de la fonction
-      initializeImageModal();
-
-    } catch (error) {
-      console.error('Erreur lors de l\'affichage des détails du produit:', error);
-    }
-  }
-
-  // Fonctions de sélection
-  window.selectColor = function(color) {
-    try {
-      document.querySelectorAll('.color-option').forEach(option => {
-        option.classList.remove('active');
-      });
-      const selectedColor = document.querySelector(`[data-color="${color}"]`);
-      if (selectedColor) selectedColor.classList.add('active');
-    } catch (error) {
-      console.error('Erreur lors de la sélection de la couleur:', error);
-    }
-  };
-
-  window.selectSize = function(size) {
-    try {
-      document.querySelectorAll('.size-option').forEach(option => {
-        option.classList.remove('active');
-      });
-      const selectedSize = document.querySelector(`[data-size="${size}"]`);
-      if (selectedSize) selectedSize.classList.add('active');
-    } catch (error) {
-      console.error('Erreur lors de la sélection de la taille:', error);
-    }
-  };
-
-  window.changeMainImage = function(imageUrl) {
-    try {
-      const mainImage = document.querySelector('.main-image img');
-      if (mainImage) mainImage.src = imageUrl;
-    } catch (error) {
-      console.error('Erreur lors du changement d\'image:', error);
-    }
-  };
-
-  // Chargement des produits
-  import('./products.js')
-    .then(module => {
-      const products = module.products;
-      const product = products.find(p => p.id === productId);
-      if (product) {
-        displayProductDetails(product);
-      } else {
-        console.error('Produit non trouvé');
-      }
-    })
-    .catch(error => {
-      console.error('Erreur lors du chargement des produits:', error);
-    });
-});
-
-function initializeImageModal() {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalMainImage');
-    const modalThumbnails = document.querySelector('.modal-thumbnails');
-    const closeBtn = document.querySelector('.close-modal');
-    let currentImageIndex = 0;
-
-    // Variables pour le tactile
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    function openModal(imageUrl, index) {
-        modal.classList.add('show');
-        modalImg.src = imageUrl;
-        currentImageIndex = index;
-        updateModalThumbnails();
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        modal.classList.remove('show');
-        document.body.style.overflow = 'auto';
-    }
-
-    function updateModalThumbnails() {
-        modalThumbnails.innerHTML = product.images.map((img, index) => `
-            <img src="${img}" 
-                 alt="Miniature ${index + 1}"
-                 class="${index === currentImageIndex ? 'active' : ''}"
-                 onclick="changeModalImage(${index})">
-        `).join('');
-    }
-
-    window.changeModalImage = function(index) {
-        currentImageIndex = index;
-        modalImg.src = product.images[index];
-        updateModalThumbnails();
-    };
-
-    // Gestion du tactile pour le modal
-    modalImg.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-    });
-
-    modalImg.addEventListener('touchmove', (e) => {
-        e.preventDefault(); // Empêche le défilement de la page
-    });
-
-    modalImg.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].clientX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        const swipeDistance = touchEndX - touchStartX;
-        const minSwipeDistance = 50; // Distance minimale pour un swipe
-
-        if (Math.abs(swipeDistance) > minSwipeDistance) {
-            if (swipeDistance > 0) {
-                // Swipe vers la droite -> image précédente
-                currentImageIndex = (currentImageIndex - 1 + product.images.length) % product.images.length;
-            } else {
-                // Swipe vers la gauche -> image suivante
-                currentImageIndex = (currentImageIndex + 1) % product.images.length;
-            }
-            changeModalImage(currentImageIndex);
-        }
-    }
-
-    // Gestion du tactile pour le carrousel principal
-    const carouselInner = document.querySelector('.carousel-inner');
-    
-    carouselInner.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-    });
-
-    carouselInner.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-    });
-
-    carouselInner.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].clientX;
-        handleSwipe();
-    });
-
-    // Ajout des écouteurs d'événements pour les images du carrousel
-    document.querySelectorAll('.carousel-inner img').forEach((img, index) => {
-        img.addEventListener('click', () => openModal(img.src, index));
-    });
-
-    // Ajout des écouteurs pour les miniatures du carrousel principal
-    document.querySelectorAll('.thumbnails img').forEach((thumb, index) => {
-        thumb.addEventListener('click', () => {
-            currentImageIndex = index;
-            const mainImg = document.querySelector('.carousel-inner img');
-            mainImg.src = product.images[index];
-            updateThumbnailsActive(index);
-        });
-    });
-
-    function updateThumbnailsActive(index) {
-        document.querySelectorAll('.thumbnails img').forEach((thumb, i) => {
-            thumb.classList.toggle('active', i === index);
-        });
-    }
-
-    // Navigation dans le modal
-    document.querySelector('.modal-nav.prev').addEventListener('click', () => {
-        currentImageIndex = (currentImageIndex - 1 + product.images.length) % product.images.length;
-        changeModalImage(currentImageIndex);
-    });
-
-    document.querySelector('.modal-nav.next').addEventListener('click', () => {
-        currentImageIndex = (currentImageIndex + 1) % product.images.length;
-        changeModalImage(currentImageIndex);
-    });
-
-    // Fermeture du modal
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-
-    // Gestion des touches du clavier
-    document.addEventListener('keydown', (e) => {
-        if (!modal.classList.contains('show')) return;
-        
-        switch(e.key) {
-            case 'Escape':
-                closeModal();
-                break;
-            case 'ArrowLeft':
-                document.querySelector('.modal-nav.prev').click();
-                break;
-            case 'ArrowRight':
-                document.querySelector('.modal-nav.next').click();
-                break;
-        }
-    });
-}

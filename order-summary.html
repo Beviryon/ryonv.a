@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYONV - Bon de commande</title>
+    <link rel="icon" href="./images/icons/icon-192x192.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --accent-color: #28a745;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --border-color: #dee2e6;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: var(--spacing-xl);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        /* Styles for both PDF and screen display */
+        .no-print {
+            display: none;
+        }
+        
+        .hide-in-pdf {
+            display: none;
+        }
+        
+        .order-summary {
+            break-inside: avoid;
+        }
+        
+        /* Hide print-only styles since we're using html2pdf */
+        @media print {
+            /* We don't need print styles anymore since we're generating a PDF instead */
+            /* These styles are kept for backwards compatibility only */
+            .container {
+                box-shadow: none;
+                padding: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .order-summary {
+                break-inside: avoid;
+            }
+            body {
+                background-color: white;
+            }
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+        
+        .document-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg);
+            text-transform: uppercase;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: var(--spacing-md);
+        }
+        
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .order-info {
+            flex: 1;
+        }
+        
+        .order-info-item {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .order-info-item strong {
+            margin-right: var(--spacing-sm);
+            min-width: 120px;
+            display: inline-block;
+        }
+        
+        .vendor-info {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .vendor-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .products-table th {
+            background-color: var(--light-color);
+            text-align: left;
+            padding: var(--spacing-md);
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .products-table td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .products-table .quantity-col {
+            text-align: center;
+            width: 10%;
+        }
+        
+        .products-table .price-col {
+            text-align: right;
+            width: 20%;
+        }
+        
+        .products-table .total-col {
+            text-align: right;
+            width: 20%;
+        }
+        
+        .order-summary {
+            margin-top: var(--spacing-xl);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-sm) 0;
+        }
+        
+        .summary-row.total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-top: 2px solid var(--border-color);
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+        }
+        
+        .order-footer {
+            margin-top: var(--spacing-xl);
+            border-top: 1px solid var(--border-color);
+            padding-top: var(--spacing-lg);
+            text-align: center;
+            color: var(--secondary-color);
+        }
+        
+        .notes {
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background-color: var(--light-color);
+            border-radius: var(--radius-md);
+        }
+        
+        .notes h3 {
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+        }
+        
+        .action-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: var(--spacing-md);
+        }
+        
+        .action-btn {
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+        
+        .action-btn:hover {
+            background-color: #0069d9;
+        }
+        
+        .secondary-btn {
+            background-color: var(--secondary-color);
+        }
+        
+        .secondary-btn:hover {
+            background-color: #5a6268;
+        }
+        
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 8rem;
+            font-weight: 800;
+            opacity: 0.03;
+            color: var(--dark-color);
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="watermark">RYONV.A</div>
+        
+        <div class="logo">
+            <img src="./images/icons/icon-192x192.png" alt="RYONV">
+        </div>
+        
+        <h1 class="document-title">Bon de commande</h1>
+        
+        <div class="order-header">
+            <div class="order-info">
+                <div class="order-info-item">
+                    <strong>Référence :</strong>
+                    <span id="order-reference">RYONVA-00000000</span>
+                </div>
+                <div class="order-info-item">
+                    <strong>Date :</strong>
+                    <span id="order-date">01/01/2023</span>
+                </div>
+                <div class="order-info-item">
+                    <strong>Client :</strong>
+                    <span>RYONV.A</span>
+                </div>
+            </div>
+            
+            <div class="vendor-info">
+                <div class="vendor-name" id="vendor-name">Nom du vendeur</div>
+                <div id="vendor-details">
+                    <!-- Détails du vendeur ici -->
+                </div>
+            </div>
+        </div>
+        
+        <table class="products-table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th class="quantity-col">Qté</th>
+                    <th class="price-col">Prix unitaire</th>
+                    <th class="total-col">Total</th>
+                </tr>
+            </thead>
+            <tbody id="product-list">
+                <!-- Les produits seront ajoutés ici dynamiquement -->
+            </tbody>
+        </table>
+        
+        <div class="order-summary">
+            <div class="summary-row">
+                <span>Sous-total</span>
+                <span id="subtotal">0 Fcfa</span>
+            </div>
+            <div class="summary-row">
+                <span>Livraison</span>
+                <span>À déterminer</span>
+            </div>
+            <div class="summary-row">
+                <span>Taxes</span>
+                <span>À déterminer</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="total">0 Fcfa</span>
+            </div>
+        </div>
+        
+        <div class="notes">
+            <h3>Notes</h3>
+            <p>Merci de votre confiance ! Ce bon de commande est généré automatiquement par RYONV.A pour faciliter votre achat. Pour finaliser votre commande, veuillez contacter directement le vendeur via WhatsApp ou par téléphone.</p>
+            <p>Les frais de livraison et les taxes seront déterminés lors de votre échange avec le vendeur.</p>
+        </div>
+        
+        <div class="order-footer">
+            <p>RYONV.A - Plateforme de mise en relation entre acheteurs et vendeurs</p>
+            <p>www.ryonv.com</p>
+        </div>
+    </div>
+    
+    <div class="action-buttons hide-in-pdf">
+        <button id="download-btn" class="action-btn">
+            <i class="fas fa-download"></i>
+            Télécharger le PDF
+        </button>
+        <button id="back-btn" class="action-btn secondary-btn">
+            <i class="fas fa-arrow-left"></i>
+            Retour
+        </button>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Récupérer les informations de commande depuis sessionStorage
+            const orderData = JSON.parse(sessionStorage.getItem('currentOrder'));
+            
+            if (!orderData || !orderData.vendor) {
+                document.body.innerHTML = `
+                    <div style="text-align: center; padding: 50px;">
+                        <h2>Aucune information de commande disponible</h2>
+                        <p>Veuillez retourner au panier pour créer une nouvelle commande.</p>
+                        <button onclick="window.location.href='cart.html'" style="padding: 10px 20px; margin-top: 20px;">
+                            Retour au panier
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+            
+            const { vendor, reference, date } = orderData;
+            
+            // Remplir les informations de l'en-tête
+            document.getElementById('order-reference').textContent = reference;
+            document.getElementById('order-date').textContent = date;
+            document.getElementById('vendor-name').textContent = vendor.name;
+            
+            // Remplir les détails du vendeur
+            const vendorDetailsElement = document.getElementById('vendor-details');
+            vendorDetailsElement.innerHTML = `
+                ${vendor.phone ? `<div><i class="fas fa-phone"></i> ${vendor.phone}</div>` : ''}
+                ${vendor.email ? `<div><i class="fas fa-envelope"></i> ${vendor.email}</div>` : ''}
+                ${vendor.location ? `<div><i class="fas fa-map-marker-alt"></i> ${vendor.location}</div>` : ''}
+            `;
+            
+            // Remplir la liste des produits
+            const productListElement = document.getElementById('product-list');
+            
+            vendor.items.forEach(item => {
+                const totalPrice = item.price * item.quantity;
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td class="quantity-col">${item.quantity}</td>
+                    <td class="price-col">${item.price.toLocaleString()} Fcfa</td>
+                    <td class="total-col">${totalPrice.toLocaleString()} Fcfa</td>
+                `;
+                
+                productListElement.appendChild(row);
+            });
+            
+            // Mettre à jour les totaux
+            document.getElementById('subtotal').textContent = `${vendor.subtotal.toLocaleString()} Fcfa`;
+            document.getElementById('total').textContent = `${vendor.subtotal.toLocaleString()} Fcfa`;
+            
+            // Fonction pour générer et télécharger le PDF
+            function generatePDF() {
+                // Cacher les boutons pendant la génération du PDF
+                const actionButtons = document.querySelector('.action-buttons');
+                actionButtons.style.display = 'none';
+                
+                // Options pour html2pdf
+                const opt = {
+                    margin: 10,
+                    filename: `BonDeCommande_${vendor.name}_${reference}.pdf`,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+                
+                // Générer le PDF
+                html2pdf().set(opt).from(document.querySelector('.container')).save().then(() => {
+                    // Réafficher les boutons après la génération
+                    actionButtons.style.display = 'flex';
+                });
+            }
+            
+            // Ajouter l'écouteur d'événement au bouton de téléchargement
+            document.getElementById('download-btn').addEventListener('click', generatePDF);
+            
+            document.getElementById('back-btn').addEventListener('click', () => {
+                window.location.href = 'cart.html';
+            });
+            
+            // Mettre le titre de la page avec le nom du vendeur
+            document.title = `RYONV - Bon de commande pour ${vendor.name}`;
+        });
+    </script>
+</body>
+</html> 

@@ -13,7 +13,8 @@
   <meta property="og:image" content="./images/icons/icon-192x192.png">
   <meta property="og:url" content="https://ryonv.com">
 
-  <link rel="icon" href="./images//icons/icon-192x192.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="./images/icon-192x192.png">
+  <link rel="icon" href="./images/icons/icon-192x192.png" type="image/x-icon">
   
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,12 +28,14 @@
     <title>RYONV - Boutique en ligne de style et qualité</title>
 
     <!-- Précharger les ressources critiques -->
+    <link rel="preload" href="./styles/theme.css" as="style">
     <link rel="preload" href="./produits.css" as="style">
     <link rel="preload" href="./produitLike.css" as="style">
     <link rel="preload" href="./produitBarre.css" as="style">
     <link rel="preload" href="./produitBottomBar.css" as="style">
     
     <!-- Charger les styles de manière optimisée -->
+    <link rel="stylesheet" href="./styles/theme.css">
     <link rel="stylesheet" href="./produits.css">
     <link rel="stylesheet" href="./produitLike.css">
     <link rel="stylesheet" href="./produitBarre.css">
@@ -40,6 +43,7 @@
     <!-- <link rel="stylesheet" href="./product-compare.css"> -->
     <!-- <link rel="stylesheet" href="./produitTest.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
     <link rel="manifest" href="./manifest.json">
     <meta http-equiv="Content-Security-Policy" content="
@@ -54,7 +58,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="theme-color" content="#007bff">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -341,11 +345,6 @@
             </div>
         </div>
     </div>
-    
-    <!-- <div class="banner-bottom">
-        <span class="promo-text">JUSQU'À</span>
-        <span class="promo-value">-20%</span>
-    </div> -->
 </section>
 
 <!-- Conteneur pour l'en-tête de catégorie -->
@@ -356,9 +355,19 @@
         <!-- Affichage des produits -->
     </div>
     <div class="pagination-container">
-        <button id="prev-btn" class="pagination-btn" disabled>⬅️ Précédent</button>
+        <button id="prev-btn" class="pagination-btn" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span>Précédent</span>
+        </button>
         <span id="page-info" class="page-info">1 sur 10</span>
-        <button id="next-btn" class="pagination-btn">Suivant ➡️</button>
+        <button id="next-btn" class="pagination-btn">
+            <span>Suivant</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </button>
     </div>
 </section>
 
@@ -506,6 +515,7 @@
   </button>
 </div>
 <script nonce="xyz" type="module"  src="./popupWhatsapp.js"></script>
+<script nonce="xyz" type="module" src="./fix-phone-numbers.js"></script>
 <script nonce="xyz" type="module" src="./produits.js"></script>
 <script nonce="xyz" type="module"  src="./products.js"></script>
 <script nonce="xyz" type="module"  src="./lib/bundle.js"></script>
@@ -831,22 +841,6 @@
     </div>
 </div>
 
-<div class="compare-products">
-    <button class="compare-btn">
-        <i class="fas fa-exchange-alt"></i>
-        <span>Comparer ce produit</span>
-    </button>
-    <div class="compare-list">
-        <div class="compare-item">
-            <img src="PRODUCT_IMAGE" alt="Produit à comparer">
-            <i class="fas fa-times remove-compare"></i>
-        </div>
-        <div class="add-to-compare">
-            <i class="fas fa-plus"></i>
-        </div>
-    </div>
-</div>
-
 <div class="recent-sales">
     <h3>Derniers achats</h3>
     <div class="sales-ticker">
@@ -902,33 +896,19 @@
     });
 </script>
 
-<!-- Ajouter ce script à la fin du body, juste avant les scripts existants -->
+<script nonce="xyz" src="./app-settings.js"></script>
+<script nonce="xyz" src="./produits.js"></script>
+<script nonce="xyz" src="./produitBottomNav.js"></script>
 <script nonce="xyz">
-  // Fonction de débogage pour surveiller les clics
-  document.addEventListener('click', function(e) {
-      const target = e.target;
-      
-      // Chercher si c'est un bouton d'ajout à la comparaison ou un parent proche
-      const addButton = target.classList.contains('add-to-compare-btn') 
-          ? target 
-          : target.closest('.add-to-compare-btn');
-      
-      if (addButton) {
-          console.log("Clic détecté sur un bouton d'ajout avec ID:", addButton.getAttribute('data-id'));
-      }
-  });
-  
-  // Fonction de secours pour l'initialisation
-  window.addEventListener('load', function() {
-      setTimeout(function() {
-          if (typeof window.ProductCompare === 'undefined') {
-              console.warn("ProductCompare n'est pas défini après le chargement de la page");
-          } else {
-              console.log("Réinitialisation du système de comparaison");
-              window.ProductCompare.init();
-          }
-      }, 2000);
-  });
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(registration => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(error => {
+        console.log('Service Worker registration failed:', error);
+      });
+  }
 </script>
 </body>
 </html>

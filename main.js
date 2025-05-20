@@ -77,22 +77,36 @@ document.addEventListener('DOMContentLoaded', () => {
   handleCursor();
   handleMobileNavigation();
   handleProductRedirection();
+
+  // Gestion du popup promotionnel
+  const overlay = document.getElementById('popupOverlay');
+  const popup = document.getElementById('promoPopup');
+  const closeBtn = document.querySelector('.close-btn');
+  
+  // Afficher le popup après 3 secondes
+  setTimeout(() => {
+    overlay.style.display = 'flex';
+    popup.style.display = 'block';
+  }, 3000);
+
+  // Fermer le popup au clic sur le bouton de fermeture ou l'overlay
+  closeBtn.addEventListener('click', closePopup);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      closePopup();
+    }
+  });
+
+  function closePopup() {
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+  }
+
+  // Fermer automatiquement après 10 secondes
+  setTimeout(closePopup, 13000);
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-=======
->>>>>>> 14a5b7b4f08bb94bf8c18f85a644730a41ac0ca5
 window.onload = function() {
   document.getElementById('loader').style.display = 'none';
   document.getElementById('content').style.display = 'block';
 };
-<<<<<<< HEAD
-=======
-
->>>>>>> 8acc083 (mise à jour du site)
-=======
->>>>>>> b1f05062005cc3fe19e221f4459f59e44df24031
->>>>>>> 14a5b7b4f08bb94bf8c18f85a644730a41ac0ca5
