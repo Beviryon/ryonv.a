@@ -20,7 +20,7 @@
       </div>
       <div class="input-container">
         <i class="fas fa-phone-alt"></i>
-        <input type="tel" id="phone" placeholder="Numéro de téléphone" required>
+        <input type="tel" id="phone" placeholder="Téléphone" required>
       </div>
       <div class="input-container">
         <i class="fas fa-city"></i>
@@ -63,19 +63,14 @@
         <input type="text" id="bank_account" placeholder="Numéro de compte bancaire" required>
       </div>
 
-      <button type="submit">S'inscrire en tant que vendeur</button>
+      <button type="submit">S'inscrire comme vendeur</button>
     </form>
     <p>Déjà un compte ? <a href="./login.html" class="animated-link">Connectez-vous</a></p>
   </main>
 
   <!-- Modal de confirmation -->
-  <div id="welcomeModal" class="modal" style="display: none;">
-    <div class="modal-content">
-      <h2>Bienvenue <span id="userName"></span> !</h2>
-      <p>Votre compte vendeur a été créé avec succès.</p>
-      <p>Un administrateur examinera votre demande et vous contactera bientôt.</p>
-      <button id="closeModal">Fermer</button>
-    </div>
+  <div id="vendorModal" style="display:none;">
+    <span id="vendorName"></span>, votre demande a été envoyée !
   </div>
 
   <script src="./register-vendor.js"></script>

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const phone = document.getElementById('phone').value;
+      const phone = document.getElementById('phone').value.trim();
       const password = passwordInput.value;
   
       try {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
   
         const data = await response.json();
-        if (response.ok) {
+        if (response.ok && data.user) {
           // Afficher la fenêtre modale de bienvenue
           userNameSpan.textContent = data.user.first_name || '';
           welcomeModal.style.display = 'block';
@@ -33,19 +33,21 @@ document.addEventListener('DOMContentLoaded', () => {
             welcomeModal.style.display = 'none';
   
             // Rediriger en fonction du rôle de l'utilisateur
-            if (data.user.role === 3) {
+            if (parseInt(data.user.role) === 3) {
               window.location.href = '/desloSite/admin.html';
+            } else if (parseInt(data.user.role) === 2) {
+              window.location.href = '/desloSite/vendor-dashboard.html';
             } else {
               window.location.href = '/desloSite/profile.html';
             }
           }, 3000);
   
         } else {
-          alert(data.error);
+          alert(data.error || "Erreur lors de la connexion.");
         }
       } catch (error) {
         console.error('Erreur lors de la connexion:', error);
-        alert('Une erreur est survenue lors de la connexion. Veuillez réessayer.');
+        alert("Erreur lors de la connexion.");
       }
     });
   

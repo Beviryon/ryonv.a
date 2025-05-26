@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const registerVendorForm = document.getElementById('registerVendorForm');
-    const welcomeModal = document.getElementById('welcomeModal');
-    const closeModal = document.getElementById('closeModal');
-    const userNameSpan = document.getElementById('userName');
     const togglePassword = document.getElementById('togglePassword');
     const passwordInput = document.getElementById('password');
+    const vendorModal = document.getElementById('vendorModal');
+    const vendorName = document.getElementById('vendorName');
 
     // Fonction pour basculer la visibilité du mot de passe
     togglePassword.addEventListener('click', () => {
@@ -34,76 +33,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     registerVendorForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-
-        // Récupérer les valeurs du formulaire
-        const formData = {
-            first_name: document.getElementById('first_name').value.trim(),
-            phone: document.getElementById('phone').value.trim(),
-            city: document.getElementById('city').value.trim(),
-            country: document.getElementById('country').value.trim(),
-            password: passwordInput.value,
-            store_name: document.getElementById('store_name').value.trim(),
-            store_description: document.getElementById('store_description').value.trim(),
-            business_type: document.getElementById('business_type').value,
-            tax_id: document.getElementById('tax_id').value.trim(),
-            bank_account: document.getElementById('bank_account').value.trim()
-        };
-
-        // Validation des champs
-        if (!validatePhone(formData.phone)) {
-            alert('Veuillez entrer un numéro de téléphone valide (10 chiffres).');
-            return;
-        }
-
-        if (!validateTaxId(formData.tax_id)) {
-            alert('Veuillez entrer un numéro d\'identification fiscale valide (14 chiffres).');
-            return;
-        }
-
-        if (!validateBankAccount(formData.bank_account)) {
-            alert('Veuillez entrer un numéro de compte bancaire valide (11 à 14 chiffres).');
-            return;
-        }
+        const first_name = document.getElementById('first_name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const city = document.getElementById('city').value.trim();
+        const country = document.getElementById('country').value.trim();
+        const password = document.getElementById('password').value;
+        const store_name = document.getElementById('store_name').value.trim();
+        const store_description = document.getElementById('store_description').value.trim();
+        const business_type = document.getElementById('business_type').value;
+        const tax_id = document.getElementById('tax_id').value.trim();
+        const bank_account = document.getElementById('bank_account').value.trim();
 
         try {
-            const response = await fetch('https://ryonv-shop.netlify.app/.netlify/functions/register-vendor', {
+            const response = await fetch('/api/register-vendor', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    first_name, phone, city, country, password,
+                    store_name, store_description, business_type, tax_id, bank_account
+                }),
             });
-
             const data = await response.json();
-
             if (response.ok) {
-                // Afficher la fenêtre modale de bienvenue
-                userNameSpan.textContent = formData.first_name;
-                welcomeModal.style.display = 'block';
-
-                // Fermer la modale après quelques secondes et rediriger vers la page de connexion
+                vendorName.textContent = first_name;
+                vendorModal.style.display = 'block';
                 setTimeout(() => {
-                    welcomeModal.style.display = 'none';
+                    vendorModal.style.display = 'none';
                     window.location.href = '/desloSite/login.html';
-                }, 5000);
+                }, 3000);
             } else {
-                alert(data.error || 'Une erreur est survenue lors de l\'inscription.');
+                alert(data.error || "Erreur lors de l'inscription.");
             }
         } catch (error) {
-            console.error('Erreur lors de l\'inscription:', error);
-            alert('Une erreur est survenue lors de l\'inscription. Veuillez réessayer.');
-        }
-    });
-
-    // Gestion de la fermeture de la modale
-    closeModal.addEventListener('click', () => {
-        welcomeModal.style.display = 'none';
-    });
-
-    // Fermer la modale si on clique en dehors
-    window.addEventListener('click', (e) => {
-        if (e.target === welcomeModal) {
-            welcomeModal.style.display = 'none';
+            alert("Erreur lors de l'inscription vendeur.");
         }
     });
 }); 
