@@ -12,30 +12,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const password = passwordInput.value;
   
       try {
-        const response = await fetch('https://ryonv-shop.netlify.app/.netlify/functions/login', {
+        const response = await fetch('/api/login', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ phone, password }),
         });
   
         const data = await response.json();
         if (response.ok) {
           // Afficher la fenêtre modale de bienvenue
-          userNameSpan.textContent = data.user.first_name;
+          userNameSpan.textContent = data.user.first_name || '';
           welcomeModal.style.display = 'block';
   
           // Stocker le token et le rôle dans le localStorage
-          localStorage.setItem('token', data.user.token);
-          localStorage.setItem('userRole', data.user.roles.name);
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('userRole', data.user.role);
   
           // Fermer la modale après 3 secondes et rediriger vers la page appropriée
           setTimeout(() => {
             welcomeModal.style.display = 'none';
   
             // Rediriger en fonction du rôle de l'utilisateur
-            if (data.user.roles.name === 'admin') {
+            if (data.user.role === 3) {
               window.location.href = '/desloSite/admin.html';
             } else {
               window.location.href = '/desloSite/profile.html';

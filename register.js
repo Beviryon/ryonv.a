@@ -1,40 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
-    const welcomeModal = document.getElementById('welcomeModal');
+    const welcomeModal = document.getElementById('confirmationModal');
     const closeModal = document.getElementById('closeModal');
     const userNameSpan = document.getElementById('userName');
   
     registerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const first_name = document.getElementById('first_name').value;
-      const phone = document.getElementById('phone').value;
-      const city = document.getElementById('city').value;
-      const country = document.getElementById('country').value;
+      const first_name = document.getElementById('first_name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const city = document.getElementById('city').value.trim();
+      const country = document.getElementById('country').value.trim();
       const password = document.getElementById('password').value;
   
       try {
-        const response = await fetch('https://ryonv-shop.netlify.app/.netlify/functions/register', {
+        const response = await fetch('/api/register', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ first_name, phone, city, country, password }),
         });
-        console.log('Response:', response);
   
-        const data = await response.json();
+        let data;
+        try {
+          data = await response.json();
+        } catch (jsonError) {
+          throw new Error("Réponse du serveur invalide.");
+        }
+  
         if (response.ok) {
-          // Afficher la fenêtre modale de bienvenue
-          userNameSpan.textContent = data.message;
+          userNameSpan.textContent = data.message || 'Inscription réussie !';
           welcomeModal.style.display = 'block';
   
-          // Fermer la modale après quelques secondes et rediriger vers la page de connexion
           setTimeout(() => {
             welcomeModal.style.display = 'none';
             window.location.href = '/desloSite/login.html';
           }, 3000);
         } else {
-          alert(data.error);
+          alert(data.error || "Erreur lors de l'inscription.");
         }
       } catch (error) {
         console.error('Erreur lors de l\'inscription:', error);
@@ -42,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
-    // Gestion de la fermeture de la modale
     closeModal.addEventListener('click', () => {
       welcomeModal.style.display = 'none';
     });
