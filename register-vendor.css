@@ -1,0 +1,199 @@
+/* Styles spécifiques pour la page d'inscription des vendeurs */
+@import url('./register.css');
+
+main {
+  max-width: 600px;
+  padding: 2rem;
+}
+
+h2 {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.input-container textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.input-container select {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.input-container select option {
+  background: white;
+  color: #333;
+}
+
+/* Style pour le modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  color: #6e8efb;
+  margin-bottom: 1rem;
+  border: none;
+}
+
+.modal-content p {
+  margin: 1rem 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.modal-content button {
+  background: #6e8efb;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 1rem;
+}
+
+.modal-content button:hover {
+  background: #5a7de0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .modal-content {
+    margin: 20% auto;
+    padding: 1.5rem;
+  }
+}
+
+/* Styles pour les messages d'erreur */
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.input-container.error input,
+.input-container.error textarea,
+.input-container.error select {
+  border-color: #dc3545;
+}
+
+.input-container.error .error-message {
+  display: block;
+}
+
+/* Styles pour les champs requis */
+.input-container.required::after {
+  content: '*';
+  color: #dc3545;
+  margin-left: 0.25rem;
+}
+
+/* Styles pour les tooltips */
+.input-container {
+  position: relative;
+}
+
+.input-container .tooltip {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1;
+}
+
+.input-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styles pour les icônes de validation */
+.input-container.valid::after {
+  content: '✓';
+  color: #28a745;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-container.invalid::after {
+  content: '✕';
+  color: #dc3545;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+} 

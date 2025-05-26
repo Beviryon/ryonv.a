@@ -1,0 +1,12 @@
+{
+  "name": "deslo-site-functions",
+  "version": "1.0.0",
+  "description": "Fonctions Netlify pour le site Deslo",
+  "main": "index.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.0"
+  }
+} 

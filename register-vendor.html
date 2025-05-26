@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription Vendeur - RYONV</title>
+  <link rel="stylesheet" href="./register.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <main>
+    <h1>Inscription Vendeur</h1>
+    <form id="registerVendorForm">
+      <h2>Informations Personnelles</h2>
+      <div class="input-container">
+        <i class="fas fa-user"></i>
+        <input type="text" id="first_name" placeholder="Prénom" required>
+      </div>
+      <div class="input-container">
+        <i class="fas fa-phone-alt"></i>
+        <input type="tel" id="phone" placeholder="Numéro de téléphone" required>
+      </div>
+      <div class="input-container">
+        <i class="fas fa-city"></i>
+        <input type="text" id="city" placeholder="Ville" required>
+      </div>
+      <div class="input-container">
+        <i class="fas fa-flag"></i>
+        <input type="text" id="country" placeholder="Pays" required>
+      </div>
+      <div class="input-container">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="password" placeholder="Mot de passe" required>
+        <i class="far fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+      </div>
+
+      <h2>Informations de la Boutique</h2>
+      <div class="input-container">
+        <i class="fas fa-store"></i>
+        <input type="text" id="store_name" placeholder="Nom de la boutique" required>
+      </div>
+      <div class="input-container">
+        <i class="fas fa-align-left"></i>
+        <textarea id="store_description" placeholder="Description de la boutique" required></textarea>
+      </div>
+      <div class="input-container">
+        <i class="fas fa-briefcase"></i>
+        <select id="business_type" required aria-label="Type d'entreprise">
+          <option value="">Type d'entreprise</option>
+          <option value="individual">Particulier</option>
+          <option value="company">Société</option>
+          <option value="association">Association</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <i class="fas fa-id-card"></i>
+        <input type="text" id="tax_id" placeholder="Numéro d'identification fiscale" required>
+      </div>
+      <div class="input-container">
+        <i class="fas fa-university"></i>
+        <input type="text" id="bank_account" placeholder="Numéro de compte bancaire" required>
+      </div>
+
+      <button type="submit">S'inscrire en tant que vendeur</button>
+    </form>
+    <p>Déjà un compte ? <a href="./login.html" class="animated-link">Connectez-vous</a></p>
+  </main>
+
+  <!-- Modal de confirmation -->
+  <div id="welcomeModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Bienvenue <span id="userName"></span> !</h2>
+      <p>Votre compte vendeur a été créé avec succès.</p>
+      <p>Un administrateur examinera votre demande et vous contactera bientôt.</p>
+      <button id="closeModal">Fermer</button>
+    </div>
+  </div>
+
+  <script src="./register-vendor.js"></script>
+</body>
+</html> 

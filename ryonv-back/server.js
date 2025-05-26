@@ -572,3 +572,182 @@ app.post('/reset-password', async (req, res) => {
   }
 });
 
+// Route pour l'inscription des vendeurs
+app.post('/register-vendor', async (req, res) => {
+  const { 
+    first_name, 
+    phone, 
+    city, 
+    country, 
+    password,
+    store_name,
+    store_description,
+    business_type,
+    tax_id,
+    bank_account
+  } = req.body;
+  const role_id = 2; // Rôle 'vendor'
+
+  try {
+    // Vérifier si le rôle existe
+    const { data: roleData, error: roleError } = await supabase
+      .from('roles')
+      .select('*')
+      .eq('id', role_id)
+      .single();
+
+    if (roleError || !roleData) {
+      console.error('Error fetching role:', roleError);
+      return res.status(400).json({ error: 'Le rôle vendeur n\'existe pas.' });
+    }
+
+    // Vérifier si le numéro de téléphone existe déjà
+    const { data: existingUser, error: existingUserError } = await supabase
+      .from('users')
+      .select('*')
+      .eq('phone', phone)
+      .single();
+
+    if (existingUser) {
+      return res.status(400).json({ error: 'Le numéro de téléphone est déjà utilisé.' });
+    }
+
+    // Hachage du mot de passe
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Créer l'utilisateur vendeur
+    const { data: userData, error: userError } = await supabase
+      .from('users')
+      .insert([{
+        first_name,
+        phone,
+        city,
+        country,
+        password: hashedPassword,
+        role_id
+      }])
+      .select()
+      .single();
+
+    if (userError) {
+      console.error('Error creating vendor user:', userError);
+      return res.status(400).json({ error: 'Erreur lors de la création du compte vendeur.' });
+    }
+
+    // Créer le profil vendeur
+    const { error: vendorError } = await supabase
+      .from('vendors')
+      .insert([{
+        user_id: userData.id,
+        store_name,
+        store_description,
+        business_type,
+        tax_id,
+        bank_account,
+        status: 'pending' // Le statut sera approuvé par un admin
+      }]);
+
+    if (vendorError) {
+      console.error('Error creating vendor profile:', vendorError);
+      // Supprimer l'utilisateur si la création du profil échoue
+      await supabase.from('users').delete().eq('id', userData.id);
+      return res.status(400).json({ error: 'Erreur lors de la création du profil vendeur.' });
+    }
+
+    res.status(200).json({ 
+      message: 'Compte vendeur créé avec succès. En attente d\'approbation par un administrateur.',
+      user: userData
+    });
+
+  } catch (error) {
+    console.error('Server error:', error);
+    res.status(500).json({ error: 'Erreur serveur lors de la création du compte vendeur.' });
+  }
+});
+
+// Route pour approuver un vendeur (admin seulement)
+app.post('/admin/approve-vendor/:vendorId', async (req, res) => {
+  const { vendorId } = req.params;
+  const token = req.headers.authorization?.split(' ')[1];
+
+  if (!token) {
+    return res.status(401).json({ error: 'Token d\'authentification manquant.' });
+  }
+
+  try {
+    // Vérifier si l'utilisateur est un admin
+    const decoded = jwt.verify(token, jwtSecret);
+    const { data: adminData, error: adminError } = await supabase
+      .from('users')
+      .select('*, roles(name)')
+      .eq('id', decoded.id)
+      .single();
+
+    if (adminError || adminData.roles.name !== 'admin') {
+      return res.status(403).json({ error: 'Accès non autorisé.' });
+    }
+
+    // Mettre à jour le statut du vendeur
+    const { error: updateError } = await supabase
+      .from('vendors')
+      .update({ status: 'approved' })
+      .eq('id', vendorId);
+
+    if (updateError) {
+      return res.status(400).json({ error: 'Erreur lors de l\'approbation du vendeur.' });
+    }
+
+    res.status(200).json({ message: 'Vendeur approuvé avec succès.' });
+
+  } catch (error) {
+    console.error('Server error:', error);
+    res.status(500).json({ error: 'Erreur serveur lors de l\'approbation du vendeur.' });
+  }
+});
+
+// Route pour obtenir la liste des vendeurs (admin seulement)
+app.get('/admin/vendors', async (req, res) => {
+  const token = req.headers.authorization?.split(' ')[1];
+
+  if (!token) {
+    return res.status(401).json({ error: 'Token d\'authentification manquant.' });
+  }
+
+  try {
+    // Vérifier si l'utilisateur est un admin
+    const decoded = jwt.verify(token, jwtSecret);
+    const { data: adminData, error: adminError } = await supabase
+      .from('users')
+      .select('*, roles(name)')
+      .eq('id', decoded.id)
+      .single();
+
+    if (adminError || adminData.roles.name !== 'admin') {
+      return res.status(403).json({ error: 'Accès non autorisé.' });
+    }
+
+    // Récupérer la liste des vendeurs avec leurs informations
+    const { data: vendors, error: vendorsError } = await supabase
+      .from('vendors')
+      .select(`
+        *,
+        users (
+          first_name,
+          phone,
+          city,
+          country
+        )
+      `);
+
+    if (vendorsError) {
+      return res.status(400).json({ error: 'Erreur lors de la récupération des vendeurs.' });
+    }
+
+    res.status(200).json({ vendors });
+
+  } catch (error) {
+    console.error('Server error:', error);
+    res.status(500).json({ error: 'Erreur serveur lors de la récupération des vendeurs.' });
+  }
+});
+

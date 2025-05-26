@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Vendeurs - RYONV Admin</title>
+    <link rel="stylesheet" href="./admin-vendors.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <div class="header-top">
+                <h1>Gestion des Vendeurs</h1>
+                <div class="notification-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" id="notificationCount">0</span>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-header">
+                            <h3>Notifications</h3>
+                            <button id="markAllRead">Tout marquer comme lu</button>
+                        </div>
+                        <div class="notification-list" id="notificationList">
+                            <!-- Les notifications seront injectées ici -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-controls">
+                <div class="search-container">
+                    <input type="text" id="searchVendor" placeholder="Rechercher un vendeur...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-container">
+                    <select id="statusFilter" aria-label="Filtrer par statut">
+                        <option value="all">Tous les statuts</option>
+                        <option value="pending">En attente</option>
+                        <option value="approved">Approuvés</option>
+                        <option value="rejected">Rejetés</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section des statistiques -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Vendeurs</h3>
+                        <p class="stat-number" id="totalVendors">0</p>
+                        <p class="stat-change positive" id="vendorsChange">+0% ce mois</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon pending">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>En Attente</h3>
+                        <p class="stat-number" id="pendingVendors">0</p>
+                        <p class="stat-change" id="pendingChange">0 en attente</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon approved">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Approuvés</h3>
+                        <p class="stat-number" id="approvedVendors">0</p>
+                        <p class="stat-change positive" id="approvedChange">+0% ce mois</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon rejected">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Rejetés</h3>
+                        <p class="stat-number" id="rejectedVendors">0</p>
+                        <p class="stat-change negative" id="rejectedChange">+0% ce mois</p>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-charts">
+                <div class="chart-container">
+                    <h3>Distribution des Vendeurs</h3>
+                    <canvas id="vendorsDistributionChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Évolution Mensuelle</h3>
+                    <canvas id="vendorsEvolutionChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <main class="admin-content">
+            <div class="vendors-list" id="vendorsList">
+                <!-- Les vendeurs seront injectés ici dynamiquement -->
+            </div>
+
+            <!-- Template pour la carte vendeur -->
+            <template id="vendorCardTemplate">
+                <div class="vendor-card">
+                    <div class="vendor-header">
+                        <h3 class="vendor-name"></h3>
+                        <span class="vendor-status"></span>
+                    </div>
+                    <div class="vendor-info">
+                        <div class="info-group">
+                            <i class="fas fa-user"></i>
+                            <span class="vendor-owner"></span>
+                        </div>
+                        <div class="info-group">
+                            <i class="fas fa-phone"></i>
+                            <span class="vendor-phone"></span>
+                        </div>
+                        <div class="info-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="vendor-location"></span>
+                        </div>
+                        <div class="info-group">
+                            <i class="fas fa-building"></i>
+                            <span class="vendor-business-type"></span>
+                        </div>
+                    </div>
+                    <div class="vendor-description"></div>
+                    <div class="vendor-actions">
+                        <button class="btn-view-details" data-vendor-id="">
+                            <i class="fas fa-eye"></i> Voir détails
+                        </button>
+                        <div class="approval-actions">
+                            <button class="btn-approve" data-vendor-id="">
+                                <i class="fas fa-check"></i> Approuver
+                            </button>
+                            <button class="btn-reject" data-vendor-id="">
+                                <i class="fas fa-times"></i> Rejeter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Modal pour les détails du vendeur -->
+            <div id="vendorDetailsModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Détails du Vendeur</h2>
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="details-section">
+                            <h3>Informations de la Boutique</h3>
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <label>Nom de la boutique:</label>
+                                    <span id="modalStoreName"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Type d'entreprise:</label>
+                                    <span id="modalBusinessType"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Numéro d'identification fiscale:</label>
+                                    <span id="modalTaxId"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Numéro de compte bancaire:</label>
+                                    <span id="modalBankAccount"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details-section">
+                            <h3>Informations du Propriétaire</h3>
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <label>Nom:</label>
+                                    <span id="modalOwnerName"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Téléphone:</label>
+                                    <span id="modalOwnerPhone"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Ville:</label>
+                                    <span id="modalOwnerCity"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Pays:</label>
+                                    <span id="modalOwnerCountry"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details-section">
+                            <h3>Description de la Boutique</h3>
+                            <p id="modalStoreDescription"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-secondary close-modal">Fermer</button>
+                        <div class="approval-actions">
+                            <button class="btn-approve" id="modalApproveBtn">
+                                <i class="fas fa-check"></i> Approuver
+                            </button>
+                            <button class="btn-reject" id="modalRejectBtn">
+                                <i class="fas fa-times"></i> Rejeter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Template pour les notifications -->
+    <template id="notificationTemplate">
+        <div class="notification-item">
+            <div class="notification-icon"></div>
+            <div class="notification-content">
+                <p class="notification-message"></p>
+                <span class="notification-time"></span>
+            </div>
+            <button class="notification-close">&times;</button>
+        </div>
+    </template>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./admin-vendors.js"></script>
+</body>
+</html> 
