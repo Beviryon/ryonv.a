@@ -1,3 +1,4 @@
+let products = [];
 document.addEventListener('DOMContentLoaded', () => {
     // Mettre à jour le compteur d'articles dans l'icône du panier
     updateCartCounter();

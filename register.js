@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
         if (response.ok) {
           userNameSpan.textContent = data.message || 'Inscription réussie !';
-          welcomeModal.style.display = 'block';
+          if (welcomeModal) welcomeModal.style.display = 'block';
   
           setTimeout(() => {
-            welcomeModal.style.display = 'none';
+            if (welcomeModal) welcomeModal.style.display = 'none';
             window.location.href = '/desloSite/login.html';
           }, 3000);
         } else {
