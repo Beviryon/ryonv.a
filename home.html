@@ -27,20 +27,22 @@
     <meta name="description" content="Découvrez RYONV, la boutique de mode en ligne qui allie qualité et style. Achetez des vêtements modernes et profitez d'une livraison rapide.">
     <title>RYONV - Boutique en ligne de style et qualité</title>
     <title>Page d'Accueil</title>
-    <link rel="stylesheet" href="./styles/theme.css">
-    <link rel="stylesheet" href="./home.css" onload="this.rel='stylesheet'">
-    <link rel="stylesheet" href="./produits.css"  onload="this.rel='stylesheet'">
-    <link rel="preload" href="./produitBottomBar.css" as="style">
+    <link rel="stylesheet" href="./styles/theme.css" nonce="xyz">
+    <link rel="stylesheet" href="./home.css" nonce="xyz">
+    <link rel="stylesheet" href="./produits.css" nonce="xyz">
+    <link rel="preload" href="./produitBottomBar.css" as="style" nonce="xyz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="manifest" href="./manifest.json">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-xyz';">
     <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self'; 
-      script-src 'self' 'nonce-xyz'; 
+      default-src 'self';
+      script-src 'self' 'nonce-xyz' https://www.googletagmanager.com https://www.clarity.ms;
       style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
-      img-src 'self' https://s.alicdn.com https://live.staticflickr.com;
+      img-src 'self' https://s.alicdn.com https://live.staticflickr.com https://www.google.com;
       font-src 'self' https://cdnjs.cloudflare.com;
+      connect-src 'self' https://www.google.com https://www.clarity.ms;
+      frame-src 'self' https://www.googletagmanager.com;
+      worker-src 'self';
     ">
     <meta name="theme-color" content="#007bff">
 </head>
@@ -155,31 +157,6 @@
       </div>
 </section>
 
-  <!-- Section Produits Phare -->
-  <!-- <section class="featured-products">
-      <h2>Nos Produits Phares</h2>
-      <div class="product-gallery">
-          <div class="product-card">
-              <img src="https://s.alicdn.com/@sc04/kf/A310c4a58d33347d6b59f55536430a81c2.jpg_720x720q50.jpg" alt="Produit 1">
-              <h3>Robe Élégante</h3>
-              <p>Élevez votre style avec notre collection de robes raffinées.</p>
-              <a href="./produits.html" class="btn">Voir plus</a>
-          </div>
-          <div class="product-card">
-              <img src="https://s.alicdn.com/@sc04/kf/H6142bfaf744b42a998a13922324c3599f.jpg?avif=close" alt="Produit 2">
-              <h3>Complet homme</h3>
-              <p>Parfaite pour toutes les occasions, de la journée à la soirée.</p>
-              <a href="./produits.html" class="btn">Voir plus</a>
-          </div>
-          <div class="product-card">
-              <img src="https://s.alicdn.com/@sc04/kf/Ha8fd0988ca0844dcba6b3ec65f2ed729B.jpg_720x720q50.jpg" alt="Produit 3">
-              <h3>Complet femme</h3>
-              <p>Chaleur et style, idéal pour la saison.</p>
-              <a href="./produits.html" class="btn">Voir plus</a>
-          </div>
-      </div>
-  </section> -->
-
   <!-- Section Abonnement pour vendre -->
   <section class="subscription-section">
       <div class="subscription-content">
@@ -225,6 +202,11 @@
     <i class="fas fa-bell"></i>
     <span class="nav-text">Alertes</span>
   </a>
+  <div class="nav-icon burger" tabindex="0" aria-label="Ouvrir le menu">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
 </div>
 
   <script nonce="xyz" src="./main.js"></script>
@@ -265,7 +247,7 @@
   <script nonce="xyz" src="./scrpt_pwa.js"></script>
   <script nonce="xyz">
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js')
+      navigator.serviceWorker.register('./service-worker.js')
         .then(registration => {
           console.log('Service Worker registered with scope:', registration.scope);
         })

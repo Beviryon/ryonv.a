@@ -24,7 +24,7 @@ const products = [
     discount: 5, 
     endDate: '2025-08-21T23:59:59' 
   },
-  stock: 0,
+  stock: 10,
   rating: 5.9,
   isBestSeller: true
 },
@@ -52,7 +52,7 @@ const products = [
     discount: 5, 
     endDate: '2025-08-21T23:59:59' 
   },
-  stock: 0,
+  stock: 10,
   rating: 5.9,
   isBestSeller: true
 },
@@ -81,7 +81,7 @@ const products = [
     discount: 5, 
     endDate: '2025-08-21T23:59:59' 
   },
-  stock: 0,
+  stock: 10,
   rating: 5.9,
   isBestSeller: true
 },

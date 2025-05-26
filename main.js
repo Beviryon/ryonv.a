@@ -3,17 +3,54 @@ const navSlide = () => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
   const navLinks = document.querySelectorAll('.nav-links li');
+  const body = document.body;
 
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
-    burger.classList.toggle('toggle');
-  });
+  // Fonction pour fermer le menu
+  const closeMenu = () => {
+    nav.classList.remove('active');
+    burger.classList.remove('active');
+    body.style.overflow = 'auto';
+  };
 
+  // Fonction pour ouvrir le menu
+  const openMenu = () => {
+    nav.classList.add('active');
+    burger.classList.add('active');
+    body.style.overflow = 'hidden'; // Empêche le défilement de la page
+  };
+
+  // Gestion du clic sur le burger
+  if (burger) {
+    burger.addEventListener('click', () => {
+      if (nav.classList.contains('active')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  }
+
+  // Fermer le menu au clic sur un lien
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      nav.classList.remove('nav-active');
-      burger.classList.remove('toggle');
+      closeMenu();
     });
+  });
+
+  // Fermer le menu au clic en dehors
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('active') && 
+        !nav.contains(e.target) && 
+        !burger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Fermer le menu avec la touche Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('active')) {
+      closeMenu();
+    }
   });
 };
 
@@ -83,30 +120,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('promoPopup');
   const closeBtn = document.querySelector('.close-btn');
   
-  // Afficher le popup après 3 secondes
-  setTimeout(() => {
-    overlay.style.display = 'flex';
-    popup.style.display = 'block';
-  }, 3000);
+  // Vérifier si les éléments existent avant de les utiliser
+  if (overlay && popup && closeBtn) {
+    // Afficher le popup après 3 secondes
+    setTimeout(() => {
+      overlay.style.display = 'flex';
+      popup.style.display = 'block';
+    }, 3000);
 
-  // Fermer le popup au clic sur le bouton de fermeture ou l'overlay
-  closeBtn.addEventListener('click', closePopup);
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) {
-      closePopup();
+    // Fermer le popup au clic sur le bouton de fermeture ou l'overlay
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closePopup();
+      }
+    });
+
+    function closePopup() {
+      overlay.style.display = 'none';
+      popup.style.display = 'none';
     }
-  });
 
-  function closePopup() {
-    overlay.style.display = 'none';
-    popup.style.display = 'none';
+    // Fermer automatiquement après 10 secondes
+    setTimeout(closePopup, 13000);
   }
-
-  // Fermer automatiquement après 10 secondes
-  setTimeout(closePopup, 13000);
 });
 
+// Gestion du loader
 window.onload = function() {
-  document.getElementById('loader').style.display = 'none';
-  document.getElementById('content').style.display = 'block';
+  const loader = document.getElementById('loader');
+  const content = document.getElementById('content');
+  
+  if (loader) {
+    loader.style.display = 'none';
+  }
+  if (content) {
+    content.style.display = 'block';
+  }
 };

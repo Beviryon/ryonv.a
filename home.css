@@ -201,7 +201,15 @@ nav {
   }
 
   .burger {
-      display: block;
+      display: none;
+  }
+
+  .burger-profile-container {
+    position: relative;
+    z-index: 100000;
+    display: none;
+    align-items: center;
+    gap: 15px;
   }
 
   .burger-profile-container {
@@ -1354,6 +1362,7 @@ footer p {
   .nav-icon i {
     font-size: 16px;
   }
+  
 }
 
 /* Styles pour les contrôles de navigation */
@@ -1416,7 +1425,7 @@ footer p {
 /* Ajustements pour mobile */
 @media (max-width: 768px) {
     .nav-controls {
-        position: fixed;
+        /* position: fixed; */
         bottom: 70px;
         right: 1rem;
         flex-direction: column;
@@ -1436,5 +1445,131 @@ footer p {
         width: 100%;
         padding: 0.75rem;
     }
+}
+
+/* === NAVBAR MODERNE ET RESPONSIVE === */
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 1.2rem 5%;
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  z-index: 10000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.logo-image img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+.logo-image:hover img {
+  transform: scale(1.08);
+}
+
+.brand-title {
+  color: #f2ae01;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.navbar-links a:hover {
+  background: rgba(242, 174, 1, 0.12);
+  color: #f2ae01;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+#navProfileImage {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #f2ae01;
+  object-fit: cover;
+  transition: border-color 0.2s;
+}
+#profile-link:hover #navProfileImage {
+  border-color: #fff;
+}
+
+/* --- Burger --- */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  gap: 5px;
+  margin-left: 0.5rem;
+}
+.burger div {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* --- Responsive --- */
+@media (max-width: 968px) {
+  .navbar-links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 70vw;
+    height: 100vh;
+    background: #181818;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem 2rem;
+    gap: 2rem;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.15);
+    transition: right 0.3s;
+    z-index: 9999;
+  }
+  .navbar-links.active {
+    right: 0;
+  }
+  .burger {
+    display: flex;
+  }
+}
+
+/* Pour masquer le menu desktop quand le menu mobile est ouvert */
+@media (max-width: 968px) {
+  .navbar-links {
+    display: flex;
+  }
 }
 
