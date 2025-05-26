@@ -27,7 +27,7 @@
     <meta name="description" content="Découvrez RYONV, la boutique de mode en ligne qui allie qualité et style. Achetez des vêtements modernes et profitez d'une livraison rapide.">
     <title>RYONV - Boutique en ligne de style et qualité</title>
     <title>Page d'Accueil</title>
-    <link rel="stylesheet" href="./styles/theme.css" nonce="xyz">
+    <link rel="stylesheet" href="./theme.css" nonce="xyz">
     <link rel="stylesheet" href="./home.css" nonce="xyz">
     <link rel="stylesheet" href="./produits.css" nonce="xyz">
     <link rel="preload" href="./produitBottomBar.css" as="style" nonce="xyz">
@@ -55,39 +55,67 @@
   <!-- End Google Tag Manager (noscript) -->
 
   
+  <!-- Nouveau header harmonisé -->
   <header>
-    <nav>
-        <div class="logo">
-          <a href="./home.html" class="logo-image">
-            <img src="https://live.staticflickr.com/65535/54122923674_3c0c43d1b4_n.jpg" alt="logo">
-          </a>
-          <a href="./home.html">RYONV</a>
-        </div>
-        <div class="menu">
-          <ul class="nav-links">
-            <li><a href="./home.html">Accueil</a></li>
-            <li><a href="./produits.html">Produits</a></li>
-            <li><a href="./services.html">Nos services</a></li>
-            <li><a href="./about.html">À propos</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-            <li><a href="./formations.html">Formations</a></li>
-            <li><a href="./Abonnement.html">Vendre avec nous</a></li>
-          </ul>
-          <div class="nav-controls">
-          <div class="burger-profile-container" >
-              <a href="./profile.html" id="profile-link" >
-                <img id="navProfileImage" src="./images/icons/profile.jpg" alt="Profile" style="width: 30px; height: 30px; border-radius: 50%;">
-              </a>
-            <div class="burger">
-              <div class="line1"></div>
-              <div class="line2"></div>
-              <div class="line3"></div>
-            </div>
-          </div>
-        </div>
+    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <a href="home.html" class="site-logo">
+      <img src="logo.png" alt="RYONV">
+      <span>RYONV.A</span>
+    </a>
+    
+    <nav class="main-nav">
+      <a href="home.html" class="nav-link">Accueil</a>
+      <a href="produits.html" class="nav-link">Produits</a>
+      <a href="services.html" class="nav-link">Nos services</a>
+      <a href="about.html" class="nav-link">À propos</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="formations.html" class="nav-link">Formations</a>
+      <a href="Abonnement.html" class="nav-link">Vendre avec nous</a>
     </nav>
+    
+    <div class="header-actions">
+      <a href="login.html" class="header-icon-btn" aria-label="Mon compte">
+        <i class="fas fa-user"></i>
+      </a>
+      <a href="cart.html" class="header-icon-btn" aria-label="Voir le panier">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-counter">0</span>
+      </a>
+    </div>
   </header>
-  
+
+  <!-- Menu mobile -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-header">
+        <a href="home.html" class="site-logo">
+          <img src="logo.png" alt="RYONV">
+          <span>RYONV.A</span>
+        </a>
+        <button class="close-menu" id="closeMenu" aria-label="Fermer le menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="home.html" class="mobile-nav-link">Accueil</a></li>
+        <li><a href="produits.html" class="mobile-nav-link">Produits</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Nos services</a></li>
+        <li><a href="about.html" class="mobile-nav-link">À propos</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="formations.html" class="mobile-nav-link">Formations</a></li>
+        <li><a href="Abonnement.html" class="mobile-nav-link">Vendre avec nous</a></li>
+      </ul>
+      <div class="mobile-nav-divider"></div>
+      <ul class="mobile-nav-links">
+        <li><a href="login.html" class="mobile-nav-link">Mon compte</a></li>
+        <li><a href="cart.html" class="mobile-nav-link">Panier</a></li>
+      </ul>
+    </div>
+  </div>
+
 <!-- Nouvelle section promo -->
 <section class="promo-section">
 
@@ -180,7 +208,7 @@
   </footer>
 
 <!-- Menu  -->
-<div class="bottom-nav">
+<!-- <div class="bottom-nav">
   <a href="./produits.html" class="nav-icon home">
     <i class="fas fa-store"></i>
     <span class="nav-text">Boutique</span>
@@ -207,7 +235,7 @@
     <div class="line2"></div>
     <div class="line3"></div>
   </div>
-</div>
+</div> -->
 
   <script nonce="xyz" src="./main.js"></script>
   <script nonce="xyz" type="module" src="./produitBottomNav.js"></script>
@@ -256,6 +284,22 @@
         });
     }
   </script>
+
+<!-- Bouton flottant -->
+<a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/22/19/20250122195047-9MTGIIUD.json"
+   class="open-assistance-btn"
+   title="Assistance"
+   target="_blank"
+   rel="noopener">
+  <i class="fa-brands fa-rocketchat"></i>
+</a>
+<!-- Pop-up caché par défaut -->
+<div id="assistance-popup" class="assistance-popup" hidden>
+  <button id="close-assistance" class="close-assistance" title="Fermer l'assistance">&times;</button>
+  <iframe src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/01/22/19/20250122195047-9MTGIIUD.json"
+          frameborder="0"
+          class="assistance-iframe"></iframe>
+</div>
 
 </body>
 </html>

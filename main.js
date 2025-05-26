@@ -144,6 +144,50 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fermer automatiquement après 10 secondes
     setTimeout(closePopup, 13000);
   }
+
+  const menuToggle = document.getElementById('menuToggle');
+  const closeMenu = document.getElementById('closeMenu');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+  if (menuToggle && closeMenu && mobileMenu && mobileMenuOverlay) {
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mobileMenu.classList.add('active');
+      mobileMenuOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeMenuFunc() {
+      mobileMenu.classList.remove('active');
+      mobileMenuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    closeMenu.addEventListener('click', closeMenuFunc);
+    mobileMenuOverlay.addEventListener('click', function(e) {
+      if (e.target === mobileMenuOverlay) closeMenuFunc();
+    });
+  }
+
+  // Assistance popup
+  const assistancePopup = document.getElementById('assistance-popup');
+  const openAssistanceBtn = document.getElementById('open-assistance');
+  const closeAssistanceBtn = document.getElementById('close-assistance');
+
+  if (assistancePopup && openAssistanceBtn && closeAssistanceBtn) {
+    assistancePopup.setAttribute('hidden', '');
+
+    openAssistanceBtn.addEventListener('click', function() {
+      assistancePopup.removeAttribute('hidden');
+      openAssistanceBtn.style.display = 'none';
+    });
+
+    closeAssistanceBtn.addEventListener('click', function() {
+      assistancePopup.setAttribute('hidden', '');
+      openAssistanceBtn.style.display = 'flex';
+    });
+  }
 });
 
 // Gestion du loader
