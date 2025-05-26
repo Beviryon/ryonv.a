@@ -13,57 +13,76 @@
   <main>
     <h1>Inscription Vendeur</h1>
     <form id="registerVendorForm">
-      <h2>Informations Personnelles</h2>
-      <div class="input-container">
-        <i class="fas fa-user"></i>
-        <input type="text" id="first_name" placeholder="Prénom" required>
-      </div>
-      <div class="input-container">
-        <i class="fas fa-phone-alt"></i>
-        <input type="tel" id="phone" placeholder="Téléphone" required>
-      </div>
-      <div class="input-container">
-        <i class="fas fa-city"></i>
-        <input type="text" id="city" placeholder="Ville" required>
-      </div>
-      <div class="input-container">
-        <i class="fas fa-flag"></i>
-        <input type="text" id="country" placeholder="Pays" required>
-      </div>
-      <div class="input-container">
-        <i class="fas fa-lock"></i>
-        <input type="password" id="password" placeholder="Mot de passe" required>
-        <i class="far fa-eye" id="togglePassword" style="cursor: pointer;"></i>
-      </div>
-
-      <h2>Informations de la Boutique</h2>
-      <div class="input-container">
-        <i class="fas fa-store"></i>
-        <input type="text" id="store_name" placeholder="Nom de la boutique" required>
-      </div>
-      <div class="input-container">
-        <i class="fas fa-align-left"></i>
-        <textarea id="store_description" placeholder="Description de la boutique" required></textarea>
-      </div>
-      <div class="input-container">
-        <i class="fas fa-briefcase"></i>
-        <select id="business_type" required aria-label="Type d'entreprise">
-          <option value="">Type d'entreprise</option>
-          <option value="individual">Particulier</option>
-          <option value="company">Société</option>
-          <option value="association">Association</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <i class="fas fa-id-card"></i>
-        <input type="text" id="tax_id" placeholder="Numéro d'identification fiscale" required>
-      </div>
-      <div class="input-container">
-        <i class="fas fa-university"></i>
-        <input type="text" id="bank_account" placeholder="Numéro de compte bancaire" required>
+      <!-- Étape 1 : Infos personnelles -->
+      <div class="form-step" id="step-1">
+        <h2>Informations Personnelles</h2>
+        <div class="input-container">
+          <i class="fas fa-user"></i>
+          <input type="text" id="first_name" placeholder="Prénom" required>
+        </div>
+        <div class="input-container">
+          <i class="fas fa-phone-alt"></i>
+          <input type="tel" id="phone" placeholder="Téléphone" required>
+        </div>
+        <div class="input-container">
+          <i class="fas fa-map-marker-alt"></i>
+          <input type="text" id="address" placeholder="Adresse" required>
+        </div>
+        <div class="input-container">
+          <i class="fas fa-city"></i>
+          <input type="text" id="city" placeholder="Ville" required>
+        </div>
+        <div class="input-container">
+          <i class="fas fa-flag"></i>
+          <input type="text" id="country" placeholder="Pays" required>
+        </div>
+        <div class="input-container">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" placeholder="Mot de passe" required>
+          <i class="far fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+        </div>
+        <button type="button" id="next-1">Suivant</button>
       </div>
 
-      <button type="submit">S'inscrire comme vendeur</button>
+      <!-- Étape 2 : Infos boutique -->
+      <div class="form-step" id="step-2" style="display:none;">
+        <h2>Informations de la Boutique</h2>
+        <div class="input-container">
+          <i class="fas fa-store"></i>
+          <input type="text" id="store_name" placeholder="Nom de la boutique" required>
+        </div>
+        <div class="input-container">
+          <i class="fas fa-align-left"></i>
+          <textarea id="store_description" placeholder="Description de la boutique" required></textarea>
+        </div>
+        <div class="input-container">
+          <i class="fas fa-briefcase"></i>
+          <select id="business_type" required aria-label="Type d'entreprise">
+            <option value="">Type d'entreprise</option>
+            <option value="individual">Particulier</option>
+            <option value="company">Société</option>
+            <option value="association">Association</option>
+          </select>
+        </div>
+        <button type="button" id="prev-2">Précédent</button>
+        <button type="button" id="next-2">Suivant</button>
+      </div>
+
+      <!-- Étape 3 : Abonnement -->
+      <div class="form-step" id="step-3" style="display:none;">
+        <h2>Type d'abonnement</h2>
+        <div class="input-container">
+          <i class="fas fa-crown"></i>
+          <select id="subscription_type" required aria-label="Type d'abonnement">
+            <option value="">Choisissez un abonnement</option>
+            <option value="decouverte">Découverte (4 mois)</option>
+            <option value="standard">Standard (6 mois)</option>
+            <option value="premium">Premium (12 mois)</option>
+          </select>
+        </div>
+        <button type="button" id="prev-3">Précédent</button>
+        <button type="submit">S'inscrire comme vendeur</button>
+      </div>
     </form>
     <p>Déjà un compte ? <a href="./login.html" class="animated-link">Connectez-vous</a></p>
   </main>

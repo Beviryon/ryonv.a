@@ -1,11 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const registerVendorForm = document.getElementById('registerVendorForm');
+    // Navigation étapes
+    const step1 = document.getElementById('step-1');
+    const step2 = document.getElementById('step-2');
+    const step3 = document.getElementById('step-3');
+    document.getElementById('next-1').onclick = () => { step1.style.display = 'none'; step2.style.display = 'block'; };
+    document.getElementById('prev-2').onclick = () => { step2.style.display = 'none'; step1.style.display = 'block'; };
+    document.getElementById('next-2').onclick = () => { step2.style.display = 'none'; step3.style.display = 'block'; };
+    document.getElementById('prev-3').onclick = () => { step3.style.display = 'none'; step2.style.display = 'block'; };
+
+    // Mot de passe
     const togglePassword = document.getElementById('togglePassword');
     const passwordInput = document.getElementById('password');
-    const vendorModal = document.getElementById('vendorModal');
-    const vendorName = document.getElementById('vendorName');
-
-    // Fonction pour basculer la visibilité du mot de passe
     togglePassword.addEventListener('click', () => {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
@@ -31,26 +36,31 @@ document.addEventListener('DOMContentLoaded', () => {
         return taxIdRegex.test(taxId.replace(/\s/g, ''));
     }
 
+    // Soumission du formulaire
+    const registerVendorForm = document.getElementById('registerVendorForm');
+    const vendorModal = document.getElementById('vendorModal');
+    const vendorName = document.getElementById('vendorName');
     registerVendorForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        // Récupère tous les champs
         const first_name = document.getElementById('first_name').value.trim();
         const phone = document.getElementById('phone').value.trim();
+        const address = document.getElementById('address').value.trim();
         const city = document.getElementById('city').value.trim();
         const country = document.getElementById('country').value.trim();
         const password = document.getElementById('password').value;
         const store_name = document.getElementById('store_name').value.trim();
         const store_description = document.getElementById('store_description').value.trim();
         const business_type = document.getElementById('business_type').value;
-        const tax_id = document.getElementById('tax_id').value.trim();
-        const bank_account = document.getElementById('bank_account').value.trim();
+        const subscription_type = document.getElementById('subscription_type').value;
 
         try {
             const response = await fetch('/api/register-vendor', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    first_name, phone, city, country, password,
-                    store_name, store_description, business_type, tax_id, bank_account
+                    first_name, phone, address, city, country, password,
+                    store_name, store_description, business_type, subscription_type
                 }),
             });
             const data = await response.json();
